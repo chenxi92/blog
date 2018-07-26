@@ -507,7 +507,7 @@ bool jsb_register_all_modules()
 
 > 添加 `jsToCPP` 文件夹下的所有文件到该工程， 并添加正确的搜索路径
 
-![add-file-to-js_bindings-project](./images/CocosCreator-JSBindings-Tutorial/add-jsToCPP.png)
+![add-file-to-js_bindings-project](/images/CocosCreator-JSBindings-Tutorial/add-jsToCPP.png)
 
 **真机运行项目，出现如下信息:**
 
