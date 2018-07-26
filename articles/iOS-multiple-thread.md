@@ -1,12 +1,9 @@
 ## 多线程技术方案
 
-1. pthread
-
-2. NSThread
-
-3. GCD
-
-4. NSOperation
+> 1. pthread
+> 2. NSThread
+> 3. GCD
+> 4. NSOperation
 
 ### 1.pthread
 
