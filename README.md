@@ -1,6 +1,12 @@
-# 博客记录
+## 学生陈希的博客
 
-### 文章列表
+<p align='center'>
+<img src="https://img.shields.io/badge/platform-iOS-ff69b4.svg">
+<img src="https://img.shields.io/badge/language-Objective--C-orange.svg">
+<img src="https://img.shields.io/badge/language-python-yellowgreen.svg">
+<img src="https://img.shields.io/badge/language-shell-green.svg">
+
+#### 文章列表
 
 1. [iOS 多线程](./articles/iOS-multiple-thread.md)
 
