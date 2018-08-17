@@ -18,4 +18,4 @@
 
 5. [RC4 C++ 和 Python 实现](./articles/RC4-implementation-for-C++-Python.md)
 
-6. [iOS 常见加密算法总结](.articles/data-encrypt.md)
+6. [iOS 常见加密算法总结](./articles/data-encrypt.md)
