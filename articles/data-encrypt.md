@@ -1,8 +1,8 @@
 ###  iOS常见加密算法总结
 
 
-#### 1. 安全散列算法
-> **Secure Hash Algorithm**，常见的算法包括了 **MD5**、**SHA1**、**HMAC** 等。
+#### [1. 安全散列算法](#Secure-Hash-Algorithm)
+> **Secure Hash Algorithm**，常见的算法包括了 **[MD5](#md5)**、**[SHA1](#SHA)**、**[HMAC](#HMAC)** 等。
 
 > 将任意长度的二进制值映射为较短的固定长度的二进制值，这个短的二进制值称为哈希值，这个算法具有不可逆、碰撞低等特性。同时该类算法可以用作数字签名，用来证实某个信息确实是由某个人发出的，同时可以保证信息没有被修改。
 
@@ -12,22 +12,22 @@
 > 
 > B) 无法从 hash 值倒推出原来的输入。
 
-#### 2. 对称加密
-> **symmetric-key encryption**，其中常见的算法包括了 **AES**、**DES**、**3DES** 等。
+#### [2. 对称加密](#symmetric-key-encryption)
+> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**DES**、**3DES** 、**[RC4](#RC4)**等。
 
 > 对称加密指的是可以使用同一个密钥对内容进行加密和解密，相比非对称加密，它的特点是加/解密速度快，并且加密的内容长度几乎没有限制。
 
-#### 3. 非对称加密
-> **asymmetric/public-key encryption**，常见的加密算法有 **RSA**、**DSA**、**ECC** 等。
+#### [3. 非对称加密](#asymmetric-public-key-encryption)
+> **asymmetric/public-key encryption**，常见的加密算法有 **[RSA](#RSA)**、**DSA**、**ECC** 等。
 
 > 非对称加密有两个密钥，分别为公钥和私钥，其中公钥公开给所有人，私钥永远只能自己知道。
 
 > 使用公钥加密的信息只能使用私钥解密，使用私钥加密只能使用公钥解密。前者用来传输需要保密的信息，因为全世界只有知道对应私钥的人才可以解密；后者用来作数字签名，因为公钥对所有人公开的，可以用来确认这个信息是否是从私钥的拥有者发出的。
 
 
-### 安全散列算法
+### <a name="Secure-Hash-Algorithm"></a>安全散列算法
 
-**MD5信息摘要**
+**<a name="md5"></a>MD5信息摘要**
 
 > **MD5 Message-Digest Algorithm**，一种被广泛使用的密码散列函数，可以产生出一个128位（16字节）的散列值（hash value），用于确保信息传输完整一致。
 > 
@@ -55,7 +55,7 @@
 @end
 ```
 
-### SHA家族
+### <a name="SHA"></a>SHA家族
 
 > **安全散列算法**（英语：Secure Hash Algorithm，缩写为SHA）是一个密码散列函数家族，是FIPS所认证的安全散列算法。
 能计算出一个数字消息所对应到的，长度固定的字符串（又称消息摘要）的算法。且若输入的消息不同，它们对应到不同字符串的机率很高。
@@ -134,7 +134,7 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 @end
 ```
 
-### HMAC
+### <a name="HMAC"></a>HMAC
 > HMAC加密算法是一种安全的基于加密hash函数和共享密钥的消息认证协议． 它可以有效地防止数据在传输过程中被截获和篡改，维护了数据的完整性、可靠性和安全性. HMAC加密算法是一种基于密钥的报文完整性的验证方法，其安全性是建立在Hash加密算法基础上的
 
 [HMAC 维基百科](https://en.wikipedia.org/wiki/HMAC)
@@ -199,8 +199,8 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 ```
 
 
-### 对称加密
-#### AES
+### <a name="symmetric-key-encryption"></a>对称加密
+#### <a name="AES"></a>AES
 
 > **AES256**是美国NIST在几种加密算法竞赛中选出来的**对称加密算法**，是用于取代DES的，原名为Rijndael加密法，破解的报道相对少些。 
  
@@ -282,7 +282,7 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 [密码算法详解——AES](https://www.cnblogs.com/luop/p/4334160.html)
 
 
-#### RC4
+#### <a name="RC4"></a>RC4
 
 > **Rivest Cipher 4**是一种流加密算法，密钥长度可变。它加解密使用相同的密钥，因此也属于对称加密算法。
 
@@ -319,8 +319,8 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 @end
 ```
 
-### 非对称加密
-#### RSA
+### <a name="asymmetric-public-key-encryption"></a>非对称加密
+#### <a name="RSA"></a>RSA
 
 **以下代码参考自** [Objective-C-RSA](https://github.com/ideawu/Objective-C-RSA) 
 
