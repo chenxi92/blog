@@ -22,7 +22,7 @@ let octal: number = 0o744;
 let color: string = "blue";
 color = 'red';
 ```
-**支持模板字符串:**使用反引号表达，可以跨行，也可以嵌入表达式 ```${expr}```
+**支持模板字符串** 使用反引号表达，可以跨行，也可以嵌入表达式 ```${expr}```
 
 ```
 let fullName: string = `Bob Bobbington`;
