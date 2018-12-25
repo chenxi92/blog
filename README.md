@@ -2,11 +2,13 @@
 
 <p align='center'>
 <img src="https://img.shields.io/badge/platform-iOS-ff69b4.svg">
-<img src="https://img.shields.io/badge/language-Objective--C-orange.svg">
 <img src="https://img.shields.io/badge/language-python-yellowgreen.svg">
 <img src="https://img.shields.io/badge/language-shell-green.svg">
+<img src="https://img.shields.io/badge/language-typeScript-red.svg">
 
 #### 文章列表
+
+#### 1. iOS 开发
 
 1. [iOS 多线程](./articles/iOS-multiple-thread.md)
 
@@ -21,3 +23,7 @@
 6. [iOS 常见加密算法总结](./articles/data-encrypt.md)
 
 7. [svn 使用总结](./articles/svn-usage.md)
+
+#### 2. TypeScript 学习
+
+1. [基本数据类型](./articles/TypeScript-Study/basic-types.md)
