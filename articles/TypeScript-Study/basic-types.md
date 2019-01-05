@@ -1,3 +1,6 @@
+### 基本数据类型
+
+<p aligh="right">2018-12-28</p>
 
 **TypeScript 支持：**
 `boolean`，`number`，`string`，`Array`，`Tuple`，`Enum`，`Any`， `Void`，`Never`，`Object`等类型。
