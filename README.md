@@ -28,4 +28,4 @@
 
 1. [基本数据类型](./articles/TypeScript-Study/basic-types.md)
 
-2. [变量](.articles/TypeScript-Study/variable.md)
+2. [变量](./articles/TypeScript-Study/variable.md)
