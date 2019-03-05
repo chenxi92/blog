@@ -26,6 +26,8 @@
 
 8. [git 使用总结](./articles/learn-git.md)
 
+9. [常见排序算法](./articles/sort.md)
+
 #### 2. TypeScript 学习
 
 1. [基本数据类型](./articles/TypeScript-Study/basic-types.md)
