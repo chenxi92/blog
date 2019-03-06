@@ -194,7 +194,7 @@ pthread_self(): 查询线程自身线程标识号
     * 让任务一个接着一个的执行
  
  全局队列（dispatch_get_global_queue): 是一个并发队列
- 主队列（dispatch_get_main_queue): 主队列专门用于在主线程上执行任务
+ 主队列（dispatch_get_main_queue): 主队列专门用于在主线程上执行任务， 是一个串行队列
  ```
  
  **队列执行效果**
@@ -447,6 +447,32 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 > suspended 队列暂停/继续
 
 > cancelAllOperations 取消所有操作
+
+#### 常见面试题
+
+下面代码会输出什么？ 为什么？
+
+```
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	NSLog(@"1");
+   	dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+}
+```
+
+##### 答案
+
+**输出: 1**， 然后崩溃
+
+##### 原因
+
+系统维护的`dispatch_get_main_queue()`这个队列里面在执行`viewDidLoad`方法，在`viewDidLoad`中又再次在`dispatch_get_main_queue()`这个相同的队列里面执行`block`方法。
+
+由于串行队列`FIFO`原则，系统维护的`dispatch_get_main_queue()`先进栈，所以要先执行完毕后，再执行后进栈的队列任务，而系统维护的`dispatch_get_main_queue()`执行完的条件时`viewDidLoad`方法执行完毕，所以系统维护的`dispatch_get_main_queue()`会等待`dispatch_sync`调用的`dispatch_get_main_queue()`执行完毕，`dispatch_sync`调用的`dispatch_get_main_queue()`又在等待先进栈的系统维护的`dispatch_get_main_queue()`执行完毕，这样就陷入死循环.
+
 
 #####  参考
 
