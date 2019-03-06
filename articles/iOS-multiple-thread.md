@@ -206,11 +206,11 @@ pthread_self(): 查询线程自身线程标识号
 
 
  
-#### dispatch\_barrier|_async 使用
+#### dispatch\_barrier\_async 使用
 
-> 该函数会等待dispatch_barrier_async 前面所有任务完成
+> 该函数会等待dispatch\_barrier\_async 前面所有任务完成
 
-> 然后在执行 dispatch_barrier_async 的任务
+> 然后在执行 dispatch\_barrier\_async 的任务
 
 ```
 - (IBAction)test_barrier_async:(id)sender {
@@ -251,7 +251,7 @@ pthread_self(): 查询线程自身线程标识号
 
 #### GCD 调度组
 
-> 使用 dispatch_group_async 和 dispatch_group_notify 函数来完成调度组的工作
+> 使用 dispatch\_group\_async 和 dispatch\_group\_notify 函数来完成调度组的工作
 
 ```
 - (void)demo {
