@@ -1,4 +1,18 @@
-### 二分查找法
+### 目录
+
+[1. 二分查找法](#binary-search)
+
+[2. 冒泡排序](#bubble-sort)
+
+[3. 快速排序](#quick-sort)
+
+[4. 插入排序](#insert-sort)
+
+[5. 鸡尾酒排序](#cock-tail-sort)
+
+[6. 选择排序](#section-sort)
+
+### <a name="binary-search"></a>二分查找法
 
 **适用范围:** 当数据量很大适宜采用该方法。
 
@@ -39,7 +53,7 @@ NSLog(@"%ld",binary);
 ```
 
 
-### 冒泡排序
+### <a name="bubble-sort"></a>冒泡排序
 
 **参考:** [冒泡排序](https://mp.weixin.qq.com/s/wO11PDZSM5pQ0DfbQjKRQA) 
 
@@ -122,11 +136,18 @@ NSLog(@"bubble sort optimize2 = %@", [Sort bubbleSortOptimize2:array]);
 NSLog(@"origin array = %@", array);
 ```
 
-### 快速排序
+### <a name="quick-sort"></a>快速排序
 
-**参考：**[快速排序](https://mp.weixin.qq.com/s/PQLC7qFjb74kt6PdExP8mw)
+**参考：** [快速排序](https://mp.weixin.qq.com/s/PQLC7qFjb74kt6PdExP8mw)
 
-**基本思想：** 在每一轮挑选一个基准元素，并让其他比它大的元素移动到数列一边，比它小的元素移动到数列的另一边，从而把数列拆解成了两个部分。这种思路就叫做**分治法**。
+[快速排序](https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F)使用`分治法`（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。
+
+**步骤为**：
+
+1. 从数列中挑出一个元素，称为“基准”（pivot），
+2. 重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任何一边）。在这个分割结束之后，该基准就处于数列的中间位置。这个称为分割（partition）操作。
+3. 递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。
+
 
 **代码实现：**
 
@@ -184,11 +205,30 @@ NSLog(@"before quick sort = %@", quickArray);
 [Sort quickSort:quickArray startIndex:0 endIndex:quickArray.count - 1];
 NSLog(@"after quick sort = %@", quickArray);
 ```
-### 插入排序
+### <a name="insert-sort"></a>插入排序
 
 **参考：** [插入排序](https://blog.51cto.com/9217856/1563523)
 
-**基本思路：** 直接插入排序(Insertion Sort)的基本思想是：每次将一个待排序的记录，按其关键字大小插入到前面已经排好序的子序列中的适当位置，直到全部记录插入完成为止。
+[插入排序](https://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F)（Insertion Sort）是一种简单直观的排序算法。
+
+它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。
+
+插入排序在实现上，通常采用in-place排序（即只需用到`O(1)`的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。
+
+![使用插入排序为一列数字进行排序的过程](../images/sort/Insertion_sort_animation.gif)
+
+具体算法描述如下：
+
+1. 从第一个元素开始，该元素可以认为已经被排序
+2. 取出下一个元素，在已经排序的元素序列中从后向前扫描
+3. 如果该元素（`已排序`）大于新元素，将该元素移到下一位置
+4. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置
+5. 将新元素插入到该位置后
+6. 重复步骤2~5
+
+适用范围：需要排序的数据量很小；或者若已知输入元素大致上按照顺序排列
+
+不适用范围：插入排序不适合对于数据量比较大的排序应用
 
 **代码实现：**
 
@@ -197,13 +237,13 @@ NSLog(@"after quick sort = %@", quickArray);
 + (void)insertSort:(NSMutableArray *)array {
     
     for (int i = 1; i < array.count; i++) {
-        NSNumber *temp = array[i];
-        int j = i;
-        while (j > 0 && [array[j - 1] compare:temp] == NSOrderedDescending) {
-            [array exchangeObjectAtIndex:j withObjectAtIndex:j - 1];
+        NSNumber *key = array[i];
+        int j = i - 1;
+        while (j >= 0 && [array[j] compare:key] == NSOrderedDescending) {
+            [array exchangeObjectAtIndex:j + 1 withObjectAtIndex:j];
             j--;
         }
-        array[j] = temp;
+        array[j + 1] = key;
     }
 }
 ```
@@ -217,7 +257,7 @@ NSLog(@"before insert sort = %@", insertArray);
 NSLog(@"after insert sort = %@", insertArray);
 ```
 
-### 鸡尾酒排序
+### <a name="cock-tail-sort"></a>鸡尾酒排序
 
 **参考** [鸡尾酒排序](https://mp.weixin.qq.com/s/CoVZrvis6BnxBQgQrdc5kA)
 
@@ -316,4 +356,41 @@ NSMutableArray *cockTailArrayOptimize = [NSMutableArray arrayWithObjects:@2, @3,
 NSLog(@"before cock tail array optimize = %@", cockTailArrayOptimize);
 [Sort cockTailSortOptimize:cockTailArrayOptimize];
 NSLog(@"after cock tail array optimize = %@", cockTailArrayOptimize);
+```
+
+### <a name="section-sort"></a>选择排序
+
+[选择排序](https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F)（Selection sort）是一种简单直观的排序算法。
+
+它的工作原理如下:
+
+首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。
+
+
+选择排序的主要优点与`数据移动`有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对`n`个元素的表进行排序总共进行至多`n-1`次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。
+
+**代码实现**
+
+```
+// Sort.m
++ (void)sectionSort:(NSMutableArray *)array {
+    for (NSInteger i = 0; i < array.count - 1; i++) {
+        NSInteger min = i;
+        for (NSInteger j = i + 1; j < array.count; j++) {
+            if ([array[j] compare:array[min]] == NSOrderedAscending) {
+                min = j;
+            }
+        }
+        [array exchangeObjectAtIndex:i withObjectAtIndex:min];
+    }
+}
+```
+
+测试：
+
+```
+NSMutableArray *sectionArray = [NSMutableArray arrayWithObjects:@2, @3, @4, @5, @6, @7, @8, @1, nil];
+NSLog(@"before section array = %@", sectionArray);
+[Sort sectionSort:sectionArray];
+NSLog(@"after section array = %@", sectionArray);
 ```
