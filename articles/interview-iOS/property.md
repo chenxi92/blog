@@ -14,9 +14,9 @@
 
 #### 1. <a name="all-property-key-words"></a>`@property`中有哪些属性关键字?
 
-1. 原子性 -- `nonatomic`(非原子), `atomic`(原子)， 默认情况下是`atomic`;
-2. 读写权限 -- `readwrite`(读写), `readonly`(只读), 默认是`readwrite`;
-3. 内存管理 -- `assign`, `strong`, `weak`, `copy`, `unsafe_unretained`, 基本数据类型，默认关键字是`assign`, 普通Objective-C对象，默认是`strong`;
+- 原子性 -- `nonatomic`(非原子), `atomic`(原子)， 默认情况下是`atomic`;
+- 读写权限 -- `readwrite`(读写), `readonly`(只读), 默认是`readwrite`;
+- 内存管理 -- `assign`, `strong`, `weak`, `copy`, `unsafe_unretained`, 基本数据类型，默认关键字是`assign`, 普通Objective-C对象，默认是`strong`;
 
 	- `unsafe_unretained`相当于`weak`；区别是，当weak引用的对象释放之后，会自动设置为nil，`unsafe_unretained `则不会
 	
@@ -26,7 +26,7 @@
 	
 	- `copy` 制一份原来的内容
 	
-4. 方法名 -- `setter`, `getter`; 默认自动合成存取器方法
+- 方法名 -- `setter`, `getter`; 默认自动合成存取器方法
 
 ##### 参考资料
 
@@ -41,6 +41,8 @@
 @property = ivar + getter + setter;
 
 ```
+
+常见问题：
 
 1. **ivar、getter、setter 是如何生成并添加到这个类中的?**
 	- 完成属性定义后，编译器会自动编写访问这些属性所需的方法，此过程叫做“**自动合成**”(autosynthesis)。需要强调的是，这个过程由编译器在**编译期**执行，所以编辑器里看不到这些“合成方法”(synthesized method)的源代码。除了生成方法代码 getter、setter 之外，编译器还要自动向类中添加适当类型的实例变量，并且在属性名前面加下划线，以此作为实例变量的名字。
@@ -175,7 +177,7 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 	- 添加,删除,修改数组内的元素的时候,程序会因为找不到对应的方法而崩溃.因为 copy 就是复制一个不可变 NSArray 的对象；
 	- 使用了 atomic 属性会严重影响性能 ；
 
-3. **block 如何修饰**
+3. **block 如何修饰？**
 	- 首先，MRR时代用retain修饰block会产生崩溃，因为作为属性的block在初始化时是被存放在静态区的(栈区)，如果block内调用外部变量，那么block无法保留其内存，在初始化的作用域内使用并不会有什么影响，但一旦出了block的初始化作用域，就会引起崩溃。
 所有MRC中使用copy修饰，将block拷贝到堆上。
 	- 其次，在ARC时代，因为ARC自动完成了对block的copy，所以修饰block用copy和strong都无所谓。 
@@ -193,7 +195,7 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 	    //[_name release];
 	    _name = [name copy];
 	}
-```
+	```
 	
 ##### 参考资料
 
@@ -204,6 +206,8 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 weak 的用处用一句话可归纳为：**弱引用，在对象释放后置为 nil，避免错误的内存访问**。
 
 用更通俗的话来表述是：weak 可以在不增加对象的引用计数的同时，又使得指针的访问是安全的。
+
+常见问题：
 
 1.  **什么情况使用 weak 关键字？**
 	- 在 ARC 中,在有可能出现循环引用的时候,往往要通过让其中一端使用 weak 来解决,比如: delegate 代理属性
