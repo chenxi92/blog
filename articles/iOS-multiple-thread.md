@@ -1,11 +1,14 @@
 ## 多线程技术方案
 
-> 1. pthread
-> 2. NSThread
-> 3. GCD
-> 4. NSOperation
+[1. pthread](#pthread)
 
-### 1.pthread
+[2. NSThread](#NSThread)
+
+[3. GCD](#GCD)
+
+[4. NSOperation](#NSOperation)
+
+### <a name="pthread"></a>1.pthread
 
 **特点**
 
@@ -83,7 +86,7 @@ pthread_detach(): 分离线程
 pthread_self(): 查询线程自身线程标识号
 ```
 
-### 2.NSThread
+### <a name="NSThread"></a>2.NSThread
 
 **特点**
 
@@ -151,7 +154,7 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
-### 3.GCD
+### <a name=""GCD></a>3.GCD
 
 **特点**
 
@@ -287,7 +290,7 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
-#### 4. NSOperation
+#### <a name="NSOperation"></a>4. NSOperation
 
 **特点**
 
@@ -470,6 +473,20 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 
 由于串行队列`FIFO`原则，系统维护的`dispatch_get_main_queue()`先进栈，所以要先执行完毕后，再执行后进栈的队列任务，而系统维护的`dispatch_get_main_queue()`执行完的条件时`viewDidLoad`方法执行完毕，所以系统维护的`dispatch_get_main_queue()`会等待`dispatch_sync`调用的`dispatch_get_main_queue()`执行完毕，`dispatch_sync`调用的`dispatch_get_main_queue()`又在等待先进栈的系统维护的`dispatch_get_main_queue()`执行完毕，这样就陷入死循环.
 
+下面代码崩溃原因同上：
+
+```
+dispatch_queue_t queue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+dispatch_async(queue, ^{
+    NSLog(@"1");
+    dispatch_sync(queue, ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+});
+```
+
+输出1，然后崩溃
 
 #####  参考
 
