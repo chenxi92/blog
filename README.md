@@ -8,7 +8,7 @@
 
 #### 文章列表
 
-#### 1. iOS 开发
+### 1. iOS 开发
 
 1. [iOS 多线程](./articles/iOS-multiple-thread.md)
 
@@ -28,7 +28,11 @@
 
 9. [常见排序算法](./articles/sort.md)
 
-#### 2. TypeScript 学习
+### 2. iOS 面试题整理
+
+1. [iOS属性相关面试题](./articles/interview-iOS/property.md)
+
+### 3. TypeScript 学习
 
 1. [基本数据类型](./articles/TypeScript-Study/basic-types.md)
 
