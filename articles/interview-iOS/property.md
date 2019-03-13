@@ -2,17 +2,17 @@
 
 #### 目录
 
-- [@property中有哪些属性关键字?](#all-property-key-words)
+- [1. @property中有哪些属性关键字?](#all-property-key-words)
 
-- [@property的本质？](#property-essence)
+- [2. @property的本质？](#property-essence)
 
-- [原子属性](#atomic)
+- [3. 原子属性](#atomic)
 
-- [copy的使用](#use-copy)
+- [4. copy的使用](#use-copy)
 
-- [weak的使用](#use-weak)
+- [5. weak的使用](#use-weak)
 
-#### <a name="all-property-key-words"></a>`@property`中有哪些属性关键字?
+#### 1. <a name="all-property-key-words"></a>`@property`中有哪些属性关键字?
 
 1. 原子性 -- `nonatomic`(非原子), `atomic`(原子)， 默认情况下是`atomic`;
 2. 读写权限 -- `readwrite`(读写), `readonly`(只读), 默认是`readwrite`;
@@ -33,7 +33,7 @@
 [Properties Encapsulate an Object’s Values](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/EncapsulatingData/EncapsulatingData.html#//apple_ref/doc/uid/TP40011210-CH5-SW4)
 
 
-### <a name="property-essence"></a>@property的本质？
+### 2. <a name="property-essence"></a>@property的本质？
 
 “属性” (property)有两大概念：ivar（实例变量）、存取方法（access method ＝ getter + setter）。 @property的本质是:
 
@@ -52,7 +52,7 @@
 	- `@dynamic` 告诉编译器：属性的 setter 与 getter 方法由用户自己实现，不自动生成。（当然对于 readonly 的属性只需提供 getter 即可）。假如一个属性被声明为 @dynamic var，然后你没有提供 @setter方法和 @getter 方法，编译的时候没问题，但是当程序运行到 instance.var = someVar，由于缺 setter 方法会导致程序崩溃；或者当运行到 someVar = var 时，由于缺 getter 方法同样会导致崩溃。编译时没问题，运行时才执行相应的方法，这就是所谓的动态绑定。
 	
 	
-#### <a name="atomic"></a>原子属性
+#### 3. <a name="atomic"></a>原子属性
 
 `atomic`与`nonatomicd`的主要区别就是系统自动生成的`getter/setter`方法不一样
 
@@ -153,7 +153,7 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 3. [iOS中atomic和nonatomic区别及内部实现](https://juejin.im/post/5a31dc76f265da430c11d3ab)
 
 
-### <a name="use-copy"></a>copy的使用
+### 4. <a name="use-copy"></a>copy的使用
 
 浅拷贝：指针复制, 深拷贝：内容复制
 
@@ -165,12 +165,11 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 常见问题：
 
 1. **用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？**
+	
 	- 因为父类指针可以指向子类对象,使用 copy 的目的是为了让本对象的属性不受外界影响,使用 copy 无论给我传入是一个可变对象还是不可对象,我本身持有的就是一个不可变的副本.
 	- 如果我们使用是 strong ,那么这个属性就有可能指向一个可变对象,如果这个可变对象在外部被修改了,那么会影响该属性.
-
- - NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary；
-
- - block 也经常使用 copy 关键字，具体原因见 [Objects Use Properties to Keep Track of Blocks](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html#//apple_ref/doc/uid/TP40011210-CH8-SW12)
+	- NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary；
+	- block 也经常使用 copy 关键字，具体原因见 [Objects Use Properties to Keep Track of Blocks](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html#//apple_ref/doc/uid/TP40011210-CH8-SW12)
 
 2. **这个写法会出什么问题：`@property (copy) NSMutableArray *array;`**
 	- 添加,删除,修改数组内的元素的时候,程序会因为找不到对应的方法而崩溃.因为 copy 就是复制一个不可变 NSArray 的对象；
@@ -200,7 +199,7 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 
 [Copying Collections](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Collections/Articles/Copying.html)
 
-### <a name="use-weak"></a>weak的使用
+### 5. <a name="use-weak"></a>weak的使用
 
 weak 的用处用一句话可归纳为：**弱引用，在对象释放后置为 nil，避免错误的内存访问**。
 
