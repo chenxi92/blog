@@ -28,6 +28,8 @@
 
 9. [常见排序算法](./articles/sort.md)
 
+10. [Mac 无法连接App Store](./articles/unable-connect-app-store.md)
+
 ### 2. iOS 面试题整理
 
 1. [iOS属性相关面试题](./articles/interview-iOS/property.md)
