@@ -30,6 +30,8 @@
 
 10. [Mac 无法连接App Store](./articles/unable-connect-app-store.md)
 
+11. [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/untrusted-certificate.md)
+
 ### 2. iOS 面试题整理
 
 1. [iOS属性相关面试题](./articles/interview-iOS/property.md)
