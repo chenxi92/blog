@@ -154,7 +154,7 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
-### <a name=""GCD></a>3.GCD
+### <a name="GCD"></a>3.GCD
 
 **特点**
 
