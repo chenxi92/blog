@@ -32,6 +32,8 @@
 
 11. [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/untrusted-certificate.md)
 
+12. [iOS Tips](./articles/ios-tips.md) 
+
 ### 2. iOS 面试题整理
 
 1. [iOS属性相关面试题](./articles/interview-iOS/property.md)
