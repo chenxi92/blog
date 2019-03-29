@@ -1,6 +1,7 @@
 ### 目录
 
 - [1. iOS 处理警告](#ios-warning)
+- [2. Github搜索技巧](#github-search)
 
 #### <a name="ios-warning"></a>iOS 处理警告⚠️
 
@@ -57,3 +58,18 @@
     // persform selector leaks code.
 #pragma clang diagnostic pop
 ```
+
+#### <a name="github-search">Github 搜索技巧
+
+- 搜索star数目
+	- `stars:>200`
+	- `stars:<500`
+	- `stars:"10..50"`
+
+- 指定语言
+	- language: Objective-C
+
+- 截止日期
+	- created:"2019-3-29"
+
+[高级搜索页面](https://github.com/search/advanced)
