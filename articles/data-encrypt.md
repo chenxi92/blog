@@ -13,7 +13,7 @@
 > B) 无法从 hash 值倒推出原来的输入。
 
 #### [2. 对称加密](#symmetric-key-encryption)
-> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**DES**、**3DES** 、 **[RC4](#RC4)**等。
+> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**DES**、**3DES**、**[RC4](#RC4)**等。
 
 > 对称加密指的是可以使用同一个密钥对内容进行加密和解密，相比非对称加密，它的特点是加/解密速度快，并且加密的内容长度几乎没有限制。
 
