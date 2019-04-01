@@ -13,7 +13,7 @@
 > B) 无法从 hash 值倒推出原来的输入。
 
 #### [2. 对称加密](#symmetric-key-encryption)
-> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**DES**、**3DES** 、**[RC4](#RC4)**等。
+> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**DES**、**3DES** 、 **[RC4](#RC4)**等。
 
 > 对称加密指的是可以使用同一个密钥对内容进行加密和解密，相比非对称加密，它的特点是加/解密速度快，并且加密的内容长度几乎没有限制。
 
@@ -202,9 +202,13 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 ### <a name="symmetric-key-encryption"></a>对称加密
 #### <a name="AES"></a>AES
 
-> **AES256**是美国NIST在几种加密算法竞赛中选出来的**对称加密算法**，是用于取代DES的，原名为Rijndael加密法，破解的报道相对少些。 
+> 高级加密标准，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准.
  
-> 如果单纯从密码学上讲，要实现与AES256相当的加密强度，RSA加密算法长度要达到16384位，另外RSA1024目前已经不被认为是安全的加密算法了。
+密码说明
+
+> 严格地说，`AES`和`Rijndael`加密法并不完全一样（虽然在实际应用中两者可以互换），因为`Rijndael`加密法可以支持更大范围的区块和密钥长度：`AES`的区块长度固定为128比特，密钥长度则可以是128，192或256比特；而`Rijndael`使用的密钥和区块长度均可以是128，192或256比特
+
+加/解密NSData：
 
 ```
 #include <CommonCrypto/CommonCrypto.h>
@@ -275,11 +279,71 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 @end
 ```
 
+加/解密文件：
+
+```// cryptor.m
+
++ (NSString *)AESEncrypt:(NSString *)filePath withKey:(NSString *)key withIv:(NSString *)iv {
+    
+    NSString *content = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptData = [data aes256EncryptWithKey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // convert to hex string
+    return [self _hexStringFromData:encryptData];
+}
+
++ (NSString *)AESDecrypt:(NSString *)filePath withKey:(NSString *)key withIv:(NSString *)iv {
+    
+    NSString *content = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    // convert hex string to NSData
+    NSData *data = [self _dataFromHexString:content];
+    
+    NSData *result = [data aes256DecryptWithkey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+}
+
+#pragma mark - Private Method
+
++ (NSString *)_hexStringFromData:(NSData *)data {
+    Byte *bytes = (Byte *)[data bytes];
+    NSMutableString *output = [NSMutableString stringWithCapacity:data.length * 2];
+    for (int i = 0; i < data.length; i++) {
+        [output appendFormat:@"%02x", bytes[i]];
+    }
+    return output;
+}
+
++ (NSData *)_dataFromHexString:(NSString *)hexString {
+    
+    NSMutableData *data = [NSMutableData dataWithCapacity:hexString.length/2];
+    unsigned char whole_byte;
+    char byte_chars[3] = {'\0','\0','\0'};
+    int i;
+    for (i=0; i < [hexString length] / 2; i++) {
+        byte_chars[0] = [hexString characterAtIndex:i*2];
+        byte_chars[1] = [hexString characterAtIndex:i*2+1];
+        whole_byte = strtol(byte_chars, NULL, 16);
+        [data appendBytes:&whole_byte length:1];
+    }
+    
+    return data;
+}
+```
+
+
 **参考：**
 
 [RSA 1024和AES 256，这两种加密算法理论上哪种更安全？](https://www.zhihu.com/question/20874499)
 
 [密码算法详解——AES](https://www.cnblogs.com/luop/p/4334160.html)
+
+[高级加密标准](https://zh.wikipedia.org/wiki/高级加密标准)
+
+[converting hex nsstring to nsdata](https://stackoverflow.com/questions/7317860/converting-hex-nsstring-to-nsdata)
 
 
 #### <a name="RC4"></a>RC4
