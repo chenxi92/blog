@@ -288,7 +288,7 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
     NSString *content = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
     NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *encryptData = [data aes256EncryptWithKey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+    NSData *encryptData = [data AES256EncryptWithKey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
     
     // convert to hex string
     return [self _hexStringFromData:encryptData];
@@ -300,8 +300,8 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
     
     // convert hex string to NSData
     NSData *data = [self _dataFromHexString:content];
-    
-    NSData *result = [data aes256DecryptWithkey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+   
+    NSData *result = [data AES256DecryptWithKey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
     
     return [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
 }
