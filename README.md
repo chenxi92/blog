@@ -34,6 +34,8 @@
 
 12. [iOS Tips](./articles/ios-tips.md) 
 
+13. [XOR 加密](./articles/xor.md) 
+
 ### 2. iOS 面试题整理
 
 1. [iOS属性相关面试题](./articles/interview-iOS/property.md)
