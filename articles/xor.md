@@ -51,7 +51,7 @@ iOS加密数据如下：
 
         // If at end of key data, reset count and 
         // set key pointer back to start of key value
-        if (keyIndex == [key length]) {
+        if (++keyIndex == [key length]) {
         	keyIndex = 0;
         	keyPtr = keyData;
         }
