@@ -5,11 +5,12 @@
 <img src="https://img.shields.io/badge/language-python-yellowgreen.svg">
 <img src="https://img.shields.io/badge/language-shell-green.svg">
 <img src="https://img.shields.io/badge/language-typeScript-red.svg">
+
 学习总结。
 
 #### 1. iOS 开发
 
-- [sql 语法学习](./articles/sql-study.md)
+- [SQLite 语法学习](./articles/sql-study.md)
 - [XOR 加密](./articles/xor.md) 
 - [iOS Tips](./articles/ios-tips.md) 
 - [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/untrusted-certificate.md)
