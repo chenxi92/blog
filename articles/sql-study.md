@@ -1,4 +1,4 @@
-[TOC]
+
 
 #### SQLite 语法特点
 
@@ -144,7 +144,7 @@ insert into company (name, age, address, salary) values
 
    
 
-使用==where==子句查询记录：
+使用 `where` 子句查询记录：
 
 基本语法如下：
 
