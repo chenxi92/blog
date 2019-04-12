@@ -1,3 +1,5 @@
+[TOC]
+
 #### SQLite 语法特点
 
 1. 不区分大小写；
@@ -224,7 +226,7 @@ select * from company where age between 25 and 27;
 
 
 
-**limit 限制符:** 
+##### limit 限制符: 
 
  用于限制由 select 语句返回的数据数量。
 
@@ -242,7 +244,7 @@ select * from company where age between 25 and 27 limit 2 offset 1;
 
 
 
-**order 限制符：**
+##### order 限制符：
 
 用来基于一个或多个列按升序或降序顺序排列数据。
 
@@ -266,7 +268,7 @@ select * from company where salary > 20000 order by age asc;
 
 
 
-**常用函数**
+##### 常用函数
 
 计算数据库中某一个表的行数:
 
