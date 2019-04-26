@@ -10,6 +10,8 @@
 
 #### 1. iOS 开发
 
+- [shell 输出带颜色内容](./articles/shell-echo.md)
+
 - [SQLite 语法学习](./articles/sql-study.md)
 - [XOR 加密](./articles/xor.md) 
 - [iOS Tips](./articles/ios-tips.md) 
