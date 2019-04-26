@@ -16,6 +16,8 @@
 
 [生成 SSH 公钥](#generate-publick-key)
 
+[标签](#tag)
+
 #### <a name="git-concept"></a>Git基本概念
 
 - 工作区(Working Directory)
@@ -94,6 +96,36 @@
 > 2. 有 .pub 后缀的文件就是公钥，另一个文件则是密钥
 
 > 3. 假如没有这些文件，或者干脆连 .ssh 目录都没有，可以用 `ssh-keygen` 来创建
+
+
+
+#### <a name="tag"></a>标签
+
+创建标签
+
+```
+git tag <version-number>
+```
+
+推送标签
+
+```
+git push origin --tags
+```
+
+删除本地标签
+
+```
+git tag -d <tag-name>
+```
+
+切回到某个标签
+
+```
+git checkout -b branch_name tag_name
+```
+
+
 
 #### 参考资料
 [git-book](https://git-scm.com/book/en/v2)
