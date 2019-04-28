@@ -1,6 +1,6 @@
 ###  <p align="center">sed 使用总结
 
-##### 替换
+#### 替换
 
 创建 `dog.txt` 文件，输入如下内容
 
@@ -26,7 +26,7 @@ My cat love my too.
 My cat was 2 years old.
 ```
 
-###### 全部替换
+##### 全部替换
 
 `g` 表示把左右的 `dog` 替换为 `cat` 。
 
@@ -43,7 +43,7 @@ My cat love my too.
 My cat was 2 years old.
 ```
 
-###### 替换指定内容
+##### 替换指定内容
 
 替换第2行
 
@@ -105,7 +105,7 @@ My dog lOve my too.
 My dog was 2 years Old.
 ```
 
-###### 替换源文件
+##### 替换源文件
 
 使用 `-i` 参数编辑源文件
 
@@ -139,7 +139,7 @@ sed -i '' "s/dog/cat/g" dog.txt
 
 
 
-##### 正则表达式
+####  正则表达式
 
 - `^` 表示一行的开头。如：`/^#/` 以 `#` 开头的匹配。
 - `$` 表示一行的结尾。如：`/}$/` 以 `}` 结尾的匹配。
@@ -150,7 +150,9 @@ sed -i '' "s/dog/cat/g" dog.txt
 - `[ ]` 字符集合。 如：`[abc]` 表示匹配a或b或c，还有 `[a-zA-Z]` 表示匹配所有的26个字符。如果其中有^表示反，如 `[^a]` 表示非a的字符。
 - `&` 保存搜索字符用来替换其他字符，如 `s/love/-&-/`，love替换成 `-love-`。
 
-##### 多个匹配
+
+
+#### 多个匹配
 
 `-e` 选项允许在同一行里执行多条命令：（第 1 行到第 3 行的 `dog` 替换成 `cat` ，第 3 行到最后一行的 `My` 替换成 `Her` ）
 
@@ -172,7 +174,7 @@ I love my dog.
 **My** dog was 2 years old.
 ```
 
-##### 插入
+#### 插入
 
 在第 1 行上插入 `I have a cat.` 。(1 表示第1行， i 表示插入的意思。在 Mac 上， `i\` 之后需要换行，原因参考[这里](<https://unix.stackexchange.com/questions/52131/sed-on-osx-insert-at-a-certain-line?answertab=votes#tab-top>))
 
@@ -185,7 +187,7 @@ My dog love my too.
 My dog was 2 years old.
 ```
 
-##### 追加
+#### 追加
 
 在最后一行追加 `Test append.` 。(在 Mac 上，`a\` 之后需要换行， 具体原因同上)
 
@@ -201,7 +203,7 @@ Test append.
 
 
 
-##### [删除操作](http://man.linuxde.net/sed)
+#### [删除操作](http://man.linuxde.net/sed)
 
 删除空白行：
 
@@ -235,7 +237,7 @@ sed '/^test/'d file
 
 
 
-##### `Pattern Space` 和 `Hold Space` 理解
+#### `Pattern Space` 和 `Hold Space` 理解
 
 `sed` 会逐行处理文件， 首先 `sed` 把当前正在处理的行保存在一个临时缓存区中（`Pattern Space`），然后处理临时缓冲区中的行，完成后把该行发送到屏幕上。`sed` 每处理完一行就将其从临时缓冲区删除，然后将下一行读入，进行处理和显示。处理完输入文件的最后一行后，`sed` 便结束运行。
 
@@ -275,7 +277,7 @@ one
 
 ![执行序列图](https://coolshell.cn/wp-content/uploads/2013/02/sed_demo.jpg)
 
-##### 参考资料：
+#### 参考资料：
 
 [sed use: expected context address](https://stackoverflow.com/questions/26124650/sed-use-expected-context-address)
 
