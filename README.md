@@ -6,11 +6,9 @@
 <img src="https://img.shields.io/badge/language-shell-green.svg">
 <img src="https://img.shields.io/badge/language-typeScript-red.svg">
 
-学习总结。
+学习记录。
 
-#### 1. iOS 开发
-
-- [shell 输出带颜色内容](./articles/shell-echo.md)
+#### iOS 开发
 
 - [SQLite 语法学习](./articles/sql-study.md)
 - [XOR 加密](./articles/xor.md) 
@@ -22,23 +20,26 @@
 - [svn 使用总结](./articles/svn-usage.md)
 - [iOS 常见加密算法总结](./articles/data-encrypt.md)
 - [RC4 C++ 和 Python 实现](./articles/RC4-implementation-for-C++-Python.md)
-- [sed 命令使用总结](./articles/sed-usage.md)
 - [iOS 出包相关命令](./articles/security-usage.md)
 
 - [CocosCreator JSBingding 教程](./articles/CocosCreator-JSBindings-Tutorial.md)]
 
 - [iOS 多线程](./articles/iOS-multiple-thread.md)
 
-
-
-#### 2. iOS 面试题整理
+#### iOS 面试题整理
 
 - [iOS属性相关面试题](./articles/interview-iOS/property.md)
 
-#### 3. TypeScript 学习
+#### TypeScript 学习
 
 - [基本数据类型](./articles/TypeScript-Study/basic-types.md)
 
 - [变量](./articles/TypeScript-Study/variable.md)
 
 - [排序](./articles/TypeScript-Study/sort.md)
+
+#### Shell命令
+
+- [shell 输出带颜色内容](./articles/shell-echo.md)
+- [sed 命令使用总结](./articles/sed-usage.md)
+- [tr 命令使用总结](./articles/tr-usage.md)

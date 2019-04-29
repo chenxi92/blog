@@ -45,4 +45,58 @@ tr [-cdst] [第一字符集][第二字符集]
 
 ##### 实例
 
-1. 将输入字符由小写转换
+1. 将输入字符由小写转换大写
+
+```shell
+$ echo "first blood" | tr 'a-z' 'A-Z'
+FIRST BLOOD
+```
+
+或者使用字符集 `[:lower:]`  `[:upper:]`  来转换大小写
+
+```shell
+$ echo "first blood" | tr [:lower:] [:upper:]
+FIRST BLOOD
+```
+
+2. 删除
+
+删除所有的数字：
+
+```shell
+$ echo "first 123 blood 456" | tr -d "0-9"
+first  blood 
+```
+
+使用字符集 `[:digit:]` 删除所有的数字
+
+```shell
+$ echo "first 123 blood 456" | tr -d [:digit:]
+first  blood 
+```
+
+3. 补集
+
+把除数字，空格，换行符之外的所有字符串，都替换成 `&` ：
+
+```shell
+$ echo "first 123 blood 456" | tr -c '0-9 \n' '&'
+&&&&& 123 &&&&& 456
+```
+
+删除除数字，空格，换行符之外的所有字符串：
+
+```shell
+echo "first 123 blood 456" | tr -dc '0-9 \n'
+ 123  456
+```
+
+4. 压缩
+
+压缩重复的字符串 `s` 和 数字 `2` 。
+
+```shell
+$ echo "he'sssss age issssss 12222222222." | tr -s 's2'
+he's age is 12.
+```
+
