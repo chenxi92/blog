@@ -22,7 +22,7 @@
 - [RC4 C++ 和 Python 实现](./articles/RC4-implementation-for-C++-Python.md)
 - [iOS 出包相关命令](./articles/security-usage.md)
 
-- [CocosCreator JSBingding 教程](./articles/CocosCreator-JSBindings-Tutorial.md)]
+- [CocosCreator JSBingding 教程](./articles/CocosCreator-JSBindings-Tutorial.md)
 
 - [iOS 多线程](./articles/iOS-multiple-thread.md)
 
