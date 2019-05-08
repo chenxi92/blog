@@ -67,4 +67,4 @@ codisign  --verify **.app
  
 ####  参考资料
 - [code sign](https://www.objc.io/issues/17-security/inside-code-signing/)
-- [sucurity 命令总结](http://www.cnblogs.com/pixy/p/4817579.html)
+- [security 命令总结](http://www.cnblogs.com/pixy/p/4817579.html)
