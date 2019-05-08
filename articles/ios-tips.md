@@ -2,6 +2,7 @@
 
 - [1. iOS 处理警告](#ios-warning)
 - [2. Github搜索技巧](#github-search)
+- [3. Google 搜索技巧](#google-search)
 
 #### <a name="ios-warning"></a>iOS 处理警告⚠️
 
@@ -73,3 +74,29 @@
 	- created:"2019-3-29"
 
 [高级搜索页面](https://github.com/search/advanced)
+
+
+
+#### <a name="google-search">Google 搜索技巧
+
+
+
+1. ##### 完全匹配
+
+   使用双引号 `""` 来进行精确匹配
+
+2. ##### 排除关键词 
+
+   使用减号 `-` 来排除某个关键词
+
+3. ##### 模糊匹配
+
+   使用星号 `*` 来进行模糊匹配
+
+4. ##### 指定站点
+
+   使用关键词 `site:` 来搜索指定站点
+
+5. ##### 指定文件类型
+
+   使用关键词 `typefile:` 来指定搜索的文件类型
