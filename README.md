@@ -11,7 +11,6 @@
 #### iOS 开发
 
 - [钥匙串学习](./articles/keychain-usage.md)
-
 - [SQLite 语法学习](./articles/sql-study.md)
 - [XOR 加密](./articles/xor.md) 
 - [iOS Tips](./articles/ios-tips.md) 
@@ -23,9 +22,7 @@
 - [iOS 常见加密算法总结](./articles/data-encrypt.md)
 - [RC4 C++ 和 Python 实现](./articles/RC4-implementation-for-C++-Python.md)
 - [iOS 出包相关命令](./articles/security-usage.md)
-
 - [CocosCreator JSBingding 教程](./articles/CocosCreator-JSBindings-Tutorial.md)
-
 - [iOS 多线程](./articles/iOS-multiple-thread.md)
 
 #### iOS 面试题整理
@@ -35,9 +32,7 @@
 #### TypeScript 学习
 
 - [基本数据类型](./articles/typescript/basic-types.md)
-
 - [变量](./articles/typescript/variable.md)
-
 - [排序](./articles/typescript/sort.md)
 
 #### Shell命令
