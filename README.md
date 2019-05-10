@@ -30,18 +30,18 @@
 
 #### iOS 面试题整理
 
-- [iOS属性相关面试题](./articles/interview-iOS/property.md)
+- [iOS属性相关面试题](./articles/interview/property.md)
 
 #### TypeScript 学习
 
-- [基本数据类型](./articles/TypeScript-Study/basic-types.md)
+- [基本数据类型](./articles/typescript/basic-types.md)
 
-- [变量](./articles/TypeScript-Study/variable.md)
+- [变量](./articles/typescript/variable.md)
 
-- [排序](./articles/TypeScript-Study/sort.md)
+- [排序](./articles/typescript/sort.md)
 
 #### Shell命令
 
-- [shell 输出带颜色内容](./articles/shell-echo.md)
-- [sed 命令使用总结](./articles/sed-usage.md)
-- [tr 命令使用总结](./articles/tr-usage.md)
+- [shell 输出带颜色内容](./articles/shell/echo.md)
+- [sed 命令使用总结](./articles/shell/sed-usage.md)
+- [tr 命令使用总结](./articles/shell/tr-usage.md)
