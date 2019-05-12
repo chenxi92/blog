@@ -3,12 +3,11 @@
 <p align="right">
 2019-5-11
 </p>
-SDK 版本 `3.2.1`
+SDK 版本 3.2.1
 
 #### 目录
 
 - [架构图](#architect-flow)
-
 - [网络请求流程](#request-flow)
 - [网络响应流程](#response-flow)
 
@@ -63,7 +62,7 @@ SDK 版本 `3.2.1`
 
     self.baseURL = url;
     
-    // 初始化 请求、相应 序列化对象
+    // 初始化 请求和响应 的序列化对象
     self.requestSerializer = [AFHTTPRequestSerializer serializer];
     self.responseSerializer = [AFJSONResponseSerializer serializer];
 
@@ -212,7 +211,7 @@ SDK 版本 `3.2.1`
 
 
 
-#### <a name="response-flow"></a>a>网络响应流程
+#### <a name="response-flow"></a>网络响应流程
 
 
 
