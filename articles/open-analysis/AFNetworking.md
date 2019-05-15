@@ -392,7 +392,7 @@ UIKit 的扩展库中，下载图片的时候，使用了内存缓存类 `AFAuto
 
 
 
-##### 参考
+#### 参考
 
 [AFNetworking docs](http://cocoadocs.org/docsets/AFNetworking/3.1.0)
 
