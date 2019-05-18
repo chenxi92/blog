@@ -491,7 +491,7 @@ UIKit 的扩展库中，下载图片的时候，使用了内存缓存类 `AFAuto
 
 
 
-####  <a name="image-download"></a>a>图片下载
+####  <a name="image-download"></a>图片下载
 
 以 `UIImageView+AFNetworking` 为例，提供了如下下载接口
 
