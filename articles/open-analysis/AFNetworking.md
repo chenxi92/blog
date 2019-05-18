@@ -10,8 +10,10 @@ SDK 版本 3.2.1
 - [架构图](#architect-flow)
 - [网络请求流程](#request-flow)
 - [网络响应流程](#response-flow)
-
 - [缓存](#cache)
+- [图片下载](#image-download)
+- [其他知识](#others)
+- [参考](#reference)
 
 #### <a name="architect-flow">架构图
 
@@ -390,10 +392,383 @@ UIKit 的扩展库中，下载图片的时候，使用了内存缓存类 `AFAuto
 
 
 
+计算图片内存大小代码如下：
+
+```objective-c
+- (instancetype)initWithImage:(UIImage *)image identifier:(NSString *)identifier {
+    if (self = [self init]) {
+        self.image = image;
+        self.identifier = identifier;
+
+        CGSize imageSize = CGSizeMake(image.size.width * image.scale, image.size.height * image.scale);
+        // 每个像素占4个字节， 32个bit
+        CGFloat bytesPerPixel = 4.0;
+        CGFloat bytesPerSize = imageSize.width * imageSize.height;
+        self.totalBytes = (UInt64)bytesPerPixel * (UInt64)bytesPerSize;
+        self.lastAccessDate = [NSDate date];
+    }
+    return self;
+}
+```
 
 
-#### 参考
+
+缓存图片，实现了 `AFImageRequestCache` 协议的如下方法
+
+```
+/**
+ Adds the image to the cache with the given identifier.
+
+ @param image The image to cache.
+ @param identifier The unique identifier for the image in the cache.
+ */
+- (void)addImage:(UIImage *)image withIdentifier:(NSString *)identifier;
+```
+
+具体实现如下：
+
+```objective-c
+- (void)addImage:(UIImage *)image withIdentifier:(NSString *)identifier {
+  	//  `dispatch_barrier_async` 保证并行队列 `self.synchronizationQueue` 里面的其他操作都完成之后，在执行添加缓存操作
+  	dispatch_barrier_async(self.synchronizationQueue, ^{
+        AFCachedImage *cacheImage = [[AFCachedImage alloc] initWithImage:image identifier:identifier];
+				// 判断图片是否已经缓存过
+        AFCachedImage *previousCachedImage = self.cachedImages[identifier];
+        if (previousCachedImage != nil) {
+            self.currentMemoryUsage -= previousCachedImage.totalBytes;
+        }
+
+        self.cachedImages[identifier] = cacheImage;
+        self.currentMemoryUsage += cacheImage.totalBytes;
+    });
+		
+  	// 添加缓存之后，检查缓存是否已经超过设定的阈值
+    dispatch_barrier_async(self.synchronizationQueue, ^{
+        if (self.currentMemoryUsage > self.memoryCapacity) {
+            UInt64 bytesToPurge = self.currentMemoryUsage - self.preferredMemoryUsageAfterPurge;
+            NSMutableArray <AFCachedImage*> *sortedImages = [NSMutableArray arrayWithArray:self.cachedImages.allValues];
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"lastAccessDate"
+                                                                           ascending:YES];
+          	// 根据最后存取时间，来升序排序
+            [sortedImages sortUsingDescriptors:@[sortDescriptor]];
+
+            UInt64 bytesPurged = 0;
+						// 移除时间最早的图片
+            for (AFCachedImage *cachedImage in sortedImages) {
+                [self.cachedImages removeObjectForKey:cachedImage.identifier];
+                bytesPurged += cachedImage.totalBytes;
+                if (bytesPurged >= bytesToPurge) {
+                    break ;
+                }
+            }
+            self.currentMemoryUsage -= bytesPurged;
+        }
+    });
+}
+```
+
+使用了 `NSSortDescriptor` 来根据最后访问时间来排序， 具体用法参考作者博客 [NSSortDescriptor](https://nshipster.com/nssortdescriptor/)。
+
+
+
+移除图片具体实现如下:
+
+```objective-c
+- (BOOL)removeImageWithIdentifier:(NSString *)identifier {
+    __block BOOL removed = NO;
+  	// 等待并行队列其他操作完成，同步执行移除操作
+    dispatch_barrier_sync(self.synchronizationQueue, ^{
+        AFCachedImage *cachedImage = self.cachedImages[identifier];
+        if (cachedImage != nil) {
+            [self.cachedImages removeObjectForKey:identifier];
+            self.currentMemoryUsage -= cachedImage.totalBytes;
+            removed = YES;
+        }
+    });
+    return removed;
+}
+```
+
+
+
+####  <a name="image-download"></a>a>图片下载
+
+以 `UIImageView+AFNetworking` 为例，提供了如下下载接口
+
+```objective-c
+// 根据 URL 下载图片
+- (void)setImageWithURL:(NSURL *)url;
+
+// 根据 URL 下载图片，并设置占位图
+- (void)setImageWithURL:(NSURL *)url placeholderImage:(nullable UIImage *)placeholderImage;
+
+// 根据请求下载图片，并设置占位图，提供回调
+- (void)setImageWithURLRequest:(NSURLRequest *)urlRequest 
+placeholderImage:(nullable UIImage *)placeholderImage 
+success:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, UIImage *image))success 
+failure:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, NSError *error))failure;
+```
+
+最终都方法都进入到
+
+```objective-c
+- (void)setImageWithURLRequest:(NSURLRequest *)urlRequest
+              placeholderImage:(UIImage *)placeholderImage
+                       success:(void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, UIImage *image))success
+                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, NSError *error))failure
+{
+    // 检查 URL
+    if ([urlRequest URL] == nil) {
+        self.image = placeholderImage;
+        if (failure) {
+            NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil];
+            failure(urlRequest, nil, error);
+        }
+        return;
+    }
+    
+    // 该请求是否正在执行
+    if ([self isActiveTaskURLEqualToURLRequest:urlRequest]){
+        return;
+    }
+    
+   	// 取消当前执行的下载任务                
+    [self cancelImageDownloadTask];
+    
+    // 优先从内存缓存中获取图片
+    AFImageDownloader *downloader = [[self class] sharedImageDownloader];
+    id <AFImageRequestCache> imageCache = downloader.imageCache;
+
+    //Use the image from the image cache if it exists
+    UIImage *cachedImage = [imageCache imageforRequest:urlRequest withAdditionalIdentifier:nil];
+    if (cachedImage) {
+        if (success) {
+            success(urlRequest, nil, cachedImage);
+        } else {
+            self.image = cachedImage;
+        }
+        // 获取到缓存，清除正在下载的操作
+        [self clearActiveDownloadInformation];
+    } else {
+        // 没有缓存， 先显示占位图(如果提供的话)
+        if (placeholderImage) {
+            self.image = placeholderImage;
+        }
+				// 执行真正的下载操作
+        __weak __typeof(self)weakSelf = self;
+        NSUUID *downloadID = [NSUUID UUID];
+        AFImageDownloadReceipt *receipt;
+        receipt = [downloader
+                   downloadImageForURLRequest:urlRequest
+                   withReceiptID:downloadID
+                   success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull responseObject) {
+                       __strong __typeof(weakSelf)strongSelf = weakSelf;
+                       if ([strongSelf.af_activeImageDownloadReceipt.receiptID isEqual:downloadID]) {
+                           if (success) {
+                               success(request, response, responseObject);
+                           } else if(responseObject) {
+                               // 显示下载的图片
+                               strongSelf.image = responseObject;
+                           }
+                           [strongSelf clearActiveDownloadInformation];
+                       }
+
+                   }
+                   failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                       __strong __typeof(weakSelf)strongSelf = weakSelf;
+                        if ([strongSelf.af_activeImageDownloadReceipt.receiptID isEqual:downloadID]) {
+                            if (failure) {
+                                failure(request, response, error);
+                            }
+                            [strongSelf clearActiveDownloadInformation];
+                        }
+                   }];
+
+        self.af_activeImageDownloadReceipt = receipt;
+    }
+}
+```
+
+
+
+下载图片在 `AFImageDownloader` 中执行，该类是对 `AFHTTPSessionManager` 的网络请求做了封装，用于执行图片下载以及图片缓存等操作。 具体下载逻辑如下：
+
+```objective-c
+- (nullable AFImageDownloadReceipt *)downloadImageForURLRequest:(NSURLRequest *)request
+                                                  withReceiptID:(nonnull NSUUID *)receiptID
+                                                        success:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse  * _Nullable response, UIImage *responseObject))success
+                                                        failure:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, NSError *error))failure {
+    __block NSURLSessionDataTask *task = nil;
+    // 在串行队列里面 同步 生成下载操作，保证线程安全
+    dispatch_sync(self.synchronizationQueue, ^{
+        
+        NSString *URLIdentifier = request.URL.absoluteString;
+        if (URLIdentifier == nil) {
+            if (failure) {
+                NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure(request, nil, error);
+                });
+            }
+            return;
+        }
+
+        // 1) Append the success and failure blocks to a pre-existing request if it already exists
+        AFImageDownloaderMergedTask *existingMergedTask = self.mergedTasks[URLIdentifier];
+        if (existingMergedTask != nil) {
+            // 正在下载，添加下载下载回调
+            AFImageDownloaderResponseHandler *handler = [[AFImageDownloaderResponseHandler alloc] initWithUUID:receiptID success:success failure:failure];
+            [existingMergedTask addResponseHandler:handler];
+            task = existingMergedTask.task;
+            return;
+        }
+
+        // 2) Attempt to load the image from the image cache if the cache policy allows it
+        switch (request.cachePolicy) {
+            case NSURLRequestUseProtocolCachePolicy:
+            case NSURLRequestReturnCacheDataElseLoad:
+            case NSURLRequestReturnCacheDataDontLoad: {
+                // 获取缓存图片
+                UIImage *cachedImage = [self.imageCache imageforRequest:request withAdditionalIdentifier:nil];
+                if (cachedImage != nil) {
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success(request, nil, cachedImage);
+                        });
+                    }
+                    return;
+                }
+                break;
+            }
+            default:
+                break;
+        }
+
+        // 3) Create the request and set up authentication, validation and response serialization
+        NSUUID *mergedTaskIdentifier = [NSUUID UUID];
+        NSURLSessionDataTask *createdTask;
+        __weak __typeof__(self) weakSelf = self;
+        // 创造下载请求
+        createdTask = [self.sessionManager
+                       dataTaskWithRequest:request
+                       uploadProgress:nil
+                       downloadProgress:nil
+                       completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                           dispatch_async(self.responseQueue, ^{
+                               __strong __typeof__(weakSelf) strongSelf = weakSelf;
+                               // 取出保存的下载请求
+                               AFImageDownloaderMergedTask *mergedTask = [strongSelf safelyGetMergedTask:URLIdentifier];
+                               if ([mergedTask.identifier isEqual:mergedTaskIdentifier]) {
+                                   mergedTask = [strongSelf safelyRemoveMergedTaskWithURLIdentifier:URLIdentifier];
+                                   if (error) {
+                                       // 回调所有的失败回调信息
+                                       for (AFImageDownloaderResponseHandler *handler in mergedTask.responseHandlers) {
+                                           if (handler.failureBlock) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   handler.failureBlock(request, (NSHTTPURLResponse *)response, error);
+                                               });
+                                           }
+                                       }
+                                   } else {
+                                       // 缓存下载图片
+                                       if ([strongSelf.imageCache shouldCacheImage:responseObject forRequest:request withAdditionalIdentifier:nil]) {
+                                           [strongSelf.imageCache addImage:responseObject forRequest:request withAdditionalIdentifier:nil];
+                                       }
+                                       // 回调所有的成功回调信息
+                                       for (AFImageDownloaderResponseHandler *handler in mergedTask.responseHandlers) {
+                                           if (handler.successBlock) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   handler.successBlock(request, (NSHTTPURLResponse *)response, responseObject);
+                                               });
+                                           }
+                                       }
+                                       
+                                   }
+                               }
+                               [strongSelf safelyDecrementActiveTaskCount];
+                               // 开启一下一个请求
+                               [strongSelf safelyStartNextTaskIfNecessary];
+                           });
+                       }];
+        // 存储下载请求，用于下载完成时的回调
+        // 4) Store the response handler for use when the request completes
+        AFImageDownloaderResponseHandler *handler = [[AFImageDownloaderResponseHandler alloc] initWithUUID:receiptID
+                                                                                                   success:success
+                                                                                                   failure:failure];
+        AFImageDownloaderMergedTask *mergedTask = [[AFImageDownloaderMergedTask alloc]
+                                                   initWithURLIdentifier:URLIdentifier
+                                                   identifier:mergedTaskIdentifier
+                                                   task:createdTask];
+        [mergedTask addResponseHandler:handler];
+        self.mergedTasks[URLIdentifier] = mergedTask;
+        // 判断下载请求是否达到阈值，默认最大下载4个
+        // 5) Either start the request or enqueue it depending on the current active request count
+        if ([self isActiveRequestCountBelowMaximumLimit]) {
+            [self startMergedTask:mergedTask];
+        } else {
+            [self enqueueMergedTask:mergedTask];
+        }
+
+        task = mergedTask.task;
+    });
+    if (task) {
+        return [[AFImageDownloadReceipt alloc] initWithReceiptID:receiptID task:task];
+    } else {
+        return nil;
+    }
+}
+```
+
+
+
+执行下载逻辑如下：
+
+1. 判断 `URL` 是否合理
+2. 判断这个 `URL` 生成的 `task` 是否已经缓存， 如果已经缓存，给该 `task` 添加一个回调
+3. 根据请求策略去获取缓存图片
+4. 没有获取到缓存图片，则创建一个新的下载请求 task
+5. 缓存该下载 `task`，跟下载回调，下载 `URL` 等信息绑定在一起，方便下载成功之后，查找回调信息等
+6. 判断当前的活跃的请求个数是否已经超过阈值，如果没有执行下载操作，如果超过，根据请求缓存策略，把该 `task` 存到适当的位置
+7. 下载成功之后，根据 URL 取出保存的下载回调信息，根据下载结果执行相应的下载回调
+
+
+
+#### <a name="others"></a>其他知识
+
+1. 保证线程安全
+
+   ```objective-c
+   - (AFImageDownloaderMergedTask *)safelyGetMergedTask:(NSString *)URLIdentifier {
+       __block AFImageDownloaderMergedTask *mergedTask;
+       dispatch_sync(self.synchronizationQueue, ^(){
+           mergedTask = self.mergedTasks[URLIdentifier];
+       });
+       return mergedTask;
+   }
+   ```
+
+   取出下载任务的时候，在一个串行队列里面同步执行操作。
+
+2. 分类动态添加属性
+
+   ```objective-c
+   + (AFImageDownloader *)sharedImageDownloader {
+       return objc_getAssociatedObject(self, @selector(sharedImageDownloader)) ?: [AFImageDownloader defaultInstance];
+   }
+   
+   + (void)setSharedImageDownloader:(AFImageDownloader *)imageDownloader {
+       objc_setAssociatedObject(self, @selector(sharedImageDownloader), imageDownloader, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+   }
+   ```
+
+   在 UIImageView 分类中动态添加下载对象。
+
+   
+
+#### <a name="reference"></a>参考
 
 [AFNetworking docs](http://cocoadocs.org/docsets/AFNetworking/3.1.0)
 
 [AFNetworking 源码分析](https://www.jianshu.com/p/856f0e26279d)
+
+[浅谈移动端图片压缩](https://juejin.im/post/5c5c2b8251882562826951b8)
