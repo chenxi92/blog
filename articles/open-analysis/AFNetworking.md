@@ -390,6 +390,36 @@ UIKit 的扩展库中，下载图片的时候，使用了内存缓存类 `AFAuto
 
 
 
+图片像素大小计算：
+
+```objective-c
+- (instancetype)initWithImage:(UIImage *)image identifier:(NSString *)identifier {
+    if (self = [self init]) {
+        self.image = image;
+        self.identifier = identifier;
+
+        CGSize imageSize = CGSizeMake(image.size.width * image.scale, image.size.height * image.scale);
+       // 每个像素4个字节
+        CGFloat bytesPerPixel = 4.0;
+        CGFloat bytesPerSize = imageSize.width * imageSize.height;
+        self.totalBytes = (UInt64)bytesPerPixel * (UInt64)bytesPerSize;
+        self.lastAccessDate = [NSDate date];
+    }
+    return self;
+}
+```
+
+参考 [     浅谈移动端图片压缩（iOS & Android）](https://juejin.im/post/5c5c2b8251882562826951b8)
+
+```
+表示颜色时，有两种形式，一种为索引色（Index Color），一种为直接色（Direct Color）
+
+索引色：用一个数字索引代表一种颜色，在图像信息中存储数字到颜色的映射关系表（调色盘 Palette）。每个像素保存该像素颜色对应的数字索引。一般调色盘只能存储有限种类的颜色，通常为 256 种。所以每个像素的数字占用 1 字节（8 bit）大小。
+直接色：用四个数字来代表一种颜色，数字分别对应颜色中红色，绿色，蓝色，透明度（RGBA）。每个像素保存这四个纬度的信息来代表该像素的颜色。根据色彩深度（每个像素存储颜色信息的 bit 数不同），最多可以支持的颜色种类也不同，常见的有 8 位（R3+G3+B2）、16 位（R5+G6+B5）、24 位（R8+G8+B8）、32 位（A8+R8+G8+B8）。所以每个像素占用 1~4 字节大小。
+```
+
+
+
 
 
 #### 参考

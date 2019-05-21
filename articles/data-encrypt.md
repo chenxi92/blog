@@ -13,7 +13,7 @@
 > B) 无法从 hash 值倒推出原来的输入。
 
 #### [2. 对称加密](#symmetric-key-encryption)
-> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**DES**、**3DES**、**[RC4](#RC4)**等。
+> **symmetric-key encryption**，其中常见的算法包括了 **[AES](#AES)**、**[DES](#DES)**、**3DES**、**[RC4](#RC4)** 等。
 
 > 对称加密指的是可以使用同一个密钥对内容进行加密和解密，相比非对称加密，它的特点是加/解密速度快，并且加密的内容长度几乎没有限制。
 
@@ -203,7 +203,7 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 #### <a name="AES"></a>AES
 
 > 高级加密标准，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准.
- 
+
 密码说明
 
 > 严格地说，`AES`和`Rijndael`加密法并不完全一样（虽然在实际应用中两者可以互换），因为`Rijndael`加密法可以支持更大范围的区块和密钥长度：`AES`的区块长度固定为128比特，密钥长度则可以是128，192或256比特；而`Rijndael`使用的密钥和区块长度均可以是128，192或256比特
@@ -344,6 +344,70 @@ SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国�
 [高级加密标准](https://zh.wikipedia.org/wiki/高级加密标准)
 
 [converting hex nsstring to nsdata](https://stackoverflow.com/questions/7317860/converting-hex-nsstring-to-nsdata)
+
+
+
+#### <a name="DES"></a>DES
+
+> **数据加密标准**（英语：Data Encryption Standard，缩写为 DES）是一种[对称密钥加密](https://zh.wikipedia.org/wiki/對稱密鑰加密)[块密码](https://zh.wikipedia.org/wiki/塊密碼)算法，1976年被[美国](https://zh.wikipedia.org/wiki/美国)联邦政府的[国家标准局](https://zh.wikipedia.org/wiki/国家标准局)确定为[联邦资料处理标准](https://zh.wikipedia.org/wiki/联邦资料处理标准)（FIPS），随后在国际上广泛流传开来。它基于使用56位密钥的[对称算法](https://zh.wikipedia.org/w/index.php?title=密钥密码学&action=edit&redlink=1)。这个算法因为包含一些[机密](https://zh.wikipedia.org/wiki/機密)设计元素，相对短的[密钥长度](https://zh.wikipedia.org/wiki/密钥长度)以及怀疑内含[美国国家安全局](https://zh.wikipedia.org/wiki/美國國家安全局)（NSA）的[后门](https://zh.wikipedia.org/wiki/后门)而在开始时有争议，DES因此受到了强烈的学院派式的审查，并以此推动了现代的[块密码](https://zh.wikipedia.org/wiki/塊密碼)及其[密码分析](https://zh.wikipedia.org/wiki/密码分析)的发展。
+
+
+
+iOS 代码示例
+
+```objective-c
++ (NSString *)base64EncodedStringWithData:(NSData *)data {
+    return [data base64EncodedStringWithOptions:0];
+}
+
++ (NSData *)base64DecodedDataWithString:(NSString *)string {
+    return [self base64DecodedDataWithData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
++ (NSData *)base64DecodedDataWithData:(NSData *)data {
+    return [[NSData alloc] initWithBase64EncodedData:data options:0];
+}
+
+// DES 加密
++ (NSString *)DESEncrypt:(NSString *)content withKey:(NSString *)key {
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptedData = [self DESCrypt:data withKey:key withIV:nil operation:kCCEncrypt];
+    return [self base64EncodedStringWithData:encryptedData];
+}
+
+// DES 解密
++ (NSString *)DESDecrypt:(NSString *)content withKey:(NSString *)key {
+    NSData *encryptedData = [self base64DecodedDataWithString:content];
+    NSData *decryptData = [self DESCrypt:encryptedData withKey:key withIV:nil operation:kCCDecrypt];
+    return [[NSString alloc] initWithData:decryptData encoding:NSUTF8StringEncoding];
+}
+
++ (NSData *)DESCrypt:(NSData *)contentData withKey:(NSString *)key withIV:(NSString *)iv operation:(CCOperation)operation {
+    
+    NSUInteger dataLength = contentData.length;
+    
+    const void *keyBytes = [key dataUsingEncoding:NSUTF8StringEncoding].bytes;
+    const void *ivBytes = [iv dataUsingEncoding:NSUTF8StringEncoding].bytes;
+    const void *contentBytes = contentData.bytes;
+    
+    size_t operationSize = dataLength + kCCBlockSizeDES;
+    void *operationBytes = malloc(operationSize);
+    if (operationBytes == NULL) return nil;
+    
+    size_t actualOutSize = 0;
+    CCCryptorStatus status = CCCrypt(operation, kCCAlgorithmDES, kCCOptionPKCS7Padding | kCCOptionECBMode, keyBytes, kCCKeySizeDES, ivBytes, contentBytes, dataLength, operationBytes, operationSize, &actualOutSize);
+    
+    NSData *outputData = nil;
+    if (status == kCCSuccess) {
+        outputData = [NSData dataWithBytes:operationBytes length:actualOutSize];
+    }
+    
+    free(operationBytes);
+    return outputData;
+}
+```
+
+
 
 
 #### <a name="RC4"></a>RC4
