@@ -49,3 +49,7 @@
 - [du 命令使用总结](./articles/shell/du-usage.md)
 - [tar 命令使用总结](./articles/shell/tar-usage.md)
 - [cut 命令使用总结](./articles/shell/cut-usage.md)
+
+#### 其他
+
+[LaTeX 学习笔记](./articles/others/learn-LaTeX.md)
