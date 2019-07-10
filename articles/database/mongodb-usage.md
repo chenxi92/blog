@@ -231,6 +231,7 @@ db.collection.aggregate([{<stage}, ...])
 ```
 
 常见表达式
+
 | 表达式 | 描述 |
 | --- | --- |
 | $sum | 计算总和。 |
