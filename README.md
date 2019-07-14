@@ -43,12 +43,13 @@
 
 #### Shell命令
 
-- [shell 输出带颜色内容](./articles/shell/echo.md)
-- [sed 命令使用总结](./articles/shell/sed-usage.md)
-- [tr 命令使用总结](./articles/shell/tr-usage.md)
-- [du 命令使用总结](./articles/shell/du-usage.md)
-- [tar 命令使用总结](./articles/shell/tar-usage.md)
+- [awk 命令使用总结](./articles/shell/awk-usage.md)
 - [cut 命令使用总结](./articles/shell/cut-usage.md)
+- [tar 命令使用总结](./articles/shell/tar-usage.md)
+- [du 命令使用总结](./articles/shell/du-usage.md)
+- [tr 命令使用总结](./articles/shell/tr-usage.md)
+- [sed 命令使用总结](./articles/shell/sed-usage.md)
+- [shell 输出带颜色内容](./articles/shell/echo.md)
 
 #### 其他
 
