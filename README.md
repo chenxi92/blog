@@ -13,7 +13,6 @@
 - [GCD 信号量](articles/dispatch-semaphore.md)
 
 - [钥匙串学习](./articles/keychain-usage.md)
-- [SQLite 语法学习](./articles/sql-study.md)
 - [XOR 加密](./articles/xor.md) 
 - [iOS Tips](./articles/ios-tips.md) 
 - [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/untrusted-certificate.md)
@@ -50,6 +49,12 @@
 - [tr 命令使用总结](./articles/shell/tr-usage.md)
 - [sed 命令使用总结](./articles/shell/sed-usage.md)
 - [shell 输出带颜色内容](./articles/shell/echo.md)
+- [vim 使用总结](./articles/shell/vim-usage.md)
+
+#### 数据库
+
+- [MongoDB 学习](./articles/database/mongodb-usage.md)
+- [SQLite 语法学习](./articles/database/sql-study.md)
 
 #### 其他
 
