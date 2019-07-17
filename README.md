@@ -42,6 +42,7 @@
 
 #### Shell命令
 
+- [scp 命令使用总结](./articles/shell/scp-usage.md)
 - [awk 命令使用总结](./articles/shell/awk-usage.md)
 - [cut 命令使用总结](./articles/shell/cut-usage.md)
 - [tar 命令使用总结](./articles/shell/tar-usage.md)
