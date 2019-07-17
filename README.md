@@ -42,7 +42,8 @@
 
 #### Shell命令
 
-- [scp 命令使用总结](./articles/shell/scp-usage.md)
+- [crontab 定时执行任务](./articles/shell/crontab-usage.md)
+- [scp 远程拷贝文件](./articles/shell/scp-usage.md)
 - [awk 命令使用总结](./articles/shell/awk-usage.md)
 - [cut 命令使用总结](./articles/shell/cut-usage.md)
 - [tar 命令使用总结](./articles/shell/tar-usage.md)
