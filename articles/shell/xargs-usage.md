@@ -72,3 +72,8 @@ mv c.js c.js.backup
 `-I` 表示替换
 `{}` 表示以 `{}` 来代替每一个 js 文件，该字符串可以其他字符串来代替, 例如: `ls *.js | xargs -t -I $ mv $ $.backup`
 
+#### 参考
+
+[Linux xargs 命令](http://www.runoob.com/linux/linux-comm-xargs.html)
+[Linux基础：xargs命令](https://www.cnblogs.com/chyingp/p/linux-command-xargs.html)
+
