@@ -516,5 +516,76 @@ db.collection.mapReduce(
 
 
 
+#### shell 脚本执行mongo命令
+
+##### 基本语法:
+
+```shell
+mongo [options] [db address] [file names (ending in .js)]
+```
+
+######  `[db address]` 形式 说明:
+
+* `foo`                   表示本机上的 foo 数据库
+
+* `192.168.0.5/foo`       表示 192.168.0.5 机器上的 foo 数据库
+
+* `192.168.0.5:9999/foo`   表示 foo 数据库在 192.168.0.5 机器上的 9999 端口下
 
 
+
+######  `options`  常用值:
+
+`—quiet` : 减少冗余输出
+
+`—host`:  ip 地址
+
+`—port`:  端口地址
+
+`—eval`:  执行 js 代码
+
+`—ssl`:  使用 SSL 来连接
+
+`—sslCAFile arg`: 指定 SSL 连接的证书， 其中 `arg` 表示证书的地址
+
+`—username`: 用户名
+
+`—password`: 密码
+
+
+
+##### 示例
+
+###### 直接执行 js 代码
+
+```shell
+mongo --quiet 192.168.2.101:27017/test --eval "db.dropDatabase()"
+```
+
+表示删除 位于 `192.168.2.101:27017` 上的 `test` 数据库
+
+
+
+###### 直接执行 js 文件
+
+```shell
+INPUT_FILE="./query-recharge-rank.js"
+OUTPUT_FILE="./recharge-rank.json"
+
+mongo --quiet 192.168.2.101:27017/mythwardb < $INPUT_FILE > $OUTPUT_FILE
+```
+
+表示执行当前目录下的 `query-recharge-rank.js`  文件内代码， 执行结果输出到 `recharge-rank.json` 文件中。
+
+
+
+###### 使用 ssl 连接数据库
+
+```shell
+file_name=mytestdb_$(date +%F)
+
+mongodump --ssl --host myth-read-doc.csilte6plqmx.us-west-2.docdb.com:27017 \
+       	--sslCAFile ./mongo.pem --username myusername --password PDev8xfd93X3i  -d testdb  -o $file_name
+```
+
+ 表示使用 `SSL` 连接把数据库内的数据 备份到本地。
