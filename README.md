@@ -42,6 +42,7 @@
 
 #### Shell命令
 
+- [find 命令使用总结](./articles/shell/find-usage.md)
 - [xargs 命令使用总结](./articles/shell/xargs-usage.md)
 - [nohup 后台执行任务](./articles/shell/nohup-usage.md)
 - [crontab 定时执行任务](./articles/shell/crontab-usage.md)
