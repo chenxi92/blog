@@ -78,3 +78,4 @@ mv c.js c.js.backup
 
 [Linux基础：xargs命令](https://www.cnblogs.com/chyingp/p/linux-command-xargs.html)
 
+[xargs 命令教程](http://www.ruanyifeng.com/blog/2019/08/xargs-tutorial.html#comment-text)
