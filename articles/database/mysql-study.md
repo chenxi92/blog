@@ -1,6 +1,7 @@
 
 <p align="right">2019-8-9</p>
-### shell 连接 Mysql 的几种方式
+
+### `shell` 连接 `Mysql` 的几种方式
 
 ```shell
 user="apper" # 用户名
@@ -237,9 +238,29 @@ ALTER TABLE table_name RENAME TO new_table_name;
 
 
 
+### 其他
+
+##### 配置文件位置
+
+从命令行终端运行此命令，将在寻找Linux/BSD / OS X系统中的MySQL配置文件 my.cnf 文件：
+
+```
+mysql --help | grep 'Default options' -A 1
+```
+
+上面命令执行后，会有这样的输出：
+
+```
+Default options are read from the following files in the given order:
+/etc/my.cnf /etc/mysql/my.cnf /usr/local/etc/my.cnf ~/.my.cnf
+```
 
 
+### 参考
 
+- [MySQL 教程](https://www.runoob.com/mysql/mysql-tutorial.html)
+
+- [MySQL 配置修改](https://github.com/jaywcjlove/mysql-tutorial/blob/master/chapter2/2.5.md)
 
 
 
