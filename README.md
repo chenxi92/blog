@@ -58,6 +58,7 @@
 
 #### 数据库
 
+- [Mysql 学习](./articles/database/mysql-study.md)
 - [MongoDB 学习](./articles/database/mongodb-usage.md)
 - [SQLite 语法学习](./articles/database/sql-study.md)
 
