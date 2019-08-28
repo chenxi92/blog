@@ -3,6 +3,7 @@
 - [1. iOS 处理警告](#ios-warning)
 - [2. Github搜索技巧](#github-search)
 - [3. Google 搜索技巧](#google-search)
+- [4. Xcode 崩溃调试技巧](#xcode-debug-crash)
 
 #### <a name="ios-warning"></a>iOS 处理警告⚠️
 
@@ -100,3 +101,13 @@
 5. ##### 指定文件类型
 
    使用关键词 `typefile:` 来指定搜索的文件类型
+
+
+
+#### <a name="xcode-debug-crash">Xcode 调试崩溃
+
+`Show the Breakpoint navigator`  -->  `+`  --> `Exception Breakpoint`
+
+点击 `Action`，选中 `Deebugger Command`, 添加 `po $arg1` 参数。
+
+[Xcode-debugging-trick](https://www.natashatherobot.com/xcode-debugging-trick/)
