@@ -101,28 +101,91 @@
 
 #### <a name="tag"></a>标签
 
-创建标签
+###### 列出标签
 
 ```
-git tag <version-number>
+git tag
 ```
 
-推送标签
+
+
+###### 创建标签
+
+Git 使用两种主要类型的标签：轻量标签（`lightweight`）与附注标签（`annotated`）。
+
+一个轻量标签很像一个不会改变的分支——它只是一个特定提交的引用。使用如下命令:
+
+```
+git tag -a <tagname> -m "add annotation"
+```
+
+
+
+轻量标签本质上是将提交校验和存储到一个文件中——没有保存任何其他信息。使用如下命令:
+
+```
+git tag <tagname>
+```
+
+
+
+###### 后期打标签
+
+1. 查看提交历史:
+
+```
+$ git log --pretty=oneline
+15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch 'experiment'
+a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
+9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
+964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
+8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
+```
+
+2. 现在，假设在 v1.2 时你忘记给项目打标签，也就是在 “updated rakefile” 提交。 你可以在之后补上标签。 
+
+```
+$ git tag -a v1.2 9fceb02
+```
+
+
+
+###### 查看标签内容
+
+```
+git show <tagname>
+```
+
+
+
+###### 推送标签
+
+默认情况下， `git push` 命令不会推送标签到远程服务器上。使用如下命令显示推送标签:
+
+```
+git push origin [tarname]
+```
+
+或一次性推送所有标签
 
 ```
 git push origin --tags
 ```
 
-删除本地标签
+
+
+###### 删除本地标签
 
 ```
-git tag -d <tag-name>
+git tag -d <tagname>
 ```
 
-切回到某个标签
+
+
+###### 新建分支然后切回到某个标签
 
 ```
-git checkout -b branch_name tag_name
+git checkout -b branchname tagname
 ```
 
 
