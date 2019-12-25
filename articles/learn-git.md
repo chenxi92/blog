@@ -44,7 +44,7 @@
 4. `git pull` 拉取远端代码，并自动合并
 5. `git push origin master` 当前分支(默认是`master`分支)代码推送到远端仓库
 
-#### <a name="version-back"></a>丢弃提交
+#### <a name="version-back"></a>版本回退
 
 - `git reset --hard HEAD^` 把当前分支指向上一个版本，
 - `git reset --hard HEAD~100`, 把当前分支回退往上100个版本， 
