@@ -64,6 +64,7 @@
 
 替换上一次提交， 使用 `git commit --amend -m "A new commit."` 来修改上一次提交的信息。
 
+
 #### <a name="undo-file-change"></a>撤销文件的修改
 1. 文件没有添加到暂存区(没有使用`git add `)
 	- `git checkout -- <file path>` 把文件在工作区的修改全部撤销，这里有两种情况：
