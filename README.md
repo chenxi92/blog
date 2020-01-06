@@ -55,6 +55,7 @@
 11. [nohup 后台执行任务](./articles/shell/nohup-usage.md)
 12. [xargs 命令使用总结](./articles/shell/xargs-usage.md)
 13. [find 命令使用总结](./articles/shell/find-usage.md)
+14. [sips 处理图片](./articles/shell/sips-usage.md)
 
 
 #### 数据库
