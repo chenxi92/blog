@@ -20,7 +20,7 @@ long
 dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout);
 ```
 
-该函数会把信号量的总量 -1 ，如果 -1 之后该信号量的总量的值小于0，会阻塞当前线程，负责会继续执行。
+该函数会把信号量的总量 -1 ，如果 -1 之后该信号量的总量的值小于0，会阻塞当前线程（知道超时时间到达），否则会继续执行。
 
 3. 发送信号量
 
