@@ -41,7 +41,8 @@
 2. [变量](./articles/typescript/variable.md)
 3. [排序](./articles/typescript/sort.md)
 
-#### Shell命令
+
+#### Shell 学习
 1. [vim 使用总结](./articles/shell/vim-usage.md)
 2. [shell 输出带颜色内容](./articles/shell/echo.md)
 3. [sed 命令使用总结](./articles/shell/sed-usage.md)
@@ -56,6 +57,7 @@
 12. [xargs 命令使用总结](./articles/shell/xargs-usage.md)
 13. [find 命令使用总结](./articles/shell/find-usage.md)
 14. [sips 处理图片](./articles/shell/sips-usage.md)
+15. [字符串用法](./articles/shell/string-usage.md)
 
 
 #### 数据库
