@@ -209,7 +209,7 @@ static NSMethodSignature *aspect_blockMethodSignature(id block, NSError **error)
 }
 ```
 
-具体解释参考: [[Aspects 源码学习](https://www.cnblogs.com/DafaRan/p/8192069.html)](https://www.cnblogs.com/DafaRan/p/8192069.html)
+具体解释参考: [[Aspects 源码学习](https://www.cnblogs.com/DafaRan/p/8192069.html)]
 
 
 

@@ -1,4 +1,8 @@
-#### 消息转发
+#### <p align="center">消息转发
+
+<p align="right">2020-4-17</p>
+
+
 
 ##### `_objc_msgForward` 和 `_objc_msgForward_stret`
 
@@ -122,6 +126,10 @@ void class_print(id self, SEL _cmd, NSString *text)
 
 
 
+[文中代码位置](https://github.com/chenxi141017/demo/blob/master/iOS/runtime/method_forward/method_forward/main.m)
+
+
+
 #### 参考文章
 
 [神经病院 Objective-C Runtime 入院第一天—— isa 和 Class](https://halfrost.com/objc_runtime_isa_class/)
@@ -129,3 +137,4 @@ void class_print(id self, SEL _cmd, NSString *text)
 [What is a meta-class in Objective-C](http://www.cocoawithlove.com/2010/01/what-is-meta-class-in-objective-c.html)
 
 [Objective-C对象模型及应用](https://blog.devtang.com/2013/10/15/objective-c-object-model/)
+

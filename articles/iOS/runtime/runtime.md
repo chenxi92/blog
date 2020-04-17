@@ -4,7 +4,6 @@ Runtime 学习目标
 
 - 方法调用流程
 - 类别，分类
-
 - 自动归档
 - 字典模型互换
 - 动态增加方法
@@ -13,6 +12,7 @@ Runtime 学习目标
 - objc_msgSend()
 - kvo 和 kvc
 - Aspect 源码阅读解析
+- ios， 类， 元类
 
 
 
@@ -69,5 +69,3 @@ Class object_getClass(id obj);
 ```
 
 
-
-#####
