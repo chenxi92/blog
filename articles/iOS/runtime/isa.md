@@ -22,9 +22,8 @@
 
 > 元类是类对象的类。类对象的 `isa` 指针指向元类。元类的isa指针指向根元类， 根元类的 `isa` 指针指向自己。元类保存了类方法的列表。类方法调用时，通过类的 `isa` 指针在元类中获取方法的实现，如果没有，则该元类会向它的父类查找该方法，直到一直找到继承链的头。
 
-描述继承关系的[图片]([http://www.sealiesoftware.com/blog/class%20diagram.pdf](http://www.sealiesoftware.com/blog/class diagram.pdf))如下所示:
+描述继承关系的[图片](http://www.sealiesoftware.com/blog/class diagram.pdf))如下所示:
 
-![](/Users/chenxi/Documents/gitHub/blog/images/runtime/instance_class_metaClass.png)
 
 在实现中，Root Class 是指 NSObject，我们可以从图中看出：
 
