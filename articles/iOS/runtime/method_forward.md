@@ -10,7 +10,7 @@
 
 `_objc_msgForward` 和 `_objc_msgForward_stret` 区别，引用自: [JSPatch 实现原理详解](http://blog.cnbang.net/tech/2855/)
 
-对于某些架构某些 struct，必须使用 _objc_msgForward_stret 代替 _objc_msgForward。为什么要用 _objc_msgForward_stret 呢，找到一篇说明 objc_msgSend_stret 和 objc_msgSend 区别的[文章](http://sealiesoftware.com/blog/archive/2008/10/30/objc_explain_objc_msgSend_stret.html)），说得比较清楚，原理是一样的，是C的一些底层机制的原因，简单复述一下：
+> 对于某些架构某些 struct，必须使用 _objc_msgForward_stret 代替 _objc_msgForward。为什么要用 _objc_msgForward_stret 呢，找到一篇说明 objc_msgSend_stret 和 objc_msgSend 区别的[文章](http://sealiesoftware.com/blog/archive/2008/10/30/objc_explain_objc_msgSend_stret.html)），说得比较清楚，原理是一样的，是C的一些底层机制的原因，简单复述一下：
 
 > 大多数 CPU 在执行 C 函数时会把前几个参数放进寄存器里，对 `obj_msgSend` 来说前两个参数固定是 `self` / `_cmd`，它们会放在寄存器上，在最后执行完后返回值也会保存在寄存器上，取这个寄存器的值就是返回值。
 
@@ -127,14 +127,4 @@ void class_print(id self, SEL _cmd, NSString *text)
 
 
 [文中代码位置](https://github.com/chenxi141017/demo/blob/master/iOS/runtime/method_forward/method_forward/main.m)
-
-
-
-#### 参考文章
-
-[神经病院 Objective-C Runtime 入院第一天—— isa 和 Class](https://halfrost.com/objc_runtime_isa_class/)
-
-[What is a meta-class in Objective-C](http://www.cocoawithlove.com/2010/01/what-is-meta-class-in-objective-c.html)
-
-[Objective-C对象模型及应用](https://blog.devtang.com/2013/10/15/objective-c-object-model/)
 
