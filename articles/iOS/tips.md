@@ -4,6 +4,7 @@
 - [2. Github搜索技巧](#github-search)
 - [3. Google 搜索技巧](#google-search)
 - [4. Xcode 崩溃调试技巧](#xcode-debug-crash)
+- [5. Xcode 调试return](#xcode-debug-return)
 
 #### <a name="ios-warning"></a>iOS 处理警告⚠️
 
@@ -61,6 +62,8 @@
 #pragma clang diagnostic pop
 ```
 
+
+
 #### <a name="github-search">Github 搜索技巧
 
 - 搜索star数目
@@ -111,3 +114,22 @@
 点击 `Action`，选中 `Deebugger Command`, 添加 `po $arg1` 参数。
 
 [Xcode-debugging-trick](https://www.natashatherobot.com/xcode-debugging-trick/)
+
+
+
+#### <a name="xcode-debug-return">Xcode 调试return
+
+1. 在函数入口添加断点；
+
+2. 控制台输入如下指令并回车；
+
+``` shell
+breakpoint set -p return
+或者输入:
+br set -p return
+```
+
+3. 断点执行continue操作；
+
+[如何断点到函数的return](https://mp.weixin.qq.com/s?__biz=MzUxMTkwNDg0OQ==&mid=2247484659&idx=1&sn=775d9f018330360a4aeda18709f5869e&chksm=f96dd9cdce1a50dbf0d755c041d3ecd63c208c4817f69634acafb38e0e1b383cdea12931c943&mpshare=1&scene=1&srcid=&sharer_sharetime=1587606656735&sharer_shareid=ba950e64c9e1fd56aad199c82bacc05d#rd)
+
