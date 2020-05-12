@@ -43,6 +43,7 @@
 3. `git commit -m 'xx'` 把暂存区中的内容提交到当前分支
 4. `git pull` 拉取远端代码，并自动合并
 5. `git push origin master` 当前分支(默认是`master`分支)代码推送到远端仓库
+6. `git push origin local_branch_name:local_branch_name` 把本地的 `local_branch_name` 分支推送到远端的 `local_branch_name` 分支， 远端没有 `local_branch_name` 会自动创建
 
 #### <a name="version-back"></a>版本回退
 
