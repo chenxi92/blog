@@ -36,10 +36,12 @@
 4. [Mac 无法连接App Store](./articles/iOS/unable_connect_appstore.md)
 5. [iOS 出包相关命令](./articles/iOS/security_usage.md)
 6. [通过 Safari 安装包](./articles/iOS/install_ipa_from_safari.md)
+7. [AutoLayout 学习](./articles/iOS/autolayout.md)
 
 #### 数据结构
 
 ##### 加密
+
 1. [iOS 常见加密算法总结](./articles/data_structure/encrypt/data_encrypt.md)
 2. [XOR 加密](./articles/data_structure/encrypt/xor.md) 
 3. [RC4 C++ 和 Python 实现](./articles/data_structure/encrypt/RC4-implementation-for-C++-Python.md)
