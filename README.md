@@ -74,11 +74,15 @@
 3. [SQLite 语法学习](./articles/database/sql-study.md)
 
 #### 其他
-1. [iOS 和 Unity 互相调用](./articles/tools/iOS_Unity_bridge.md)
 2. [LaTeX 学习笔记](./articles/tools/laTeX_tutorial.md)
 3. [CocosCreator JSBingding 教程](./articles/tools/CocosCreator_JSBindings_Tutorial.md)
 4. [git 使用总结](./articles/tools/git_usage.md)
 5. [svn 使用总结](./articles/tools/svn_usage.md)
+
+#### Unity 学习
+
+1. [Unity 学习总结](./articles/unity/1-unity-learnning-issue.md)
+2. [iOS 和 Unity 互相调用](./articles/unity/2-unity-ios-bridge.md)
 
 #### TypeScript 学习
 
