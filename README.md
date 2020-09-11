@@ -12,43 +12,43 @@
 
 ##### 多线程
 
-1. [GCD 信号量](articles/iOS/dispatch_semaphore.md)
-2. [iOS 多线程](./articles/iOS/multiple_thread.md)
+1. [GCD 信号量](articles/iOS/dispatch-semaphore.md)
+2. [iOS 多线程](./articles/iOS/multiple-thread.md)
 
 ##### runtime
 
-1. [消息转发](./articles/iOS/runtime/method_forward.md)
-2. [理解: ISA指针、类和元类](./articles/iOS/runtime/isa.md)
+1. [消息转发](./articles/iOS/method-forward.md)
+2. [理解: ISA指针、类和元类](./articles/iOS/isa/index.md)
 
 ##### 面试题
 
-1. [iOS属性相关面试题](./articles/interview/property.md)
+1. [iOS属性相关面试题](./articles/iOS/interview/property.md)
 
 ##### 源码阅读
-1. [AFNetworking 阅读](./articles/open-analysis/AFNetworking.md)
-2. [Aspects 阅读](./articles/open-analysis/aspects.md)
-3. [Masonry 阅读](./articles/open-analysis/masonry.md)
+1. [AFNetworking 阅读](./articles/iOS/open-analysis/AFNetworking.md)
+2. [Aspects 阅读](./articles/iOS/open-analysis/Aspects.md)
+3. [Masonry 阅读](./articles/iOS/open-analysis/Masonry.md)
 
 ##### 其他
 
-1. [钥匙串学习](./articles/iOS/keychain_usage.md)
+1. [钥匙串学习](./articles/iOS/keychain/index.md)
 2. [iOS Tips](./articles/iOS/tips.md) 
-3. [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/iOS/untrusted_certificate.md)
-4. [Mac 无法连接App Store](./articles/iOS/unable_connect_appstore.md)
-5. [iOS 出包相关命令](./articles/iOS/security_usage.md)
-6. [通过 Safari 安装包](./articles/iOS/install_ipa_from_safari.md)
-7. [AutoLayout 学习](./articles/iOS/autolayout.md)
+3. [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/iOS/untrusted-certificate.md)
+4. [Mac 无法连接App Store](./articles/iOS/unable-connect-appstore.md)
+5. [iOS 出包相关命令](./articles/iOS/security.md)
+6. [通过 Safari 安装包](./articles/iOS/install-ipa-from-safari.md)
+7. [AutoLayout 学习](./articles/iOS/autolayout/index.md)
 
 #### 数据结构
 
 ##### 加密
 
-1. [iOS 常见加密算法总结](./articles/data_structure/encrypt/data_encrypt.md)
-2. [XOR 加密](./articles/data_structure/encrypt/xor.md) 
-3. [RC4 C++ 和 Python 实现](./articles/data_structure/encrypt/RC4-implementation-for-C++-Python.md)
+1. [iOS 常见加密算法总结](./articles/data-structure/iOS-Encrypt-Summary.md)
+2. [XOR 加密](./articles/data-structure/xor-iOS.md)
+3. [RC4 C++ 和 Python 实现](./articles/data-structure/RC4-C++&Python.md)
 
 ##### 排序
-1. [常见排序算法](./articles/data_structure/sort/sort.md)
+1. [常见排序算法](./articles/data-structure/sort/index.md)
 
 #### Shell 学习
 1. [vim 使用总结](./articles/shell/vim-usage.md)
@@ -69,15 +69,15 @@
 16. [plutil 用法](./articles/shell/plutil-usage.md)
 
 #### 数据库
-1. [Mysql 学习](./articles/database/mysql-study.md)
-2. [MongoDB 学习](./articles/database/mongodb-usage.md)
-3. [SQLite 语法学习](./articles/database/sql-study.md)
+1. [Mysql 学习](./articles/database/mysql-summary.md)
+2. [MongoDB 学习](./articles/database/mongodb-summary.md)
+3. [SQLite 语法学习](./articles/database/sql-summary.md)
 
 #### 其他
-2. [LaTeX 学习笔记](./articles/tools/laTeX_tutorial.md)
-3. [CocosCreator JSBingding 教程](./articles/tools/CocosCreator_JSBindings_Tutorial.md)
-4. [git 使用总结](./articles/tools/git_usage.md)
-5. [svn 使用总结](./articles/tools/svn_usage.md)
+2. [LaTeX 学习笔记](./articles/tools/laTeX.md)
+3. [CocosCreator JSBingding 教程](./articles/tools/CocosCreator-JSBindings/index.md)
+4. [git 使用总结](./articles/tools/git.md)
+5. [svn 使用总结](./articles/tools/svn.md)
 
 #### Unity 学习
 

@@ -30,7 +30,7 @@ Pthreads定义了一套C语言的类型、函数与常量，它以pthread.h头�
 
 **创建线程**
 
-```
+```objective-c
 /**
 
 - (void)demo {
@@ -161,17 +161,17 @@ pthread_self(): 查询线程自身线程标识号
 不用关心线程的生命周期
 
 **执行任务方式**
- 
+
  1. 同步的方式执行：
- 
+
  ```
  dispatch_sync(dispatch_queue_t queue, dispatch_block_t block);
  queue: 队列
  block: 任务
  ```
- 
+
  2. 异步的方式执行
- 
+
  ```
  dispatch_async(dispatch_queue_t queue, dispatch_block_t block);
  queue: 队列
@@ -186,7 +186,7 @@ pthread_self(): 查询线程自身线程标识号
  可以在新的线程中执行， 具备开启新线程能力
  不用等待任务执行完毕， 就可以执行下一条语句
  ```
- 
+
 **队列类型**
 
  ```
@@ -199,16 +199,16 @@ pthread_self(): 查询线程自身线程标识号
  全局队列（dispatch_get_global_queue): 是一个并发队列
  主队列（dispatch_get_main_queue): 主队列专门用于在主线程上执行任务， 是一个串行队列
  ```
- 
+
  **队列执行效果**
- 
+
 |     | 并发队列 | 串行队列 |
 | :---: |:---|:---|
 |**同步** | 1.没有开启新线程<br>2.串行执行任务 | 1. 没有开启新线程<br>2. 串行执行任务 |
 |**异步** | 1. 开启新线程<br>2. 并发执行任务  | 1. 开启新线程<br>2. 串行执行任务 |
 
 
- 
+
 #### dispatch\_barrier\_async 使用
 
 > 该函数会等待dispatch\_barrier\_async 前面所有任务完成

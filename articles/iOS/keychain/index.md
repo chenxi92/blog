@@ -6,7 +6,7 @@
 
 除了存储数据本身，还可以提供一组公开可见的属性，以控制项目的可访问性并使其可搜索。
 
-![putting-data-and-attributes-into-a-keychain](../images/keychain-usage/putting-data-and-attributes-into-a-keychain.png)
+![putting-data-and-attributes-into-a-keychain](./putting-data-and-attributes-into-a-keychain.png)
 
 `keychain` 存储类别分为：`kSecClassInternetPassword`  , `kSecClassGenericPassword` ,  `kSecClassCertificate` , `kSecClassKey` , `kSecClassIdentity`  
 

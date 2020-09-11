@@ -6,7 +6,7 @@ Auto Layout 是苹果的布局引擎。 采用了 [Cassowary constraint-solving]
 
 #### 原理
 
-![AutoLayout](./../../images/autolayout/autolayout.png)
+![AutoLayout](./autolayout.png)
 
 
 
@@ -51,7 +51,7 @@ firstItem.firstAttribute {==,<=,>=} secondItem.secondAttribute * multiplier + co
 
 创建如下视图的代码:
 
- ![AutoLayout-demo1](./../../images/autolayout/autolayout-demo1.png)
+ ![AutoLayout-demo1](./autolayout-demo1.png)
 
 其中绿色视图距离边距20， 蓝色和红色方块水平排列， 红色和紫色方块垂直排列。
 
