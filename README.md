@@ -1,4 +1,4 @@
-### 学生陈希
+### Hello World !
 
 <p align='center'>
 <img src="https://img.shields.io/badge/platform-iOS-ff69b4.svg">
@@ -8,36 +8,41 @@
 
 学习记录。
 
-#### iOS 开发
+#### iOS
 
-##### 多线程
+##### 基础
 
 1. [GCD 信号量](articles/iOS/dispatch-semaphore.md)
-2. [iOS 多线程](./articles/iOS/multiple-thread.md)
+2. [iOS 多线程](./articles/iOS/multiple-thread.md) 
+3. [消息转发](./articles/iOS/method-forward.md)
+4. [理解: ISA指针、类和元类](./articles/iOS/isa/index.md)
+5. [钥匙串](./articles/iOS/keychain/index.md)
+6. [AutoLayout ](./articles/iOS/autolayout/index.md)
 
-##### runtime
 
-1. [消息转发](./articles/iOS/method-forward.md)
-2. [理解: ISA指针、类和元类](./articles/iOS/isa/index.md)
 
 ##### 面试题
 
 1. [iOS属性相关面试题](./articles/iOS/interview/property.md)
+
+
 
 ##### 源码阅读
 1. [AFNetworking 阅读](./articles/iOS/open-analysis/AFNetworking.md)
 2. [Aspects 阅读](./articles/iOS/open-analysis/Aspects.md)
 3. [Masonry 阅读](./articles/iOS/open-analysis/Masonry.md)
 
+
+
 ##### 其他
 
-1. [钥匙串学习](./articles/iOS/keychain/index.md)
 2. [iOS Tips](./articles/iOS/tips.md) 
 3. [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/iOS/untrusted-certificate.md)
 4. [Mac 无法连接App Store](./articles/iOS/unable-connect-appstore.md)
 5. [iOS 出包相关命令](./articles/iOS/security.md)
 6. [通过 Safari 安装包](./articles/iOS/install-ipa-from-safari.md)
-7. [AutoLayout 学习](./articles/iOS/autolayout/index.md)
+
+
 
 #### 数据结构
 
@@ -50,7 +55,12 @@
 ##### 排序
 1. [常见排序算法](./articles/data-structure/sort/index.md)
 
-#### Shell 学习
+
+
+#### Shell 
+
+##### shell 命令
+
 1. [vim 使用总结](./articles/shell/vim-usage.md)
 2. [shell 输出带颜色内容](./articles/shell/echo.md)
 3. [sed 命令使用总结](./articles/shell/sed-usage.md)
@@ -68,23 +78,38 @@
 15. [字符串用法](./articles/shell/string-usage.md)
 16. [plutil 用法](./articles/shell/plutil-usage.md)
 
+
+
+#### shell 笔记
+
+[变量](./articles/shell/notes/variable.md)
+
+
+
 #### 数据库
+
 1. [Mysql 学习](./articles/database/mysql-summary.md)
 2. [MongoDB 学习](./articles/database/mongodb-summary.md)
 3. [SQLite 语法学习](./articles/database/sql-summary.md)
 
+
+
 #### 其他
 2. [LaTeX 学习笔记](./articles/tools/laTeX.md)
 3. [CocosCreator JSBingding 教程](./articles/tools/CocosCreator-JSBindings/index.md)
-4. [git 使用总结](./articles/tools/git.md)
-5. [svn 使用总结](./articles/tools/svn.md)
+4. [git 使用](./articles/tools/git.md)
+5. [svn 使用](./articles/tools/svn.md)
 
-#### Unity 学习
+
+
+#### Unity 
 
 1. [Unity 学习总结](./articles/unity/1-unity-learnning-issue.md)
 2. [iOS 和 Unity 互相调用](./articles/unity/2-unity-ios-bridge.md)
 
-#### TypeScript 学习
+
+
+#### TypeScript 
 
 1. [基本数据类型](./articles/typescript/basic-types.md)
 2. [变量](./articles/typescript/variable.md)
