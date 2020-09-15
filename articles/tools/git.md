@@ -18,6 +18,8 @@
 
 [标签](#tag)
 
+
+
 #### <a name="git-concept"></a>Git基本概念
 
 - 工作区(Working Directory)
@@ -36,6 +38,7 @@
 > 代码托管的服务器
 
 
+
 #### <a name="common-command"></a>常见命令
 
 1. `git clone <remote-url>` 克隆某个远端仓库
@@ -44,6 +47,8 @@
 4. `git pull` 拉取远端代码，并自动合并
 5. `git push origin master` 当前分支(默认是`master`分支)代码推送到远端仓库
 6. `git push origin local_branch_name:local_branch_name` 把本地的 `local_branch_name` 分支推送到远端的 `local_branch_name` 分支， 远端没有 `local_branch_name` 会自动创建
+
+
 
 #### <a name="version-back"></a>版本回退
 
@@ -66,6 +71,8 @@
 替换上一次提交， 使用 `git commit --amend -m "A new commit."` 来修改上一次提交的信息。
 
 
+
+
 #### <a name="undo-file-change"></a>撤销文件的修改
 1. 文件没有添加到暂存区(没有使用`git add `)
 	- `git checkout -- <file path>` 把文件在工作区的修改全部撤销，这里有两种情况：
@@ -79,6 +86,8 @@
 3. 暂存区内容已经提交到当前分支(使用`git commit`)
 	- `git reset HEAD^` 回退当前提交到工作区 
 	- `git checkout -- <file path>` 撤销工作区中文件的修改 
+	
+	
 
 #### <a name="branch"></a>分支
 
@@ -91,6 +100,8 @@
 
 #### <a name="resolved-conflict"></a>解决冲突
 `Git` 用`<<<<<<<`，`=======`，`>>>>>>>`标记出冲突的内容， 手动解决之后，先`git add `, 再`git commit`即可。
+
+
 
 #### <a name="submodule"></a>子模块
 
@@ -107,11 +118,13 @@
 
 > git submodule <url> <path>
 
-为已经存在的git工程添加子模块，`<path>` 表示制定子模块的位置，不指定则在根目录下。
+为已经存在的git工程添加子模块，`<path>` 表示指定子模块的位置，不指定则在根目录下。
 
 > git submodule update --remote
 
-拉取自模块的最新代码，默认是在master分支上拉取。
+拉取子模块的最新代码，默认是在master分支上拉取。
+
+
 
 #### <a name="generate-publick-key"></a>生成git ssh 公钥
 
