@@ -110,15 +110,22 @@
 
 默认会包含子模块目录，但是其中没有任何文件。<br>
 你必须运行两个命令：<br>
+
 `git submodule init` 用来初始化本地配置文件，而 `git submodule update` 则从该项目中抓取所有数据并检出父项目中列出的合适的提交。
+
+
 
 > git clone --recursive <url>
 
 自动初始化并更新仓库中的每一个子模块。
 
-> git submodule <url> <path>
+
+
+> git submodule add `<url>`  `<path>`
 
 为已经存在的git工程添加子模块，`<path>` 表示指定子模块的位置，不指定则在根目录下。
+
+
 
 > git submodule update --remote
 
