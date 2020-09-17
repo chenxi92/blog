@@ -84,6 +84,8 @@
 
 [变量](./articles/shell/notes/variable.md)
 
+[字符串](./articles/shell/notes/string.md)
+
 
 
 #### 数据库
