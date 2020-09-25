@@ -93,6 +93,8 @@
 
    使用减号 `-` 来排除某个关键词
 
+   `Mercedes -benz` 搜索 Mercedes 但是排除 benz 相关内容
+
 3. ##### 模糊匹配
 
    使用星号 `*` 来进行模糊匹配
@@ -101,9 +103,37 @@
 
    使用关键词 `site:` 来搜索指定站点
 
+   `site:.gov covid-19`
+
 5. ##### 指定文件类型
 
    使用关键词 `typefile:` 来指定搜索的文件类型
+   
+6. 计时器
+
+   输入 `stopwatch`  或者 `timer`
+
+7. 颜色提取
+
+   输入 `color picker`  或者  `rgb 50 50 80`
+
+8. 显示ip
+
+   输入 `what is my ip` 或者 `my ip`
+
+9. 世界时钟
+
+   输入 `Japan time 5pm`
+
+10. 查看社交媒体
+
+    输入 `@username` 
+
+11. 十万个为什么
+
+    输入 `I’m feeling curious`
+
+[参考 10 hidden features in google search](https://medium.com/swlh/10-hidden-features-in-google-search-83b347b48157)
 
 
 
