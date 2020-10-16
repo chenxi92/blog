@@ -37,16 +37,12 @@
 ##### 其他
 
 1. [iOS Tips](./articles/iOS/tips.md) 
-
 2. [解决 `iPhone Developer(XXX)` 证书不受信任](./articles/iOS/untrusted-certificate.md)
-
 3. [Mac 无法连接App Store](./articles/iOS/unable-connect-appstore.md)
-
 4. [iOS 出包相关命令](./articles/iOS/security.md)
-
 5. [通过 Safari 安装包](./articles/iOS/install-ipa-from-safari.md)
-
 6. [iOS 创建证书](./articles/iOS/create-certificate/index.md)
+7. [iOS 提审错误记录](./articles/iOS/upload-ipa-fails/index.md)
 
 
 
