@@ -46,7 +46,7 @@
 
 5. [通过 Safari 安装包](./articles/iOS/install-ipa-from-safari.md)
 
-6. [iOS 创建证书](./articles/ios/create-certificate/index.md)
+6. [iOS 创建证书](./articles/iOS/create-certificate/index.md)
 
 
 
