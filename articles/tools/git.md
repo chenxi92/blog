@@ -91,12 +91,14 @@
 
 #### <a name="branch"></a>分支
 
-- 查看分支：`git branch`
-- 创建分支：`git branch <name>`
-- 切换分支：`git checkout <name>`
-- 创建+切换分支：`git checkout -b <name>`
-- 合并某分支到当前分支：`git merge <name>`
-- 删除分支：`git branch -d <name>`
+- 查看本地分支: `git branch`
+- 查看所有分支: `git branch -a`
+- 创建分支: `git branch <name>`
+- 切换分支: `git checkout <name>`
+- 创建+切换分支: `git checkout -b <name>`
+- 合并某分支到当前分支: `git merge <name>`
+- 删除分支: `git branch -d <name>`
+- 删除远程分支: `git push origin --delete <branchName>`
 
 #### <a name="resolved-conflict"></a>解决冲突
 `Git` 用`<<<<<<<`，`=======`，`>>>>>>>`标记出冲突的内容， 手动解决之后，先`git add `, 再`git commit`即可。
