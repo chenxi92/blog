@@ -246,6 +246,18 @@ ALTER TABLE table_name RENAME TO new_table_name;
 
 作用类似 `LIKE` 运算符。
 
+#### LOCATE
+
+> LOCATE(substr, str)
+
+返回字符串 `str` 中第一次出现子字符串 `substr` 的位置。
+
+如果 substr 不在 str 中， 返回 0
+
+如果 substr 或者 str 为 NULL， 返回 null
+
+其他情况，返回大于 0 的值
+
 
 
 ### 其他
