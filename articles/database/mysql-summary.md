@@ -236,6 +236,16 @@ ALTER TABLE table_name RENAME TO new_table_name;
 | DATE()          | 当前日期           |
 | CURTIME()       | 当前时间           |
 
+#### INSTR
+
+> INSTR(str, substr)
+
+`INSTR()` 函数返回字符串中子字符串第一次出现的位置。如果在`str`中找不到子字符串，则`INSTR()`函数返回零(`0`)。
+
+该函数不区分大小写。
+
+作用类似 `LIKE` 运算符。
+
 
 
 ### 其他
