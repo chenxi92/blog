@@ -1,3 +1,5 @@
+<p align="right">Update: 2020-12-21</p>
+
 
 
 #### 安装
@@ -10,19 +12,12 @@ brew install curl
 
 #### 用法
 
-##### 基本
+##### 1. 基本用法
 
 发送 HTTP 请求，并答应服务器的响应内容
 
 ```bash
-curl quiet-waters-1228.herokuapp.com/hello
-```
-
-响应内容
-
-```http
-Hello, World!
-Thank you for cURLing me!
+curl [url]
 ```
 
 
@@ -30,60 +25,46 @@ Thank you for cURLing me!
 如果想看到更多的响应信息， 可以使用 `-i` 参数来发送 HTTP 请求
 
 ```bash
-curl -i quiet-waters-1228.herokuapp.com/hello
-```
-
-响应内容
-
-```http
-HTTP/1.1 200 OK
-Cache-Control: max-age=0, private, must-revalidate
-Content-Type: text/html; charset=utf-8
-Etag: "a0bb15ce430e40738d857e3e7dfe0de7"
-Server: thin 1.6.1 codename Death Proof
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Request-Id: d605f89d-bffc-4983-8ca4-8ac2b77c7b8d
-X-Runtime: 0.002568
-X-Ua-Compatible: chrome=1
-X-Xss-Protection: 1; mode=block
-transfer-encoding: chunked
-Connection: keep-alive
-
-Hello, World!
-Thank you for cURLing me!
+curl -i [url]
 ```
 
 
 
-##### 下载文件
+##### 2. 下载文件
+
+```bash
+# 下载文件并重新命名
+curl -o [custom-file-name] [url]
+```
 
 
 
-##### 指定请求方法
+##### 3. 指定请求方法
+
+使用 `-X` 指定HTTP请求方法， 默认时Get方法.
+
+```bash
+# 发送post请求
+curl -X POST [url]
+
+# 发送post请求，并且指定body参数 (指定name 和 age 的值)
+curl -X POST -d "name=peak&age=12" [url]
+
+# 发送post请求， 并且body参数使用本地文件, 从当前目录下的from_data.json文件中传递参数
+curl -X POST -d @form_data.json [url]
+```
 
 
 
--X
+##### 4. 设置请求头
+
+```bash
+# 指定请求头的内容
+curl -X POST -H "Accept: application/json" [url]
+```
 
 
 
--d
-
-
-
--d  @[file-name]
-
-
-
--F
-
-
-
-##### 设置请求头
-
-
-
-
+#### 参考
 
 [cURL](http://conqueringthecommandline.com/book/curl)

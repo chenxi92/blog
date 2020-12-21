@@ -81,6 +81,7 @@
 16. [plutil 用法](./articles/shell/plutil-usage.md)
 17. [sort 用法](./articles/shell/sort-usage.md)
 18. [ag 命令用法](./articles/shell/ag-usage.md)
+19. [curl 命令用法](./articles/shell/curl-usage.md)
 
 
 
