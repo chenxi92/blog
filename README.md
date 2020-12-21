@@ -79,6 +79,7 @@
 14. [sips 处理图片](./articles/shell/sips-usage.md)
 15. [字符串用法](./articles/shell/string-usage.md)
 16. [plutil 用法](./articles/shell/plutil-usage.md)
+17. [sort 用法](./articles/shell/sort-usage.md)
 
 
 

@@ -258,6 +258,65 @@ ALTER TABLE table_name RENAME TO new_table_name;
 
 其他情况，返回大于 0 的值
 
+#### CAST
+
+> CAST(expression AS TYPE)
+
+#### REPLACE
+
+> REPLACE(str, old_string, new_string)
+
+将 str 中的 old_string 替换为 new_string 。
+
+#### JSON_EXTRACT
+
+> JSON_EXTRACT(json_doc, path)
+
+从 json 字符串中提取指定字段的值 [使用举例](https://dev.mysql.com/doc/refman/8.0/en/json-search-functions.html#operator_json-column-path)
+
+```mysql
+mysql> SELECT c, JSON_EXTRACT(c, "$.id"), g
+     > FROM jemp
+     > WHERE JSON_EXTRACT(c, "$.id") > 1
+     > ORDER BY JSON_EXTRACT(c, "$.name");
++-------------------------------+-----------+------+
+| c                             | c->"$.id" | g    |
++-------------------------------+-----------+------+
+| {"id": "3", "name": "Barney"} | "3"       |    3 |
+| {"id": "4", "name": "Betty"}  | "4"       |    4 |
+| {"id": "2", "name": "Wilma"}  | "2"       |    2 |
++-------------------------------+-----------+------+
+3 rows in set (0.00 sec)
+
+# -> 操作符, 当作函数的别名
+mysql> SELECT c, c->"$.id", g
+     > FROM jemp
+     > WHERE c->"$.id" > 1
+     > ORDER BY c->"$.name";
++-------------------------------+-----------+------+
+| c                             | c->"$.id" | g    |
++-------------------------------+-----------+------+
+| {"id": "3", "name": "Barney"} | "3"       |    3 |
+| {"id": "4", "name": "Betty"}  | "4"       |    4 |
+| {"id": "2", "name": "Wilma"}  | "2"       |    2 |
++-------------------------------+-----------+------+
+3 rows in set (0.00 sec)
+```
+
+
+
+### 操作案例
+
+#### 复制表
+
+```sql
+insert into <target-table> 
+(user_id, app_id, channel_id, token, first_pay, stat, device_id, create_time, update_time) 
+select 
+user_id, app_id, channel_id, token, first_pay, stat, device_id, create_time, update_time
+from <source-table>
+```
+
 
 
 ### 其他
