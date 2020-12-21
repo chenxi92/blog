@@ -80,6 +80,7 @@
 15. [字符串用法](./articles/shell/string-usage.md)
 16. [plutil 用法](./articles/shell/plutil-usage.md)
 17. [sort 用法](./articles/shell/sort-usage.md)
+18. [ag 命令用法](./articles/shell/ag-usage.md)
 
 
 
