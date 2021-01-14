@@ -207,32 +207,38 @@ Test append.
 
 删除空白行：
 
+```shell
+sed '/^$/d' [file]
 ```
-sed '/^$/d' file
+
+删除连续空白行，只保留一个空行
+
+```shell
+sed -i '' 'N;/^\n/D' [file]
 ```
 
 删除文件的第2行：
 
-```
-sed '2d' file
+```shell
+sed '2d' [file]
 ```
 
 删除文件的第2行到末尾所有行：
 
-```
-sed '2,$d' file
+```shell
+sed '2,$d' [file]
 ```
 
 删除文件最后一行：
 
-```
-sed '$d' file
+```shell
+sed '$d' [file]
 ```
 
 删除文件中所有开头是test的行：
 
-```
-sed '/^test/'d file
+```shell
+sed '/^test/'d [file]
 ```
 
 
@@ -262,7 +268,7 @@ three
 
 反序输出文件每一行的内容：（参考[sed 简明教程](https://coolshell.cn/articles/9104.html)）
 
-```
+```shell
 $ sed '1!G;h;$!d' t.txt
 three
 two
@@ -276,6 +282,42 @@ one
 - $!d —— 除了最后一行不执行d命令，其它行都执行d命令，删除当前行
 
 ![执行序列图](https://coolshell.cn/wp-content/uploads/2013/02/sed_demo.jpg)
+
+
+
+#### 用法举例
+
+##### 从provisioning profiles中提取 codeSign
+
+```sh
+# URL: https://mgrebenets.github.io/mobile%20ci/2015/05/15/provisioning-profiles-sigh
+
+codeSign=$(/usr/libexec/PlistBuddy -c 'Print :DeveloperCertificates:0' /dev/stdin <<< $(security cms -D -i "$path_to_mobileprovision") | openssl x509 -inform DER -noout -subject | sed -n '/^subject/s/^.*CN=\(.*\)\/OU=.*/\1/p')
+
+1. security cms -D -i "$path_to_mobileprovision"
+获取描述文件信息， 描述文件位置 [~/Library/MobileDevice/Provisioning Profiles/xxx.mobileprovision]
+
+2. /usr/libexec/PlistBuddy -c 'Print :DeveloperCertificates:0' 
+提取描述文件内证书信息
+
+3. openssl x509 -inform DER -noout -subject
+decode 证书信息， 内容格式一般为： subject= /UID=5GZU79FW4H/CN=iPhone Developer: hsh peak (N24RAL9484)/OU=F8ARKU83W2/O=AIMCOMMUNITY LIMITED/C=GB
+
+4. sed -n '/^subject/s/^.*CN=\(.*\)\/OU=.*/\1/p'
+提取“CN=” 和 “/OU=” 之间的内容
+
+/ 界定符， 默认是'/'
+n 读取下一个输入行，用下一个命令处理新的行而不是用第一个命令；
+p 打印
+^subject 匹配以subject 开头的行
+s 标记为替换
+^.*CN=\(.*\)\/OU=.* 匹配 “CN=” 和 “/OU=” 之间的内容
+\1 保存匹配的内容
+```
+
+
+
+
 
 #### 参考资料：
 
