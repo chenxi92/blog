@@ -82,7 +82,7 @@
 17. [sort 用法](./articles/shell/sort-usage.md)
 18. [ag 命令用法](./articles/shell/ag-usage.md)
 19. [curl 命令用法](./articles/shell/curl-usage.md)
-
+20. [jq 命令用法](./articles/shell/jq.md)
 
 
 #### shell 笔记
