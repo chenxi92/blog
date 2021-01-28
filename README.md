@@ -51,7 +51,7 @@
 ##### 加密
 
 1. [iOS 常见加密算法总结](./articles/data-structure/iOS-Encrypt-Summary.md)
-2. [XOR 加密](./articles/data-structure/xor-iOS.md)
+2. [XOR 运算](./articles/data-structure/xor.md)
 3. [RC4 C++ 和 Python 实现](./articles/data-structure/RC4-C++&Python.md)
 
 ##### 排序
