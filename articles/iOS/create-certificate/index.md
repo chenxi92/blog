@@ -14,15 +14,21 @@
 
 
 
+
+
 选中 `Identifiers` ，点击 `Registers an App ID` 
 
 ![Register-an-App-ID](./create-App-ID-2.png)
 
-选中类型  `App` ，点击 `Continue` 
+
+
+选中  `App IDs` ，点击 `Continue` 
 
 ![Register-an-App-ID-Continue](./create-App-ID-3.png)
 
-选中 `App IDs`  ， 点击 `Continue` 
+
+
+选中 `App`  ， 点击 `Continue` 
 
 ![Register-an-App-ID-App](./create-App-ID-4.png)
 

@@ -65,6 +65,19 @@ curl -X POST -H "Accept: application/json" [url]
 
 
 
+##### 5. 其他参数
+
+- `-f` 不输出所有的服务端错误信息
+- `-s` 静默输出
+- `-S` 失败时输出错误信息
+- `-L` 重定向功能
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+
+
 #### 参考
 
 [cURL](http://conqueringthecommandline.com/book/curl)
