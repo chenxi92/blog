@@ -5,6 +5,9 @@
 - [3. Google 搜索技巧](#google-search)
 - [4. Xcode 崩溃调试技巧](#xcode-debug-crash)
 - [5. Xcode 调试return](#xcode-debug-return)
+- [6. Mac 看看端口号](#kill-port)
+
+
 
 #### <a name="ios-warning"></a>iOS 处理警告⚠️
 
@@ -162,4 +165,39 @@ br set -p return
 3. 断点执行continue操作；
 
 [如何断点到函数的return](https://mp.weixin.qq.com/s?__biz=MzUxMTkwNDg0OQ==&mid=2247484659&idx=1&sn=775d9f018330360a4aeda18709f5869e&chksm=f96dd9cdce1a50dbf0d755c041d3ecd63c208c4817f69634acafb38e0e1b383cdea12931c943&mpshare=1&scene=1&srcid=&sharer_sharetime=1587606656735&sharer_shareid=ba950e64c9e1fd56aad199c82bacc05d#rd)
+
+
+
+#### <a name="kill-port">Mac 看看端口号
+
+查看指定端口号
+
+```sh
+lsof -i :<port>
+```
+
+
+
+输入:
+
+```bash
+lsof -i :6008
+```
+
+
+
+输出：
+
+```bash
+COMMAND   PID   USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    76562 karmas   35u  IPv6 0x5b30baecc79198f9      0t0  TCP *:6008 (LISTEN)
+```
+
+
+
+杀掉相关进程
+
+```bash
+kill -9 <PID>
+```
 
