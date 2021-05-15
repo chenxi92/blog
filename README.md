@@ -27,6 +27,7 @@
 
 1. [iOS属性相关面试题](./articles/iOS/interview/property.md)
 2. [分类与扩展](./articles/iOS/interview/1-category-and-extension.md)
+3. [atomic 理解与应用](./articles/iOS/interview/2-atomic.md)
 
 
 
@@ -124,5 +125,4 @@
 1. [基本数据类型](./articles/typescript/basic-types.md)
 2. [变量](./articles/typescript/variable.md)
 3. [排序](./articles/typescript/sort.md)
-
 
