@@ -29,6 +29,7 @@
 2. [分类与扩展](./articles/iOS/interview/1-category-and-extension.md)
 3. [atomic 理解与应用](./articles/iOS/interview/2-atomic.md)
 4. [weak 关键字](./articles/iOS/interview/3-weak.md)
+5. [关联对象](./articles/iOS/interview/4-associated-object.md)
 
 
 
