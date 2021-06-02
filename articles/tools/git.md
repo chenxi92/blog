@@ -42,11 +42,35 @@
 #### <a name="common-command"></a>常见命令
 
 1. `git clone <remote-url>` 克隆某个远端仓库
+
 2. `git add <file path>` 把工作区中修改的文件添加到暂存区
+
 3. `git commit -m 'xx'` 把暂存区中的内容提交到当前分支
+
 4. `git pull` 拉取远端代码，并自动合并
+
 5. `git push origin master` 当前分支(默认是`master`分支)代码推送到远端仓库
+
 6. `git push origin local_branch_name:local_branch_name` 把本地的 `local_branch_name` 分支推送到远端的 `local_branch_name` 分支， 远端没有 `local_branch_name` 会自动创建
+
+7. `git rebase`  [变基操作](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)
+
+   作用：把本地未 push 的分叉提交历史整理成直线；
+
+   ```bash
+   把 experiment 分支合并到 master 分支上使用rebase操作流程:
+   1. git checkout experiment
+   2. git rebase master
+   3. git checkout master
+   4. git merge experiment
+   
+   # 发生冲突之后，解决完毕后,不再使用 git commit 命令，而是继续执行 rebase 操作
+   git rebase --continue 
+   ```
+
+   
+
+   
 
 
 
