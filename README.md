@@ -49,6 +49,8 @@
 5. [通过 Safari 安装包](./articles/iOS/install-ipa-from-safari.md)
 6. [iOS 创建证书](./articles/iOS/create-certificate/index.md)
 7. [iOS 提审错误记录](./articles/iOS/upload-ipa-fails/index.md)
+8. [Bug 记录](./articles/bug-track/index.md)
+
 
 
 
