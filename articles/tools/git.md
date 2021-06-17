@@ -18,6 +18,8 @@
 
 [标签](#tag)
 
+[忽略文件/文件夹](#ignore)
+
 
 
 #### <a name="git-concept"></a>Git基本概念
@@ -71,8 +73,6 @@
    
 
    
-
-
 
 #### <a name="version-back"></a>版本回退
 
@@ -203,7 +203,7 @@ git tag <tagname>
 
 1. 查看提交历史:
 
-```
+```shell
 $ git log --pretty=oneline
 15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch 'experiment'
 a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
@@ -257,6 +257,63 @@ git tag -d <tagname>
 ```
 git checkout -b branchname tagname
 ```
+
+
+
+#### <a name="ignore"></a>忽略文件/文件夹
+
+##### 文件/文件夹尚未被提交
+
+1. 创建 .gitignore 文件
+
+   ```shell
+   # 忽略 .a 文件
+   *.a
+   
+   # 但否定忽略 lib.a, 尽管已经在前面忽略了 .a 文件
+   !lib.a
+   
+   # 仅在当前目录下忽略 TODO 文件， 但不包括子目录下的 subdir/TODO
+   /TODO
+   
+   # 忽略 build/ 文件夹下的所有文件
+   build/
+   
+   # 忽略 doc/notes.txt, 不包括 doc/server/arch.txt
+   doc/*.txt
+   
+   # 忽略所有的 .pdf 文件 在 doc/ directory 下的
+   doc/**/*.pdf
+   ```
+
+   
+
+2. 编写忽略规则
+
+
+
+##### 文件/文件夹已经提交
+
+1. 从本地缓存内删除
+
+```shell
+# 忽略文件
+git rm --cached <file-path>
+
+# 忽略文件夹
+git rm -r --cached <folder-path>
+```
+
+2. 在 .gitignore 文件内编写忽略规则
+3. 提交到 git 仓库
+
+```shell
+git add .
+git commit -m <message>
+git push
+```
+
+
 
 
 
