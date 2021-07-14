@@ -6,6 +6,7 @@
 - [4. Xcode 崩溃调试技巧](#xcode-debug-crash)
 - [5. Xcode 调试return](#xcode-debug-return)
 - [6. Mac 看看端口号](#kill-port)
+- [7. iPhone not available](#iphone-not-available)
 
 
 
@@ -201,3 +202,34 @@ node    76562 karmas   35u  IPv6 0x5b30baecc79198f9      0t0  TCP *:6008 (LISTEN
 kill -9 <PID>
 ```
 
+
+
+
+
+#### <a name="iphone-not-available">iPhone is not available. 
+
+问题:
+
+手机连接Xcode调试， 提示 【xxx iPhone is not available. Please reconnect the device】
+
+手机版本： 14.2
+
+Xcode 版本： 12.2
+
+解决方案：
+
+- 查看本机 `DeviceSupport` 文件
+
+  > /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/
+
+  > 有 14.2 文件夹
+  >
+  > 如果没有可以参考: https://github.com/filsv/iPhoneOSDeviceSupport 下载对应的 DeviceSupport
+
+- 查看Xcode `DeviceSupport` 文件
+
+  > ~/Library/Developer/Xcode/iOS DeviceSupport
+  >
+  > 没有对应的  DeviceSupport 文件
+  >
+  > 重新Xcode， 重启手机
