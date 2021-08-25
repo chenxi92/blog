@@ -22,7 +22,6 @@
 
 
 
-
 ##### 面试题
 
 1. [iOS属性相关面试题](./articles/iOS/interview/property.md)
@@ -50,6 +49,7 @@
 6. [iOS 创建证书](./articles/iOS/create-certificate/index.md)
 7. [iOS 提审错误记录](./articles/iOS/upload-ipa-fails/index.md)
 8. [Bug 记录](./articles/bug-track/index.md)
+9. [libmobiledevice 用法总结](./articles/iOS/libmobiledevice.md)
 
 
 
