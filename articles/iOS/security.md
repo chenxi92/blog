@@ -32,6 +32,12 @@ p12_password 表示p12文件密码
 security find-identity -v -p codesigning
 ```
 
+搜索 REVOKED 关键字来判断证书是否被撤销
+```
+$ security find-identity -v -p codesigning | grep REVOKED
+12) BC94E9400C1F7A96101475CE6D3603C8FF5C561F "iPhone Developer: Guo Qun Wan (5N6XPS8SJT)" (CSSMERR_TP_CERT_REVOKED)
+```
+
 ##### 5.截取证书名称:
 ```
 security find-identity -v -p codesigning | cut -d \" -f2
