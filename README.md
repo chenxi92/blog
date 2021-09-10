@@ -52,6 +52,8 @@
 7. [iOS 提审错误记录](./articles/iOS/upload-ipa-fails/index.md)
 8. [Bug 记录](./articles/bug-track/index.md)
 9. [libmobiledevice 用法总结](./articles/iOS/libmobiledevice.md)
+10. [iOS 崩溃文件符号化总结](./articles/iOS/symbols.md)
+
 
 
 
