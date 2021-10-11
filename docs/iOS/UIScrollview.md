@@ -2,7 +2,7 @@
 
 ScrollView 通过可以其中的滚动区域来正确工作
 
-![0](./images/0.png)
+![0](../.vuepress/public/images/iOS/UIScrollView/0.png)
 
 
 
@@ -25,7 +25,7 @@ ScrollView 通过可以其中的滚动区域来正确工作
 
 放一个 ScrollView 到一个 ViewController 中并设置约束， 一般设置为距离 safe area 的边距(top, leading, trailing, bottom) 为0
 
-![1](./images/1.png)
+![1](../.vuepress/public/images/iOS/UIScrollView/1.png)
 
 
 
@@ -45,7 +45,7 @@ ScrollView 通过可以其中的滚动区域来正确工作
 
 当约束创建完毕之后，**把创建的约束的值设置为0**
 
-![2](./images/2.png)
+![2](../.vuepress/public/images/iOS/UIScrollView/2.png)
 
 
 
@@ -55,13 +55,13 @@ ScrollView 通过可以其中的滚动区域来正确工作
 
 选中 `Content Veiw` 后按住 `Control` 按键，鼠标箭头移动到 `Frame Layout Guide` 上， 在弹出的对话框中勾选 `Equal With` 
 
-![3](./images/3.png)
+![3](../.vuepress/public/images/iOS/UIScrollView/3.png)
 
 
 
 把创建的约束 `Multiplier` 修改为 **1**
 
-![4](./images/4.png)
+![4](../.vuepress/public/images/iOS/UIScrollView/4.png)
 
 
 
@@ -71,7 +71,7 @@ ScrollView 通过可以其中的滚动区域来正确工作
 
 选中 `Content View` 添加约束， 高度设置为一个比较大的值，例如 1000。（可以在之后删除）
 
-![5](./images/5.png)
+![5](../.vuepress/public/images/iOS/UIScrollView/5.png)
 
 
 
@@ -81,7 +81,7 @@ ScrollView 通过可以其中的滚动区域来正确工作
 
 在 ScrollView 的 Content View 中添加所需要的元素（例如 UILabe、UIImageView、UIButton等等），并按照从上到下的顺序依次设置每个子元素的约束（约束相对与 Content View）
 
-![7](./images/7.png)
+![7](../.vuepress/public/images/iOS/UIScrollView/7.png)
 
 
 
@@ -89,7 +89,7 @@ ScrollView 通过可以其中的滚动区域来正确工作
 
 当所有子元素的约束都设置完毕之后 `Auto Layout` 会计算出 `Content View` 的高度， 这时我们可以删除之前设置的固定高度。
 
-![6](./images/6.png)
+![6](../.vuepress/public/images/iOS/UIScrollView/6.png)
 
 
 

@@ -10,7 +10,7 @@
 
 登录苹果账号， 选择  `Certificates, Identifiers & Profiles`  
 
-![profiles](./create-App-ID-1.png)
+![profiles](../.vuepress/public/images/iOS/create-certificate/create-App-ID-1.png)
 
 
 
@@ -18,25 +18,25 @@
 
 选中 `Identifiers` ，点击 `Registers an App ID` 
 
-![Register-an-App-ID](./create-App-ID-2.png)
+![Register-an-App-ID](../.vuepress/public/images/iOS/create-certificate/create-App-ID-2.png)
 
 
 
 选中  `App IDs` ，点击 `Continue` 
 
-![Register-an-App-ID-Continue](./create-App-ID-3.png)
+![Register-an-App-ID-Continue](../.vuepress/public/images/iOS/create-certificate/create-App-ID-3.png)
 
 
 
 选中 `App`  ， 点击 `Continue` 
 
-![Register-an-App-ID-App](./create-App-ID-4.png)
+![Register-an-App-ID-App](../.vuepress/public/images/iOS/create-certificate/create-App-ID-4.png)
 
 
 
 在 `Capabilities` 列表中选择所需功能， 点击 `Register`
 
-![select-capabilities](./create-App-ID-5.png)
+![select-capabilities](../.vuepress/public/images/iOS/create-certificate/create-App-ID-5.png)
 
 
 
@@ -48,13 +48,13 @@
 
 打开 `钥匙串`,  点击 `钥匙串访问`  —>  `证书助理`  —>  `从证书颁发机构请求证书`
 
-![reqeust-from-keychain](./reqeust-csr-1.png)
+![reqeust-from-keychain](../.vuepress/public/images/iOS/create-certificate/reqeust-csr-1.png)
 
 输入邮箱名称 和 用户名， 选择 `存储到磁盘` ,  点击 `继续`， 选择目录存储到本地。 
 
 默认会生成一个 `CertificateSigningRequest.certSigningRequest` 文件。
 
-![save-to-disk](./reqeust-csr-2.png)
+![save-to-disk](../.vuepress/public/images/iOS/create-certificate/reqeust-csr-2.png)
 
 
 
@@ -62,11 +62,11 @@
 
 选中 `Certificates`   点击 `+`
 
-![create-new-certificate](./create-new-certificate-1.png)
+![create-new-certificate](../.vuepress/public/images/iOS/create-certificate/create-new-certificate-1.png)
 
 选中 `iOS App Development`  ，点击 `Continue` 
 
-![create-new-certificate-2](./create-new-certificate-2.png)
+![create-new-certificate-2](../.vuepress/public/images/iOS/create-certificate/create-new-certificate-2.png)
 
 **注意**
 
@@ -93,11 +93,11 @@
 
 选择已经创建好的 `CertificateSigningRequest.certSigningRequest` 文件， 点击 `Continue` 
 
-![create-new-certificate-3](./create-new-certificate-3.png)
+![create-new-certificate-3](../.vuepress/public/images/iOS/create-certificate/create-new-certificate-3.png)
 
 点击 `Download` ，下载到本地后双击即可安装到钥匙串。
 
-![create-new-certificate-4](./create-new-certificate-4.png)
+![create-new-certificate-4](../.vuepress/public/images/iOS/create-certificate/create-new-certificate-4.png)
 
 ##### 2.3 创建发布证书
 
@@ -109,7 +109,7 @@
 
 选中 `Devices` 点击 `+`
 
-![register-device-1](./register-device-1.png)
+![register-device-1](../.vuepress/public/images/iOS/create-certificate/register-device-1.png)
 
 
 
@@ -117,11 +117,11 @@
 
 右侧表示注册多个设备id，选择 `.deviceids` 格式的文件上传即可；
 
-![register-device-2](./register-device-2.png)
+![register-device-2](../.vuepress/public/images/iOS/create-certificate/register-device-2.png)
 
 新注册设备显示在上面， 已经注册的设备显示在下面。
 
-![register-device-3](./register-device-3.png)
+![register-device-3](../.vuepress/public/images/iOS/create-certificate/register-device-3.png)
 
 
 
@@ -131,11 +131,11 @@
 
 选中`Profiles` ，点击 `+`
 
-![create-profile-1](./create-profile-1.png)
+![create-profile-1](../.vuepress/public/images/iOS/create-certificate/create-profile-1.png)
 
 证书类型选中 `iOS App Development` ，点击 `Continue`
 
-![create-profile-2](./create-profile-2.png)
+![create-profile-2](../.vuepress/public/images/iOS/create-certificate/create-profile-2.png)
 
 **注意**
 
@@ -152,23 +152,23 @@
 
 选择合适的 App ID，点击 `Continue`
 
-![create-profile-3](./create-profile-3.png)
+![create-profile-3](../.vuepress/public/images/iOS/create-certificate/create-profile-3.png)
 
 选择合适的证书，点击 `Continue`
 
-![create-profile-4](./create-profile-4.png)
+![create-profile-4](../.vuepress/public/images/iOS/create-certificate/create-profile-4.png)
 
 
 
 选择需要添加的测试设备，点击`Continue`
 
-![create-profile-5](./create-profile-5.png)
+![create-profile-5](../.vuepress/public/images/iOS/create-certificate/create-profile-5.png)
 
 
 
 输入文件名称，点击 `Generate` ，之后点击 `Download` ，下载 `xxx.mobileprovision` 文件到本地， 双击即可安装。
 
-![create-profile-6](./create-profile-6.png)
+![create-profile-6](../.vuepress/public/images/iOS/create-certificate/create-profile-6.png)
 
 
 

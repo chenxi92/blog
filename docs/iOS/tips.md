@@ -1,16 +1,6 @@
-### 目录
-
-- [1. iOS 处理警告](#ios-warning)
-- [2. Github搜索技巧](#github-search)
-- [3. Google 搜索技巧](#google-search)
-- [4. Xcode 崩溃调试技巧](#xcode-debug-crash)
-- [5. Xcode 调试return](#xcode-debug-return)
-- [6. Mac 看看端口号](#kill-port)
-- [7. iPhone not available](#iphone-not-available)
 
 
-
-#### <a name="ios-warning"></a>iOS 处理警告⚠️
+### iOS 处理警告⚠️
 
 ##### 基本语法
 
@@ -68,7 +58,7 @@
 
 
 
-#### <a name="github-search">Github 搜索技巧
+### Github 搜索技巧
 
 - 搜索star数目
 	- `stars:>200`
@@ -85,7 +75,7 @@
 
 
 
-#### <a name="google-search">Google 搜索技巧
+### Google 搜索技巧
 
 
 
@@ -141,7 +131,7 @@
 
 
 
-#### <a name="xcode-debug-crash">Xcode 调试崩溃
+### Xcode 调试崩溃
 
 `Show the Breakpoint navigator`  -->  `+`  --> `Exception Breakpoint`
 
@@ -151,7 +141,7 @@
 
 
 
-#### <a name="xcode-debug-return">Xcode 调试return
+### Xcode 调试return
 
 1. 在函数入口添加断点；
 
@@ -169,7 +159,7 @@ br set -p return
 
 
 
-#### <a name="kill-port">Mac 看看端口号
+### Mac 看看端口号
 
 查看指定端口号
 
@@ -206,7 +196,7 @@ kill -9 <PID>
 
 
 
-#### <a name="iphone-not-available">iPhone is not available. 
+### iPhone is not available. 
 
 问题:
 
@@ -233,3 +223,109 @@ Xcode 版本： 12.2
   > 没有对应的  DeviceSupport 文件
   >
   > 重新Xcode， 重启手机
+
+
+
+### 为 `xxx.ipa` 创建 .itmsp失败。
+
+错误如下图所示:
+
+![transporter-create-itmsp-fail](../.vuepress/public/images/iOS/tips/transporter-create-itmsp-fail.png)
+
+
+
+**环境：**
+
+Transporter
+
+Xcode 12
+
+**解决办法**
+
+1. 检查 App Store Connect 后台 `套装ID` 是否与 ipa 包内一致；
+2. 确认电脑网络 (本次由于网络问题导致)
+
+
+
+###  Error ITMS-90503
+
+提审报错，内容如下:
+
+```objective-c
+Error ITMS-90503: "Invalid Bundle. You've include the "arme64" value for the
+UIRequiredDeviceCapabilities key in you Xcode project, indicating that your app may only support
+64-bit. Your binary, 'com.global.west.ios', must only contain the 64-bit architecture slice.
+```
+
+**环境**
+
+Unity 升级到 2019.4.7f1 后， 导出Xcode工程配置有所修改。
+
+
+
+**解决办法：**
+
+Info.plist 文件内 `UIRequiredDeviceCapabilities` 删除 `arm64` ， `metal`, 仅仅保留 `armv7`。
+
+与升级之前工程保持一致的配置。
+
+
+
+**参考**
+
+[UIRequiredDeviceCapabilities](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW3)
+
+
+
+### 解决 Mac 无法连接App Store 的问题？
+
+#### 问题描述
+
+新的Mac电脑，开机之后提示登录AppleID，
+
+点击跳过，打开App Store登录已有账号，转圈之后无任何提示，创建新的Apple账号，提示无法连接App Store。
+
+在该电脑的safari浏览器上登录已有Apple账号，正常登录。
+
+#### 解决步骤 
+
+1. 修改DNS
+
+   系统偏好设置 --> 网络 --> 高级 --> DNS, 增加新的DNS`8.8.8.8`。然后重启电脑，重新登录App Store。~~无法解决。~~
+
+2. 查看时间
+
+   系统偏好设置 --> 日期与时间 --> 日期与时间 --> ☑️自动设置日期与时间。然后重启电脑，重新登录App Store。~~无法解决。~~
+
+3. 连接VPN
+
+   连接VPN重新登录App Store。~~无法解决。~~
+
+4. 登录iTunes
+
+   使用同一账号登录iTunes,发现可以正常登录，注销该账号。然后重启电脑，重新登录App Store。~~无法解决。~~
+
+5. 更新系统
+
+   系统偏好设置 --> 软件更新，更新到最新的系统。然后重启电脑，重新登录App Store。~~无法解决。~~
+
+6. 使用终端
+
+   在终端输入以下命令：```defaults delete com.apple.appstore.commerce Storefront```。然后重启电脑，重新登录App Store。**解决。**
+
+
+
+### 解决 `iPhone Developer(XXX)` 证书不受信任
+
+#### 问题描述
+
+新项目创建苹果账号之后，从苹果官网下载下来的`开发`/`发布`证书，本地安装之后显示 `iPhone Developer(XXX)` 证书不受信任。该证书导出p12文件之后，其他电脑安装该p12文件显示没有私钥。
+
+#### 原因
+
+创建证书的电脑的`钥匙串`没有AppleWWDRCA(**Apple Worldwide Developer Relations Certification Authority**)证书
+
+#### 解决办法
+
+1. 下载最新的[AppleWWDRCA证书](https://developer.apple.com/certificationauthority/AppleWWDRCA.cer)，双击安装到“登录”项的钥匙串下；
+2. 重新安装`开发`/`发布`证书

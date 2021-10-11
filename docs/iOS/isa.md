@@ -26,7 +26,7 @@
 
 描述继承关系的如下所示:
 
-![图片](./../../../images/runtime/class_diagram.png)
+![图片](../.vuepress/public/images/iOS/isa/class_diagram.png)
 
 
 
