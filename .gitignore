@@ -17,3 +17,8 @@ _book
 
 
 .DS_Store
+
+.temp
+.cache
+dist
+package-lock.json
