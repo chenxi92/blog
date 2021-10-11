@@ -2,31 +2,42 @@
 SVN 常用命令总结：
 
 ##### 检出
-
-
-> svn checkout <project-path>
-
+```shell
+svn checkout <project-path>
+```
 
 ##### 添加
 
 - 添加单个文件
-> svn add <file-path>
+
+```shell
+svn add <file-path>
+```
 
 - 添加所有文件
-> svn add \`svn st | grep ? | awk '{print $2}'\`
-
+```shell
+svn add \`svn st | grep ? | awk '{print $2}'\`
+```
 
 ##### 提交
-> svn commit -m "add some file"
+```shell
+svn commit -m "add some file"
+```
 
 ##### 更新
-> svn update
+```shell
+svn update
+```
 
 ##### 删除
-> svn delete <file-path> -m "delete a file"
+```shell
+svn delete <file-path> -m "delete a file"
+```
 
 ##### 查看文件状态
-> svn status
+```shell
+svn status
+```
 
 **文件状态列表**
 - A  ->  新增
@@ -43,7 +54,7 @@ SVN 常用命令总结：
 
 > 1. 改动没有被提交
 
-```
+```shell
 svn revert [-R] something
 ```
 - 其中something可以是（目录或文件的）相对路径也可以是绝对路径;
@@ -54,13 +65,17 @@ svn revert [-R] something
 > 2. 改动已经提交
 
 1. 保证我们拿到的是最新代码
-> svn update
+```shell
+svn update
+```
 
 假设最新版本号是28。
 
 2. 然后找出要回滚的确切版本号
 
-> svn log [something]
+```shell
+svn log [something]
+```
 
 假设根据`svn log`日志查出要回滚的版本号是25，此处的something可以是文件、目录或整个项目
 
@@ -68,13 +83,16 @@ svn revert [-R] something
 
 3. 回滚到版本号25：
 
-> svn merge -r 28:25 something
+```shell
+svn merge -r 28:25 something
+```
 
 为了保险起见，再次确认回滚的结果：`svn diff [something]` 发现正确无误，提交。
 
 > 4、提交回滚
-> svn commit -m "Revert revision from r28 to r25,because of .."
-
+```shell
+svn commit -m "Revert revision from r28 to r25,because of .."
+```
 
 ##### 设置忽略文件
 

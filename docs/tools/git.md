@@ -161,7 +161,9 @@
 #### <a name="submodule"></a>子模块
 
 克隆带子模块的项目
-> git clone <url>
+```shell
+git clone <url>
+```
 
 默认会包含子模块目录，但是其中没有任何文件。<br>
 你必须运行两个命令：<br>
@@ -169,9 +171,9 @@
 `git submodule init` 用来初始化本地配置文件，而 `git submodule update` 则从该项目中抓取所有数据并检出父项目中列出的合适的提交。
 
 
-
-> git clone --recursive <url>
-
+```shell
+git clone --recursive <url>
+```
 自动初始化并更新仓库中的每一个子模块。
 
 

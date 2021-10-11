@@ -1,8 +1,7 @@
-### <p align="center">AFNetworking  源码分析
+### AFNetworking  源码分析
 
-<p align="right">
-2019-5-11
-</p>
+<p align="right">Update: 2019-5-11</p>
+
 SDK 版本 3.2.1
 
 #### 目录
@@ -15,7 +14,7 @@ SDK 版本 3.2.1
 - [其他知识](#others)
 - [参考](#reference)
 
-#### <a name="architect-flow">架构图
+#### <a name="architect-flow"></a>架构图
 
 - 网络通信 
   - `AFURLSessionManager`   基于 `NSURLSession` 做了一系列的封装，负责真正的网络请求。

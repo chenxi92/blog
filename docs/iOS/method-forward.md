@@ -1,4 +1,4 @@
-#### <p align="center">消息转发
+#### 消息转发
 
 <p align="right">2020-4-17</p>
 

@@ -16,8 +16,9 @@ jq 是一个用来处理json数据的命令行工具
 
 #### 语法
 
-> jq  [options]  <jq filter>  [file...]
-
+```shell
+jq  [options]  <jq filter>  [file...]
+```
 
 
 #### 示例

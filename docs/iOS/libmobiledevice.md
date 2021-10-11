@@ -136,14 +136,16 @@ idevicesyslog -d -p <process>
 
 
 
-> ideviceinstaller -i <ipa-file-path>
-
+```shell
+ideviceinstaller -i <ipa-file-path>`
+```
 安装 ipa 到当前设备
 
 
 
-> ideviceinstaller -u <bundle-identifier>
-
+```shell
+ideviceinstaller -u <bundle-identifier>
+```
 卸载指定 BundleIdentifier 的ipa
 
 

@@ -1,4 +1,4 @@
-#### <p align="center">`du`  命令使用
+#### `du` 命令使用
 
 > display disk usage statistics.
 

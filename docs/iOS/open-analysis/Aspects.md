@@ -1,16 +1,8 @@
+### Aspects 源码阅读
 
-
-### <p align="center">Aspects 源码阅读
-
-<p align="right">
-2020-4-15
-</p>
-
-
+<p align="right">Update: 2020-4-15</p>
 
 SDK 版本 1.4.2
-
-
 
 #### 文件结构
 

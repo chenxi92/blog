@@ -1,6 +1,6 @@
-#### <p align="center">GCD 信号量
+#### GCD 信号量
 
-<p align="right">2019-5-19
+<p align="right">2019-5-19</p>
 
 #### 函数
 

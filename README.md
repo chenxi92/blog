@@ -109,9 +109,9 @@
 
 #### 数据库
 
-1. [Mysql 学习](./docs/database/mysql-summary.md)
-2. [MongoDB 学习](./docs/database/mongodb-summary.md)
-3. [SQLite 语法学习](./docs/database/sql-summary.md)
+1. [Mysql 学习](./docs/database/mysql.md)
+2. [MongoDB 学习](./docs/database/mongodb.md)
+3. [SQLite 语法学习](./docs/database/sql.md)
 
 
 

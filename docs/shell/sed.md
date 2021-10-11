@@ -1,4 +1,4 @@
-###  <p align="center">sed 使用总结
+### sed 使用总结
 
 #### 替换
 

@@ -1,8 +1,6 @@
+### `tar` 命令使用总结
 
-
-### <p align="center">`tar` 命令使用总结
-
-<p align="right">2019-5-14
+<p align="right">Update: 2019-5-14</p>
 
 > manipulate tape archives.
 >

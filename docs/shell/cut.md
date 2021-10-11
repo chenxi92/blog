@@ -1,6 +1,6 @@
-#### <p align="center"> `cut` 命令使用总结
+#### `cut` 命令使用总结
 
-<p align="right">2019-5-15
+<p align="right">Update: 2019-5-15</p>
 
 > cut out selected portions of each line of a file.
 
