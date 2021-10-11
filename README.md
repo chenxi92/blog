@@ -49,14 +49,8 @@
 - [Bug 记录](./docs/iOS/bug-track.md)
 - [libmobiledevice 用法总结](./docs/iOS/libmobiledevice.md)
 - [iOS 崩溃文件符号化总结](./docs/iOS/symbols.md)
-
-
-
-
-#### Swift
-
-[Vapor 教程](./docs/iOS/vapor-tutorial.md)
-
+- [iOS & Unity 调用](./docs/iOS/unity-ios-bridge.md)
+- [Vapor 教程](./docs/iOS/vapor-tutorial.md)
 
 
 
@@ -116,17 +110,10 @@
 
 
 #### 其他
-2. [LaTeX 学习笔记](./docs/tools/laTeX.md)
-3. [CocosCreator JSBingding 教程](./docs/tools/CocosCreator-JSBindings/index.md)
-4. [git 使用](./docs/tools/git.md)
-5. [svn 使用](./docs/tools/svn.md)
+- [LaTeX 学习笔记](./docs/others/laTeX.md)
+- [git 使用](./docs/others/git.md)
+- [svn 使用](./docs/others/svn.md)
 
-
-
-#### Unity 
-
-1. [Unity 学习总结](./docs/unity/1-unity-learnning-issue.md)
-2. [iOS 和 Unity 互相调用](./docs/unity/2-unity-ios-bridge.md)
 
 
 

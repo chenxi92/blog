@@ -329,3 +329,23 @@ Info.plist 文件内 `UIRequiredDeviceCapabilities` 删除 `arm64` ， `metal`, 
 
 1. 下载最新的[AppleWWDRCA证书](https://developer.apple.com/certificationauthority/AppleWWDRCA.cer)，双击安装到“登录”项的钥匙串下；
 2. 重新安装`开发`/`发布`证书
+
+
+### Visual Studio Code 打开Unity工程无法正常工作
+
+#### 问题描述
+
+按照 [Unity Development with VS Code](https://code.visualstudio.com/docs/other/unity) 操作后能正常开发Unity工程，但是某一天打开 Unity工程无法正常查看变量的引用，函数无法跳转等。
+
+控制台输出如下错误:
+
+```
+[fail]: OmniSharp.MSBuild.ProjectLoader
+        The reference assemblies for .NETFramework,Version=v4.7.1 were not found. To resolve this, install the developer
+        Pack (SDK/Targeting Pack) for this framework version or retarget your application. You can download .Net
+        Framework Developer Packs at https://aka.ms/msbuild/developerpacks
+```
+
+#### 解决方法
+
+在 Visual Studio Code 中的 `设置` -> `Omnisharp: Use Global Mono` 勾选 `always`

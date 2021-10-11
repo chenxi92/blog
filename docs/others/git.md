@@ -21,7 +21,6 @@
 [忽略文件/文件夹](#ignore)
 
 
-
 #### <a name="git-concept"></a>Git基本概念
 
 - 工作区(Working Directory)
@@ -33,7 +32,7 @@
 > 工作区又一个隐藏文件夹`.git`, 叫做Git的版本库。<br>
 > Git的版本库存放很多东西， 其中比价重要的就是stage（或者index) 的暂存区， 还有Git为我们自动创建的第一个分支`master`， 以及指向`master`的指针`HEAD`。
 
-![](https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0)
+![index](../.vuepress/public/images/others/git/index.jpg)
 
 - 远程仓库区(Remote)
 
@@ -70,9 +69,7 @@
    git rebase --continue 
    ```
 
-   
 
-   
 
 #### <a name="version-back"></a>版本回退
 

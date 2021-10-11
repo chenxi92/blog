@@ -3,18 +3,23 @@ module.exports = {
   lang: 'zh-CN',
   title: '陈希的学习笔记',
   themeConfig: {
+    logo: 'https://vuejs.org/images/logo.png',
     navbar: [
       {
         text: 'iOS',
         link: '/iOS/'
       },
       {
-        text: 'shell',
+        text: 'Shell',
         link: '/shell/'
       },
       {
         text: '数据库',
         link: '/database/'
+      },
+      {
+        text: '其他',
+        link: '/others/'
       }
     ],
     repo: 'https://github.com/chenxi92/blog.git',
@@ -90,6 +95,10 @@ module.exports = {
               link: '/iOS/UIScrollview.md'
             },
             {
+              text: 'iOS & Unity 相互调用',
+              link: '/iOS/2-unity-ios-bridge.md'
+            },
+            {
               text: 'Vapor 学习',
               link: '/iOS/vapor-tutorial.md'
             },
@@ -100,7 +109,6 @@ module.exports = {
             },
             {
               text: '面试',
-              collapsable: true,
               children: [
                 {
                   text: '面试题',
@@ -150,8 +158,7 @@ module.exports = {
       ],
       '/shell/': [
         {
-          text: 'shell',
-          link: '/shell/',
+          text: 'Shell 学习',
           children: [
             {
               text: 'ag',
@@ -253,6 +260,25 @@ module.exports = {
               link: '/database/sql.md'
             }
           ]
+        }
+      ],
+      '/others/': [
+        {
+          text: '其他',
+          children: [
+          {
+            text: 'Git',
+            link: '/others/git.md'
+          },
+          {
+            text: 'SVN',
+            link: '/others/svn.md'
+          },
+          {
+            text: 'laTex',
+            link: '/others/laTex.md'
+          }
+        ]
         }
       ]
     }
