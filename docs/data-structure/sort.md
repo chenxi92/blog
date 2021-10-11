@@ -22,7 +22,7 @@
 
 **代码实现：**
 
-```
+```oc
 // Sort.m
 + (NSInteger)binarySearch:(NSArray *)array target:(id)key {
     NSMutableArray *arr = [NSMutableArray arrayWithArray:array];
@@ -215,7 +215,7 @@ NSLog(@"after quick sort = %@", quickArray);
 
 插入排序在实现上，通常采用in-place排序（即只需用到`O(1)`的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。
 
-![使用插入排序为一列数字进行排序的过程](./Insertion_sort_animation.gif)
+![使用插入排序为一列数字进行排序的过程](../.vuepress/public/images/data-structure/Insertion_sort_animation.gif)
 
 具体算法描述如下：
 

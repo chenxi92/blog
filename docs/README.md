@@ -1,13 +1,16 @@
 ---
 home: true
 tagline: null
-heroText: null
+heroText: 学习记录
 actions:
   - text: iOS 笔记
     link: /iOS/README.md
     type: primary
   - text: Shell 笔记
     link: /shell/README.md
+    type: secondary
+  - text: 数据结构
+    link: /data-structure/README.md
     type: secondary
   - text: 数据库
     link: /database/README.md

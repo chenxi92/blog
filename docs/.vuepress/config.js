@@ -14,6 +14,10 @@ module.exports = {
         link: '/shell/'
       },
       {
+        text: '数据结构',
+        link: '/data-structure/'
+      },
+      {
         text: '数据库',
         link: '/database/'
       },
@@ -239,6 +243,29 @@ module.exports = {
             {
               text: 'xargs',
               link: '/shell/xargs.md'
+            }
+          ]
+        }
+      ],
+      '/data-structure/': [
+        {
+          text: '数据结构学习',
+          children: [
+            {
+              text: '加密算法总结',
+              link: '/data-structure/iOS-Encrypt-summary.md'
+            },
+            {
+              text: '异或运算',
+              link: '/data-structure/xor.md'
+            },
+            {
+              text: 'RC4',
+              link: '/data-structure/RC4-C++&Python.md'
+            },
+            {
+              text: '常见排序算法',
+              link: '/data-structure/xor.md'
             }
           ]
         }
