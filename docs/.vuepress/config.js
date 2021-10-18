@@ -22,6 +22,10 @@ module.exports = {
         link: '/database/'
       },
       {
+        text: 'Vue',
+        link: '/Vue/'
+      },
+      {
         text: '其他',
         link: '/others/'
       }
@@ -285,6 +289,18 @@ module.exports = {
             {
               text: 'SQL',
               link: '/database/sql.md'
+            }
+          ]
+        }
+      ],
+      '/Vue/': [
+        {
+          text: 'Vue',
+          link: '/Vue/',
+          children: [
+            {
+              text: 'Slots 用法总结',
+              link: '/Vue/slots.md'
             }
           ]
         }

@@ -12,9 +12,9 @@ cd docs/.vuepress/dist
 # 部署到自定义域域名
 # echo 'www.example.com' > CNAME
 
-git init
+# git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'update'
 
 # 部署到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master

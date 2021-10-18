@@ -91,6 +91,9 @@
 - [git 使用](./docs/others/git.md)
 - [svn 使用](./docs/others/svn.md)
 
+## Vue
+- [Slots 用法总结](./docs/Vue/slots.md)
+
 ## TypeScript 
 - [基本数据类型](./docs/typescript/basic-types.md)
 - [变量](./docs/typescript/variable.md)
