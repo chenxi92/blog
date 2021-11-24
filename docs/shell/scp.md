@@ -1,4 +1,4 @@
-<p align="right">2019-7-17</p>
+<p align="right">2021-11-24</p>
 
 
 
@@ -28,3 +28,14 @@ scp /home/space/music/1.mp3 peak@192.168.2.101:/home/peak/others/music
 scp peak@192.168.2.101:/home/peak/others/music /home/space/music/1.mp3 
 ```
 
+3. 远程拷贝到本地(Identity file)
+
+```shell
+scp -C -i <path-to-file-identity-file> <remote-user>@<remote-ip>:<full-path-to-file> <full-local-path-where-to-save>
+```
+
+例如：
+
+```shell
+scp -i /Users/xx/workspace/xxxKeyOnAWS.pem root@14.71.22.145:/tmp/xx.sql /Users/xx/Desktop/xx.sql
+```
