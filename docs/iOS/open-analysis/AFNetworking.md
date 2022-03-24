@@ -1,8 +1,10 @@
 ### AFNetworking  源码分析
 
-<p align="right">Update: 2019-5-11</p>
+<p align="right">Update: 2022-3-24</p>
 
-SDK 版本 3.2.1
+Version: **4.0**
+
+
 
 #### 目录
 
@@ -18,14 +20,50 @@ SDK 版本 3.2.1
 
 - 网络通信 
   - `AFURLSessionManager`   基于 `NSURLSession` 做了一系列的封装，负责真正的网络请求。
+    - `AFURLSessionManagerTaskDelegate` 处理单个网络请求的回调。
   - `AFHTTPSessionManager` 继承自 `AFURLSessionManager` ， 具体请求逻辑交给父类来完成，一般使用该类发起网络请求。
+  
 - 网络状态监控
   - `AFNetworkReachabilityManager`  负责监控网络状态。
-- 序列化/反序列化
+  
+- 序列化/反序列化 协议
   - `AFURLRequestSerialization` 负责构造 `NSURLRequest` 。
+  
+    - `AFHTTPRequestSerializer`  实现 `AFURLRequestSerialization` 的基类。
+  
+      ```markdown
+      offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.
+      ```
+  
+    - `AFJSONRequestSerializer` JSON 类型的编码实现。
+  
+    - `AFPropertyListRequestSerializer` PropertyList 类型的编码实现。
+  
   - `AFURLResponseSerrialization` 负责解析 `NSURLResponse` 。
+  
+    - `AFHTTPResponseSerializer`  实现`AFURLResponseSerrialization` 协议的基类。
+  
+      ```markdown
+      offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.
+      ```
+  
+    - `AFJSONResponseSerializer`  解析 response 数据为 JSON 对象。
+  
+    - `AFXMLParserResponseSerializer` 解析 response 数据为 XML 对象。
+  
+    - `AFXMLDocumentResponseSerializer` 解析 response 数据为 XML 对象（使用于 Mac 平台）。
+  
+    - `AFPropertyListResponseSerializer` 解析 response 数据为 plist 对象。
+  
+    - `AFImageResponseSerializer` 解析 response 数据为 image 对象。 
+  
 - 安全策略
-  - `AFSecurityPolicy`
+  - `AFSecurityPolicy` 负责验证证书有效性。
+  
+- 网络状态监听
+  
+  - `AFNetworkReachabilityManager`
+  
 - UIKit扩展
   - `UIImageView+AFNetworking` `UIImageView` 的扩展，负责图片的下载以及缓存。
   - `AFAutoPurgingImageCache`  负责图片缓存
@@ -51,11 +89,15 @@ SDK 版本 3.2.1
            sessionConfiguration:(NSURLSessionConfiguration *)configuration
 {
     // 调用父类接口，初始化父类
+    // #1 初始化默认配置
+    // AFJSONResponseSerializer、AFSecurityPolicy、AFNetworkReachabilityManager、NSURLSession（同时指定 session 的代理为自己)
+    // #2 初始化各种容器、锁、变量等
     self = [super initWithSessionConfiguration:configuration];
     if (!self) {
         return nil;
     }
     
+    // 处理 baseURL
     // Ensure terminal slash for baseURL path, so that NSURL +URLWithString:relativeToURL: works as expected
     if ([[url path] length] > 0 && ![[url absoluteString] hasSuffix:@"/"]) {
         url = [url URLByAppendingPathComponent:@""];
@@ -75,14 +117,16 @@ SDK 版本 3.2.1
 
 ```objective-c
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(nullable id)parameters
-                       success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
-                       failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+                             parameters:(nullable id)parameters
+                                headers:(nullable NSDictionary <NSString *, NSString *> *)headers
+                               progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
 ```
 
 该 `POST` 请求最终调用到:
 
-```
+```objective-c
 - (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
                              parameters:(nullable id)parameters
                                 headers:(nullable NSDictionary <NSString *, NSString *> *)headers
@@ -105,19 +149,18 @@ SDK 版本 3.2.1
 ```objective-c
 - (NSURLSessionDataTask *)dataTaskWithHTTPMethod:(NSString *)method
                                        URLString:(NSString *)URLString
-                                      parameters:(id)parameters
-                                         headers:(NSDictionary <NSString *, NSString *> *)headers
+                                      parameters:(nullable id)parameters
+                                         headers:(nullable NSDictionary <NSString *, NSString *> *)headers
                                   uploadProgress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgress
                                 downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgress
-                                         success:(void (^)(NSURLSessionDataTask *, id))success
-                                         failure:(void (^)(NSURLSessionDataTask *, NSError *))failure
+                                         success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                         failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
 {
-    // 使用序列化对象 构造 Requst 对象
     NSError *serializationError = nil;
+    // 构造 Request 对象
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&serializationError];
-    // 添加请求头信息到Request对象中
     for (NSString *headerField in headers.keyEnumerator) {
-        [request addValue:headers[headerField] forHTTPHeaderField:headerField];
+        [request setValue:headers[headerField] forHTTPHeaderField:headerField];
     }
     if (serializationError) {
         if (failure) {
@@ -128,8 +171,8 @@ SDK 版本 3.2.1
 
         return nil;
     }
-    
-    // 调用父类接口构造dataTask
+                                           
+		// 父类构造 DataTask 对象
     __block NSURLSessionDataTask *dataTask = nil;
     dataTask = [self dataTaskWithRequest:request
                           uploadProgress:uploadProgress
@@ -146,10 +189,11 @@ SDK 版本 3.2.1
         }
     }];
 
-    // 返回 dataTask
     return dataTask;
 }
 ```
+
+
 
 父类的构造 `dataTask` 做了如下操作
 
@@ -159,20 +203,17 @@ SDK 版本 3.2.1
                              downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgressBlock
                             completionHandler:(nullable void (^)(NSURLResponse *response, id _Nullable responseObject,  NSError * _Nullable error))completionHandler {
 
-    // 生成 NSURLSessionDataTask 对象
-    __block NSURLSessionDataTask *dataTask = nil;
-    url_session_manager_create_task_safely(^{
-        dataTask = [self.session dataTaskWithRequest:request];
-    });
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request];
 
-    // 添加代理
     [self addDelegateForDataTask:dataTask uploadProgress:uploadProgressBlock downloadProgress:downloadProgressBlock completionHandler:completionHandler];
 
     return dataTask;
 }
 ```
 
-添加代理主要作用是把该 `dataTask` 和它对应的回调信息保存起来
+
+
+添加代理主要作用是把该  `dataTask`  和它对应的回调信息保存起来
 
 ```objective-c
 - (void)addDelegateForDataTask:(NSURLSessionDataTask *)dataTask
@@ -180,7 +221,7 @@ SDK 版本 3.2.1
               downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgressBlock
              completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler
 {
-    // 生成dataTask代理对象
+    // 生成 AFURLSessionManagerTaskDelegate 对象
     AFURLSessionManagerTaskDelegate *delegate = [[AFURLSessionManagerTaskDelegate alloc] initWithTask:dataTask];
     delegate.manager = self;
     // 保存请求的回调到dataTask的代理对象上
@@ -195,7 +236,7 @@ SDK 版本 3.2.1
 }
 ```
 
-实际存入是根据该 `dataTask` 的 `taskIdentifier` 属性值作为key值，保存在字典中
+实际存入是根据该 `dataTask` 的 `taskIdentifier` 属性值作为key值，保存在字典中。
 
 ```objective-c
 - (void)setDelegate:(AFURLSessionManagerTaskDelegate *)delegate
@@ -767,7 +808,5 @@ failure:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable 
 #### <a name="reference"></a>参考
 
 [AFNetworking docs](http://cocoadocs.org/docsets/AFNetworking/3.1.0)
-
-[AFNetworking 源码分析](https://www.jianshu.com/p/856f0e26279d)
 
 [浅谈移动端图片压缩](https://juejin.im/post/5c5c2b8251882562826951b8)

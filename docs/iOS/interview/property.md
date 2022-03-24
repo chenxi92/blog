@@ -142,17 +142,19 @@
 }
 ```
 
-修饰符	| 优势 | 劣势
+
+
+| 修饰符	| 优势 | 劣势
 |---|---|---|
 nonatomic | 执行效率高，性能好 | 不是线程安全的
 atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降低执行效率
 
 ##### 参考资料
 1. [Objective-C 原子属性](http://liuduo.me/2018/02/08/objective-c-atomic/)
-
 2. [从@property说起（三）atomic与多线程锁](https://segmentfault.com/a/1190000008808143)
-
 3. [iOS中atomic和nonatomic区别及内部实现](https://juejin.im/post/5a31dc76f265da430c11d3ab)
+
+
 
 
 ### 4. <a name="use-copy"></a>copy的使用
@@ -179,7 +181,7 @@ atomic | 线程安全，但是仅能保证写操作的线程安全 | 大幅降�
 
 3. **block 如何修饰？**
 	- 首先，MRR时代用retain修饰block会产生崩溃，因为作为属性的block在初始化时是被存放在静态区的(栈区)，如果block内调用外部变量，那么block无法保留其内存，在初始化的作用域内使用并不会有什么影响，但一旦出了block的初始化作用域，就会引起崩溃。
-所有MRC中使用copy修饰，将block拷贝到堆上。
+	所有MRC中使用copy修饰，将block拷贝到堆上。
 	- 其次，在ARC时代，因为ARC自动完成了对block的copy，所以修饰block用copy和strong都无所谓。 
 
 4. **如何让自己的类用 copy 修饰符？**
@@ -259,7 +261,7 @@ weak 的用处用一句话可归纳为：**弱引用，在对象释放后置为 
 		    weak_table_t weak_table;
 		}
 		```
-	weak表是一个弱引用表，实现为一个weak_table_t结构体，存储了某个对象相关的的所有的弱引用信息。其定义如下(具体定义在[objc-weak.h](https://opensource.apple.com/source/objc4/objc4-646/runtime/objc-weak.h)中)：
+		weak表是一个弱引用表，实现为一个weak_table_t结构体，存储了某个对象相关的的所有的弱引用信息。其定义如下(具体定义在[objc-weak.h](https://opensource.apple.com/source/objc4/objc4-646/runtime/objc-weak.h)中)：
 
 		```
 		struct weak_table_t {
@@ -307,5 +309,4 @@ weak 的用处用一句话可归纳为：**弱引用，在对象释放后置为 
 3. [iOS 底层解析weak的实现原理](https://www.jianshu.com/p/13c4fb1cedea)
 4. [iOS（Objective-C）内存管理](http://zhoulingyu.com/2017/02/15/Advanced-iOS-Study-objc-Memory-2/)
 5. [Objective-C 引用计数原理](http://yulingtianxia.com/blog/2015/12/06/The-Principle-of-Refenrence-Counting/)
-
 
