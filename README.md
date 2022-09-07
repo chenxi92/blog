@@ -18,7 +18,8 @@
 - [attribute 用法总结](./docs/iOS/attribute.md)
 - [UIScrollView In StoryBoard](./docs/iOS/UIScrollView.md)
 - [Xcode 常用快捷键](./docs/iOS/xcode-shortcut.md)
-- [configure alternate app icon](./docs/iOS/configure-alternate-app-icon.md)
+- [Configure Alternate App Icon](./docs/iOS/configure-alternate-app-icon.md)
+- [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
 
 ### 面试题
 - [iOS属性相关面试题](./docs/iOS/interview/property.md)
