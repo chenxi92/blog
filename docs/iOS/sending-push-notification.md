@@ -47,7 +47,7 @@ curl -v \
 
 ## Reference
 
-[Sending Push Notifications Using Command-Line Tool](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns/)
+[Sending Push Notifications Using Command-Line Tool](https://developer.apple.com/documentation/usernotifications/sending_push_notifications_using_command-line_tools)
 
 [Sending Notification Requests to APNs](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns/)
 
