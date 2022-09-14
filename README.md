@@ -3,8 +3,15 @@
 <img src="https://img.shields.io/badge/language-python-yellowgreen.svg">
 <img src="https://img.shields.io/badge/language-shell-green.svg">
 <img src="https://img.shields.io/badge/language-typeScript-red.svg">
-
 学习记录。
+
+## Recent
+
+[How to create dmg file](./docs/iOS/how-to-create-dmg.md)
+
+[Sending Push Notifications](./docs/iOS/sending-push-notification.md)
+
+
 
 ## iOS
 
@@ -20,6 +27,7 @@
 - [Xcode 常用快捷键](./docs/iOS/xcode-shortcut.md)
 - [Configure Alternate App Icon](./docs/iOS/configure-alternate-app-icon.md)
 - [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
+- [How to create dmg file](./docs/iOS/how-to-create-dmg.md)
 
 ### 面试题
 - [iOS属性相关面试题](./docs/iOS/interview/property.md)
