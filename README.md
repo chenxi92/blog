@@ -7,6 +7,8 @@
 
 ## Recent
 
+[dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
+
 [How to create dmg file](./docs/iOS/how-to-create-dmg.md)
 
 [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
@@ -28,6 +30,10 @@
 - [Configure Alternate App Icon](./docs/iOS/configure-alternate-app-icon.md)
 - [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
 - [How to create dmg file](./docs/iOS/how-to-create-dmg.md)
+
+### Keywords
+
+- [dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
 
 ### 面试题
 - [iOS属性相关面试题](./docs/iOS/interview/property.md)
