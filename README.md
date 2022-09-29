@@ -7,6 +7,8 @@
 
 ## Recent
 
+[How to test static framework](./docs/iOS/how-to-test-static-framework/how-to-test-static-framework.md)
+
 [dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
 
 [How to create dmg file](./docs/iOS/how-to-create-dmg.md)
@@ -57,7 +59,7 @@
 - [iOS 崩溃文件符号化总结](./docs/iOS/symbols.md)
 - [iOS & Unity 调用](./docs/iOS/unity-ios-bridge.md)
 - [Vapor 教程](./docs/iOS/vapor-tutorial.md)
-
+- [How to test static framework](./docs/iOS/how-to-test-static-framework/how-to-test-static-framework.md)
 
 ## 数据结构
 
