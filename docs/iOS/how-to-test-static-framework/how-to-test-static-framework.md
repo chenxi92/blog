@@ -16,10 +16,10 @@ errSecMissingEntitlement                 = -34018,    /* A required entitlement 
 
 1. In your framework project add a new target (select `App` template) as the host app.
 
-![2](images/2.png)
+![2](./images/2.png)
 
 
 
 2. In you unit test target,  `General` -> `Testing` select the host app.
 
-![3](images/3.png)
+![3](./images/3.png)
