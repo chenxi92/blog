@@ -110,10 +110,30 @@ module.exports = {
               text: 'Vapor 学习',
               link: '/iOS/vapor-tutorial.md'
             },
-            
             {
               text: 'Xcode 快捷键',
               link: '/iOS/xcode-shortcut.md'
+            },
+            {
+              text: 'Configure Alternate App Icon',
+              link: '/iOS/configure-alternate-app-icon.md'
+            },
+            {
+              text: 'Sending Push Notifications',
+              link: '/iOS/sending-push-notification.md'
+            },
+            {
+              text: 'How to create dmg file',
+              link: '/iOS/how-to-create-dmg.md'
+            },
+            {
+              text: 'Keywords',
+              children: [
+                {
+                  text: 'dynamicCallable',
+                  link: '/iOS/SwiftKeywords/dynamicCallable.md'
+                }
+              ]
             },
             {
               text: '面试',
