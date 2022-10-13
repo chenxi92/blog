@@ -127,6 +127,10 @@ module.exports = {
               link: '/iOS/how-to-create-dmg.md'
             },
             {
+              text: 'How to test static framework',
+              link: '/iOS/how-to-test-static-framework/how-to-test-static-framework.md'
+            },
+            {
               text: 'Keywords',
               children: [
                 {
@@ -329,19 +333,23 @@ module.exports = {
         {
           text: '其他',
           children: [
-          {
-            text: 'Git',
-            link: '/others/git.md'
-          },
-          {
-            text: 'SVN',
-            link: '/others/svn.md'
-          },
-          {
-            text: 'laTex',
-            link: '/others/laTex.md'
-          }
-        ]
+            {
+              text: 'Get WiFi password',
+              link: '/others/wifi/wifi-password.md'
+            },
+            {
+              text: 'Git',
+              link: '/others/git.md'
+            },
+            {
+              text: 'SVN',
+              link: '/others/svn.md'
+            },
+            {
+              text: 'laTex',
+              link: '/others/laTex.md'
+            }
+          ]
         }
       ]
     }

@@ -7,6 +7,8 @@
 
 ## Recent
 
+[Get WiFi password](./docs/others/wifi/wifi-password.md)
+
 [How to test static framework](./docs/iOS/how-to-test-static-framework/how-to-test-static-framework.md)
 
 [dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
@@ -105,6 +107,7 @@
 - [SQLite 语法学习](./docs/database/sql.md)
 
 ## 其他
+- [Get WiFi password](./docs/others/wifi/wifi-password.md)
 - [LaTeX 学习笔记](./docs/others/laTeX.md)
 - [git 使用](./docs/others/git.md)
 - [svn 使用](./docs/others/svn.md)
