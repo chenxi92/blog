@@ -1,41 +1,73 @@
-#### GCD 信号量
+# Dispatch Semaphore
 
-<p align="right">2019-5-19</p>
+<p align="right">2022-10-17</p>
 
-#### 函数
+[What is Dispatch Semaphore?](#What is Dispatch Semaphore?)
 
-1. 创建一个信号量
+[How to use Dispatch Semaphore?](#How to use Dispatch Semaphore?)
+
+[Examples](#Examples)
+
+
+
+## What is Dispatch Semaphore?
+
+The definition of `Dispatch Semaphore` of [Apple](https://developer.apple.com/documentation/dispatch/dispatch_semaphore?language=objc) is:
+
+> An object that controls access to a resource across multiple execution contexts through use of a traditional counting semaphore.
+
+Semaphores give us the ability to control access to a shared resources by multiple threads. 
+
+A semaphore consists of a threads queue and a counter value (type int).
+
+**The counter value** is used by the semaphore to decide whether a thread should get access to a shared resource or not. The counter value changes when we call `dispatch_semaphore_wait` or `dispatch_semaphore_signal` method.
+
+
+
+## How to use Dispatch Semaphore?
+
+### The relative API
 
 ```objective-c
-dispatch_semaphore_t
-dispatch_semaphore_create(long value);
+/// Create a semaphore with an initial value.
+dispatch_semaphore_t dispatch_semaphore_create(intptr_t value);
+
+/// decrements a semaphore.
+intptr_t dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout);
+
+/// increments a semaphore.
+intptr_t dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 ```
 
-该函数接受一个整形参数，可理解为一个信号量的总量。
 
-2. 等待信号量
 
-```objective-c
-long
-dispatch_semaphore_wait(dispatch_semaphore_t dsema, dispatch_time_t timeout);
-```
+### When we call `dispatch_semaphore_wait` or `dispatch_semaphore_signal`
 
-该函数会把信号量的总量 -1 ，如果 -1 之后该信号量的总量的值小于0，会阻塞当前线程（知道超时时间到达），否则会继续执行。
+- Call `dispatch_semaphore_wait` each time before we want using the shared resource. We are asking the semaphore whether the shared resource is available or not. If not, we will wait.
 
-3. 发送信号量
-
-```objective-c
-long
-dispatch_semaphore_signal(dispatch_semaphore_t dsema);
-```
-
-该函数会把信号量的总量 +1。
+- Call `dispatch_semaphore_signal` each time after we finished using the shared resource.
 
 
 
-##### 测试
+### Calling `dispatch_semaphore_wait` will do the following:
 
-###### 测试线程同步
+- Decrement semaphore counter by 1.
+- If the **result value** is less than zero, the thread is frozen.
+- If the **result value** is equal to or bigger than zero, the code will get executed without waiting.
+
+
+
+### Calling `dispatch_semaphore_wait` will do the following:
+
+- Increment semaphore counter by 1.
+- If the **previous value** was less than zero, this method wakes the oldest thread currently waiting in the thread queue.
+- If the **previous value** was euqal to or bigger than zero, it means the thread queue is empty, no one is waiting.
+
+
+
+## Examples
+
+### Use semaphore to synchronize
 
 ```objective-c
 - (void)testSynchronize {
@@ -53,7 +85,7 @@ dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 }
 ```
 
-输出
+The output:
 
 ```objective-c
 2019-05-19 08:55:38.260560+0800 testSem[61543:4914620] begin request. thread = <NSThread: 0x60000105d3c0>{number = 1, name = main}
@@ -61,9 +93,11 @@ dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 2019-05-19 08:55:39.494228+0800 testSem[61543:4914620] received response. thread = <NSThread: 0x60000105d3c0>{number = 1, name = main}
 ```
 
-###### 测试线程加锁
 
-先声明变量
+
+### Use semaphore to lock/unlock
+
+Declare the variables:
 
 ```objective-c
 @interface ViewController ()
@@ -72,7 +106,9 @@ dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 @end
 ```
 
-不加锁
+
+
+#### Test method without using semaphore:
 
 ```objective-c
 - (void)testLock {
@@ -93,7 +129,7 @@ dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 }
 ```
 
-不加锁 输出
+The output:
 
 ```objective-c
 2019-05-19 08:57:47.899357+0800 testSem[61579:4916193] array = (
@@ -113,7 +149,9 @@ dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 )
 ```
 
-加锁
+
+
+#### Test method using semaphore:
 
 ```objective-c
 - (void)testLock {
@@ -134,7 +172,7 @@ dispatch_semaphore_signal(dispatch_semaphore_t dsema);
 }
 ```
 
-加锁 输出
+The output
 
 ```objective-c
 2019-05-19 08:59:06.386425+0800 testSem[61606:4917387] array = (
