@@ -2,11 +2,11 @@
 
 <p align="right">2022-10-17</p>
 
-[What is Dispatch Semaphore?](#What is Dispatch Semaphore?)
+[What is Dispatch Semaphore?](#what-is-dispatch-semaphore)
 
-[How to use Dispatch Semaphore?](#How to use Dispatch Semaphore?)
+[How to use Dispatch Semaphore?](#how-to-use-dispatch-semaphore)
 
-[Examples](#Examples)
+[Examples](#examples)
 
 
 
