@@ -334,6 +334,10 @@ module.exports = {
           text: '其他',
           children: [
             {
+              text: 'Graphviz Tutorial',
+              link: '/others/graphviz-tutorial/graphviz-tutorial.md'
+            },
+            {
               text: 'Get WiFi password',
               link: '/others/wifi/wifi-password.md'
             },

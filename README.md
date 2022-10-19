@@ -7,6 +7,8 @@
 
 ## Recent
 
+[Graphviz Tutorial](./docs/others/graphviz-tutorial/graphviz-tutorial.md)
+
 [Get WiFi password](./docs/others/wifi/wifi-password.md)
 
 [How to test static framework](./docs/iOS/how-to-test-static-framework/how-to-test-static-framework.md)
@@ -107,6 +109,7 @@
 - [SQLite 语法学习](./docs/database/sql.md)
 
 ## 其他
+- [Graphviz Tutorial](./docs/others/graphviz-tutorial/graphviz-tutorial.md)
 - [Get WiFi password](./docs/others/wifi/wifi-password.md)
 - [LaTeX 学习笔记](./docs/others/laTeX.md)
 - [git 使用](./docs/others/git.md)
