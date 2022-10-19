@@ -6,13 +6,13 @@ Graphviz is a open source graph visualization software. Graph visualization is a
 
 ## Install
 
-Install executable packages 
+Install executable packages, use the following commands:
 
 > brew install graphviz
 
 
 
-Install [source code](https://graphviz.org/download/source/)
+Install  source code [click here](https://graphviz.org/download/source/).
 
 
 
@@ -37,11 +37,11 @@ Some basic rules about DOT Language:
 
 ### graph
 
-Generate undirected graphs and pecify an edge using the edge operator `--` .
+Generate undirected graphs and pecify an edge using the edge operator `-` .
 
 ### digraph
 
-Generate directed graphs and specify an edge using the edge operator `-->` .
+Generate directed graphs and specify an edge using the edge operator `->` .
 
 ### node
 
@@ -55,7 +55,7 @@ A shape connecte multiple nodes.
 
 ## Usage
 
-### digraph example
+### Digraph example
 
 Create a file name it as `test1.dot` and paste the following code into it.
 
@@ -147,3 +147,10 @@ Run the following command to generate a png command:
 The output as the following:
 
 ![test-3](./test3.png)
+
+
+
+## Reference
+
+[Graphviz](https://graphviz.org/)
+

@@ -3,9 +3,13 @@
 <img src="https://img.shields.io/badge/language-python-yellowgreen.svg">
 <img src="https://img.shields.io/badge/language-shell-green.svg">
 <img src="https://img.shields.io/badge/language-typeScript-red.svg">
-学习记录。
 
-## Recent
+
+This repository record what I have learned.
+
+
+
+## Recently
 
 [Graphviz Tutorial](./docs/others/graphviz-tutorial/graphviz-tutorial.md)
 
@@ -23,8 +27,8 @@
 
 ## iOS
 
-### 基础
-- [GCD 信号量](./docs/iOS/dispatch-semaphore.md)
+### Basic
+- [Dispatch Semaphore](./docs/iOS/dispatch-semaphore.md)
 - [iOS 多线程](./docs/iOS/multiple-thread.md) 
 - [消息转发](./docs/iOS/method-forward.md)
 - [理解: ISA指针、类和元类](./docs/iOS/isa.md)
@@ -39,21 +43,21 @@
 
 ### Keywords
 
-- [dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
+- [Swift dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
 
-### 面试题
+### Interview Questions
 - [iOS属性相关面试题](./docs/iOS/interview/property.md)
 - [分类与扩展](./docs/iOS/interview/1-category-and-extension.md)
 - [atomic 理解与应用](./docs/iOS/interview/2-atomic.md)
 - [weak 关键字](./docs/iOS/interview/3-weak.md)
 - [关联对象](./docs/iOS/interview/4-associated-object.md)
 
-### 源码阅读
-- [AFNetworking 阅读](./docs/iOS/open-analysis/AFNetworking.md)
-- [Aspects 阅读](./docs/iOS/open-analysis/Aspects.md)
-- [Masonry 阅读](./docs/iOS/open-analysis/Masonry.md)
+### Open Source Analytics
+- [AFNetworking Analytics](./docs/iOS/open-analysis/AFNetworking.md)
+- [Aspects Analytics](./docs/iOS/open-analysis/Aspects.md)
+- [Masonry Analytics](./docs/iOS/open-analysis/Masonry.md)
 
-### 其他
+### Others
 - [iOS Tips](./docs/iOS/tips.md) 
 - [iOS 出包相关命令](./docs/iOS/security.md)
 - [通过 Safari 安装包](./docs/iOS/install-ipa-from-safari.md)
@@ -65,7 +69,9 @@
 - [Vapor 教程](./docs/iOS/vapor-tutorial.md)
 - [How to test static framework](./docs/iOS/how-to-test-static-framework/how-to-test-static-framework.md)
 
-## 数据结构
+
+
+## Data Structure
 
 ### 加密
 - [iOS 常见加密算法总结](./docs/data-structure/iOS-Encrypt-Summary.md)
@@ -75,9 +81,11 @@
 ### 排序
 - [常见排序算法](./docs/data-structure/sort.md)
 
+
+
 ## Shell 
 
-### shell 命令
+### Commands
 - [vim 使用总结](./docs/shell/vim.md)
 - [shell 输出带颜色内容](./docs/shell/echo.md)
 - [sed 命令使用总结](./docs/shell/sed.md)
@@ -99,26 +107,38 @@
 - [curl 命令用法](./docs/shell/curl.md)
 - [jq 命令用法](./docs/shell/jq.md)
 
-### shell 笔记
+### Notes
 - [变量](./docs/shell/notes/variable.md)
 - [字符串](./docs/shell/notes/string.md)
 
-## 数据库
+
+
+## Database
+
 - [Mysql 学习](./docs/database/mysql.md)
 - [MongoDB 学习](./docs/database/mongodb.md)
 - [SQLite 语法学习](./docs/database/sql.md)
 
-## 其他
+
+
+## Other
+
 - [Graphviz Tutorial](./docs/others/graphviz-tutorial/graphviz-tutorial.md)
 - [Get WiFi password](./docs/others/wifi/wifi-password.md)
 - [LaTeX 学习笔记](./docs/others/laTeX.md)
-- [git 使用](./docs/others/git.md)
-- [svn 使用](./docs/others/svn.md)
+- [Git usage](./docs/others/git.md)
+- [SVN Usage](./docs/others/svn.md)
+
+
 
 ## Vue
+
 - [Slots 用法总结](./docs/Vue/slots.md)
 
+
+
 ## TypeScript 
+
 - [基本数据类型](./docs/typescript/basic-types.md)
 - [变量](./docs/typescript/variable.md)
 - [排序](./docs/typescript/sort.md)
