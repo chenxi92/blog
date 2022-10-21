@@ -29,7 +29,7 @@ This repository record what I have learned.
 
 ### Basic
 - [Dispatch Semaphore](./docs/iOS/dispatch-semaphore.md)
-- [iOS 多线程](./docs/iOS/multiple-thread.md) 
+- [iOS multiple threads](./docs/iOS/multiple-thread.md) 
 - [消息转发](./docs/iOS/method-forward.md)
 - [理解: ISA指针、类和元类](./docs/iOS/isa.md)
 - [钥匙串](./docs/iOS/keychain.md)

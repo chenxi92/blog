@@ -1,14 +1,32 @@
-## 多线程技术方案
+# iOS Thread Notes
 
-[1. pthread](#pthread)
+Threading Terminology
 
-[2. NSThread](#NSThread)
+- The term **thread** is used to refer to a separate path of execution for code.
+- The term **process** is used to refer to a running executable, which can encompass multiple threads.
+- The term **task** is used to refer to the abstract concept of work that needs to be performed.
 
-[3. GCD](#GCD)
 
-[4. NSOperation](#NSOperation)
 
-### <a name="pthread"></a>1.pthread
+The contents about the notes:
+
+[pthread](#pthread)
+
+[NSThread](#nsthread)
+
+[GCD](#gcd)
+
+[NSOperation](#nsoperation)
+
+[Using Locks](#using-locks)
+
+[Interview Question](#interview-questions)
+
+[Reference](#reference)
+
+
+
+## pthread
 
 **特点**
 
@@ -16,26 +34,17 @@
 
 **定义**
 
-```
-线程库实行了POSIX线程标准通常称为Pthreads。
-POSIX线程具有很好的可移植性，使用pthreads编写的代码可运行于Solaris、FreeBSD、Linux 等平台，Windows平台亦有pthreads-win32可供使用 。
-Pthreads定义了一套C语言的类型、函数与常量，它以pthread.h头文件和一个线程库实现。
-```
-
-**头文件**
-
-```
-#import <pthread.h>
-```
+> 线程库实行了 POSIX 线程标准通常称为 pthreads。
+>
+> POSIX 线程具有很好的可移植性，使用 pthreads 编写的代码可运行于 Solaris、FreeBSD、Linux 等平台，Windows 平台亦有pthreads-win32 可供使用 。
+> pthreads 定义了一套C语言的类型、函数与常量，它以 pthread.h 头文件和一个线程库实现。
 
 **创建线程**
 
 ```objective-c
-/**
+#import <pthread.h>
 
 - (void)demo {
-
-    
     //1.创建线程对象
     pthread_t thread;
     
@@ -86,7 +95,9 @@ pthread_detach(): 分离线程
 pthread_self(): 查询线程自身线程标识号
 ```
 
-### <a name="NSThread"></a>2.NSThread
+
+
+## NSThread
 
 **特点**
 
@@ -98,7 +109,7 @@ pthread_self(): 查询线程自身线程标识号
 
 **1. 实例方法创建线程**
 
-```
+```objective-c
 - (IBAction)useInstanceMehotd:(id)sender {
     NSLog(@"===== begin %@", [NSThread currentThread]);
     // 创建NSThread 对象
@@ -116,9 +127,11 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
+
+
 **2. 类方法创建线程**
 
-```
+```objective-c
 - (IBAction)useClassMethod:(id)sender {
     NSLog(@"===== begin %@", [NSThread currentThread]);
     // 自动创建线程，并执行方法
@@ -135,9 +148,11 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
+
+
 **3. NSObject分类方法创建线程**
 
-```
+```objective-c
 - (IBAction)useCatgoryMethod:(id)sender {
     NSLog(@"===== begin %@", [NSThread currentThread]);
     // 是NSObject分类方法
@@ -154,7 +169,9 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
-### <a name="GCD"></a>3.GCD
+
+
+## GCD
 
 **特点**
 
@@ -177,7 +194,6 @@ pthread_self(): 查询线程自身线程标识号
  queue: 队列
  block: 任务
 
- 
  同步：
  只能在当前线程中执行任务， 不具备开启线程能力
  必须等待任务执行完毕，才会执行下一条语句
@@ -209,13 +225,13 @@ pthread_self(): 查询线程自身线程标识号
 
 
 
-#### dispatch\_barrier\_async 使用
+### Dispatch barrier
 
 > 该函数会等待dispatch\_barrier\_async 前面所有任务完成
 
 > 然后在执行 dispatch\_barrier\_async 的任务
 
-```
+```objective-c
 - (IBAction)test_barrier_async:(id)sender {
     dispatch_queue_t queue = dispatch_queue_create("com.chenxi.learn.thread", DISPATCH_QUEUE_CONCURRENT);
     
@@ -252,11 +268,13 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
-#### GCD 调度组
+#### 
+
+### Dispatch group
 
 > 使用 dispatch\_group\_async 和 dispatch\_group\_notify 函数来完成调度组的工作
 
-```
+```objective-c
 - (void)demo {
     
     // 1. 调度组
@@ -290,7 +308,9 @@ pthread_self(): 查询线程自身线程标识号
 }
 ```
 
-#### <a name="NSOperation"></a>4. NSOperation
+
+
+## NSOperation
 
 **特点**
 
@@ -315,9 +335,10 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 > 将操作放入队列
 
 
-##### NSInvocationOperation 使用
 
-```
+### NSInvocationOperation
+
+```objective-c
 - (IBAction)tes_invocation:(id)sender {
     
     NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(demo:) object:@{@"name":@"invocationOperation", @"param": @"hello world"}];
@@ -338,9 +359,11 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 }
 ```
 
-##### NSBlockOperation
 
-```
+
+### NSBlockOperation
+
+```objective-c
 - (IBAction)test_block:(id)sender {
     
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
@@ -369,9 +392,11 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 }
 ```
 
-##### 操作依赖
 
-```
+
+### 操作依赖
+
+```objective-c
 - (IBAction)test_dependency:(id)sender {
     
     _queue = [[NSOperationQueue alloc] init];
@@ -401,14 +426,15 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
     
     NSLog(@"test dependency , thread = %@", [NSThread currentThread]);
 }
-
 ```
 
-##### 自定义NSOperation
+
+
+### [Defining a Custom Operation Object](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW16)
 
 > 自定义 Operation 需要继承 NSOperation 类，并实现其 main() 方法，因为在调用 start() 方法的时候，内部会调用 main() 方法完成相关逻辑。
 
-```
+```objective-c
 // 创建 CustomOperation 类， 继承自 NSOperation
 @interface CustomOperation : NSOperation
 @end
@@ -440,7 +466,8 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 ```
 
 
-##### 队列其他方法
+
+### 队列其他方法
 
 > maxConcurrentOperationCount 这是最大并发数
 
@@ -448,11 +475,139 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 
 > cancelAllOperations 取消所有操作
 
-#### 常见面试题
 
-下面代码会输出什么？ 为什么？
 
+## Using locks
+
+### Using a POSIX Mutex Lock
+
+To create the mutex lock, you declare and initialize a `pthread_mutex_t` structure. 
+
+To lock and unlock the mutex lock, you use the `pthread_mutex_lock` and `pthread_mutex_unlock` functions.
+
+```objective-c
+pthread_mutex_t mutex;
+void MyInitFunction()
+{
+    pthread_mutex_init(&mutex, NULL);
+}
+ 
+void MyLockingFunction()
+{
+    pthread_mutex_lock(&mutex);
+    // Do work.
+    pthread_mutex_unlock(&mutex);
+}
 ```
+
+
+
+### Using the NSLock Class
+
+An [NSLock](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSLock/Description.html#//apple_ref/occ/cl/NSLock) object implements a basic mutex for Cocoa applications. 
+
+```objective-c
+BOOL moreToDo = YES;
+NSLock *theLock = [[NSLock alloc] init];
+...
+while (moreToDo) {
+    /* Do another increment of calculation */
+    /* until there’s no more to do. */
+    if ([theLock tryLock]) {
+        /* Update display used by all threads. */
+        [theLock unlock];
+    }
+}
+```
+
+
+
+### Using the @synchronized Directive
+
+The `@synchronized` directive is a convenient way to create mutex locks on the fly in Objective-C code.
+
+```objective-c
+- (void)myMethod:(id)anObj
+{
+    @synchronized(anObj)
+    {
+        // Everything between the braces is protected by the @synchronized directive.
+    }
+}
+```
+
+As a precautionary measure, the `@synchronized` block implicitly adds an exception handler to the protected code.
+
+This handler automatically releases the mutex in the event that an exception is thrown.
+
+
+
+### Using an NSRecursiveLock Object
+
+The [NSRecursiveLock](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSRecursiveLock/Description.html#//apple_ref/occ/cl/NSRecursiveLock) class defines a lock that can be acquired multiple times by the same thread without causing the thread to deadlock.
+
+```objective-c
+NSRecursiveLock *theLock = [[NSRecursiveLock alloc] init];
+ 
+void MyRecursiveFunction(int value)
+{
+    [theLock lock];
+    if (value != 0)
+    {
+        --value;
+        MyRecursiveFunction(value);
+    }
+    [theLock unlock];
+}
+ 
+MyRecursiveFunction(5);
+```
+
+
+
+### Using an NSConditionLock Object
+
+An [NSConditionLock](https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSConditionLock/Description.html#//apple_ref/occ/cl/NSConditionLock) object defines a mutex lock that can be locked and unlocked with specific values.
+
+Typically, you use an `NSConditionLock` object when threads need to perform tasks in a specific order, such as when one thread produces data that another consumes. While the producer is executing, the consumer acquires the lock using a condition that is specific to your program. (The condition itself is just an integer value that you define.) When the producer finishes, it unlocks the lock and sets the lock condition to the appropriate integer value to wake the consumer thread, which then proceeds to process the data.
+
+
+
+The following example shows how the producer-consumer problem might be handled using condition locks. 
+
+```objective-c
+id condLock = [[NSConditionLock alloc] initWithCondition:NO_DATA];
+ 
+while(true)
+{
+    [condLock lock];
+    /* Add data to the queue. */
+    [condLock unlockWithCondition:HAS_DATA];
+}
+```
+
+
+
+The following example shows the basic structure of the consumer thread’s processing loop.
+
+```objective-c
+while (true)
+{
+    [condLock lockWhenCondition:HAS_DATA];
+    /* Remove data from the queue. */
+    [condLock unlockWithCondition:(isEmpty ? NO_DATA : HAS_DATA)];
+ 
+    // Process the data locally.
+}
+```
+
+
+
+## Interview Questions
+
+### 1. 下面代码会输出什么?
+
+```objective-c
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	NSLog(@"1");
@@ -463,17 +618,23 @@ NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果
 }
 ```
 
-##### 答案
+答案:
 
-**输出: 1**， 然后崩溃
+> 输出: 1， 然后崩溃
 
-##### 原因
+原因:
 
-系统维护的`dispatch_get_main_queue()`这个队列里面在执行`viewDidLoad`方法，在`viewDidLoad`中又再次在`dispatch_get_main_queue()`这个相同的队列里面执行`block`方法。
+>  系统维护的 `dispatch_get_main_queue()` 这个队列里面在执行 `viewDidLoad`方法，在 `viewDidLoad` 中又再次在 `dispatch_get_main_queue()` 这个相同的队列里面执行`block`方法。
+>
+>  由于串行队列 `FIFO` 原则，系统维护的`dispatch_get_main_queue()`先进栈，所以要先执行完毕后，再执行后进栈的队列任务。
+>
+> 系统维护的 `dispatch_get_main_queue()` 执行完的条件时 `viewDidLoad` 方法执行完毕，所以系统维护的 `dispatch_get_main_queue()` 会等待 `dispatch_sync` 调用的`dispatch_get_main_queue()` 执行完毕。
+>
+> `dispatch_sync` 调用的 `dispatch_get_main_queue()`又在等待先进栈的系统维护的 `dispatch_get_main_queue()`执行完毕，这样就陷入死循环。
 
-由于串行队列`FIFO`原则，系统维护的`dispatch_get_main_queue()`先进栈，所以要先执行完毕后，再执行后进栈的队列任务，而系统维护的`dispatch_get_main_queue()`执行完的条件时`viewDidLoad`方法执行完毕，所以系统维护的`dispatch_get_main_queue()`会等待`dispatch_sync`调用的`dispatch_get_main_queue()`执行完毕，`dispatch_sync`调用的`dispatch_get_main_queue()`又在等待先进栈的系统维护的`dispatch_get_main_queue()`执行完毕，这样就陷入死循环.
 
-下面代码崩溃原因同上：
+
+### 2. 下面代码会输出什么?
 
 ```
 dispatch_queue_t queue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
@@ -486,8 +647,18 @@ dispatch_async(queue, ^{
 });
 ```
 
-输出1，然后崩溃
+答案:
 
-#####  参考
+>  输出1，然后崩溃
 
-1. [关于iOS多线程，你看我就够了](https://www.jianshu.com/p/0b0d9b1f1f19)
+原因:
+
+> 同上
+
+
+
+##  Reference
+
+- [Threading Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1)
+- [Concurrency Programming Guide](https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008091-CH1-SW1)
+- [关于iOS多线程，你看我就够了](https://www.jianshu.com/p/0b0d9b1f1f19)
