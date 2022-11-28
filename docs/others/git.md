@@ -1,27 +1,5 @@
-#### 目录
 
-[Git基本概念](#git-concept)
-
-[常见命令](#common-command)
-
-[版本回退](#version-back)
-
-[撤销文件的修改](#undo-file-change)
-
-[分支](#branch)
-
-[解决冲突](#resolved-conflict)
-
-[子模块](#submodule)
-
-[生成 SSH 公钥](#generate-publick-key)
-
-[标签](#tag)
-
-[忽略文件/文件夹](#ignore)
-
-
-#### <a name="git-concept"></a>Git基本概念
+## Git基本概念
 
 - 工作区(Working Directory)
 
@@ -40,7 +18,7 @@
 
 
 
-#### <a name="common-command"></a>常见命令
+## 常见命令
 
 1. `git clone <remote-url>` 克隆某个远端仓库
 
@@ -71,7 +49,7 @@
 
 
 
-#### <a name="version-back"></a>版本回退
+## 版本回退
 
 - `git reset --hard HEAD^` 把当前分支指向上一个版本，
 - `git reset --hard HEAD~100`, 把当前分支回退往上100个版本， 
@@ -94,7 +72,7 @@
 
 
 
-#### <a name="undo-file-change"></a>撤销文件的修改
+## 撤销文件的修改
 1. 文件没有添加到暂存区(没有使用`git add `)
 	- `git checkout -- <file path>` 把文件在工作区的修改全部撤销，这里有两种情况：
 		- 一种是自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
@@ -110,244 +88,331 @@
 	
 	
 
-#### <a name="branch"></a>分支
+## Branches
 
-- 查看本地分支: `git branch`
+### Show branch
 
-- 查看所有分支: `git branch -a`
+List local branches :
 
-- 创建分支: `git branch <name>`
+> git branch
 
-- 切换分支: `git checkout <name>`
+List remote branches:
 
-- 创建+切换分支: `git checkout -b <name>`
+> git branch -r
 
-- 合并某分支到当前分支: `git merge <name>`
+List all branches (both local and remote)
 
-- 删除分支: `git branch -d <name>`
-
-- 删除远程分支: `git push origin --delete <branchName>`
-
-- 当前分支修改内容保留到其他分支
-
-  ```shell
-  # 暂存当前分支修改内容
-  git stash
-  
-  # 切换到其他分支
-  git checkout <branch-name>
-  
-  # 拉取最新代码
-  git pull
-  
-  # 暂存内容同步到新分支
-  git stash pop
-  ```
-  
-  
+> git branch -a
 
 
 
+### Create branch
+
+Create a branch with:
+
+> git branch <branch-name>
+
+Switch to a different branch with:
+
+> git checkout <branch-name>
+
+Create a branch and switch to it with:
+
+> git checkout -b <branch-name>
 
 
-#### <a name="resolved-conflict"></a>解决冲突
-`Git` 用`<<<<<<<`，`=======`，`>>>>>>>`标记出冲突的内容， 手动解决之后，先`git add `, 再`git commit`即可。
+
+### Merge branch
+
+Merge a specific branch to current with:
+
+> git merge <branch-name>
 
 
 
-#### <a name="submodule"></a>子模块
+### Delete branch
 
-克隆带子模块的项目
+Delete a local branch with:
+
+> git branch -d <branch-name>
+
+To delete a local branch that has not been merged to the current branch or an upstream:
+
+> git branch -D <branch-name>
+
+
+
+Delete a remote branch with:
+
+> git push origin --delete <branch-name>
+
+Or
+
+> git push origin :<branch-name>
+
+
+
+Delete multiple branches
+
+> git branch | grep 'fix/' | xargs git branch -d
+
+This will delete all branches that start with `fix/` .
+
+
+
+### Rename branch
+
+To rename the current(local) branch:
+
+> git branch -m <new-branch-name>
+
+To rename a different(local) branch:
+
+> git branch -m <old-branch-name> <new-branch-name>
+
+
+
+## Unstaged Edits
+
+### I want to move my unstaged edits to a different, existing branch
+
 ```shell
-git clone <url>
+git stash
+git checkout <exist-branch-name>
+git stash pop
 ```
 
-默认会包含子模块目录，但是其中没有任何文件。<br>
-你必须运行两个命令：<br>
 
-`git submodule init` 用来初始化本地配置文件，而 `git submodule update` 则从该项目中抓取所有数据并检出父项目中列出的合适的提交。
 
+## Resolve conflict
+If you want to keep one branch's version of the code, you can use `--ours` or `--theirs`.
+
+> git checkout --ours <file-path>
+
+
+
+If you want to resoleve conflic manually, first find the conflict content, then correct the content. 
+
+After resolved commit and push to remote.
+
+
+
+## Submodules
+
+### Clone all submodules
+
+> git clone --recursive <url>
+
+If already cloned
+
+> git submodule update --init --recursive
+
+
+
+### Remove a submodule
+
+To remove a submodule with the following:
 
 ```shell
-git clone --recursive <url>
+git submodule deinit <submodule-name>
+git rm <submodule-name>
+git rm --cached <submodule-name>
+git -rf .git/modules/<submodule-name>
 ```
-自动初始化并更新仓库中的每一个子模块。
 
 
 
-> git submodule add `<url>`  `<path>`
+### Add a submodule
 
-为已经存在的git工程添加子模块，`<path>` 表示指定子模块的位置，不指定则在根目录下。
+Add a submodule to your exist repository with:
+
+> git submodule add `<submodule-url>`  `<path>`
+
+`path` option means where you want to save the submodule, if empty the submodule will save in the root directory.
 
 
+
+### Update submodule
 
 > git submodule update --remote
 
-拉取子模块的最新代码，默认是在master分支上拉取。
+
+
+## Generate publick key
+
+Generate a publish key with:
+
+> ssh-keygen
+
+publick key usually located in the `~/.ssh` .
 
 
 
-#### <a name="generate-publick-key"></a>生成git ssh 公钥
+## Tags
 
-> 1. SSH 公钥默认储存在账户的主目录下的 ~/.ssh 目录
+### Show tag
 
-> 2. 有 .pub 后缀的文件就是公钥，另一个文件则是密钥
+Show the list of tags with:
 
-> 3. 假如没有这些文件，或者干脆连 .ssh 目录都没有，可以用 `ssh-keygen` 来创建
+> git tag
 
+Show a specific tag with:
 
-
-#### <a name="tag"></a>标签
-
-###### 列出标签
-
-```
-git tag
-```
+> git tag <tag-name>
 
 
 
-###### 创建标签
+### Create tag
 
-Git 使用两种主要类型的标签：轻量标签（`lightweight`）与附注标签（`annotated`）。
+Create a tag with:
 
-一个轻量标签很像一个不会改变的分支——它只是一个特定提交的引用。使用如下命令:
+> git tag -a <tag-name> 
 
-```
-git tag -a <tagname> -m "add annotation"
-```
+Or add some message with:
 
+> git tag -a <tag-name> -m 'xxx'
 
+Create a tag from previous commit with:
 
-轻量标签本质上是将提交校验和存储到一个文件中——没有保存任何其他信息。使用如下命令:
+> git tag -a <tag-name> <commit-id>
 
-```
-git tag <tagname>
-```
+Use the `git log` command to get the commit id
 
 
 
-###### 后期打标签
+### Push tag
 
-1. 查看提交历史:
+Push a specific tag to remote with:
 
-```shell
-$ git log --pretty=oneline
-15027957951b64cf874c3557a0f3547bd83b3ff6 Merge branch 'experiment'
-a6b4c97498bd301d84096da251c98a07c7723e65 beginning write support
-9fceb02d0ae598e95dc970b74767f19372d61af8 updated rakefile
-964f16d36dfccde844893cac5b347e7b3d44abbc commit the todo
-8a5cbc430f1a9c3d00faaeffd07798508422908a updated readme
-```
+> git push origin <tag-name>
 
-2. 现在，假设在 v1.2 时你忘记给项目打标签，也就是在 “updated rakefile” 提交。 你可以在之后补上标签。 
+Push all the tags with:
 
-```
-$ git tag -a v1.2 9fceb02
-```
+> git push origin --tags
 
 
 
-###### 查看标签内容
+### Delete tag
 
-```
-git show <tagname>
-```
+Delete a local tag with:
 
-
-
-###### 推送标签
-
-默认情况下， `git push` 命令不会推送标签到远程服务器上。使用如下命令显示推送标签:
-
-```
-git push origin [tarname]
-```
-
-或一次性推送所有标签
-
-```
-git push origin --tags
-```
+> git tag -d <tag-name>
 
 
 
-###### 删除本地标签
+## Git ignore
 
-```
-git tag -d <tagname>
-```
+### Ignore files before commit
 
+Create a `.gitignore` file at the root directory of your repository. 
 
+Commit the `.gitignore` file and push it to remote.
 
-###### 新建分支然后切回到某个标签
-
-```
-git checkout -b branchname tagname
-```
-
-
-
-#### <a name="ignore"></a>忽略文件/文件夹
-
-##### 文件/文件夹尚未被提交
-
-1. 创建 .gitignore 文件
-
-   ```shell
-   # 忽略 .a 文件
-   *.a
-   
-   # 但否定忽略 lib.a, 尽管已经在前面忽略了 .a 文件
-   !lib.a
-   
-   # 仅在当前目录下忽略 TODO 文件， 但不包括子目录下的 subdir/TODO
-   /TODO
-   
-   # 忽略 build/ 文件夹下的所有文件
-   build/
-   
-   # 忽略 doc/notes.txt, 不包括 doc/server/arch.txt
-   doc/*.txt
-   
-   # 忽略所有的 .pdf 文件 在 doc/ directory 下的
-   doc/**/*.pdf
-   ```
-
-   
-
-2. 编写忽略规则
-
-
-
-##### 文件/文件夹已经提交
-
-1. 从本地缓存内删除
+Some rules about the `.gitignore` file:
 
 ```shell
-# 忽略文件
-git rm --cached <file-path>
+# 忽略 .a 文件
+*.a
 
-# 忽略文件夹
-git rm -r --cached <folder-path>
+# 但否定忽略 lib.a, 尽管已经在前面忽略了 .a 文件
+!lib.a
+
+# 仅在当前目录下忽略 TODO 文件， 但不包括子目录下的 subdir/TODO
+/TODO
+
+# 忽略 build/ 文件夹下的所有文件
+build/
+
+# 忽略 doc/notes.txt, 不包括 doc/server/arch.txt
+doc/*.txt
+
+# 忽略所有的 .pdf 文件 在 doc/ directory 下的
+doc/**/*.pdf
 ```
 
-2. 在 .gitignore 文件内编写忽略规则
-3. 提交到 git 仓库
+
+
+### Ignore files after committed
+
+First remove the file from you local cache:
+
+> git rm --cached <file-path>
+
+Then create a `.gitignore` file and edit the ignore rules
+
+Finally push it to remote with:
 
 ```shell
 git add .
-git commit -m <message>
+git commit -m "xxx"
 git push
 ```
 
 
 
+## Commits
+
+### What did I commit?
+
+Show the latest commit on your current HEAD with:
+
+> git show
+
+Or
+
+> git log -n1 -p
+
+Or
+
+> git log --pretty=oneline
+
+See a file at a specific commit with:
+
+> git show <commit-id>:<file-name>
 
 
-#### 参考资料
+
+### I wrote the wrong thing in a commit message
+
+If you wrote the wrong thing and the commit has not yet been pushed, you can do the following to change the commit message without changing the changes in the commit:
+
+> git commit --amend --only
+
+This will open your default text editor, where you can edit the message. 
+
+On the other hand, you can do this all in one command:
+
+> git commit --amend --only -m 'xxx'
+
+
+
+### I want to remove a file form the previous commit
+
+In order to remove changes for a file form the previous commit, do the following:
+
+```shell
+$ git checkout HEAD^ myfile
+$ git add myfile
+$ git commit --amend --on-edit
+```
+
+In case the file was newly added to the commit and you want to remove it(from Git alone), do:
+
+```shell
+$ git rm --cached myfile
+$ git commit --amend --no-edit
+```
+
+The `--no-edit` option is used to keep the existing commit message.
+
+
+
+## Reference
 [git-book](https://git-scm.com/book/en/v2)
 
 [git 教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 [生成 SSH 公钥](https://git-scm.com/book/zh/v1/服务器上的-Git-生成-SSH-公钥)
+
+[git flight rules](https://github.com/k88hudson/git-flight-rules)
+
