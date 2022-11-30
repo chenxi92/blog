@@ -110,15 +110,19 @@ List all branches (both local and remote)
 
 Create a branch with:
 
-> git branch <branch-name>
+> git branch  `<branch-name>`
+
+
 
 Switch to a different branch with:
 
-> git checkout <branch-name>
+> git checkout `<branch-name>`
+
+
 
 Create a branch and switch to it with:
 
-> git checkout -b <branch-name>
+> git checkout -b `<branch-name>`
 
 
 
@@ -126,7 +130,7 @@ Create a branch and switch to it with:
 
 Merge a specific branch to current with:
 
-> git merge <branch-name>
+> git merge `<branch-name>`
 
 
 
@@ -134,21 +138,21 @@ Merge a specific branch to current with:
 
 Delete a local branch with:
 
-> git branch -d <branch-name>
+> git branch -d `<branch-name>`
 
 To delete a local branch that has not been merged to the current branch or an upstream:
 
-> git branch -D <branch-name>
+> git branch -D `<branch-name>`
 
 
 
 Delete a remote branch with:
 
-> git push origin --delete <branch-name>
+> git push origin --delete `<branch-name>`
 
 Or
 
-> git push origin :<branch-name>
+> git push origin :`<branch-name>`
 
 
 
@@ -164,11 +168,11 @@ This will delete all branches that start with `fix/` .
 
 To rename the current(local) branch:
 
-> git branch -m <new-branch-name>
+> git branch -m `<new-branch-name>`
 
 To rename a different(local) branch:
 
-> git branch -m <old-branch-name> <new-branch-name>
+> git branch -m `<old-branch-name>`  `<new-branch-name>`
 
 
 
@@ -187,7 +191,7 @@ git stash pop
 ## Resolve conflict
 If you want to keep one branch's version of the code, you can use `--ours` or `--theirs`.
 
-> git checkout --ours <file-path>
+> git checkout --ours `<file-path>`
 
 
 
@@ -201,7 +205,7 @@ After resolved commit and push to remote.
 
 ### Clone all submodules
 
-> git clone --recursive <url>
+> git clone --recursive  `<url>`
 
 If already cloned
 
@@ -258,7 +262,7 @@ Show the list of tags with:
 
 Show a specific tag with:
 
-> git tag <tag-name>
+> git tag `<tag-name>`
 
 
 
@@ -266,15 +270,15 @@ Show a specific tag with:
 
 Create a tag with:
 
-> git tag -a <tag-name> 
+> git tag -a `<tag-name>` 
 
 Or add some message with:
 
-> git tag -a <tag-name> -m 'xxx'
+> git tag -a `<tag-name>` -m 'xxx'
 
 Create a tag from previous commit with:
 
-> git tag -a <tag-name> <commit-id>
+> git tag -a `<tag-name>`  `<commit-id>`
 
 Use the `git log` command to get the commit id
 
@@ -284,7 +288,7 @@ Use the `git log` command to get the commit id
 
 Push a specific tag to remote with:
 
-> git push origin <tag-name>
+> git push origin `<tag-name>`
 
 Push all the tags with:
 
@@ -296,7 +300,7 @@ Push all the tags with:
 
 Delete a local tag with:
 
-> git tag -d <tag-name>
+> git tag -d `<tag-name>`
 
 
 
@@ -336,7 +340,7 @@ doc/**/*.pdf
 
 First remove the file from you local cache:
 
-> git rm --cached <file-path>
+> git rm --cached  `<file-path>`
 
 Then create a `.gitignore` file and edit the ignore rules
 
@@ -368,7 +372,7 @@ Or
 
 See a file at a specific commit with:
 
-> git show <commit-id>:<file-name>
+> git show `<commit-id>`:`<file-name>`
 
 
 
