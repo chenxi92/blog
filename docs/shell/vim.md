@@ -1,7 +1,141 @@
+Record some usage about Vim.
 
-#### 区块选择
 
-原始文件 `test` ,有4行，每行长度不一致 
+
+## Modal editing
+
+Vim has the following operation modes:
+
+- `Normal` for moving around a file and making edits
+- `Insert` for inserting text
+- `Replace` for replacing text
+- `Visual` (plain, line, or block) for selecting blocks for text
+- `Command-line` for running command
+
+
+
+Keystrokes have different meanings in different operating modes. For example, the letter `x` in insert mode will just insert a literal character `x`, but in Normal mode, it will delete the character under the cursor, and in Visual mode, it will delete the selection.
+
+
+
+## Command-Line
+
+Command mode can be entered by typing `:` in `Normal mode`.
+
+- `:q` quit (close window)
+- `:w` save
+- `:wq` save and quit
+- `:ls` show open buffers
+- `:help {topic}` open help
+  - `:help :w` opens help for the `:w` command
+  - `:help w` opens help for the `w` movement
+
+
+
+## Movement
+
+- Basic movement:
+  - `h` (move left)
+    - `{number}h` move cursor to left `{number}` steps
+  - `l` (move right)
+    - `{number}l` move cursor to right `{number}` steps
+  - `j` (move down line)
+    - `{number}j` move cursor to down `{number}` lines
+  - `k` (move up line)
+    - `{number}k` move cursor to up `{number}` lines
+- Words
+  - `w` (jump to next word)
+    - `{number}w` move cursor to next `{number}` words
+  - `b` (jump to beginning of word)
+  - `e` (jump to end of word)
+- Lines
+  - `0` (jump to the begin of the line)
+  - `^` (jumpt to first non-blank character)
+  - `&` (jump to end of the line)
+- Screen
+  - `H` (jump to top of the screen)
+  - `M` (jump to middle of the screen)
+  - `L` (jump to the bottom of the scree)
+- Scroll
+  - `Ctrl+u` (scroll up)
+  - `Ctrl+d` (scroll down)
+- File
+  - `gg` (jump to the begin of the file)
+  - `G` (jump to the end of the file)
+
+
+
+## Selection
+
+Visual model:
+
+- Visual: `v`
+- Visual Line: `V`
+- Visual Block: `Ctrl-V`
+
+Can use movement keys to make selection.
+
+
+
+## Edit
+
+- `i` enter `Insert mode`
+  - `o` insert line below
+  - `O` insert line above
+- `d {motion}` delete {motion}
+  - `dw` delete word
+  - `d&` delete to the end of the line
+  - `d0` delete to the beginning of the line
+  - `{number}dd` delete the following `{number}` lines (e.g `3dd` will delete the following 3 lines include the current line)
+  - `dl` delete the current selected charcter
+- `x` delete character (equal to `dl`)
+- `u` to undo
+- `Ctrl+r` to redo
+- Copy (must in `Normal model`)
+  - `yy` to copy entire line 
+  - `{number}yy` to copy up `{number}` lines (include current line)
+  - `yaw` to copy a word with it's trailing whitespace
+  - `yiw` to copy a word without its trailing withspace
+  - `y$` to copy everying right of the cursor to the end of the line
+  - `y^` to copy everying left of the cursor to the start of the line
+- Past
+  - `p` to paste
+
+
+
+## Insert mode
+
+- `i` insert before the cursor
+- `a` insert after the cursor
+- `I` insert at the beginning of the line
+- `A` insert at the end of the line
+
+
+
+## Search
+
+The basic steps to perform a search in Vim are as follows:
+
+- Type `/` (to search backward) or `?` (to search forward) to start search
+
+- Type the search pattern
+- Press `Enter` to persorm search
+- Press `n` to find the next occurrence or `N` to find the previous occurrence.
+
+
+
+To ignore the case sensitive, append the `\c` at the search pattern.
+
+To browse the search history ,type `/` or `?` and use the arrow up/down keys to search history.
+
+
+
+## Practices
+
+### 1. How to insert a string `insert-` before each line?
+
+The original file `test` has the following content:
+
 ```
 2.3.4.5
 12.3.4.6
@@ -9,52 +143,42 @@
 4.5.5.3
 ```
 
-##### 行首插入字符串
+The steps are as follows:
 
-在每行前面插入字符串 `insert-`。
-
-步骤如下:
-
-1.  在终端输入 `vim test` ，进来会选中第一行第一列;
-2.  按下 `control` + `v` ，进入区块编辑模式;
-3.  按下 `shift` + `G` ，跳到最后一行第一列;
-4.  按下 `shift` + `I` ，表示在行首插入；
-5.  输入 `insert-` ， 需要插入的文本;
-6.  按下 `esc` , 退出区块选择模式.
+- Type `vim test` at your command line
+- Type `Ctrl+v` to enter Visual block mode
+- Type `G` to jumpt the first character at the end of the file
+- Type `I` to enter the insert mode
+- Type `insert-` 
+- Type `ESC` to exit the Visual block mode
 
 
 
-```
-insert-2.3.4.5
-insert-12.3.4.6
-insert-99.3.44.55
-insert-4.5.5.3
-```
+### How to insert a string `-insert` after each line?
 
-
-
-
-##### 行尾插入字符串
-
-在每行后面插入字符串 `insert-end.`
-
-步骤如下:
-
-1.  在终端输入 `vim test` ，进来会选中第一行第一列;
-2.  按下 `control` + `v` ，进入区块编辑模式;
-3.  按下 `shift` + `G` ，跳到最后一行第一列;
-4.  按下 `shift` + `$` ，选中所有内容;
-4.  按下 `shift` + `A` ，表示在行尾插入；
-5.  输入 `insert-end.` ， 需要插入的文本;
-6.  按下 `esc` , 退出区块选择模式.
+The original file `test` has the following content:
 
 ```
-insert-2.3.4.5insert-end.
-insert-12.3.4.6insert-end.
-insert-99.3.44.55insert-end.
-insert-4.5.5.3insert-end.
+2.3.4.5
+12.3.4.6
+99.3.44.55
+4.5.5.3
 ```
 
+The steps are as follows:
+
+- Type `vim test` at your command line
+- Type `Ctrl+v` to enter Visual block mode
+- Type `G` to jumpt the first character at the end of the file
+- Type `Ctrl + $` to select all the content
+- Type `A` to enter the insert mode (insert at the end)
+- Type `-insert` 
+- Type `ESC` to exit the Visual block mode
 
 
 
+## Reference
+
+[Messing Semester- Editors (Vim)](https://missing.csail.mit.edu/2020/editors/)
+
+[Vim Cheat Sheet](https://vim.rtorr.com/)
