@@ -1,4 +1,8 @@
-Record some usage about Vim.
+# Vim
+
+Record some usages about Vim.
+
+Platform: `macOS`
 
 
 
@@ -130,6 +134,54 @@ To browse the search history ,type `/` or `?` and use the arrow up/down keys to 
 
 
 
+## Replace
+
+The [substitute](https://www.oreilly.com/library/view/vi-and-vim/9781449303082/ch01s07.html) command has the following syntax:
+
+> :s/<old>/<new>/options
+
+
+
+#### 1. In a Single Line
+
+> :s/<old>/<new>/g
+
+This replace the <old> with <new> in the current line.
+
+
+
+#### 2. All Occurrence
+
+> :%s/<old>/<new>/g
+
+This replace the <old> with <new> in the every line of the file.
+
+
+
+#### 3. Case-Insensitive
+
+> :%s/<old>/<new>/gi
+
+We can perform case-insensitive search by adding the `i` option at the end.
+
+
+
+#### 4. With Specific Lines
+
+The basic syntax:
+
+> :start_line_number, end_line_number s/<old>/<new>g
+
+For example:
+
+```shell
+:2, 3 s/hello//gi
+```
+
+The above command will replace `hello` (case-insensitive) with empty string between 2 to 3 lines.
+
+
+
 ## Practices
 
 ### 1. How to insert a string `insert-` before each line?
@@ -170,7 +222,7 @@ The steps are as follows:
 - Type `vim test` at your command line
 - Type `Ctrl+v` to enter Visual block mode
 - Type `G` to jumpt the first character at the end of the file
-- Type `Ctrl + $` to select all the content
+- Type `$` to select all the content
 - Type `A` to enter the insert mode (insert at the end)
 - Type `-insert` 
 - Type `ESC` to exit the Visual block mode
@@ -182,3 +234,5 @@ The steps are as follows:
 [Messing Semester- Editors (Vim)](https://missing.csail.mit.edu/2020/editors/)
 
 [Vim Cheat Sheet](https://vim.rtorr.com/)
+
+[Search and Replace in Vim](https://www.baeldung.com/linux/vim-search-replace)
