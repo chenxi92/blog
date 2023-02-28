@@ -11,6 +11,8 @@ This repository record what I have learned.
 
 ## Recently
 
+[iOS App Pre-Order](./docs/iOS/ios-app-preorder.md)
+
 [Graphviz Tutorial](./docs/others/graphviz-tutorial/graphviz-tutorial.md)
 
 [Get WiFi password](./docs/others/wifi/wifi-password.md)
@@ -58,6 +60,7 @@ This repository record what I have learned.
 - [Masonry Analytics](./docs/iOS/open-analysis/Masonry.md)
 
 ### Others
+- [iOS App Pre-Order](./docs/iOS/ios-app-preorder.md)
 - [iOS Tips](./docs/iOS/tips.md) 
 - [iOS 出包相关命令](./docs/iOS/security.md)
 - [通过 Safari 安装包](./docs/iOS/install-ipa-from-safari.md)

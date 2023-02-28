@@ -140,6 +140,10 @@ module.exports = {
               ]
             },
             {
+              text: 'iOS App Pre-Order',
+              link: '/iOS/ios-app-preorder.md'
+            },
+            {
               text: '面试',
               children: [
                 {
