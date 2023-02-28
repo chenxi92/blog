@@ -138,29 +138,29 @@ To browse the search history ,type `/` or `?` and use the arrow up/down keys to 
 
 The [substitute](https://www.oreilly.com/library/view/vi-and-vim/9781449303082/ch01s07.html) command has the following syntax:
 
-> :s/<old>/<new>/options
+> :s/`<old>`/`<new>`/options
 
 
 
 #### 1. In a Single Line
 
-> :s/<old>/<new>/g
+> :s/`<old>`/`<new>`/g
 
-This replace the <old> with <new> in the current line.
+This replace the `<old>` with `<new>` in the current line.
 
 
 
 #### 2. All Occurrence
 
-> :%s/<old>/<new>/g
+> :%s/`<old>`/`<new>`/g
 
-This replace the <old> with <new> in the every line of the file.
+This replace the` <old>` with `<new>` in the every line of the file.
 
 
 
 #### 3. Case-Insensitive
 
-> :%s/<old>/<new>/gi
+> :%s/`<old>`/`<new>`/gi
 
 We can perform case-insensitive search by adding the `i` option at the end.
 
@@ -170,7 +170,7 @@ We can perform case-insensitive search by adding the `i` option at the end.
 
 The basic syntax:
 
-> :start_line_number, end_line_number s/<old>/<new>g
+> :`start_line_number`, `end_line_number` s/`<old>`/`<new>`g
 
 For example:
 
