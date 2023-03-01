@@ -39,6 +39,10 @@ module.exports = {
           link: '/iOS/',
           children: [
             {
+              text: 'Swift Concurrency',
+              link: '/iOS/swift-concurrency.md'
+            },
+            {
               text: 'App 启动',
               link: '/iOS/app-launch.md'
             },

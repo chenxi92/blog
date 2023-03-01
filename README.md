@@ -10,6 +10,7 @@ This repository record what I have learned.
 
 
 ## Recently
+[Swift Concurrency](./docs/iOS/swift-concurrency.md)
 
 [iOS App Pre-Order](./docs/iOS/ios-app-preorder.md)
 
@@ -30,6 +31,7 @@ This repository record what I have learned.
 ## iOS
 
 ### Basic
+- [Swift Concurrency](./docs/iOS/swift-concurrency.md)
 - [Dispatch Semaphore](./docs/iOS/dispatch-semaphore.md)
 - [iOS multiple threads](./docs/iOS/multiple-thread.md) 
 - [消息转发](./docs/iOS/method-forward.md)
