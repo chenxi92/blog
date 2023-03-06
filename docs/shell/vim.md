@@ -86,12 +86,6 @@ Can use movement keys to make selection.
 - `i` enter `Insert mode`
   - `o` insert line below
   - `O` insert line above
-- `d {motion}` delete {motion}
-  - `dw` delete word
-  - `d&` delete to the end of the line
-  - `d0` delete to the beginning of the line
-  - `{number}dd` delete the following `{number}` lines (e.g `3dd` will delete the following 3 lines include the current line)
-  - `dl` delete the current selected charcter
 - `x` delete character (equal to `dl`)
 - `u` to undo
 - `Ctrl+r` to redo
@@ -105,7 +99,35 @@ Can use movement keys to make selection.
 - Past
   - `p` to paste
 
+- Delete 
 
+  - `d {motion}` delete {motion}
+
+    - `dw` delete word
+    - `d&` delete to the end of the line
+    - `d0` delete to the beginning of the line
+    - `{number}dd` delete the following `{number}` lines (e.g `3dd` will delete the following 3 lines include the current line)
+    - `dl` delete the current selected charcter
+
+  -  Delete multiple lines
+
+    Deleting multiple lines on a specific pattern is as follows:
+
+    > `:g<pattern>/d`
+
+    The global command ( `g` ) tells the delete command ( `d` ) to delete all lines containing the `<pattern>` .
+
+    use the exclamation mark `!` to delete the lines not matching the pattern:
+
+    > `:g!<pattern>/d`
+
+    - `:g/foo/d` - Delete all lines containing the stirng `foo`.
+
+    - `:g!/foo/d` - Delete all lines not containing the string `foo`.
+
+    - `:g/^\s*$/d` - Remove all blank lines. Remove the blank lines that have zero or more whitespace characters (`\s*`).
+
+    
 
 ## Insert mode
 
