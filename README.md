@@ -10,6 +10,8 @@ This repository record what I have learned.
 
 
 ## Recently
+[Android FAQS](./docs/java/android-faqs.md)
+
 [Swift Concurrency](./docs/iOS/swift-concurrency.md)
 
 [iOS App Pre-Order](./docs/iOS/ios-app-preorder.md)
@@ -26,7 +28,9 @@ This repository record what I have learned.
 
 [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
 
+## Android
 
+[Android FAQS](./docs/java/android-faqs.md)
 
 ## iOS
 

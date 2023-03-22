@@ -6,6 +6,10 @@ module.exports = {
     logo: 'https://vuejs.org/images/logo.png',
     navbar: [
       {
+        text: 'Android',
+        link: '/java/'
+      },
+      {
         text: 'iOS',
         link: '/iOS/'
       },
@@ -33,6 +37,18 @@ module.exports = {
     repo: 'https://github.com/chenxi92/blog.git',
     lastUpdatedText: '上次更新时间',
     sidebar: {
+      '/java/': [
+        {
+          text: 'Android',
+          link: '/java/',
+          children: [
+            {
+              text: 'Android FAQS',
+              link: '/java/android-faqs.md'
+            }
+          ]
+        },
+      ],
       '/iOS/': [
         {
           text: 'iOS',

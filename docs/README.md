@@ -3,6 +3,9 @@ home: true
 tagline: null
 heroText: 学习记录
 actions:
+  - text: Android
+    link: /java/README.md
+    type: secondary
   - text: iOS 笔记
     link: /iOS/README.md
     type: primary
