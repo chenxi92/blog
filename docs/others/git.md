@@ -290,6 +290,8 @@ Push a specific tag to remote with:
 
 > git push origin `<tag-name>`
 
+
+
 Push all the tags with:
 
 > git push origin --tags
@@ -301,6 +303,12 @@ Push all the tags with:
 Delete a local tag with:
 
 > git tag -d `<tag-name>`
+
+
+
+Delete remote tag:
+
+> git push --delete origin <tag-name>
 
 
 

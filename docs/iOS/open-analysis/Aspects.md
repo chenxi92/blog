@@ -302,7 +302,7 @@ static Class aspect_hookClass(NSObject *self, NSError **error) {
 
 核心思想是: 
 
-创建完子类后，替换子类的 `forwardInvocation:`方法， 并且把子类和当前对象关联。这么做的好处是调用当前对象的方法(当前对象的isa指针指向了子类)，如果找不到实现，走自动转发流程的时候，会调用到子类的 `forwardInvocation:` 方法里面，子类的 `forwardInvocation:` 实现被指向了自定义的方法，从而实现了 hook 过程。这里的 [demo](https://github.com/chenxi141017/demo/blob/master/iOS/runtime/aspects/aspects/main.m) 模拟了 `Aspects` 的 hook 流程。
+创建完子类后，替换子类的 `forwardInvocation:`方法， 并且把子类和当前对象关联。这么做的好处是调用当前对象的方法(当前对象的isa指针指向了子类)，如果找不到实现，走自动转发流程的时候，会调用到子类的 `forwardInvocation:` 方法里面，子类的 `forwardInvocation:` 实现被指向了自定义的方法，从而实现了 hook 过程。这里的 [demo](https://github.com/chenxi92/demos/blob/main/iOS/runtime/aspects/aspects/main.m) 模拟了 `Aspects` 的 hook 流程。
 
 ###### 6.2 hook selector
 
