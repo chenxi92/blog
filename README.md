@@ -10,7 +10,7 @@ This repository record what I have learned.
 
 
 ## Recently
-[Android FAQS](./docs/java/android-faqs.md)
+[Android Thread Usage](./docs/java/android-thread-usage.md)
 
 [Swift Concurrency](./docs/iOS/swift-concurrency.md)
 
@@ -28,9 +28,15 @@ This repository record what I have learned.
 
 [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
 
+
+
 ## Android
 
+[Android Thread Usage](./docs/java/android-thread-usage.md)
+
 [Android FAQS](./docs/java/android-faqs.md)
+
+
 
 ## iOS
 
@@ -49,23 +55,34 @@ This repository record what I have learned.
 - [Sending Push Notifications](./docs/iOS/sending-push-notification.md)
 - [How to create dmg file](./docs/iOS/how-to-create-dmg.md)
 
+
+
 ### Keywords
 
 - [Swift dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
 
+
+
 ### Interview Questions
+
 - [iOS属性相关面试题](./docs/iOS/interview/property.md)
 - [分类与扩展](./docs/iOS/interview/1-category-and-extension.md)
 - [atomic 理解与应用](./docs/iOS/interview/2-atomic.md)
 - [weak 关键字](./docs/iOS/interview/3-weak.md)
 - [关联对象](./docs/iOS/interview/4-associated-object.md)
 
+
+
 ### Open Source Analytics
+
 - [AFNetworking Analytics](./docs/iOS/open-analysis/AFNetworking.md)
 - [Aspects Analytics](./docs/iOS/open-analysis/Aspects.md)
 - [Masonry Analytics](./docs/iOS/open-analysis/Masonry.md)
 
+
+
 ### Others
+
 - [iOS App Pre-Order](./docs/iOS/ios-app-preorder.md)
 - [iOS Tips](./docs/iOS/tips.md) 
 - [iOS 出包相关命令](./docs/iOS/security.md)
@@ -82,12 +99,12 @@ This repository record what I have learned.
 
 ## Data Structure
 
-### 加密
+### Encrypt/Decrypt
 - [iOS 常见加密算法总结](./docs/data-structure/iOS-Encrypt-Summary.md)
 - [XOR 运算](./docs/data-structure/xor.md)
 - [RC4 C++ 和 Python 实现](./docs/data-structure/RC4-C++&Python.md)
 
-### 排序
+### Sort
 - [常见排序算法](./docs/data-structure/sort.md)
 
 

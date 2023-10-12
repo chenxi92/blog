@@ -308,7 +308,7 @@ Delete a local tag with:
 
 Delete remote tag:
 
-> git push --delete origin <tag-name>
+> git push --delete origin `<tag-name>`
 
 
 

@@ -45,6 +45,10 @@ module.exports = {
             {
               text: 'Android FAQS',
               link: '/java/android-faqs.md'
+            },
+            {
+              text: 'Android Thread Usage',
+              link: '/java/android-thread-usage.md'
             }
           ]
         },
