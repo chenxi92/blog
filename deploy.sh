@@ -20,6 +20,6 @@ git commit -m 'update'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:chenxi92/blog.git master:gh-pages
+git push -f git@github.com:chenxi92/blog.git main:gh-pages
 
 cd -
