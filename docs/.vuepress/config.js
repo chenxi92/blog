@@ -43,6 +43,10 @@ module.exports = {
           link: '/java/',
           children: [
             {
+              text: 'Android reflection',
+              link: '/java/reflection.md'
+            },
+            {
               text: 'Android FAQS',
               link: '/java/android-faqs.md'
             },

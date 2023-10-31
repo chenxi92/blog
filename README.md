@@ -10,6 +10,8 @@ This repository record what I have learned.
 
 
 ## Recently
+[Java Reflection](./docs/java/reflection.md)
+
 [Android Thread Usage](./docs/java/android-thread-usage.md)
 
 [Swift Concurrency](./docs/iOS/swift-concurrency.md)
@@ -24,13 +26,11 @@ This repository record what I have learned.
 
 [dynamicCallable](./docs/iOS/SwiftKeywords/dynamicCallable.md)
 
-[How to create dmg file](./docs/iOS/how-to-create-dmg.md)
-
-[Sending Push Notifications](./docs/iOS/sending-push-notification.md)
-
 
 
 ## Android
+
+[Java Reflection](./docs/java/reflection.md)
 
 [Android Thread Usage](./docs/java/android-thread-usage.md)
 
