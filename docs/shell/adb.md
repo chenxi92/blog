@@ -48,11 +48,3 @@ adb shell pm path <packages_id>
 adb pull <apk_path> <destination_path>
 ```
 
-
-
-6. Install the apk to your phone
-
-```sh
-adb install <apk_path>
-```
-
