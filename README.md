@@ -10,6 +10,8 @@ This repository record what I have learned.
 
 
 ## Recently
+[adb usage](./docs/shell/adb.md)
+
 [Java Reflection](./docs/java/reflection.md)
 
 [Android Thread Usage](./docs/java/android-thread-usage.md)
@@ -112,6 +114,7 @@ This repository record what I have learned.
 ## Shell 
 
 ### Commands
+- [adb usage](./docs/shell/adb.md)
 - [vim 使用总结](./docs/shell/vim.md)
 - [shell 输出带颜色内容](./docs/shell/echo.md)
 - [sed 命令使用总结](./docs/shell/sed.md)

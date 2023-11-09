@@ -224,7 +224,7 @@ public class Test {
             Class<?> cls = Class.forName("com.peak.learningdemo.Student");
 
             Method m1 = cls.getMethod("method1");
-            // invoke static no need pass the instance object
+            
             m1.invoke(null);
 
             Method m2 = cls.getMethod("method2", String.class);

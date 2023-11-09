@@ -225,6 +225,10 @@ module.exports = {
           text: 'Shell 学习',
           children: [
             {
+              text: 'adb',
+              link: '/shell/adb.md'
+            },
+            {
               text: 'ag',
               link: '/shell/ag.md'
             },
