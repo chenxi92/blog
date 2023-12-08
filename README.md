@@ -10,6 +10,8 @@ This repository record what I have learned.
 
 
 ## Recently
+[Modifying APK File](./docs/java/modifying-apk-file.md)
+
 [adb usage](./docs/shell/adb.md)
 
 [Java Reflection](./docs/java/reflection.md)
@@ -35,6 +37,8 @@ This repository record what I have learned.
 [Java Reflection](./docs/java/reflection.md)
 
 [Android Thread Usage](./docs/java/android-thread-usage.md)
+
+[Modifying APK File](./docs/java/modifying-apk-file.md)
 
 [Android FAQS](./docs/java/android-faqs.md)
 
