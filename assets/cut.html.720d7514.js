@@ -1,0 +1,1 @@
+const e={key:"v-510ec7e2",path:"/shell/cut.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633945792e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:2}]},filePathRelative:"shell/cut.md"};export{e as data};

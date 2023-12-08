@@ -1,0 +1,1 @@
+const e={key:"v-d2f0461e",path:"/shell/scp.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1637720632e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:2}]},filePathRelative:"shell/scp.md"};export{e as data};

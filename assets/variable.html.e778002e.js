@@ -1,0 +1,1 @@
+const e={key:"v-0d2037cc",path:"/typescript/variable.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:3,title:"\u53D8\u91CF",slug:"\u53D8\u91CF",children:[]}],git:{updatedTime:1633942617e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"typescript/variable.md"};export{e as data};
