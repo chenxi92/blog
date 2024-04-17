@@ -48,3 +48,13 @@ adb shell pm path <packages_id>
 adb pull <apk_path> <destination_path>
 ```
 
+
+
+6. Redirect output and save it into local file
+
+```sh
+adb logcat > <path-to-file>
+```
+
+> To stop the logging process, preses `Command` + `Z`
+
