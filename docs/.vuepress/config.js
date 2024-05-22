@@ -229,6 +229,10 @@ module.exports = {
           text: 'Shell 学习',
           children: [
             {
+              text: 'encrypt-shell',
+              link: '/shell/encrypt-shell.md'
+            },
+            {
               text: 'adb',
               link: '/shell/adb.md'
             },

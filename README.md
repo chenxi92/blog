@@ -10,6 +10,9 @@ This repository record what I have learned.
 
 
 ## Recently
+
+[How to encrypt script](./docs/shell/encrypt-shell.md)
+
 [Modifying APK File](./docs/java/modifying-apk-file.md)
 
 [adb usage](./docs/shell/adb.md)
@@ -143,6 +146,7 @@ This repository record what I have learned.
 ### Notes
 - [变量](./docs/shell/notes/variable.md)
 - [字符串](./docs/shell/notes/string.md)
+- [How to encrypt shell script](./docs/shell/encrypt-shell.md)
 
 
 
