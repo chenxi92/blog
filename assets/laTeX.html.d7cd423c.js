@@ -1,0 +1,1 @@
+const e={key:"v-32c85a1a",path:"/others/laTeX.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633949964e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"others/laTeX.md"};export{e as data};

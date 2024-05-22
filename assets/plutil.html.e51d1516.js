@@ -1,0 +1,1 @@
+const e={key:"v-95c1bf3a",path:"/shell/plutil.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633942617e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"shell/plutil.md"};export{e as data};

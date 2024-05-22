@@ -1,0 +1,1 @@
+const e={key:"v-25b47c13",path:"/others/",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5176\u4ED6",slug:"\u5176\u4ED6",children:[]}],git:{updatedTime:163395553e4,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:2}]},filePathRelative:"others/README.md"};export{e as data};
