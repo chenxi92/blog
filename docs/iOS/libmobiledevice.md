@@ -1,158 +1,160 @@
 
 
-### libimobiledevice
+# libimobiledevice
 
-libimobiledevice 是一个跨平台的与iOS设备交互模块。
+`libimobiledevice` is a cross-platform software library used for communicating with `iPhone`, `iPod Touch`, `iPad`, and `Apple TV `devices running iOS. It allows for interaction with these devices on Linux and provides practical tools such as extracting crash logs and generating iTunes backups.
 
 
 
-安装
+## Install
 
 > **brew** install libimobiledevice
 
 
 
-#### 常见用法
+## Usage
+
+1. Get the  `UDID` from the connected device.
 
 ```sh
 idevice_id -l
 ```
 
-获取设备 UDID
 
 
+2. Get the `name` from the connected device.
 
 ```shell
 idevicename
 ```
 
-获取当前设备名称
 
 
+3. Get the `name` from the specific `UDID`.
 
 ```shell
 idevicename -u <UDID>
 ```
 
-根据UDID获取设备名称
 
 
+4. Get the device info from the specific `UDID`.
 
 ```shell
 ideviceinfo -u <UDID>
 ```
 
-获取设备信息
 
 
+5. List the provision file from the connected device.
 
 ```shell
 ideviceprovision list
 ```
 
-获取设备内的所有描述文件信息
 
 
+6. Copy the provision file to a specific path from the connected device.
 
 ```shell
 ideviceprovision copy <path>
 ```
 
-复制设备内的描述文件到指定路径
 
 
+7. Move the crash report file to a specific path.
 
 ```shell
 idevicecrashreport -u <UDID> <path>
 ```
 
-移动崩溃信息到指定目录下
 
 
+8. Copy the crash report file to a specific path.
 
 ```shell
 idevicecrashreport -u <UDID> -k <path>
 ```
 
-复制崩溃信息到指定目录下
 
 
+9. Shutdown the device.
 
 ```shell
 idevicediagnostics shutdown
 ```
 
-设备关机
 
 
+10. Restart the device.
 
 ```shell
 idevicediagnostics restart
 ```
 
-设备重启
 
 
+11. Pair with your computer.
 
 ```shell
 idevicepair -u <UDID> pair
 ```
 
-指定设备与电脑配对(需要手机输入密码)
 
 
+12. Get the log info from a specific `process`.
 
 ```
 idevicesyslog -d -p <process>
 ```
 
-获取指定进程下的游戏日志信息
 
 
 
-### ideviceinstaller
 
-用来管理 iOS app 的命令行工具， 需要依赖 libimobiledevice 模块。
+## ideviceinstaller
 
-
-
-安装
+### Install
 
 > brew install ideviceinstaller
 
 
 
-#### 常见用法
+#### Usage
 
->ideviceinstaller -h
+1. Show the helper info.
 
-显示帮助信息
-
-
-
-> ideviceinstaller -i
-
-显示所有的 app 信息 （bundleIdentifier， version, name)
+```
+ideviceinstaller -h
+```
 
 
+
+2. Show the info from the connected device.
+
+```
+ideviceinstaller -i
+```
+
+
+
+3. Install the `ipa` file to the connected device.
 
 ```shell
 ideviceinstaller -i <ipa-file-path>`
 ```
-安装 ipa 到当前设备
 
 
+4. Uninstall `ipa` file.
 
 ```shell
 ideviceinstaller -u <bundle-identifier>
 ```
-卸载指定 BundleIdentifier 的ipa
 
 
 
 
-
-### 参考资料
+## Reference
 
 - [libimobiledevice](https://github.com/libimobiledevice/libimobiledevice)
 
