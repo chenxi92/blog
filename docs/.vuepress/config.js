@@ -163,6 +163,10 @@ module.exports = {
               link: '/iOS/how-to-test-static-framework/how-to-test-static-framework.md'
             },
             {
+              text: 'How to download xcappdata folder',
+              link: '/iOS/download-xcappdata-folder.md'
+            },
+            {
               text: 'Keywords',
               children: [
                 {
