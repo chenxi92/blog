@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>陈希的学习笔记</title><meta name="description" content="">
+    <link rel="modulepreload" href="/blog/assets/app.01142347.js"><link rel="modulepreload" href="/blog/assets/sort.html.31e05562.js"><link rel="modulepreload" href="/blog/assets/sort.html.607eb715.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.72ef85ec.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="陈希的学习笔记"><span class="site-name can-hide">陈希的学习笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="router-link-active" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="router-link-active" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">数据结构学习 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/data-structure/iOS-Encrypt-summary.md" class="sidebar-item" aria-label="加密算法总结"><!--[--><!--]--> 加密算法总结 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/xor.md" class="sidebar-item" aria-label="异或运算"><!--[--><!--]--> 异或运算 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/RC4-C++&amp;Python.md" class="sidebar-item" aria-label="RC4"><!--[--><!--]--> RC4 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/xor.md" class="sidebar-item" aria-label="常见排序算法"><!--[--><!--]--> 常见排序算法 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h3 id="目录" tabindex="-1"><a class="header-anchor" href="#目录" aria-hidden="true">#</a> 目录</h3><p><a href="#binary-search">1. 二分查找法</a></p><p><a href="#bubble-sort">2. 冒泡排序</a></p><p><a href="#quick-sort">3. 快速排序</a></p><p><a href="#insert-sort">4. 插入排序</a></p><p><a href="#cock-tail-sort">5. 鸡尾酒排序</a></p><p><a href="#section-sort">6. 选择排序</a></p><h3 id="二分查找法" tabindex="-1"><a class="header-anchor" href="#二分查找法" aria-hidden="true">#</a> <a name="binary-search"></a>二分查找法</h3><p><strong>适用范围：</strong> 当数据量很大适宜采用该方法。</p><p><strong>前提条件：</strong> 数据需是排好序的</p><p><strong>基本思想：</strong> 假设数据是按升序排序的，对于给定值x，从序列的中间位置开始比较，如果当前位置值等于x，则查找成功；若x小于当前位置值，则在数列的前半段 中查找；若x大于当前位置值则在数列的后半段中继续查找，直到找到为止。</p><p><strong>代码实现：</strong></p><div class="language-oc ext-oc line-numbers-mode"><pre class="language-oc"><code>// Sort.m
++ (NSInteger)binarySearch:(NSArray *)array target:(id)key {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:array];
+    NSInteger left = 0;
+    NSInteger right = [arr count] - 1;
+
+    while (right &gt;= left) {
+        // NSInteger middle = (right + left) / 2; 如果right的值快要溢出边界，该操作会导致值溢出
+        NSInteger middle = right / 2 + left / 2;
+        if (arr[middle] == key) {
+            return middle;
+        } else if (arr[middle] &gt; key) {
+            right = middle - 1;
+        } else if (arr[middle] &lt; key) {
+            left = middle + 1;
+        }
+    }
+    return -1;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>测试：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>NSInteger binary = [Sort binarySearch:@[@&quot;2&quot;,@&quot;5&quot;,@&quot;6&quot;,@&quot;8&quot;,@&quot;9&quot;, @&quot;12&quot;] target:@&quot;8&quot;];
+NSLog(@&quot;%ld&quot;,binary);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="冒泡排序" tabindex="-1"><a class="header-anchor" href="#冒泡排序" aria-hidden="true">#</a> <a name="bubble-sort"></a>冒泡排序</h3><p><strong>参考:</strong> <a href="https://mp.weixin.qq.com/s/wO11PDZSM5pQ0DfbQjKRQA" target="_blank" rel="noopener noreferrer">冒泡排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><strong>基本思想：使用双循环来进行排序。外部循环控制所有的回合，内部循环代表每一轮的冒泡处理，先进行元素比较，再进行元素交换</strong></p><p><strong>代码实现：</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (NSMutableArray *)bubbleSort:(NSArray *)array {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:array];
+    for (int i = 0; i &lt; arr.count; i++) {
+        for (int j = 0; j &lt; [arr count] - i - 1; j++) {
+            if ([arr[j] intValue] &gt; [arr[j+1] intValue]) { // 升序排列
+                [arr exchangeObjectAtIndex:j withObjectAtIndex:j + 1];
+            }
+        }
+    }
+    return arr;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>代码优化1：<strong>判断如果数列已经有序，并且做出标记，剩下的几轮排序就可以不必执行，提早结束工作</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (NSMutableArray *)bubbleSortOptimize1:(NSArray *)array {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:array];
+    for (int i = 0; i &lt; arr.count; i++) {
+        BOOL isSorted = YES; // 标记是否有序
+        for (int j = 0; j &lt; arr.count - i - 1; j++) {
+            if ([arr[j] intValue] &gt; [arr[j+1] intValue]) { // 升序排列
+                [arr exchangeObjectAtIndex:j withObjectAtIndex:j + 1];
+                // 有元素交换，所以不是有序，标记变为NO
+                isSorted = NO;
+            }
+            
+        }
+        if (isSorted) break;
+    }
+    return arr;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>代码优化2：<strong>判断有序区间</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (NSMutableArray *)bubbleSortOptimize2:(NSArray *)array {
+    NSMutableArray *arr = [NSMutableArray arrayWithArray:array];
+    NSInteger lastExchangeIndex = 0; // 记录最后一次交换的位置
+    NSInteger sortBorder = arr.count - 1; // 无序数列的边界，每次比较只需要比到这里为止
+    for (int i = 0; i &lt; arr.count; i++) {
+        BOOL isSorted = YES; // 标记是否有序
+        for (int j = 0; j &lt; sortBorder; j++) {
+            if ([arr[j] intValue] &gt; [arr[j+1] intValue]) {
+                [arr exchangeObjectAtIndex:j withObjectAtIndex:j + 1];
+                // 有元素交换，所以不是有序，标记变为NO
+                isSorted = NO;
+                // 把无序数列的边界更新为最后一次交换元素的位置
+                lastExchangeIndex = j;
+            }
+        }
+        sortBorder = lastExchangeIndex;
+        if (isSorted) break;
+    }
+    return arr;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>测试：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>NSMutableArray *array = [NSMutableArray arrayWithObjects:@3, @4, @2, @1, @5, @6, @7, @8, nil];
+        
+NSLog(@&quot;bubble sort = %@&quot;, [Sort bubbleSort:array]);
+NSLog(@&quot;bubble sort optimize1 = %@&quot;, [Sort bubbleSortOptimize1:array]);
+NSLog(@&quot;bubble sort optimize2 = %@&quot;, [Sort bubbleSortOptimize2:array]);
+NSLog(@&quot;origin array = %@&quot;, array);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="快速排序" tabindex="-1"><a class="header-anchor" href="#快速排序" aria-hidden="true">#</a> <a name="quick-sort"></a>快速排序</h3><p><strong>参考：</strong> <a href="https://mp.weixin.qq.com/s/PQLC7qFjb74kt6PdExP8mw" target="_blank" rel="noopener noreferrer">快速排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener noreferrer">快速排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>使用<code>分治法</code>（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。</p><p><strong>步骤为</strong>：</p><ol><li>从数列中挑出一个元素，称为“基准”（pivot），</li><li>重新排序数列，所有比基准值小的元素摆放在基准前面，所有比基准值大的元素摆在基准后面（相同的数可以到任何一边）。在这个分割结束之后，该基准就处于数列的中间位置。这个称为分割（partition）操作。</li><li>递归地（recursively）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li></ol><p><strong>代码实现：</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (void)quickSort:(NSMutableArray *)array startIndex:(NSInteger)startIndex endIndex:(NSInteger)endIndex {
+    if (startIndex &gt;= endIndex) {
+        return;
+    }
+    NSInteger left = startIndex;
+    NSInteger right = endIndex;
+    // 取第一个位置的元素作为基准元素
+    NSInteger pivot = [array[startIndex] integerValue];
+    // 坑的位置，初始等于pivot的位置
+    NSInteger index = startIndex;
+    
+    //大循环在左右指针重合或者交错时结束
+    while (right &gt;= left) {
+        //right指针从右向左进行比较
+        while (right &gt;= left) {
+            if ([array[right] integerValue] &lt; pivot) {
+                [array exchangeObjectAtIndex:left withObjectAtIndex:right];
+                index = right;
+                left++;
+                break;
+            }
+            right--;
+        }
+        
+        //left指针从左向右进行比较
+        while (right &gt;= left) {
+            if ([array[left] integerValue] &gt; pivot) {
+                [array exchangeObjectAtIndex:right withObjectAtIndex:left];
+                index = left;
+                right--;
+                break;
+            }
+            left++;
+        }
+    }
+    array[index] = @(pivot);
+    
+    [self quickSort:array startIndex:startIndex endIndex:index - 1];
+    [self quickSort:array startIndex:index + 1 endIndex:endIndex];
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><p>测试：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>NSMutableArray *quickArray = [NSMutableArray arrayWithObjects:@4, @7, @6, @5, @9, @3, @2, @8, @1, nil];
+
+NSLog(@&quot;before quick sort = %@&quot;, quickArray);
+[Sort quickSort:quickArray startIndex:0 endIndex:quickArray.count - 1];
+NSLog(@&quot;after quick sort = %@&quot;, quickArray);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="插入排序" tabindex="-1"><a class="header-anchor" href="#插入排序" aria-hidden="true">#</a> <a name="insert-sort"></a>插入排序</h3><p><strong>参考：</strong> <a href="https://blog.51cto.com/9217856/1563523" target="_blank" rel="noopener noreferrer">插入排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://zh.wikipedia.org/wiki/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener noreferrer">插入排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>（Insertion Sort）是一种简单直观的排序算法。</p><p>它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p><p>插入排序在实现上，通常采用in-place排序（即只需用到<code>O(1)</code>的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p><p><img src="/blog/assets/Insertion_sort_animation.7016a1ad.gif" alt="使用插入排序为一列数字进行排序的过程"></p><p>具体算法描述如下：</p><ol><li>从第一个元素开始，该元素可以认为已经被排序</li><li>取出下一个元素，在已经排序的元素序列中从后向前扫描</li><li>如果该元素（<code>已排序</code>）大于新元素，将该元素移到下一位置</li><li>重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</li><li>将新元素插入到该位置后</li><li>重复步骤2~5</li></ol><p>适用范围：需要排序的数据量很小；或者若已知输入元素大致上按照顺序排列</p><p>不适用范围：插入排序不适合对于数据量比较大的排序应用</p><p><strong>代码实现：</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (void)insertSort:(NSMutableArray *)array {
+    
+    for (int i = 1; i &lt; array.count; i++) {
+        NSNumber *key = array[i];
+        int j = i - 1;
+        while (j &gt;= 0 &amp;&amp; [array[j] compare:key] == NSOrderedDescending) {
+            [array exchangeObjectAtIndex:j + 1 withObjectAtIndex:j];
+            j--;
+        }
+        array[j + 1] = key;
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>测试：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>NSMutableArray *insertArray = [NSMutableArray arrayWithObjects:@3, @2, @6, @9, @8, @5, @7, @1, @4, nil];
+NSLog(@&quot;before insert sort = %@&quot;, insertArray);
+[Sort insertSort:insertArray];
+NSLog(@&quot;after insert sort = %@&quot;, insertArray);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="鸡尾酒排序" tabindex="-1"><a class="header-anchor" href="#鸡尾酒排序" aria-hidden="true">#</a> <a name="cock-tail-sort"></a>鸡尾酒排序</h3><p><strong>参考</strong> <a href="https://mp.weixin.qq.com/s/CoVZrvis6BnxBQgQrdc5kA" target="_blank" rel="noopener noreferrer">鸡尾酒排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><strong>优点：</strong> 在特定条件下，减少排序的回合数</p><p><strong>缺点：</strong> 代码量几乎扩大了一倍</p><p><strong>应用场景：</strong> 大部分元素已经有序</p><p><strong>代码实现：</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (void)cockTailSort:(NSMutableArray *)array {
+    
+    for (NSInteger i = 0; i &lt; array.count/2; i++) {
+        //有序标记，每一轮的初始是true
+        BOOL isSorted = YES;
+        //奇数轮，从左向右比较和交换
+        for (NSInteger j = i; j &lt; array.count - i - 1; j++) {
+            if ([array[j] compare:array[j + 1]] == NSOrderedDescending) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:j + 1];
+                isSorted = NO;
+            }
+        }
+        if (isSorted) break;
+        
+        //偶数轮之前，重新标记为true
+        isSorted = YES;
+        //偶数轮，从右向左比较和交换
+        for (NSInteger j = array.count - i - 1; j &gt; i; j--) {
+            if ([array[j] compare:array[j - 1]] == NSOrderedAscending) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:j - 1];
+                isSorted = NO;
+            }
+        }
+        if (isSorted) break;
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p><strong>代码优化</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (void)cockTailSortOptimize:(NSMutableArray *)array {
+    //记录右侧最后一次交换的位置
+    NSInteger lastRightExchangeIndex = 0;
+    //记录左侧最后一次交换的位置
+    NSInteger lastLeftExchangeIndex = 0;
+    //无序数列的右边界，每次比较只需要比到这里为止
+    NSInteger rightSortBorder = array.count - 1;
+    //无序数列的左边界，每次比较只需要比到这里为止
+    NSInteger leftSortBorder = 0;
+    
+    for (NSInteger i = 0; i &lt; array.count/2; i++) {
+        
+        //有序标记，每一轮的初始是YES
+        BOOL isSorted = YES;
+        //奇数轮，从左向右比较和交换
+        for (NSInteger j = leftSortBorder; j &lt; rightSortBorder; j++) {
+            if ([array[j] compare:array[j + 1]] == NSOrderedDescending) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:j + 1];
+                isSorted = NO;
+                lastRightExchangeIndex = j;
+            }
+        }
+        rightSortBorder = lastRightExchangeIndex;
+        if (isSorted) break;
+        
+        //偶数轮之前，重新标记为YES
+        isSorted = YES;
+        //偶数轮，从右向左比较和交换
+        for (NSInteger j = rightSortBorder; j &gt; leftSortBorder; j--) {
+            if ([array[j] compare:array[j - 1]] == NSOrderedAscending) {
+                [array exchangeObjectAtIndex:j withObjectAtIndex:j - 1];
+                isSorted = NO;
+                lastLeftExchangeIndex = j;
+            }
+        }
+        leftSortBorder = lastLeftExchangeIndex;
+        if (isSorted) break;
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><p>测试：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>NSMutableArray *cockTailArray = [NSMutableArray arrayWithObjects:@2, @3, @4, @5, @6, @7, @8, @1, nil];
+NSLog(@&quot;before cock tail array = %@&quot;, cockTailArray);
+[Sort cockTailSort:cockTailArray];
+NSLog(@&quot;after cock tail array = %@&quot;, cockTailArray);
+        
+NSMutableArray *cockTailArrayOptimize = [NSMutableArray arrayWithObjects:@2, @3, @4, @5, @6, @7, @8, @1, nil];
+NSLog(@&quot;before cock tail array optimize = %@&quot;, cockTailArrayOptimize);
+[Sort cockTailSortOptimize:cockTailArrayOptimize];
+NSLog(@&quot;after cock tail array optimize = %@&quot;, cockTailArrayOptimize);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="选择排序" tabindex="-1"><a class="header-anchor" href="#选择排序" aria-hidden="true">#</a> <a name="section-sort"></a>选择排序</h3><p><a href="https://zh.wikipedia.org/wiki/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener noreferrer">选择排序<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>（Selection sort）是一种简单直观的排序算法。</p><p>它的工作原理如下:</p><p>首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p><p>选择排序的主要优点与<code>数据移动</code>有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对<code>n</code>个元素的表进行排序总共进行至多<code>n-1</code>次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p><p><strong>代码实现</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Sort.m
++ (void)sectionSort:(NSMutableArray *)array {
+    for (NSInteger i = 0; i &lt; array.count - 1; i++) {
+        NSInteger min = i;
+        for (NSInteger j = i + 1; j &lt; array.count; j++) {
+            if ([array[j] compare:array[min]] == NSOrderedAscending) {
+                min = j;
+            }
+        }
+        [array exchangeObjectAtIndex:i withObjectAtIndex:min];
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>测试：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>NSMutableArray *sectionArray = [NSMutableArray arrayWithObjects:@2, @3, @4, @5, @6, @7, @8, @1, nil];
+NSLog(@&quot;before section array = %@&quot;, sectionArray);
+[Sort sectionSort:sectionArray];
+NSLog(@&quot;after section array = %@&quot;, sectionArray);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/chenxi92/blog.git/edit/main/data-structure/sort.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新时间: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: peak@jiemogame.com">peak</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.01142347.js" defer></script>
+  </body>
+</html>

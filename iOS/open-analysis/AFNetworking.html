@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>陈希的学习笔记</title><meta name="description" content="">
+    <link rel="modulepreload" href="/blog/assets/app.01142347.js"><link rel="modulepreload" href="/blog/assets/AFNetworking.html.70bacfb1.js"><link rel="modulepreload" href="/blog/assets/AFNetworking.html.c7611f1e.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.72ef85ec.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="陈希的学习笔记"><span class="site-name can-hide">陈希的学习笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="router-link-active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="router-link-active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/blog/iOS/" class="router-link-active sidebar-item sidebar-heading active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/swift-concurrency.md" class="sidebar-item" aria-label="Swift Concurrency"><!--[--><!--]--> Swift Concurrency <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/app-launch.md" class="sidebar-item" aria-label="App 启动"><!--[--><!--]--> App 启动 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/attribute.md" class="sidebar-item" aria-label="attribute"><!--[--><!--]--> attribute <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/autolayout.md" class="sidebar-item" aria-label="AutoLayout 布局"><!--[--><!--]--> AutoLayout 布局 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/bug-track.md" class="sidebar-item" aria-label="Bug 追踪"><!--[--><!--]--> Bug 追踪 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/create-certificate.md" class="sidebar-item" aria-label="创建开发证书"><!--[--><!--]--> 创建开发证书 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/dispatch-semaphore.md" class="sidebar-item" aria-label="信号量"><!--[--><!--]--> 信号量 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/install-ipa-from-safari.md" class="sidebar-item" aria-label="iPA 文件安装"><!--[--><!--]--> iPA 文件安装 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/isa.md" class="sidebar-item" aria-label="isa 指针"><!--[--><!--]--> isa 指针 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/keychain.md" class="sidebar-item" aria-label="钥匙串学习"><!--[--><!--]--> 钥匙串学习 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/libmobiledevice.md" class="sidebar-item" aria-label="libmobiledevice"><!--[--><!--]--> libmobiledevice <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/method-forward.md" class="sidebar-item" aria-label="消息转发"><!--[--><!--]--> 消息转发 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/multiple-thread.md" class="sidebar-item" aria-label="多线程"><!--[--><!--]--> 多线程 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/security.md" class="sidebar-item" aria-label="security"><!--[--><!--]--> security <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/symbols.md" class="sidebar-item" aria-label="符号表"><!--[--><!--]--> 符号表 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/tips.md" class="sidebar-item" aria-label="iOS 开发小知识"><!--[--><!--]--> iOS 开发小知识 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/UIScrollview.md" class="sidebar-item" aria-label="UIScrollView 约束"><!--[--><!--]--> UIScrollView 约束 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/2-unity-ios-bridge.md" class="sidebar-item" aria-label="iOS &amp; Unity 相互调用"><!--[--><!--]--> iOS &amp; Unity 相互调用 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/vapor-tutorial.md" class="sidebar-item" aria-label="Vapor 学习"><!--[--><!--]--> Vapor 学习 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/xcode-shortcut.md" class="sidebar-item" aria-label="Xcode 快捷键"><!--[--><!--]--> Xcode 快捷键 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/configure-alternate-app-icon.md" class="sidebar-item" aria-label="Configure Alternate App Icon"><!--[--><!--]--> Configure Alternate App Icon <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/sending-push-notification.md" class="sidebar-item" aria-label="Sending Push Notifications"><!--[--><!--]--> Sending Push Notifications <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/how-to-create-dmg.md" class="sidebar-item" aria-label="How to create dmg file"><!--[--><!--]--> How to create dmg file <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/how-to-test-static-framework/how-to-test-static-framework.md" class="sidebar-item" aria-label="How to test static framework"><!--[--><!--]--> How to test static framework <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/download-xcappdata-folder.md" class="sidebar-item" aria-label="How to download xcappdata folder"><!--[--><!--]--> How to download xcappdata folder <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">Keywords <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/SwiftKeywords/dynamicCallable.md" class="sidebar-item" aria-label="dynamicCallable"><!--[--><!--]--> dynamicCallable <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><a href="/blog/iOS/ios-app-preorder.md" class="sidebar-item" aria-label="iOS App Pre-Order"><!--[--><!--]--> iOS App Pre-Order <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">面试 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/interview/0-interview-question.md" class="sidebar-item" aria-label="面试题"><!--[--><!--]--> 面试题 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/1-category-and-extension.md" class="sidebar-item" aria-label="Category &amp; Extension"><!--[--><!--]--> Category &amp; Extension <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/2-atomic.md" class="sidebar-item" aria-label="原子性"><!--[--><!--]--> 原子性 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/3-weak.md" class="sidebar-item" aria-label="Weak"><!--[--><!--]--> Weak <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/4-associated-object.md" class="sidebar-item" aria-label="关联对象"><!--[--><!--]--> 关联对象 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/property.md" class="sidebar-item" aria-label="属性"><!--[--><!--]--> 属性 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><p tabindex="0" class="sidebar-item active">源码学习 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/open-analysis/AFNetworking.md" class="sidebar-item active" aria-label="AFNetworking"><!--[--><!--]--> AFNetworking <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/open-analysis/Aspects.md" class="sidebar-item" aria-label="Aspects"><!--[--><!--]--> Aspects <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/open-analysis/Masonry.md" class="sidebar-item" aria-label="Masonry"><!--[--><!--]--> Masonry <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h3 id="afnetworking-源码分析" tabindex="-1"><a class="header-anchor" href="#afnetworking-源码分析" aria-hidden="true">#</a> AFNetworking 源码分析</h3><p align="right">Update: 2022-3-24</p><p>Version: <strong>4.0</strong></p><h4 id="目录" tabindex="-1"><a class="header-anchor" href="#目录" aria-hidden="true">#</a> 目录</h4><ul><li><a href="#architect-flow">架构图</a></li><li><a href="#request-flow">网络请求流程</a></li><li><a href="#response-flow">网络响应流程</a></li><li><a href="#cache">缓存</a></li><li><a href="#image-download">图片下载</a></li><li><a href="#others">其他知识</a></li><li><a href="#reference">参考</a></li></ul><h4 id="架构图" tabindex="-1"><a class="header-anchor" href="#架构图" aria-hidden="true">#</a> <a name="architect-flow"></a>架构图</h4><ul><li><p>网络通信</p><ul><li><code>AFURLSessionManager</code> 基于 <code>NSURLSession</code> 做了一系列的封装，负责真正的网络请求。 <ul><li><code>AFURLSessionManagerTaskDelegate</code> 处理单个网络请求的回调。</li></ul></li><li><code>AFHTTPSessionManager</code> 继承自 <code>AFURLSessionManager</code> ， 具体请求逻辑交给父类来完成，一般使用该类发起网络请求。</li></ul></li><li><p>网络状态监控</p><ul><li><code>AFNetworkReachabilityManager</code> 负责监控网络状态。</li></ul></li><li><p>序列化/反序列化 协议</p><ul><li><p><code>AFURLRequestSerialization</code> 负责构造 <code>NSURLRequest</code> 。</p><ul><li><p><code>AFHTTPRequestSerializer</code> 实现 <code>AFURLRequestSerialization</code> 的基类。</p><div class="language-markdown ext-md line-numbers-mode"><pre class="language-markdown"><code>offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div></li><li><p><code>AFJSONRequestSerializer</code> JSON 类型的编码实现。</p></li><li><p><code>AFPropertyListRequestSerializer</code> PropertyList 类型的编码实现。</p></li></ul></li><li><p><code>AFURLResponseSerrialization</code> 负责解析 <code>NSURLResponse</code> 。</p><ul><li><p><code>AFHTTPResponseSerializer</code> 实现<code>AFURLResponseSerrialization</code> 协议的基类。</p><div class="language-markdown ext-md line-numbers-mode"><pre class="language-markdown"><code>offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div></li><li><p><code>AFJSONResponseSerializer</code> 解析 response 数据为 JSON 对象。</p></li><li><p><code>AFXMLParserResponseSerializer</code> 解析 response 数据为 XML 对象。</p></li><li><p><code>AFXMLDocumentResponseSerializer</code> 解析 response 数据为 XML 对象（使用于 Mac 平台）。</p></li><li><p><code>AFPropertyListResponseSerializer</code> 解析 response 数据为 plist 对象。</p></li><li><p><code>AFImageResponseSerializer</code> 解析 response 数据为 image 对象。</p></li></ul></li></ul></li><li><p>安全策略</p><ul><li><code>AFSecurityPolicy</code> 负责验证证书有效性。</li></ul></li><li><p>网络状态监听</p><ul><li><code>AFNetworkReachabilityManager</code></li></ul></li><li><p>UIKit扩展</p><ul><li><code>UIImageView+AFNetworking</code> <code>UIImageView</code> 的扩展，负责图片的下载以及缓存。</li><li><code>AFAutoPurgingImageCache</code> 负责图片缓存</li><li><code>AFImageDownloader</code> 负责图片下载，基于 <code>AFHTTPSessionManager</code> 的封装。</li></ul></li></ul><h4 id="网络请求流程" tabindex="-1"><a class="header-anchor" href="#网络请求流程" aria-hidden="true">#</a> <a name="request-flow"></a>网络请求流程</h4><p>以发起 <code>POST</code> 请求为例，</p><ol><li>调用如下接口初始化 <code>AFHTTPSessionManager</code> 对象</li></ol><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (instancetype)initWithBaseURL:(nullable NSURL *)url
+           sessionConfiguration:(nullable NSURLSessionConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>初始化做了如下操作</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (instancetype)initWithBaseURL:(NSURL *)url
+           sessionConfiguration:(NSURLSessionConfiguration *)configuration
+{
+    // 调用父类接口，初始化父类
+    // #1 初始化默认配置
+    // AFJSONResponseSerializer、AFSecurityPolicy、AFNetworkReachabilityManager、NSURLSession（同时指定 session 的代理为自己)
+    // #2 初始化各种容器、锁、变量等
+    self = [super initWithSessionConfiguration:configuration];
+    if (!self) {
+        return nil;
+    }
+    
+    // 处理 baseURL
+    // Ensure terminal slash for baseURL path, so that NSURL +URLWithString:relativeToURL: works as expected
+    if ([[url path] length] &gt; 0 &amp;&amp; ![[url absoluteString] hasSuffix:@&quot;/&quot;]) {
+        url = [url URLByAppendingPathComponent:@&quot;&quot;];
+    }
+
+    self.baseURL = url;
+    
+    // 初始化 请求和响应 的序列化对象
+    self.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    return self;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><ol start="2"><li>发起 <code>POST</code> 请求</li></ol><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+                             parameters:(nullable id)parameters
+                                headers:(nullable NSDictionary &lt;NSString *, NSString *&gt; *)headers
+                               progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure;
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>该 <code>POST</code> 请求最终调用到:</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (nullable NSURLSessionDataTask *)POST:(NSString *)URLString
+                             parameters:(nullable id)parameters
+                                headers:(nullable NSDictionary &lt;NSString *, NSString *&gt; *)headers
+                               progress:(nullable void (^)(NSProgress *uploadProgress))uploadProgress
+                                success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    // 构造dataTask对象
+    NSURLSessionDataTask *dataTask = [self dataTaskWithHTTPMethod:@&quot;POST&quot; URLString:URLString parameters:parameters headers:headers uploadProgress:uploadProgress downloadProgress:nil success:success failure:failure];
+    
+    // 执行请求
+    [dataTask resume];
+    
+    return dataTask;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p>构造 <code>NSURLSessionDataTask</code> 对象做了如下操作</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (NSURLSessionDataTask *)dataTaskWithHTTPMethod:(NSString *)method
+                                       URLString:(NSString *)URLString
+                                      parameters:(nullable id)parameters
+                                         headers:(nullable NSDictionary &lt;NSString *, NSString *&gt; *)headers
+                                  uploadProgress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgress
+                                downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgress
+                                         success:(nullable void (^)(NSURLSessionDataTask *task, id _Nullable responseObject))success
+                                         failure:(nullable void (^)(NSURLSessionDataTask * _Nullable task, NSError *error))failure
+{
+    NSError *serializationError = nil;
+    // 构造 Request 对象
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:&amp;serializationError];
+    for (NSString *headerField in headers.keyEnumerator) {
+        [request setValue:headers[headerField] forHTTPHeaderField:headerField];
+    }
+    if (serializationError) {
+        if (failure) {
+            dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
+                failure(nil, serializationError);
+            });
+        }
+
+        return nil;
+    }
+                                           
+		// 父类构造 DataTask 对象
+    __block NSURLSessionDataTask *dataTask = nil;
+    dataTask = [self dataTaskWithRequest:request
+                          uploadProgress:uploadProgress
+                        downloadProgress:downloadProgress
+                       completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (error) {
+            if (failure) {
+                failure(dataTask, error);
+            }
+        } else {
+            if (success) {
+                success(dataTask, responseObject);
+            }
+        }
+    }];
+
+    return dataTask;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><p>父类的构造 <code>dataTask</code> 做了如下操作</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request
+                               uploadProgress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgressBlock
+                             downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgressBlock
+                            completionHandler:(nullable void (^)(NSURLResponse *response, id _Nullable responseObject,  NSError * _Nullable error))completionHandler {
+
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:request];
+
+    [self addDelegateForDataTask:dataTask uploadProgress:uploadProgressBlock downloadProgress:downloadProgressBlock completionHandler:completionHandler];
+
+    return dataTask;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>添加代理主要作用是把该 <code>dataTask</code> 和它对应的回调信息保存起来</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)addDelegateForDataTask:(NSURLSessionDataTask *)dataTask
+                uploadProgress:(nullable void (^)(NSProgress *uploadProgress)) uploadProgressBlock
+              downloadProgress:(nullable void (^)(NSProgress *downloadProgress)) downloadProgressBlock
+             completionHandler:(void (^)(NSURLResponse *response, id responseObject, NSError *error))completionHandler
+{
+    // 生成 AFURLSessionManagerTaskDelegate 对象
+    AFURLSessionManagerTaskDelegate *delegate = [[AFURLSessionManagerTaskDelegate alloc] initWithTask:dataTask];
+    delegate.manager = self;
+    // 保存请求的回调到dataTask的代理对象上
+    delegate.completionHandler = completionHandler;
+
+    // 把该dataTask代理对象保存起来
+    dataTask.taskDescription = self.taskDescriptionForSessionTasks;
+    [self setDelegate:delegate forTask:dataTask];
+
+    delegate.uploadProgressBlock = uploadProgressBlock;
+    delegate.downloadProgressBlock = downloadProgressBlock;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>实际存入是根据该 <code>dataTask</code> 的 <code>taskIdentifier</code> 属性值作为key值，保存在字典中。</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)setDelegate:(AFURLSessionManagerTaskDelegate *)delegate
+            forTask:(NSURLSessionTask *)task
+{
+    NSParameterAssert(task);
+    NSParameterAssert(delegate);
+
+    [self.lock lock];
+    self.mutableTaskDelegatesKeyedByTaskIdentifier[@(task.taskIdentifier)] = delegate;
+    [self addNotificationObserverForTask:task];
+    [self.lock unlock];
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h4 id="网络响应流程" tabindex="-1"><a class="header-anchor" href="#网络响应流程" aria-hidden="true">#</a> <a name="response-flow"></a>网络响应流程</h4><p><code>AFURLSessionManager</code> 实现了 <code>NSURLSessionDelegate</code>, <code>NSURLSessionTaskDelegate</code>, <code>NSURLSessionDataDelegate</code>, <code>NSURLSessionDownloadDelegate</code> 等网络协议。</p><p>接受数据处理流程如下：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)URLSession:(NSURLSession *)session
+          dataTask:(NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data
+{
+    // 获取task的代理对象，并由该代理对象去处理相关数据
+    AFURLSessionManagerTaskDelegate *delegate = [self delegateForTask:dataTask];
+    [delegate URLSession:session dataTask:dataTask didReceiveData:data];
+    
+    // block如果存在，执行block处理数据
+    if (self.dataTaskDidReceiveData) {
+        self.dataTaskDidReceiveData(session, dataTask, data);
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>获取 <code>task</code> 的代理对象</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (AFURLSessionManagerTaskDelegate *)delegateForTask:(NSURLSessionTask *)task {
+    NSParameterAssert(task);
+
+    AFURLSessionManagerTaskDelegate *delegate = nil;
+    [self.lock lock]; // 加锁
+    // 根据每一个 task 的 taskIdentifier 的属性值来获取代理对象
+    delegate = self.mutableTaskDelegatesKeyedByTaskIdentifier[@(task.taskIdentifier)];
+    [self.lock unlock];
+
+    return delegate;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><code>task</code> 的代理对象 <code>AFURLSessionManagerTaskDelegate</code> ，实现了 <code>NSURLSessionTaskDelegate</code>, <code>NSURLSessionDataDelegate</code>, <code>NSURLSessionDownloadDelegate</code> 协议。</p><p>接收的数据具体由 <code>AFURLSessionManagerTaskDelegate</code> 类来处理</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)URLSession:(__unused NSURLSession *)session
+          dataTask:(__unused NSURLSessionDataTask *)dataTask
+    didReceiveData:(NSData *)data
+{
+    // 更新下载进度
+    self.downloadProgress.totalUnitCount = dataTask.countOfBytesExpectedToReceive;
+    self.downloadProgress.completedUnitCount = dataTask.countOfBytesReceived;
+		// 保存数据
+    [self.mutableData appendData:data];
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>下载完成处理流程：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)URLSession:(NSURLSession *)session
+              task:(NSURLSessionTask *)task
+didCompleteWithError:(NSError *)error
+{
+    // 获取代理
+    AFURLSessionManagerTaskDelegate *delegate = [self delegateForTask:task];
+
+    // delegate may be nil when completing a task in the background
+    if (delegate) {
+      	// 代理来处理数据
+        [delegate URLSession:session task:task didCompleteWithError:error];
+        // 移除代理对象
+        [self removeDelegateForTask:task];
+    }
+		// block 处理下载完成的情况
+    if (self.taskDidComplete) {
+        self.taskDidComplete(session, task, error);
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>代理具体处理数据为</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)URLSession:(__unused NSURLSession *)session
+              task:(NSURLSessionTask *)task
+didCompleteWithError:(NSError *)error
+{
+    __strong AFURLSessionManager *manager = self.manager;
+
+    __block id responseObject = nil;
+
+    __block NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[AFNetworkingTaskDidCompleteResponseSerializerKey] = manager.responseSerializer;
+    
+    // 提升性能，不再需要的数据，及时释放
+    //Performance Improvement from #2672
+    NSData *data = nil;
+    if (self.mutableData) {
+        data = [self.mutableData copy];
+        //We no longer need the reference, so nil it out to gain back some memory.
+        self.mutableData = nil;
+    }
+
+#if AF_CAN_USE_AT_AVAILABLE &amp;&amp; AF_CAN_INCLUDE_SESSION_TASK_METRICS
+    if (@available(iOS 10, macOS 10.12, watchOS 3, tvOS 10, *)) {
+        if (self.sessionTaskMetrics) {
+            userInfo[AFNetworkingTaskDidCompleteSessionTaskMetrics] = self.sessionTaskMetrics;
+        }
+    }
+#endif
+
+    if (self.downloadFileURL) {
+        userInfo[AFNetworkingTaskDidCompleteAssetPathKey] = self.downloadFileURL;
+    } else if (data) {
+        userInfo[AFNetworkingTaskDidCompleteResponseDataKey] = data;
+    }
+
+    if (error) {
+        userInfo[AFNetworkingTaskDidCompleteErrorKey] = error;
+
+        dispatch_group_async(manager.completionGroup ?: url_session_manager_completion_group(), manager.completionQueue ?: dispatch_get_main_queue(), ^{
+           // 执行代理对象的 completionHandler 
+            if (self.completionHandler) {
+                self.completionHandler(task.response, responseObject, error);
+            }
+						// 发送通知 下载完成
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidCompleteNotification object:task userInfo:userInfo];
+            });
+        });
+    } else {
+        dispatch_async(url_session_manager_processing_queue(), ^{
+          	// 处理返回的数据
+          	// 处理返回的错误码是否有效
+          	// 转成json数据
+            NSError *serializationError = nil;
+            responseObject = [manager.responseSerializer responseObjectForResponse:task.response data:data error:&amp;serializationError];
+
+            if (self.downloadFileURL) {
+                responseObject = self.downloadFileURL;
+            }
+
+            if (responseObject) {
+                userInfo[AFNetworkingTaskDidCompleteSerializedResponseKey] = responseObject;
+            }
+
+            if (serializationError) {
+                userInfo[AFNetworkingTaskDidCompleteErrorKey] = serializationError;
+            }
+
+            dispatch_group_async(manager.completionGroup ?: url_session_manager_completion_group(), manager.completionQueue ?: dispatch_get_main_queue(), ^{
+              	// 执行代理对象的 completionHandler 
+                if (self.completionHandler) {
+                    self.completionHandler(task.response, responseObject, serializationError);
+                }
+ 								// 发送通知 下载完成
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:AFNetworkingTaskDidCompleteNotification object:task userInfo:userInfo];
+                });
+            });
+        });
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br></div></div><h4 id="缓存" tabindex="-1"><a class="header-anchor" href="#缓存" aria-hidden="true">#</a> <a name="cache"></a>缓存</h4><p>UIKit 的扩展库中，下载图片的时候，使用了内存缓存类 <code>AFAutoPurgingImageCache</code>。该类实现了 <code>AFImageRequestCache</code> 内存缓存协议。</p><p>计算图片内存大小代码如下：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (instancetype)initWithImage:(UIImage *)image identifier:(NSString *)identifier {
+    if (self = [self init]) {
+        self.image = image;
+        self.identifier = identifier;
+
+        CGSize imageSize = CGSizeMake(image.size.width * image.scale, image.size.height * image.scale);
+        // 每个像素占4个字节， 32个bit
+        CGFloat bytesPerPixel = 4.0;
+        CGFloat bytesPerSize = imageSize.width * imageSize.height;
+        self.totalBytes = (UInt64)bytesPerPixel * (UInt64)bytesPerSize;
+        self.lastAccessDate = [NSDate date];
+    }
+    return self;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>缓存图片，实现了 <code>AFImageRequestCache</code> 协议的如下方法</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>/**
+ Adds the image to the cache with the given identifier.
+
+ @param image The image to cache.
+ @param identifier The unique identifier for the image in the cache.
+ */
+- (void)addImage:(UIImage *)image withIdentifier:(NSString *)identifier;
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>具体实现如下：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)addImage:(UIImage *)image withIdentifier:(NSString *)identifier {
+  	//  `dispatch_barrier_async` 保证并行队列 `self.synchronizationQueue` 里面的其他操作都完成之后，在执行添加缓存操作
+  	dispatch_barrier_async(self.synchronizationQueue, ^{
+        AFCachedImage *cacheImage = [[AFCachedImage alloc] initWithImage:image identifier:identifier];
+				// 判断图片是否已经缓存过
+        AFCachedImage *previousCachedImage = self.cachedImages[identifier];
+        if (previousCachedImage != nil) {
+            self.currentMemoryUsage -= previousCachedImage.totalBytes;
+        }
+
+        self.cachedImages[identifier] = cacheImage;
+        self.currentMemoryUsage += cacheImage.totalBytes;
+    });
+		
+  	// 添加缓存之后，检查缓存是否已经超过设定的阈值
+    dispatch_barrier_async(self.synchronizationQueue, ^{
+        if (self.currentMemoryUsage &gt; self.memoryCapacity) {
+            UInt64 bytesToPurge = self.currentMemoryUsage - self.preferredMemoryUsageAfterPurge;
+            NSMutableArray &lt;AFCachedImage*&gt; *sortedImages = [NSMutableArray arrayWithArray:self.cachedImages.allValues];
+            NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@&quot;lastAccessDate&quot;
+                                                                           ascending:YES];
+          	// 根据最后存取时间，来升序排序
+            [sortedImages sortUsingDescriptors:@[sortDescriptor]];
+
+            UInt64 bytesPurged = 0;
+						// 移除时间最早的图片
+            for (AFCachedImage *cachedImage in sortedImages) {
+                [self.cachedImages removeObjectForKey:cachedImage.identifier];
+                bytesPurged += cachedImage.totalBytes;
+                if (bytesPurged &gt;= bytesToPurge) {
+                    break ;
+                }
+            }
+            self.currentMemoryUsage -= bytesPurged;
+        }
+    });
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>使用了 <code>NSSortDescriptor</code> 来根据最后访问时间来排序， 具体用法参考作者博客 <a href="https://nshipster.com/nssortdescriptor/" target="_blank" rel="noopener noreferrer">NSSortDescriptor<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。</p><p>移除图片具体实现如下:</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (BOOL)removeImageWithIdentifier:(NSString *)identifier {
+    __block BOOL removed = NO;
+  	// 等待并行队列其他操作完成，同步执行移除操作
+    dispatch_barrier_sync(self.synchronizationQueue, ^{
+        AFCachedImage *cachedImage = self.cachedImages[identifier];
+        if (cachedImage != nil) {
+            [self.cachedImages removeObjectForKey:identifier];
+            self.currentMemoryUsage -= cachedImage.totalBytes;
+            removed = YES;
+        }
+    });
+    return removed;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h4 id="图片下载" tabindex="-1"><a class="header-anchor" href="#图片下载" aria-hidden="true">#</a> <a name="image-download"></a>图片下载</h4><p>以 <code>UIImageView+AFNetworking</code> 为例，提供了如下下载接口</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// 根据 URL 下载图片
+- (void)setImageWithURL:(NSURL *)url;
+
+// 根据 URL 下载图片，并设置占位图
+- (void)setImageWithURL:(NSURL *)url placeholderImage:(nullable UIImage *)placeholderImage;
+
+// 根据请求下载图片，并设置占位图，提供回调
+- (void)setImageWithURLRequest:(NSURLRequest *)urlRequest 
+placeholderImage:(nullable UIImage *)placeholderImage 
+success:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, UIImage *image))success 
+failure:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, NSError *error))failure;
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>最终都方法都进入到</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)setImageWithURLRequest:(NSURLRequest *)urlRequest
+              placeholderImage:(UIImage *)placeholderImage
+                       success:(void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, UIImage *image))success
+                       failure:(void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, NSError *error))failure
+{
+    // 检查 URL
+    if ([urlRequest URL] == nil) {
+        self.image = placeholderImage;
+        if (failure) {
+            NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil];
+            failure(urlRequest, nil, error);
+        }
+        return;
+    }
+    
+    // 该请求是否正在执行
+    if ([self isActiveTaskURLEqualToURLRequest:urlRequest]){
+        return;
+    }
+    
+   	// 取消当前执行的下载任务                
+    [self cancelImageDownloadTask];
+    
+    // 优先从内存缓存中获取图片
+    AFImageDownloader *downloader = [[self class] sharedImageDownloader];
+    id &lt;AFImageRequestCache&gt; imageCache = downloader.imageCache;
+
+    //Use the image from the image cache if it exists
+    UIImage *cachedImage = [imageCache imageforRequest:urlRequest withAdditionalIdentifier:nil];
+    if (cachedImage) {
+        if (success) {
+            success(urlRequest, nil, cachedImage);
+        } else {
+            self.image = cachedImage;
+        }
+        // 获取到缓存，清除正在下载的操作
+        [self clearActiveDownloadInformation];
+    } else {
+        // 没有缓存， 先显示占位图(如果提供的话)
+        if (placeholderImage) {
+            self.image = placeholderImage;
+        }
+				// 执行真正的下载操作
+        __weak __typeof(self)weakSelf = self;
+        NSUUID *downloadID = [NSUUID UUID];
+        AFImageDownloadReceipt *receipt;
+        receipt = [downloader
+                   downloadImageForURLRequest:urlRequest
+                   withReceiptID:downloadID
+                   success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull responseObject) {
+                       __strong __typeof(weakSelf)strongSelf = weakSelf;
+                       if ([strongSelf.af_activeImageDownloadReceipt.receiptID isEqual:downloadID]) {
+                           if (success) {
+                               success(request, response, responseObject);
+                           } else if(responseObject) {
+                               // 显示下载的图片
+                               strongSelf.image = responseObject;
+                           }
+                           [strongSelf clearActiveDownloadInformation];
+                       }
+
+                   }
+                   failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+                       __strong __typeof(weakSelf)strongSelf = weakSelf;
+                        if ([strongSelf.af_activeImageDownloadReceipt.receiptID isEqual:downloadID]) {
+                            if (failure) {
+                                failure(request, response, error);
+                            }
+                            [strongSelf clearActiveDownloadInformation];
+                        }
+                   }];
+
+        self.af_activeImageDownloadReceipt = receipt;
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br></div></div><p>下载图片在 <code>AFImageDownloader</code> 中执行，该类是对 <code>AFHTTPSessionManager</code> 的网络请求做了封装，用于执行图片下载以及图片缓存等操作。 具体下载逻辑如下：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (nullable AFImageDownloadReceipt *)downloadImageForURLRequest:(NSURLRequest *)request
+                                                  withReceiptID:(nonnull NSUUID *)receiptID
+                                                        success:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse  * _Nullable response, UIImage *responseObject))success
+                                                        failure:(nullable void (^)(NSURLRequest *request, NSHTTPURLResponse * _Nullable response, NSError *error))failure {
+    __block NSURLSessionDataTask *task = nil;
+    // 在串行队列里面 同步 生成下载操作，保证线程安全
+    dispatch_sync(self.synchronizationQueue, ^{
+        
+        NSString *URLIdentifier = request.URL.absoluteString;
+        if (URLIdentifier == nil) {
+            if (failure) {
+                NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorBadURL userInfo:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure(request, nil, error);
+                });
+            }
+            return;
+        }
+
+        // 1) Append the success and failure blocks to a pre-existing request if it already exists
+        AFImageDownloaderMergedTask *existingMergedTask = self.mergedTasks[URLIdentifier];
+        if (existingMergedTask != nil) {
+            // 正在下载，添加下载下载回调
+            AFImageDownloaderResponseHandler *handler = [[AFImageDownloaderResponseHandler alloc] initWithUUID:receiptID success:success failure:failure];
+            [existingMergedTask addResponseHandler:handler];
+            task = existingMergedTask.task;
+            return;
+        }
+
+        // 2) Attempt to load the image from the image cache if the cache policy allows it
+        switch (request.cachePolicy) {
+            case NSURLRequestUseProtocolCachePolicy:
+            case NSURLRequestReturnCacheDataElseLoad:
+            case NSURLRequestReturnCacheDataDontLoad: {
+                // 获取缓存图片
+                UIImage *cachedImage = [self.imageCache imageforRequest:request withAdditionalIdentifier:nil];
+                if (cachedImage != nil) {
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success(request, nil, cachedImage);
+                        });
+                    }
+                    return;
+                }
+                break;
+            }
+            default:
+                break;
+        }
+
+        // 3) Create the request and set up authentication, validation and response serialization
+        NSUUID *mergedTaskIdentifier = [NSUUID UUID];
+        NSURLSessionDataTask *createdTask;
+        __weak __typeof__(self) weakSelf = self;
+        // 创造下载请求
+        createdTask = [self.sessionManager
+                       dataTaskWithRequest:request
+                       uploadProgress:nil
+                       downloadProgress:nil
+                       completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                           dispatch_async(self.responseQueue, ^{
+                               __strong __typeof__(weakSelf) strongSelf = weakSelf;
+                               // 取出保存的下载请求
+                               AFImageDownloaderMergedTask *mergedTask = [strongSelf safelyGetMergedTask:URLIdentifier];
+                               if ([mergedTask.identifier isEqual:mergedTaskIdentifier]) {
+                                   mergedTask = [strongSelf safelyRemoveMergedTaskWithURLIdentifier:URLIdentifier];
+                                   if (error) {
+                                       // 回调所有的失败回调信息
+                                       for (AFImageDownloaderResponseHandler *handler in mergedTask.responseHandlers) {
+                                           if (handler.failureBlock) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   handler.failureBlock(request, (NSHTTPURLResponse *)response, error);
+                                               });
+                                           }
+                                       }
+                                   } else {
+                                       // 缓存下载图片
+                                       if ([strongSelf.imageCache shouldCacheImage:responseObject forRequest:request withAdditionalIdentifier:nil]) {
+                                           [strongSelf.imageCache addImage:responseObject forRequest:request withAdditionalIdentifier:nil];
+                                       }
+                                       // 回调所有的成功回调信息
+                                       for (AFImageDownloaderResponseHandler *handler in mergedTask.responseHandlers) {
+                                           if (handler.successBlock) {
+                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                   handler.successBlock(request, (NSHTTPURLResponse *)response, responseObject);
+                                               });
+                                           }
+                                       }
+                                       
+                                   }
+                               }
+                               [strongSelf safelyDecrementActiveTaskCount];
+                               // 开启一下一个请求
+                               [strongSelf safelyStartNextTaskIfNecessary];
+                           });
+                       }];
+        // 存储下载请求，用于下载完成时的回调
+        // 4) Store the response handler for use when the request completes
+        AFImageDownloaderResponseHandler *handler = [[AFImageDownloaderResponseHandler alloc] initWithUUID:receiptID
+                                                                                                   success:success
+                                                                                                   failure:failure];
+        AFImageDownloaderMergedTask *mergedTask = [[AFImageDownloaderMergedTask alloc]
+                                                   initWithURLIdentifier:URLIdentifier
+                                                   identifier:mergedTaskIdentifier
+                                                   task:createdTask];
+        [mergedTask addResponseHandler:handler];
+        self.mergedTasks[URLIdentifier] = mergedTask;
+        // 判断下载请求是否达到阈值，默认最大下载4个
+        // 5) Either start the request or enqueue it depending on the current active request count
+        if ([self isActiveRequestCountBelowMaximumLimit]) {
+            [self startMergedTask:mergedTask];
+        } else {
+            [self enqueueMergedTask:mergedTask];
+        }
+
+        task = mergedTask.task;
+    });
+    if (task) {
+        return [[AFImageDownloadReceipt alloc] initWithReceiptID:receiptID task:task];
+    } else {
+        return nil;
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br></div></div><p>执行下载逻辑如下：</p><ol><li>判断 <code>URL</code> 是否合理</li><li>判断这个 <code>URL</code> 生成的 <code>task</code> 是否已经缓存， 如果已经缓存，给该 <code>task</code> 添加一个回调</li><li>根据请求策略去获取缓存图片</li><li>没有获取到缓存图片，则创建一个新的下载请求 task</li><li>缓存该下载 <code>task</code>，跟下载回调，下载 <code>URL</code> 等信息绑定在一起，方便下载成功之后，查找回调信息等</li><li>判断当前的活跃的请求个数是否已经超过阈值，如果没有执行下载操作，如果超过，根据请求缓存策略，把该 <code>task</code> 存到适当的位置</li><li>下载成功之后，根据 URL 取出保存的下载回调信息，根据下载结果执行相应的下载回调</li></ol><h4 id="其他知识" tabindex="-1"><a class="header-anchor" href="#其他知识" aria-hidden="true">#</a> <a name="others"></a>其他知识</h4><ol><li><p>保证线程安全</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (AFImageDownloaderMergedTask *)safelyGetMergedTask:(NSString *)URLIdentifier {
+    __block AFImageDownloaderMergedTask *mergedTask;
+    dispatch_sync(self.synchronizationQueue, ^(){
+        mergedTask = self.mergedTasks[URLIdentifier];
+    });
+    return mergedTask;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>取出下载任务的时候，在一个串行队列里面同步执行操作。</p></li><li><p>分类动态添加属性</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>+ (AFImageDownloader *)sharedImageDownloader {
+    return objc_getAssociatedObject(self, @selector(sharedImageDownloader)) ?: [AFImageDownloader defaultInstance];
+}
+
++ (void)setSharedImageDownloader:(AFImageDownloader *)imageDownloader {
+    objc_setAssociatedObject(self, @selector(sharedImageDownloader), imageDownloader, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>在 UIImageView 分类中动态添加下载对象。</p></li></ol><h4 id="参考" tabindex="-1"><a class="header-anchor" href="#参考" aria-hidden="true">#</a> <a name="reference"></a>参考</h4><p><a href="http://cocoadocs.org/docsets/AFNetworking/3.1.0" target="_blank" rel="noopener noreferrer">AFNetworking docs<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://juejin.im/post/5c5c2b8251882562826951b8" target="_blank" rel="noopener noreferrer">浅谈移动端图片压缩<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/chenxi92/blog.git/edit/main/iOS/open-analysis/AFNetworking.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新时间: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: peak@jiemogame.com">peak</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.01142347.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>iOS Thread Notes | 陈希的学习笔记</title><meta name="description" content="">
+    <link rel="modulepreload" href="/blog/assets/app.01142347.js"><link rel="modulepreload" href="/blog/assets/multiple-thread.html.113525b4.js"><link rel="modulepreload" href="/blog/assets/multiple-thread.html.dca8d515.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.72ef85ec.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="陈希的学习笔记"><span class="site-name can-hide">陈希的学习笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="router-link-active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="router-link-active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/blog/iOS/" class="router-link-active sidebar-item sidebar-heading active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/swift-concurrency.md" class="sidebar-item" aria-label="Swift Concurrency"><!--[--><!--]--> Swift Concurrency <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/app-launch.md" class="sidebar-item" aria-label="App 启动"><!--[--><!--]--> App 启动 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/attribute.md" class="sidebar-item" aria-label="attribute"><!--[--><!--]--> attribute <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/autolayout.md" class="sidebar-item" aria-label="AutoLayout 布局"><!--[--><!--]--> AutoLayout 布局 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/bug-track.md" class="sidebar-item" aria-label="Bug 追踪"><!--[--><!--]--> Bug 追踪 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/create-certificate.md" class="sidebar-item" aria-label="创建开发证书"><!--[--><!--]--> 创建开发证书 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/dispatch-semaphore.md" class="sidebar-item" aria-label="信号量"><!--[--><!--]--> 信号量 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/install-ipa-from-safari.md" class="sidebar-item" aria-label="iPA 文件安装"><!--[--><!--]--> iPA 文件安装 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/isa.md" class="sidebar-item" aria-label="isa 指针"><!--[--><!--]--> isa 指针 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/keychain.md" class="sidebar-item" aria-label="钥匙串学习"><!--[--><!--]--> 钥匙串学习 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/libmobiledevice.md" class="sidebar-item" aria-label="libmobiledevice"><!--[--><!--]--> libmobiledevice <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/method-forward.md" class="sidebar-item" aria-label="消息转发"><!--[--><!--]--> 消息转发 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/multiple-thread.md" class="sidebar-item active" aria-label="多线程"><!--[--><!--]--> 多线程 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/security.md" class="sidebar-item" aria-label="security"><!--[--><!--]--> security <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/symbols.md" class="sidebar-item" aria-label="符号表"><!--[--><!--]--> 符号表 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/tips.md" class="sidebar-item" aria-label="iOS 开发小知识"><!--[--><!--]--> iOS 开发小知识 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/UIScrollview.md" class="sidebar-item" aria-label="UIScrollView 约束"><!--[--><!--]--> UIScrollView 约束 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/2-unity-ios-bridge.md" class="sidebar-item" aria-label="iOS &amp; Unity 相互调用"><!--[--><!--]--> iOS &amp; Unity 相互调用 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/vapor-tutorial.md" class="sidebar-item" aria-label="Vapor 学习"><!--[--><!--]--> Vapor 学习 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/xcode-shortcut.md" class="sidebar-item" aria-label="Xcode 快捷键"><!--[--><!--]--> Xcode 快捷键 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/configure-alternate-app-icon.md" class="sidebar-item" aria-label="Configure Alternate App Icon"><!--[--><!--]--> Configure Alternate App Icon <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/sending-push-notification.md" class="sidebar-item" aria-label="Sending Push Notifications"><!--[--><!--]--> Sending Push Notifications <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/how-to-create-dmg.md" class="sidebar-item" aria-label="How to create dmg file"><!--[--><!--]--> How to create dmg file <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/how-to-test-static-framework/how-to-test-static-framework.md" class="sidebar-item" aria-label="How to test static framework"><!--[--><!--]--> How to test static framework <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/download-xcappdata-folder.md" class="sidebar-item" aria-label="How to download xcappdata folder"><!--[--><!--]--> How to download xcappdata folder <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">Keywords <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/SwiftKeywords/dynamicCallable.md" class="sidebar-item" aria-label="dynamicCallable"><!--[--><!--]--> dynamicCallable <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><a href="/blog/iOS/ios-app-preorder.md" class="sidebar-item" aria-label="iOS App Pre-Order"><!--[--><!--]--> iOS App Pre-Order <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">面试 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/interview/0-interview-question.md" class="sidebar-item" aria-label="面试题"><!--[--><!--]--> 面试题 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/1-category-and-extension.md" class="sidebar-item" aria-label="Category &amp; Extension"><!--[--><!--]--> Category &amp; Extension <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/2-atomic.md" class="sidebar-item" aria-label="原子性"><!--[--><!--]--> 原子性 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/3-weak.md" class="sidebar-item" aria-label="Weak"><!--[--><!--]--> Weak <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/4-associated-object.md" class="sidebar-item" aria-label="关联对象"><!--[--><!--]--> 关联对象 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/property.md" class="sidebar-item" aria-label="属性"><!--[--><!--]--> 属性 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><p tabindex="0" class="sidebar-item">源码学习 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/open-analysis/AFNetworking.md" class="sidebar-item" aria-label="AFNetworking"><!--[--><!--]--> AFNetworking <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/open-analysis/Aspects.md" class="sidebar-item" aria-label="Aspects"><!--[--><!--]--> Aspects <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/open-analysis/Masonry.md" class="sidebar-item" aria-label="Masonry"><!--[--><!--]--> Masonry <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="ios-thread-notes" tabindex="-1"><a class="header-anchor" href="#ios-thread-notes" aria-hidden="true">#</a> iOS Thread Notes</h1><p>Threading Terminology</p><ul><li>The term <strong>thread</strong> is used to refer to a separate path of execution for code.</li><li>The term <strong>process</strong> is used to refer to a running executable, which can encompass multiple threads.</li><li>The term <strong>task</strong> is used to refer to the abstract concept of work that needs to be performed.</li></ul><p>The contents about the notes:</p><p><a href="#pthread">pthread</a></p><p><a href="#nsthread">NSThread</a></p><p><a href="#gcd">GCD</a></p><p><a href="#nsoperation">NSOperation</a></p><p><a href="#using-locks">Using Locks</a></p><p><a href="#interview-questions">Interview Question</a></p><p><a href="#reference">Reference</a></p><h2 id="pthread" tabindex="-1"><a class="header-anchor" href="#pthread" aria-hidden="true">#</a> pthread</h2><p><strong>特点</strong></p><p>程序员自己管理线程的生命周期</p><p><strong>定义</strong></p><blockquote><p>线程库实行了 POSIX 线程标准通常称为 pthreads。</p><p>POSIX 线程具有很好的可移植性，使用 pthreads 编写的代码可运行于 Solaris、FreeBSD、Linux 等平台，Windows 平台亦有pthreads-win32 可供使用 。 pthreads 定义了一套C语言的类型、函数与常量，它以 pthread.h 头文件和一个线程库实现。</p></blockquote><p><strong>创建线程</strong></p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>#import &lt;pthread.h&gt;
+
+- (void)demo {
+    //1.创建线程对象
+    pthread_t thread;
+    
+    /**2.创建线程
+    参数：
+     1.指向线程标识符的指针，C 语言中类型的结尾通常 _t/Ref，而且不需要使用 *;
+     2.用来设置线程属性;
+     3.指向函数的指针,传入函数名(函数的地址)，线程要执行的函数/任务;
+     4.运行函数的参数;
+     */
+    NSString *param = @&quot;参数&quot;;
+    int result = pthread_create(&amp;thread, NULL, func, (__bridge void *)(param));
+    if (result == 0) {
+    	NSLog(@&quot;success&quot;)
+    } else {
+    	NSLog(@&quot;failure&quot;);
+    	return;
+    }
+    
+    //3.设置子线程的状态设置为detached,则该线程运行结束后会自动释放所有资源，或者在子线程中添加 pthread_detach(pthread_self()),其中pthread_self()是获得线程自身的id
+    pthread_detach(thread);
+ }
+ 
+ void *func(void *param) {
+	//在此做耗时操作
+    NSLog(@&quot;new thread : %@  参数是: %@&quot;,[NSThread currentThread],(__bridge NSString *)(param));
+    
+    return NULL;
+ }
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p><strong>其他函数</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>pthread_t：线程ID
+pthread_attr_t：线程属性
+pthread_create()：创建一个线程
+pthread_exit()：终止当前线程
+pthread_cancel()：中断另外一个线程的运行
+pthread_join()：阻塞当前的线程，直到另外一个线程运行结束
+pthread_attr_init()：初始化线程的属性
+pthread_attr_setdetachstate()：设置脱离状态的属性（决定这个线程在终止时是否可以被结合）
+pthread_attr_getdetachstate()：获取脱离状态的属性
+pthread_attr_destroy()：删除线程的属性
+pthread_kill()：向线程发送一个信号
+pthread_equal(): 对两个线程的线程标识号进行比较
+pthread_detach(): 分离线程
+pthread_self(): 查询线程自身线程标识号
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="nsthread" tabindex="-1"><a class="header-anchor" href="#nsthread" aria-hidden="true">#</a> NSThread</h2><p><strong>特点</strong></p><p>程序员管理线程的生命周期；</p><p>使用OC对象， 简单易用，可直接操作线程对象</p><p><strong>创建方式</strong></p><p><strong>1. 实例方法创建线程</strong></p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)useInstanceMehotd:(id)sender {
+    NSLog(@&quot;===== begin %@&quot;, [NSThread currentThread]);
+    // 创建NSThread 对象
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(myOperation:) object:@&quot;instance method&quot;];
+    // 启动线程 -&gt; 开辟子线程执行方法
+    [thread start];
+    NSLog(@&quot;===== end %@&quot;, [NSThread currentThread]);
+}
+
+- (void)myOperation:(id)param {
+    NSLog(@&quot;begin %@&quot;, [NSThread currentThread]);
+    NSLog(@&quot;param = %@&quot;, param);
+    [NSThread sleepForTimeInterval:3];
+    NSLog(@&quot;end %@&quot;, [NSThread currentThread]);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><strong>2. 类方法创建线程</strong></p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)useClassMethod:(id)sender {
+    NSLog(@&quot;===== begin %@&quot;, [NSThread currentThread]);
+    // 自动创建线程，并执行方法
+    [NSThread detachNewThreadSelector:@selector(myOperation:) toTarget:self withObject:@&quot;class method&quot;];
+    NSLog(@&quot;===== end %@&quot;, [NSThread currentThread]);
+
+}
+
+- (void)myOperation:(id)param {
+    NSLog(@&quot;begin %@&quot;, [NSThread currentThread]);
+    NSLog(@&quot;param = %@&quot;, param);
+    [NSThread sleepForTimeInterval:3];
+    NSLog(@&quot;end %@&quot;, [NSThread currentThread]);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p><strong>3. NSObject分类方法创建线程</strong></p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)useCatgoryMethod:(id)sender {
+    NSLog(@&quot;===== begin %@&quot;, [NSThread currentThread]);
+    // 是NSObject分类方法
+    // 自动在后台线程执行
+    [self performSelectorInBackground:@selector(myOperation:) withObject:@&quot;category method&quot;];
+    NSLog(@&quot;===== end %@&quot;, [NSThread currentThread]);
+}
+
+- (void)myOperation:(id)param {
+    NSLog(@&quot;begin %@&quot;, [NSThread currentThread]);
+    NSLog(@&quot;param = %@&quot;, param);
+    [NSThread sleepForTimeInterval:3];
+    NSLog(@&quot;end %@&quot;, [NSThread currentThread]);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="gcd" tabindex="-1"><a class="header-anchor" href="#gcd" aria-hidden="true">#</a> GCD</h2><p><strong>特点</strong></p><p>不用关心线程的生命周期</p><p><strong>执行任务方式</strong></p><ol><li>同步的方式执行：</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>dispatch_sync(dispatch_queue_t queue, dispatch_block_t block);
+queue: 队列
+block: 任务
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><ol start="2"><li>异步的方式执行</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>dispatch_async(dispatch_queue_t queue, dispatch_block_t block);
+queue: 队列
+block: 任务
+
+同步：
+只能在当前线程中执行任务， 不具备开启线程能力
+必须等待任务执行完毕，才会执行下一条语句
+
+异步：
+可以在新的线程中执行， 具备开启新线程能力
+不用等待任务执行完毕， 就可以执行下一条语句
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><strong>队列类型</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>1. 并发队列(Concurrent Dispatch Queue)
+   * 允许多个任务并发（同时）执行
+   * 并发功能只有在异步函数下才有效
+2. 串行队列（Serial Dispatch Queue)
+   * 让任务一个接着一个的执行
+
+全局队列（dispatch_get_global_queue): 是一个并发队列
+主队列（dispatch_get_main_queue): 主队列专门用于在主线程上执行任务， 是一个串行队列
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><strong>队列执行效果</strong></p><table><thead><tr><th style="text-align:center;"></th><th style="text-align:left;">并发队列</th><th style="text-align:left;">串行队列</th></tr></thead><tbody><tr><td style="text-align:center;"><strong>同步</strong></td><td style="text-align:left;">1.没有开启新线程<br>2.串行执行任务</td><td style="text-align:left;">1. 没有开启新线程<br>2. 串行执行任务</td></tr><tr><td style="text-align:center;"><strong>异步</strong></td><td style="text-align:left;">1. 开启新线程<br>2. 并发执行任务</td><td style="text-align:left;">1. 开启新线程<br>2. 串行执行任务</td></tr></tbody></table><h3 id="dispatch-barrier" tabindex="-1"><a class="header-anchor" href="#dispatch-barrier" aria-hidden="true">#</a> Dispatch barrier</h3><blockquote><p>该函数会等待dispatch_barrier_async 前面所有任务完成</p></blockquote><blockquote><p>然后在执行 dispatch_barrier_async 的任务</p></blockquote><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)test_barrier_async:(id)sender {
+    dispatch_queue_t queue = dispatch_queue_create(&quot;com.chenxi.learn.thread&quot;, DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@&quot;task1 complete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@&quot;task2 complete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        int time = arc4random() % 5;
+        [NSThread sleepForTimeInterval:time];
+        NSLog(@&quot;task3 complete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    // 阻塞
+    dispatch_barrier_async(queue, ^{
+        NSLog(@&quot;barrier asycn task ..., %@&quot;, [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:3];
+        NSLog(@&quot;another task1 complete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@&quot;another task2 complete, %@&quot;, [NSThread currentThread]);
+    });
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><h4 id="" tabindex="-1"><a class="header-anchor" href="#" aria-hidden="true">#</a></h4><h3 id="dispatch-group" tabindex="-1"><a class="header-anchor" href="#dispatch-group" aria-hidden="true">#</a> Dispatch group</h3><blockquote><p>使用 dispatch_group_async 和 dispatch_group_notify 函数来完成调度组的工作</p></blockquote><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)demo {
+    
+    // 1. 调度组
+    dispatch_group_t group = dispatch_group_create();
+    
+    // 2. 并发队列
+    dispatch_queue_t queue = dispatch_queue_create(&quot;com.chenxi.learn.thread&quot;, DISPATCH_QUEUE_CONCURRENT);
+    
+    // 3. 任务添加到调度组
+    dispatch_group_async(group, queue, ^{
+        [NSThread sleepForTimeInterval:3];
+        NSLog(@&quot;task1 comolete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    dispatch_group_async(group, queue, ^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@&quot;task2 comolete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    dispatch_group_async(group, queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@&quot;task3 comolete, %@&quot;, [NSThread currentThread]);
+    });
+    
+    // 等待所有任务离开调度组， 调用该函数
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@&quot;all task completed, %@&quot;, [NSThread currentThread]);
+    });
+    
+    NSLog(@&quot;other things ...&quot;);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><h2 id="nsoperation" tabindex="-1"><a class="header-anchor" href="#nsoperation" aria-hidden="true">#</a> NSOperation</h2><p><strong>特点</strong></p><blockquote><p>是使用OC语言对GCD的封装</p></blockquote><blockquote><p>完全面向对象，不需要管理线程的生命周期</p></blockquote><p>NSOperation 只是一个抽象类， 需要使用子类来执行任务。 苹果提供了两个子类： NSInvocationOperation 和 NSBlockOperation。</p><p><strong>核心</strong></p><blockquote><p>操作(NSoperation)： 要做的事情</p></blockquote><blockquote><p>队列(NSOperationQueue): 存放操作</p></blockquote><p><strong>使用步骤</strong></p><blockquote><p>创建操作</p></blockquote><blockquote><p>创建队列</p></blockquote><blockquote><p>将操作放入队列</p></blockquote><h3 id="nsinvocationoperation" tabindex="-1"><a class="header-anchor" href="#nsinvocationoperation" aria-hidden="true">#</a> NSInvocationOperation</h3><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)tes_invocation:(id)sender {
+    
+    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(demo:) object:@{@&quot;name&quot;:@&quot;invocationOperation&quot;, @&quot;param&quot;: @&quot;hello world&quot;}];
+    
+    // 操作完成回调
+    [invocationOperation setCompletionBlock:^{
+        NSLog(@&quot;end invocation thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [queue addOperation:invocationOperation];
+}
+
+- (void)demo:(id)obj {
+    [NSThread sleepForTimeInterval:arc4random()%4];
+    NSLog(@&quot;thread = %@, msg = %@&quot;, [NSThread currentThread], obj);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="nsblockoperation" tabindex="-1"><a class="header-anchor" href="#nsblockoperation" aria-hidden="true">#</a> NSBlockOperation</h3><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)test_block:(id)sender {
+    
+    NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:3];
+        NSLog(@&quot;block operation 1, thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    // 可以添加多个任务
+    [blockOperation addExecutionBlock:^{
+        [NSThread sleepForTimeInterval:1];
+        NSLog(@&quot;block operation 2, thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    [blockOperation addExecutionBlock:^{
+        [NSThread sleepForTimeInterval:1.5];
+        NSLog(@&quot;block operation 3, thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    [blockOperation setCompletionBlock:^{
+        NSLog(@&quot;end block operation, thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [queue addOperation:blockOperation];
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h3 id="操作依赖" tabindex="-1"><a class="header-anchor" href="#操作依赖" aria-hidden="true">#</a> 操作依赖</h3><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (IBAction)test_dependency:(id)sender {
+    
+    _queue = [[NSOperationQueue alloc] init];
+    
+    NSBlockOperation *op1 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:3];
+        NSLog(@&quot;op1 , thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    NSBlockOperation *op2 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@&quot;op2 , thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    NSBlockOperation *op3 = [NSBlockOperation blockOperationWithBlock:^{
+        [NSThread sleepForTimeInterval:0.5];
+        NSLog(@&quot;op3 , thread = %@&quot;, [NSThread currentThread]);
+    }];
+    
+    // op1 完成之后，开始op2 / op3 任务
+    [op2 addDependency:op1];
+    [op3 addDependency:op1];
+    
+    [_queue addOperation:op1];
+    [_queue addOperation:op2];
+    [_queue addOperation:op3];
+    
+    NSLog(@&quot;test dependency , thread = %@&quot;, [NSThread currentThread]);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h3 id="defining-a-custom-operation-object" tabindex="-1"><a class="header-anchor" href="#defining-a-custom-operation-object" aria-hidden="true">#</a> <a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/OperationObjects/OperationObjects.html#//apple_ref/doc/uid/TP40008091-CH101-SW16" target="_blank" rel="noopener noreferrer">Defining a Custom Operation Object<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></h3><blockquote><p>自定义 Operation 需要继承 NSOperation 类，并实现其 main() 方法，因为在调用 start() 方法的时候，内部会调用 main() 方法完成相关逻辑。</p></blockquote><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// 创建 CustomOperation 类， 继承自 NSOperation
+@interface CustomOperation : NSOperation
+@end
+
+@implementation CustomOperation
+
+- (void)main
+{
+    NSTimeInterval time = arc4random() % 6;
+    [NSThread sleepForTimeInterval:time];
+    NSLog(@&quot;thread %@&quot;, [NSThread currentThread]);
+}
+
+@end
+
+// ======= 在其他文件调用
+
+- (IBAction)test_custom_operation:(id)sender {
+    
+    CustomOperation *operation1 = [[CustomOperation alloc] init];
+    CustomOperation *operation2 = [[CustomOperation alloc] init];
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [queue addOperation:operation1];
+    [queue addOperation:operation2];
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="队列其他方法" tabindex="-1"><a class="header-anchor" href="#队列其他方法" aria-hidden="true">#</a> 队列其他方法</h3><blockquote><p>maxConcurrentOperationCount 这是最大并发数</p></blockquote><blockquote><p>suspended 队列暂停/继续</p></blockquote><blockquote><p>cancelAllOperations 取消所有操作</p></blockquote><h2 id="using-locks" tabindex="-1"><a class="header-anchor" href="#using-locks" aria-hidden="true">#</a> Using locks</h2><h3 id="using-a-posix-mutex-lock" tabindex="-1"><a class="header-anchor" href="#using-a-posix-mutex-lock" aria-hidden="true">#</a> Using a POSIX Mutex Lock</h3><p>To create the mutex lock, you declare and initialize a <code>pthread_mutex_t</code> structure.</p><p>To lock and unlock the mutex lock, you use the <code>pthread_mutex_lock</code> and <code>pthread_mutex_unlock</code> functions.</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>pthread_mutex_t mutex;
+void MyInitFunction()
+{
+    pthread_mutex_init(&amp;mutex, NULL);
+}
+ 
+void MyLockingFunction()
+{
+    pthread_mutex_lock(&amp;mutex);
+    // Do work.
+    pthread_mutex_unlock(&amp;mutex);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h3 id="using-the-nslock-class" tabindex="-1"><a class="header-anchor" href="#using-the-nslock-class" aria-hidden="true">#</a> Using the NSLock Class</h3><p>An <a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSLock/Description.html#//apple_ref/occ/cl/NSLock" target="_blank" rel="noopener noreferrer">NSLock<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> object implements a basic mutex for Cocoa applications.</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>BOOL moreToDo = YES;
+NSLock *theLock = [[NSLock alloc] init];
+...
+while (moreToDo) {
+    /* Do another increment of calculation */
+    /* until there’s no more to do. */
+    if ([theLock tryLock]) {
+        /* Update display used by all threads. */
+        [theLock unlock];
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="using-the-synchronized-directive" tabindex="-1"><a class="header-anchor" href="#using-the-synchronized-directive" aria-hidden="true">#</a> Using the @synchronized Directive</h3><p>The <code>@synchronized</code> directive is a convenient way to create mutex locks on the fly in Objective-C code.</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)myMethod:(id)anObj
+{
+    @synchronized(anObj)
+    {
+        // Everything between the braces is protected by the @synchronized directive.
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>As a precautionary measure, the <code>@synchronized</code> block implicitly adds an exception handler to the protected code.</p><p>This handler automatically releases the mutex in the event that an exception is thrown.</p><h3 id="using-an-nsrecursivelock-object" tabindex="-1"><a class="header-anchor" href="#using-an-nsrecursivelock-object" aria-hidden="true">#</a> Using an NSRecursiveLock Object</h3><p>The <a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSRecursiveLock/Description.html#//apple_ref/occ/cl/NSRecursiveLock" target="_blank" rel="noopener noreferrer">NSRecursiveLock<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> class defines a lock that can be acquired multiple times by the same thread without causing the thread to deadlock.</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>NSRecursiveLock *theLock = [[NSRecursiveLock alloc] init];
+ 
+void MyRecursiveFunction(int value)
+{
+    [theLock lock];
+    if (value != 0)
+    {
+        --value;
+        MyRecursiveFunction(value);
+    }
+    [theLock unlock];
+}
+ 
+MyRecursiveFunction(5);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="using-an-nsconditionlock-object" tabindex="-1"><a class="header-anchor" href="#using-an-nsconditionlock-object" aria-hidden="true">#</a> Using an NSConditionLock Object</h3><p>An <a href="https://developer.apple.com/library/archive/documentation/LegacyTechnologies/WebObjects/WebObjects_3.5/Reference/Frameworks/ObjC/Foundation/Classes/NSConditionLock/Description.html#//apple_ref/occ/cl/NSConditionLock" target="_blank" rel="noopener noreferrer">NSConditionLock<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a> object defines a mutex lock that can be locked and unlocked with specific values.</p><p>Typically, you use an <code>NSConditionLock</code> object when threads need to perform tasks in a specific order, such as when one thread produces data that another consumes. While the producer is executing, the consumer acquires the lock using a condition that is specific to your program. (The condition itself is just an integer value that you define.) When the producer finishes, it unlocks the lock and sets the lock condition to the appropriate integer value to wake the consumer thread, which then proceeds to process the data.</p><p>The following example shows how the producer-consumer problem might be handled using condition locks.</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>id condLock = [[NSConditionLock alloc] initWithCondition:NO_DATA];
+ 
+while(true)
+{
+    [condLock lock];
+    /* Add data to the queue. */
+    [condLock unlockWithCondition:HAS_DATA];
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>The following example shows the basic structure of the consumer thread’s processing loop.</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>while (true)
+{
+    [condLock lockWhenCondition:HAS_DATA];
+    /* Remove data from the queue. */
+    [condLock unlockWithCondition:(isEmpty ? NO_DATA : HAS_DATA)];
+ 
+    // Process the data locally.
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="interview-questions" tabindex="-1"><a class="header-anchor" href="#interview-questions" aria-hidden="true">#</a> Interview Questions</h2><h3 id="_1-下面代码会输出什么" tabindex="-1"><a class="header-anchor" href="#_1-下面代码会输出什么" aria-hidden="true">#</a> 1. 下面代码会输出什么?</h3><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (void)viewDidLoad {
+	[super viewDidLoad];
+	NSLog(@&quot;1&quot;);
+   	dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@&quot;2&quot;);
+    });
+    NSLog(@&quot;3&quot;);
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>答案:</p><blockquote><p>输出: 1， 然后崩溃</p></blockquote><p>原因:</p><blockquote><p>系统维护的 <code>dispatch_get_main_queue()</code> 这个队列里面在执行 <code>viewDidLoad</code>方法，在 <code>viewDidLoad</code> 中又再次在 <code>dispatch_get_main_queue()</code> 这个相同的队列里面执行<code>block</code>方法。</p><p>由于串行队列 <code>FIFO</code> 原则，系统维护的<code>dispatch_get_main_queue()</code>先进栈，所以要先执行完毕后，再执行后进栈的队列任务。</p><p>系统维护的 <code>dispatch_get_main_queue()</code> 执行完的条件时 <code>viewDidLoad</code> 方法执行完毕，所以系统维护的 <code>dispatch_get_main_queue()</code> 会等待 <code>dispatch_sync</code> 调用的<code>dispatch_get_main_queue()</code> 执行完毕。</p><p><code>dispatch_sync</code> 调用的 <code>dispatch_get_main_queue()</code>又在等待先进栈的系统维护的 <code>dispatch_get_main_queue()</code>执行完毕，这样就陷入死循环。</p></blockquote><h3 id="_2-下面代码会输出什么" tabindex="-1"><a class="header-anchor" href="#_2-下面代码会输出什么" aria-hidden="true">#</a> 2. 下面代码会输出什么?</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>dispatch_queue_t queue = dispatch_queue_create(NULL, DISPATCH_QUEUE_SERIAL);
+dispatch_async(queue, ^{
+    NSLog(@&quot;1&quot;);
+    dispatch_sync(queue, ^{
+        NSLog(@&quot;2&quot;);
+    });
+    NSLog(@&quot;3&quot;);
+});
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>答案:</p><blockquote><p>输出1，然后崩溃</p></blockquote><p>原因:</p><blockquote><p>同上</p></blockquote><h2 id="reference" tabindex="-1"><a class="header-anchor" href="#reference" aria-hidden="true">#</a> Reference</h2><ul><li><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Multithreading/Introduction/Introduction.html#//apple_ref/doc/uid/10000057i-CH1-SW1" target="_blank" rel="noopener noreferrer">Threading Programming Guide<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li><li><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008091-CH1-SW1" target="_blank" rel="noopener noreferrer">Concurrency Programming Guide<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li><li><a href="https://www.jianshu.com/p/0b0d9b1f1f19" target="_blank" rel="noopener noreferrer">关于iOS多线程，你看我就够了<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li></ul><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/chenxi92/blog.git/edit/main/iOS/multiple-thread.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新时间: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: peak@jiemogame.com">peak</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.01142347.js" defer></script>
+  </body>
+</html>

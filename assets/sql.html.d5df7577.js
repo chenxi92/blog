@@ -1,0 +1,1 @@
+const e={key:"v-545bfc06",path:"/database/sql.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633945792e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"database/sql.md"};export{e as data};

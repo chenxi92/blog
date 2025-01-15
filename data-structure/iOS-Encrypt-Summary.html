@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>陈希的学习笔记</title><meta name="description" content="">
+    <link rel="modulepreload" href="/blog/assets/app.01142347.js"><link rel="modulepreload" href="/blog/assets/iOS-Encrypt-Summary.html.3f26edc3.js"><link rel="modulepreload" href="/blog/assets/iOS-Encrypt-Summary.html.d0a4c6ea.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.72ef85ec.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="陈希的学习笔记"><span class="site-name can-hide">陈希的学习笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="router-link-active" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="router-link-active" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">数据结构学习 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/data-structure/iOS-Encrypt-summary.md" class="sidebar-item" aria-label="加密算法总结"><!--[--><!--]--> 加密算法总结 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/xor.md" class="sidebar-item" aria-label="异或运算"><!--[--><!--]--> 异或运算 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/RC4-C++&amp;Python.md" class="sidebar-item" aria-label="RC4"><!--[--><!--]--> RC4 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/xor.md" class="sidebar-item" aria-label="常见排序算法"><!--[--><!--]--> 常见排序算法 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h3 id="ios常见加密算法总结" tabindex="-1"><a class="header-anchor" href="#ios常见加密算法总结" aria-hidden="true">#</a> iOS常见加密算法总结</h3><h4 id="_1-安全散列算法" tabindex="-1"><a class="header-anchor" href="#_1-安全散列算法" aria-hidden="true">#</a> <a href="#Secure-Hash-Algorithm">1. 安全散列算法</a></h4><blockquote><p><strong>Secure Hash Algorithm</strong>，常见的算法包括了 <strong><a href="#md5">MD5</a></strong>、<strong><a href="#SHA">SHA1</a></strong>、<strong><a href="#HMAC">HMAC</a></strong> 等。</p></blockquote><blockquote><p>将任意长度的二进制值映射为较短的固定长度的二进制值，这个短的二进制值称为哈希值，这个算法具有不可逆、碰撞低等特性。同时该类算法可以用作数字签名，用来证实某个信息确实是由某个人发出的，同时可以保证信息没有被修改。</p></blockquote><blockquote><p>实际上，简单来说，这种算法有两个特性：</p><p>A) 不同的输入一定得出不同的 hash 值；</p><p>B) 无法从 hash 值倒推出原来的输入。</p></blockquote><h4 id="_2-对称加密" tabindex="-1"><a class="header-anchor" href="#_2-对称加密" aria-hidden="true">#</a> <a href="#symmetric-key-encryption">2. 对称加密</a></h4><blockquote><p><strong>symmetric-key encryption</strong>，其中常见的算法包括了 <strong><a href="#AES">AES</a></strong>、<strong><a href="#DES">DES</a></strong>、<strong>3DES</strong>、<strong><a href="#RC4">RC4</a></strong> 等。</p></blockquote><blockquote><p>对称加密指的是可以使用同一个密钥对内容进行加密和解密，相比非对称加密，它的特点是加/解密速度快，并且加密的内容长度几乎没有限制。</p></blockquote><h4 id="_3-非对称加密" tabindex="-1"><a class="header-anchor" href="#_3-非对称加密" aria-hidden="true">#</a> <a href="#asymmetric-public-key-encryption">3. 非对称加密</a></h4><blockquote><p><strong>asymmetric/public-key encryption</strong>，常见的加密算法有 <strong><a href="#RSA">RSA</a></strong>、<strong>DSA</strong>、<strong>ECC</strong> 等。</p></blockquote><blockquote><p>非对称加密有两个密钥，分别为公钥和私钥，其中公钥公开给所有人，私钥永远只能自己知道。</p></blockquote><blockquote><p>使用公钥加密的信息只能使用私钥解密，使用私钥加密只能使用公钥解密。前者用来传输需要保密的信息，因为全世界只有知道对应私钥的人才可以解密；后者用来作数字签名，因为公钥对所有人公开的，可以用来确认这个信息是否是从私钥的拥有者发出的。</p></blockquote><h3 id="安全散列算法" tabindex="-1"><a class="header-anchor" href="#安全散列算法" aria-hidden="true">#</a> <a name="Secure-Hash-Algorithm"></a>安全散列算法</h3><p><strong><a name="md5"></a>MD5信息摘要</strong></p><blockquote><p><strong>MD5 Message-Digest Algorithm</strong>，一种被广泛使用的密码散列函数，可以产生出一个128位（16字节）的散列值（hash value），用于确保信息传输完整一致。</p><p>MD5由美国密码学家罗纳德·李维斯特（Ronald Linn Rivest）设计，于1992年公开，用以取代MD4算法。</p><p>将数据（如一段文字）运算变为另一固定长度值，是散列算法的基础原理。</p><p>1996年后被证实存在弱点，可以被加以破解，对于需要高度安全性的数据，专家一般建议改用其他算法，如SHA-2。2004年，证实MD5算法无法防止碰撞（collision），因此不适用于安全性认证，如SSL公开密钥认证或是数字签名等用途。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>#include &lt;CommonCrypto/CommonCrypto.h&gt;
+
+@implementation NSData (Add)
+
+- (NSString *)md5String {
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString string];
+    for (int i = 0; i &lt; CC_MD5_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="sha家族" tabindex="-1"><a class="header-anchor" href="#sha家族" aria-hidden="true">#</a> <a name="SHA"></a>SHA家族</h3><blockquote><p><strong>安全散列算法</strong>（英语：Secure Hash Algorithm，缩写为SHA）是一个密码散列函数家族，是FIPS所认证的安全散列算法。 能计算出一个数字消息所对应到的，长度固定的字符串（又称消息摘要）的算法。且若输入的消息不同，它们对应到不同字符串的机率很高。 SHA家族的算法，由美国国家安全局（NSA）所设计，并由美国国家标准与技术研究院（NIST）发布，是美国的政府标准，其分别是：</p></blockquote><blockquote><p><strong>SHA-0</strong>：1993年发布，当时称做安全散列标准（Secure Hash Standard），发布之后很快就被NSA撤回，是SHA-1的前身。</p></blockquote><blockquote><p><strong>SHA-1</strong>：1995年发布，SHA-1在许多安全协议中广为使用，包括TLS和SSL、PGP、SSH、S/MIME和IPsec，曾被视为是MD5（更早之前被广为使用的散列函数）的后继者。但SHA-1的安全性在2000年以后已经不被大多数的加密场景所接受。 2017年荷兰密码学研究小组CWI和Google正式宣布攻破了SHA-1。</p></blockquote><blockquote><p><strong>SHA-2</strong>：2001年发布，包括SHA-224、SHA-256、SHA-384、SHA-512、SHA-512/224、SHA-512/256。 虽然至今尚未出现对SHA-2有效的攻击，它的算法跟SHA-1基本上仍然相似；因此有些人开始发展其他替代的散列算法。</p></blockquote><blockquote><p><strong>SHA-3</strong>：2015年正式发布，SHA-3并不是要取代SHA-2，因为SHA-2目前并没有出现明显的弱点。 由于对MD5出现成功的破解，以及对SHA-0和SHA-1出现理论上破解的方法，NIST感觉需要一个与之前算法不同的，可替换的加密散列算法，也就是现在的SHA-3。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>#include &lt;CommonCrypto/CommonCrypto.h&gt;
+
+@implementation NSData (Add)
+
+- (NSString *)sha1String {
+    unsigned char result[CC_SHA1_DIGEST_LENGTH];
+    CC_SHA1(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    for (int i = 0; i &lt; CC_SHA1_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+
+- (NSString *)sha224String {
+    unsigned char result[CC_SHA224_DIGEST_LENGTH];
+    CC_SHA224(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA224_DIGEST_LENGTH * 2];
+    for (int i = 0; i &lt; CC_SHA224_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+
+- (NSString *)sha256String {
+    unsigned char result[CC_SHA256_DIGEST_LENGTH];
+    CC_SHA256(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
+    for (int i = 0; i &lt; CC_SHA256_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+
+- (NSString *)sha384String {
+    unsigned char result[CC_SHA384_DIGEST_LENGTH];
+    CC_SHA384(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA384_DIGEST_LENGTH * 2];
+    for (int i = 0; i &lt; CC_SHA384_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+
+- (NSString *)sha512String {
+    unsigned char result[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(self.bytes, (CC_LONG)self.length, result);
+    NSMutableString *hash = [NSMutableString
+                             stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
+    for (int i = 0; i &lt; CC_SHA512_DIGEST_LENGTH; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><h3 id="hmac" tabindex="-1"><a class="header-anchor" href="#hmac" aria-hidden="true">#</a> <a name="HMAC"></a>HMAC</h3><blockquote><p>HMAC加密算法是一种安全的基于加密hash函数和共享密钥的消息认证协议． 它可以有效地防止数据在传输过程中被截获和篡改，维护了数据的完整性、可靠性和安全性. HMAC加密算法是一种基于密钥的报文完整性的验证方法，其安全性是建立在Hash加密算法基础上的</p></blockquote><p><a href="https://en.wikipedia.org/wiki/HMAC" target="_blank" rel="noopener noreferrer">HMAC 维基百科<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>#include &lt;CommonCrypto/CommonCrypto.h&gt;
+
+@implementation NSData (Add)
+
+
+- (NSString *)hmacStringUsingAlg:(CCHmacAlgorithm)alg withKey:(NSString *)key {
+    size_t size;
+    switch (alg) {
+        case kCCHmacAlgMD5: size = CC_MD5_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA1: size = CC_SHA1_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA224: size = CC_SHA224_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA256: size = CC_SHA256_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA384: size = CC_SHA384_DIGEST_LENGTH; break;
+        case kCCHmacAlgSHA512: size = CC_SHA512_DIGEST_LENGTH; break;
+        default: return nil;
+    }
+    unsigned char result[size];
+    const char *cKey = [key cStringUsingEncoding:NSUTF8StringEncoding];
+    CCHmac(alg, cKey, strlen(cKey), self.bytes, self.length, result);
+    NSMutableString *hash = [NSMutableString stringWithCapacity:size * 2];
+    for (int i = 0; i &lt; size; i++) {
+        [hash appendFormat:@&quot;%02x&quot;, result[i]];
+    }
+    return hash;
+}
+
+- (NSString *)hmacMD5StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgMD5 withKey:key];
+}
+
+
+- (NSString *)hmacSHA1StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA1 withKey:key];
+}
+
+
+- (NSString *)hmacSHA224StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA224 withKey:key];
+}
+
+
+- (NSString *)hmacSHA256StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA256 withKey:key];
+}
+
+
+- (NSString *)hmacSHA384StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA384 withKey:key];
+}
+
+
+- (NSString *)hmacSHA512StringWithKey:(NSString *)key {
+    return [self hmacStringUsingAlg:kCCHmacAlgSHA512 withKey:key];
+}
+
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br></div></div><h3 id="对称加密" tabindex="-1"><a class="header-anchor" href="#对称加密" aria-hidden="true">#</a> <a name="symmetric-key-encryption"></a>对称加密</h3><h4 id="aes" tabindex="-1"><a class="header-anchor" href="#aes" aria-hidden="true">#</a> <a name="AES"></a>AES</h4><blockquote><p>高级加密标准，在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院于2001年11月26日发布于FIPS PUB 197，并在2002年5月26日成为有效的标准.</p></blockquote><p>密码说明</p><blockquote><p>严格地说，<code>AES</code>和<code>Rijndael</code>加密法并不完全一样（虽然在实际应用中两者可以互换），因为<code>Rijndael</code>加密法可以支持更大范围的区块和密钥长度：<code>AES</code>的区块长度固定为128比特，密钥长度则可以是128，192或256比特；而<code>Rijndael</code>使用的密钥和区块长度均可以是128，192或256比特</p></blockquote><p>加/解密NSData：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>#include &lt;CommonCrypto/CommonCrypto.h&gt;
+
+@implementation NSData (Add)
+
+- (NSData *)AES256EncryptWithKey:(NSData *)key iv:(NSData *)iv {
+    if (key.length != 16 &amp;&amp; key.length != 24 &amp;&amp; key.length != 32) return nil;
+    if (iv.length != 16 &amp;&amp; iv.length != 0) return nil;
+    
+    NSData *result = nil;
+    size_t bufferSize = self.length + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    if (!buffer) return nil;
+    
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt,
+                                          kCCAlgorithmAES,
+                                          kCCOptionPKCS7Padding,
+                                          key.bytes,
+                                          key.length,
+                                          iv.bytes,
+                                          self.bytes,
+                                          self.length,
+                                          buffer,
+                                          bufferSize,
+                                          &amp;encryptedSize);
+    if (cryptStatus == kCCSuccess) {
+        result = [[NSData alloc] initWithBytes:buffer length:(NSUInteger)encryptedSize];
+        free(buffer);
+        return result;
+    } else {
+        free(buffer);
+        return nil;
+    }
+}
+
+- (NSData *)AES256DecryptWithKey:(NSData *)key iv:(NSData *)iv {
+    if (key.length != 16 &amp;&amp; key.length != 24 &amp;&amp; key.length != 32) return nil;
+    if (iv.length != 16 &amp;&amp; iv.length != 0) return nil;
+    
+    NSData *result = nil;
+    size_t bufferSize = self.length + kCCBlockSizeAES128;
+    void *buffer = malloc(bufferSize);
+    if (!buffer) return nil;
+    
+    size_t encryptedSize = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt,
+                                          kCCAlgorithmAES,
+                                          kCCOptionPKCS7Padding,
+                                          key.bytes,
+                                          key.length,
+                                          iv.bytes,
+                                          self.bytes,
+                                          self.length,
+                                          buffer,
+                                          bufferSize,
+                                          &amp;encryptedSize);
+    if (cryptStatus == kCCSuccess) {
+        result = [[NSData alloc] initWithBytes:buffer length:(NSUInteger)encryptedSize];
+        free(buffer);
+        return result;
+    } else {
+        free(buffer);
+        return nil;
+    }
+}
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br></div></div><p>加/解密文件：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>
++ (NSString *)AESEncrypt:(NSString *)filePath withKey:(NSString *)key withIv:(NSString *)iv {
+    
+    NSString *content = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptData = [data AES256EncryptWithKey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // convert to hex string
+    return [self _hexStringFromData:encryptData];
+}
+
++ (NSString *)AESDecrypt:(NSString *)filePath withKey:(NSString *)key withIv:(NSString *)iv {
+    
+    NSString *content = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    // convert hex string to NSData
+    NSData *data = [self _dataFromHexString:content];
+   
+    NSData *result = [data AES256DecryptWithKey:[key dataUsingEncoding:NSUTF8StringEncoding] iv:[iv dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    return [[NSString alloc] initWithData:result encoding:NSUTF8StringEncoding];
+}
+
+#pragma mark - Private Method
+
++ (NSString *)_hexStringFromData:(NSData *)data {
+    Byte *bytes = (Byte *)[data bytes];
+    NSMutableString *output = [NSMutableString stringWithCapacity:data.length * 2];
+    for (int i = 0; i &lt; data.length; i++) {
+        [output appendFormat:@&quot;%02x&quot;, bytes[i]];
+    }
+    return output;
+}
+
++ (NSData *)_dataFromHexString:(NSString *)hexString {
+    
+    NSMutableData *data = [NSMutableData dataWithCapacity:hexString.length/2];
+    unsigned char whole_byte;
+    char byte_chars[3] = {&#39;\0&#39;,&#39;\0&#39;,&#39;\0&#39;};
+    int i;
+    for (i=0; i &lt; [hexString length] / 2; i++) {
+        byte_chars[0] = [hexString characterAtIndex:i*2];
+        byte_chars[1] = [hexString characterAtIndex:i*2+1];
+        whole_byte = strtol(byte_chars, NULL, 16);
+        [data appendBytes:&amp;whole_byte length:1];
+    }
+    
+    return data;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br></div></div><p><strong>参考：</strong></p><p><a href="https://www.zhihu.com/question/20874499" target="_blank" rel="noopener noreferrer">RSA 1024和AES 256，这两种加密算法理论上哪种更安全？<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://www.cnblogs.com/luop/p/4334160.html" target="_blank" rel="noopener noreferrer">密码算法详解——AES<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%A7%E5%8A%A0%E5%AF%86%E6%A0%87%E5%87%86" target="_blank" rel="noopener noreferrer">高级加密标准<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://stackoverflow.com/questions/7317860/converting-hex-nsstring-to-nsdata" target="_blank" rel="noopener noreferrer">converting hex nsstring to nsdata<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><h4 id="des" tabindex="-1"><a class="header-anchor" href="#des" aria-hidden="true">#</a> <a name="DES"></a>DES</h4><blockquote><p><strong>数据加密标准</strong>（英语：Data Encryption Standard，缩写为 DES）是一种<a href="https://zh.wikipedia.org/wiki/%E5%B0%8D%E7%A8%B1%E5%AF%86%E9%91%B0%E5%8A%A0%E5%AF%86" target="_blank" rel="noopener noreferrer">对称密钥加密<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a><a href="https://zh.wikipedia.org/wiki/%E5%A1%8A%E5%AF%86%E7%A2%BC" target="_blank" rel="noopener noreferrer">块密码<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>算法，1976年被<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9B%BD" target="_blank" rel="noopener noreferrer">美国<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>联邦政府的<a href="https://zh.wikipedia.org/wiki/%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%E5%B1%80" target="_blank" rel="noopener noreferrer">国家标准局<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>确定为<a href="https://zh.wikipedia.org/wiki/%E8%81%94%E9%82%A6%E8%B5%84%E6%96%99%E5%A4%84%E7%90%86%E6%A0%87%E5%87%86" target="_blank" rel="noopener noreferrer">联邦资料处理标准<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>（FIPS），随后在国际上广泛流传开来。它基于使用56位密钥的<a href="https://zh.wikipedia.org/w/index.php?title=%E5%AF%86%E9%92%A5%E5%AF%86%E7%A0%81%E5%AD%A6&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener noreferrer">对称算法<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。这个算法因为包含一些<a href="https://zh.wikipedia.org/wiki/%E6%A9%9F%E5%AF%86" target="_blank" rel="noopener noreferrer">机密<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>设计元素，相对短的<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E9%92%A5%E9%95%BF%E5%BA%A6" target="_blank" rel="noopener noreferrer">密钥长度<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>以及怀疑内含<a href="https://zh.wikipedia.org/wiki/%E7%BE%8E%E5%9C%8B%E5%9C%8B%E5%AE%B6%E5%AE%89%E5%85%A8%E5%B1%80" target="_blank" rel="noopener noreferrer">美国国家安全局<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>（NSA）的<a href="https://zh.wikipedia.org/wiki/%E5%90%8E%E9%97%A8" target="_blank" rel="noopener noreferrer">后门<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>而在开始时有争议，DES因此受到了强烈的学院派式的审查，并以此推动了现代的<a href="https://zh.wikipedia.org/wiki/%E5%A1%8A%E5%AF%86%E7%A2%BC" target="_blank" rel="noopener noreferrer">块密码<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>及其<a href="https://zh.wikipedia.org/wiki/%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90" target="_blank" rel="noopener noreferrer">密码分析<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>的发展。</p></blockquote><p>iOS 代码示例</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>+ (NSString *)base64EncodedStringWithData:(NSData *)data {
+    return [data base64EncodedStringWithOptions:0];
+}
+
++ (NSData *)base64DecodedDataWithString:(NSString *)string {
+    return [self base64DecodedDataWithData:[string dataUsingEncoding:NSUTF8StringEncoding]];
+}
+
++ (NSData *)base64DecodedDataWithData:(NSData *)data {
+    return [[NSData alloc] initWithBase64EncodedData:data options:0];
+}
+
+// DES 加密
++ (NSString *)DESEncrypt:(NSString *)content withKey:(NSString *)key {
+    NSData *data = [content dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *encryptedData = [self DESCrypt:data withKey:key withIV:nil operation:kCCEncrypt];
+    return [self base64EncodedStringWithData:encryptedData];
+}
+
+// DES 解密
++ (NSString *)DESDecrypt:(NSString *)content withKey:(NSString *)key {
+    NSData *encryptedData = [self base64DecodedDataWithString:content];
+    NSData *decryptData = [self DESCrypt:encryptedData withKey:key withIV:nil operation:kCCDecrypt];
+    return [[NSString alloc] initWithData:decryptData encoding:NSUTF8StringEncoding];
+}
+
++ (NSData *)DESCrypt:(NSData *)contentData withKey:(NSString *)key withIV:(NSString *)iv operation:(CCOperation)operation {
+    
+    NSUInteger dataLength = contentData.length;
+    
+    const void *keyBytes = [key dataUsingEncoding:NSUTF8StringEncoding].bytes;
+    const void *ivBytes = [iv dataUsingEncoding:NSUTF8StringEncoding].bytes;
+    const void *contentBytes = contentData.bytes;
+    
+    size_t operationSize = dataLength + kCCBlockSizeDES;
+    void *operationBytes = malloc(operationSize);
+    if (operationBytes == NULL) return nil;
+    
+    size_t actualOutSize = 0;
+    CCCryptorStatus status = CCCrypt(operation, kCCAlgorithmDES, kCCOptionPKCS7Padding | kCCOptionECBMode, keyBytes, kCCKeySizeDES, ivBytes, contentBytes, dataLength, operationBytes, operationSize, &amp;actualOutSize);
+    
+    NSData *outputData = nil;
+    if (status == kCCSuccess) {
+        outputData = [NSData dataWithBytes:operationBytes length:actualOutSize];
+    }
+    
+    free(operationBytes);
+    return outputData;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><h4 id="rc4" tabindex="-1"><a class="header-anchor" href="#rc4" aria-hidden="true">#</a> <a name="RC4"></a>RC4</h4><blockquote><p><strong>Rivest Cipher 4</strong>是一种流加密算法，密钥长度可变。它加解密使用相同的密钥，因此也属于对称加密算法。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>#ifndef CX_SWAP // swap two value
+#define CX_SWAP(_a_, _b_) do {__typeof__(_a_) _tmp_ = (_a_); (_a_) = (_b_); (_b_) = (_tmp_); } while(0)
+#endif
+
+@implementation NSString (CX)
+- (NSString *)rc4WithKey:(NSString *)key {
+    int j = 0;
+    unichar res[self.length];
+    const unichar *buffer = res;
+    unsigned char s[256];
+    for (int i = 0; i &lt; 256; i++) {
+        s[i] = i;
+    }
+    for (int i = 0; i &lt; 256; i++) {
+        j = (j + s[i] + [key characterAtIndex:(i%key.length)])%256;
+        CX_SWAP(s[i], s[j]);
+    }
+    int i = j = 0;
+    for (int y = 0; y &lt; self.length; y++) {
+        i = (i + 1) % 256;
+        j = (j + 1) % 256;
+        CX_SWAP(s[i], s[j]);
+        
+        unsigned char f = [self characterAtIndex:y] ^ s[ (s[i] + s[j]) % 256 ];
+        res[y] = f;
+    }
+    return [NSString stringWithCharacters:buffer length:self.length];
+}
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h3 id="非对称加密" tabindex="-1"><a class="header-anchor" href="#非对称加密" aria-hidden="true">#</a> <a name="asymmetric-public-key-encryption"></a>非对称加密</h3><h4 id="rsa" tabindex="-1"><a class="header-anchor" href="#rsa" aria-hidden="true">#</a> <a name="RSA"></a>RSA</h4><p><strong>以下代码参考自</strong> <a href="https://github.com/ideawu/Objective-C-RSA" target="_blank" rel="noopener noreferrer">Objective-C-RSA<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>@interface RSA : NSObject
+
+// return base64 encoded string
++ (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey;
+// return raw data
++ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey;
+// return base64 encoded string
++ (NSString *)encryptString:(NSString *)str privateKey:(NSString *)privKey;
+// return raw data
++ (NSData *)encryptData:(NSData *)data privateKey:(NSString *)privKey;
+
+// decrypt base64 encoded string, convert result to string(not base64 encoded)
++ (NSString *)decryptString:(NSString *)str publicKey:(NSString *)pubKey;
++ (NSData *)decryptData:(NSData *)data publicKey:(NSString *)pubKey;
++ (NSString *)decryptString:(NSString *)str privateKey:(NSString *)privKey;
++ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey;
+
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>#import &quot;RSA.h&quot;
+#import &lt;Security/Security.h&gt;
+
+@implementation RSA
+
+static NSString *base64_encode_data(NSData *data){
+	data = [data base64EncodedDataWithOptions:0];
+	NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	return ret;
+}
+
+static NSData *base64_decode(NSString *str){
+	NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+	return data;
+}
+
++ (NSData *)stripPublicKeyHeader:(NSData *)d_key{
+	// Skip ASN.1 public key header
+	if (d_key == nil) return(nil);
+	
+	unsigned long len = [d_key length];
+	if (!len) return(nil);
+	
+	unsigned char *c_key = (unsigned char *)[d_key bytes];
+	unsigned int  idx	 = 0;
+	
+	if (c_key[idx++] != 0x30) return(nil);
+	
+	if (c_key[idx] &gt; 0x80) idx += c_key[idx] - 0x80 + 1;
+	else idx++;
+	
+	// PKCS #1 rsaEncryption szOID_RSA_RSA
+	static unsigned char seqiod[] =
+	{ 0x30,   0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01,
+		0x01, 0x05, 0x00 };
+	if (memcmp(&amp;c_key[idx], seqiod, 15)) return(nil);
+	
+	idx += 15;
+	
+	if (c_key[idx++] != 0x03) return(nil);
+	
+	if (c_key[idx] &gt; 0x80) idx += c_key[idx] - 0x80 + 1;
+	else idx++;
+	
+	if (c_key[idx++] != &#39;\0&#39;) return(nil);
+	
+	// Now make a new NSData from this buffer
+	return([NSData dataWithBytes:&amp;c_key[idx] length:len - idx]);
+}
+
+//credit: http://hg.mozilla.org/services/fx-home/file/tip/Sources/NetworkAndStorage/CryptoUtils.m#l1036
++ (NSData *)stripPrivateKeyHeader:(NSData *)d_key{
+	// Skip ASN.1 private key header
+	if (d_key == nil) return(nil);
+
+	unsigned long len = [d_key length];
+	if (!len) return(nil);
+
+	unsigned char *c_key = (unsigned char *)[d_key bytes];
+	unsigned int  idx	 = 22; //magic byte at offset 22
+
+	if (0x04 != c_key[idx++]) return nil;
+
+	//calculate length of the key
+	unsigned int c_len = c_key[idx++];
+	int det = c_len &amp; 0x80;
+	if (!det) {
+		c_len = c_len &amp; 0x7f;
+	} else {
+		int byteCount = c_len &amp; 0x7f;
+		if (byteCount + idx &gt; len) {
+			//rsa length field longer than buffer
+			return nil;
+		}
+		unsigned int accum = 0;
+		unsigned char *ptr = &amp;c_key[idx];
+		idx += byteCount;
+		while (byteCount) {
+			accum = (accum &lt;&lt; 8) + *ptr;
+			ptr++;
+			byteCount--;
+		}
+		c_len = accum;
+	}
+
+	// Now make a new NSData from this buffer
+	return [d_key subdataWithRange:NSMakeRange(idx, c_len)];
+}
+
++ (SecKeyRef)addPublicKey:(NSString *)key{
+	NSRange spos = [key rangeOfString:@&quot;-----BEGIN PUBLIC KEY-----&quot;];
+	NSRange epos = [key rangeOfString:@&quot;-----END PUBLIC KEY-----&quot;];
+	if(spos.location != NSNotFound &amp;&amp; epos.location != NSNotFound){
+		NSUInteger s = spos.location + spos.length;
+		NSUInteger e = epos.location;
+		NSRange range = NSMakeRange(s, e-s);
+		key = [key substringWithRange:range];
+	}
+	key = [key stringByReplacingOccurrencesOfString:@&quot;\r&quot; withString:@&quot;&quot;];
+	key = [key stringByReplacingOccurrencesOfString:@&quot;\n&quot; withString:@&quot;&quot;];
+	key = [key stringByReplacingOccurrencesOfString:@&quot;\t&quot; withString:@&quot;&quot;];
+	key = [key stringByReplacingOccurrencesOfString:@&quot; &quot;  withString:@&quot;&quot;];
+	
+	// This will be base64 encoded, decode it.
+	NSData *data = base64_decode(key);
+	data = [RSA stripPublicKeyHeader:data];
+	if(!data){
+		return nil;
+	}
+
+	//a tag to read/write keychain storage
+	NSString *tag = @&quot;RSAUtil_PubKey&quot;;
+	NSData *d_tag = [NSData dataWithBytes:[tag UTF8String] length:[tag length]];
+	
+	// Delete any old lingering key with the same tag
+	NSMutableDictionary *publicKey = [[NSMutableDictionary alloc] init];
+	[publicKey setObject:(__bridge id) kSecClassKey forKey:(__bridge id)kSecClass];
+	[publicKey setObject:(__bridge id) kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
+	[publicKey setObject:d_tag forKey:(__bridge id)kSecAttrApplicationTag];
+	SecItemDelete((__bridge CFDictionaryRef)publicKey);
+	
+	// Add persistent version of the key to system keychain
+	[publicKey setObject:data forKey:(__bridge id)kSecValueData];
+	[publicKey setObject:(__bridge id) kSecAttrKeyClassPublic forKey:(__bridge id)
+	 kSecAttrKeyClass];
+	[publicKey setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)
+	 kSecReturnPersistentRef];
+	
+	CFTypeRef persistKey = nil;
+	OSStatus status = SecItemAdd((__bridge CFDictionaryRef)publicKey, &amp;persistKey);
+	if (persistKey != nil){
+		CFRelease(persistKey);
+	}
+	if ((status != noErr) &amp;&amp; (status != errSecDuplicateItem)) {
+		return nil;
+	}
+
+	[publicKey removeObjectForKey:(__bridge id)kSecValueData];
+	[publicKey removeObjectForKey:(__bridge id)kSecReturnPersistentRef];
+	[publicKey setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecReturnRef];
+	[publicKey setObject:(__bridge id) kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
+	
+	// Now fetch the SecKeyRef version of the key
+	SecKeyRef keyRef = nil;
+	status = SecItemCopyMatching((__bridge CFDictionaryRef)publicKey, (CFTypeRef *)&amp;keyRef);
+	if(status != noErr){
+		return nil;
+	}
+	return keyRef;
+}
+
++ (SecKeyRef)addPrivateKey:(NSString *)key{
+	NSRange spos;
+	NSRange epos;
+	spos = [key rangeOfString:@&quot;-----BEGIN RSA PRIVATE KEY-----&quot;];
+	if(spos.length &gt; 0){
+		epos = [key rangeOfString:@&quot;-----END RSA PRIVATE KEY-----&quot;];
+	}else{
+		spos = [key rangeOfString:@&quot;-----BEGIN PRIVATE KEY-----&quot;];
+		epos = [key rangeOfString:@&quot;-----END PRIVATE KEY-----&quot;];
+	}
+	if(spos.location != NSNotFound &amp;&amp; epos.location != NSNotFound){
+		NSUInteger s = spos.location + spos.length;
+		NSUInteger e = epos.location;
+		NSRange range = NSMakeRange(s, e-s);
+		key = [key substringWithRange:range];
+	}
+	key = [key stringByReplacingOccurrencesOfString:@&quot;\r&quot; withString:@&quot;&quot;];
+	key = [key stringByReplacingOccurrencesOfString:@&quot;\n&quot; withString:@&quot;&quot;];
+	key = [key stringByReplacingOccurrencesOfString:@&quot;\t&quot; withString:@&quot;&quot;];
+	key = [key stringByReplacingOccurrencesOfString:@&quot; &quot;  withString:@&quot;&quot;];
+
+	// This will be base64 encoded, decode it.
+	NSData *data = base64_decode(key);
+	data = [RSA stripPrivateKeyHeader:data];
+	if(!data){
+		return nil;
+	}
+
+	//a tag to read/write keychain storage
+	NSString *tag = @&quot;RSAUtil_PrivKey&quot;;
+	NSData *d_tag = [NSData dataWithBytes:[tag UTF8String] length:[tag length]];
+
+	// Delete any old lingering key with the same tag
+	NSMutableDictionary *privateKey = [[NSMutableDictionary alloc] init];
+	[privateKey setObject:(__bridge id) kSecClassKey forKey:(__bridge id)kSecClass];
+	[privateKey setObject:(__bridge id) kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
+	[privateKey setObject:d_tag forKey:(__bridge id)kSecAttrApplicationTag];
+	SecItemDelete((__bridge CFDictionaryRef)privateKey);
+
+	// Add persistent version of the key to system keychain
+	[privateKey setObject:data forKey:(__bridge id)kSecValueData];
+	[privateKey setObject:(__bridge id) kSecAttrKeyClassPrivate forKey:(__bridge id)
+	 kSecAttrKeyClass];
+	[privateKey setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)
+	 kSecReturnPersistentRef];
+
+	CFTypeRef persistKey = nil;
+	OSStatus status = SecItemAdd((__bridge CFDictionaryRef)privateKey, &amp;persistKey);
+	if (persistKey != nil){
+		CFRelease(persistKey);
+	}
+	if ((status != noErr) &amp;&amp; (status != errSecDuplicateItem)) {
+		return nil;
+	}
+
+	[privateKey removeObjectForKey:(__bridge id)kSecValueData];
+	[privateKey removeObjectForKey:(__bridge id)kSecReturnPersistentRef];
+	[privateKey setObject:[NSNumber numberWithBool:YES] forKey:(__bridge id)kSecReturnRef];
+	[privateKey setObject:(__bridge id) kSecAttrKeyTypeRSA forKey:(__bridge id)kSecAttrKeyType];
+
+	// Now fetch the SecKeyRef version of the key
+	SecKeyRef keyRef = nil;
+	status = SecItemCopyMatching((__bridge CFDictionaryRef)privateKey, (CFTypeRef *)&amp;keyRef);
+	if(status != noErr){
+		return nil;
+	}
+	return keyRef;
+}
+
+/* START: Encryption &amp; Decryption with RSA private key */
+
++ (NSData *)encryptData:(NSData *)data withKeyRef:(SecKeyRef) keyRef isSign:(BOOL)isSign {
+	const uint8_t *srcbuf = (const uint8_t *)[data bytes];
+	size_t srclen = (size_t)data.length;
+	
+	size_t block_size = SecKeyGetBlockSize(keyRef) * sizeof(uint8_t);
+	void *outbuf = malloc(block_size);
+	size_t src_block_size = block_size - 11;
+	
+	NSMutableData *ret = [[NSMutableData alloc] init];
+	for(int idx=0; idx&lt;srclen; idx+=src_block_size){
+		//NSLog(@&quot;%d/%d block_size: %d&quot;, idx, (int)srclen, (int)block_size);
+		size_t data_len = srclen - idx;
+		if(data_len &gt; src_block_size){
+			data_len = src_block_size;
+		}
+		
+		size_t outlen = block_size;
+		OSStatus status = noErr;
+        
+        if (isSign) {
+            status = SecKeyRawSign(keyRef,
+                                   kSecPaddingPKCS1,
+                                   srcbuf + idx,
+                                   data_len,
+                                   outbuf,
+                                   &amp;outlen
+                                   );
+        } else {
+            status = SecKeyEncrypt(keyRef,
+                                   kSecPaddingPKCS1,
+                                   srcbuf + idx,
+                                   data_len,
+                                   outbuf,
+                                   &amp;outlen
+                                   );
+        }
+		if (status != 0) {
+			NSLog(@&quot;SecKeyEncrypt fail. Error Code: %d&quot;, status);
+			ret = nil;
+			break;
+		}else{
+			[ret appendBytes:outbuf length:outlen];
+		}
+	}
+	
+	free(outbuf);
+	CFRelease(keyRef);
+	return ret;
+}
+
++ (NSString *)encryptString:(NSString *)str privateKey:(NSString *)privKey{
+	NSData *data = [RSA encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] privateKey:privKey];
+	NSString *ret = base64_encode_data(data);
+	return ret;
+}
+
++ (NSData *)encryptData:(NSData *)data privateKey:(NSString *)privKey{
+	if(!data || !privKey){
+		return nil;
+	}
+	SecKeyRef keyRef = [RSA addPrivateKey:privKey];
+	if(!keyRef){
+		return nil;
+	}
+	return [RSA encryptData:data withKeyRef:keyRef isSign:YES];
+}
+
++ (NSData *)decryptData:(NSData *)data withKeyRef:(SecKeyRef) keyRef{
+	const uint8_t *srcbuf = (const uint8_t *)[data bytes];
+	size_t srclen = (size_t)data.length;
+	
+	size_t block_size = SecKeyGetBlockSize(keyRef) * sizeof(uint8_t);
+	UInt8 *outbuf = malloc(block_size);
+	size_t src_block_size = block_size;
+	
+	NSMutableData *ret = [[NSMutableData alloc] init];
+	for(int idx=0; idx&lt;srclen; idx+=src_block_size){
+		//NSLog(@&quot;%d/%d block_size: %d&quot;, idx, (int)srclen, (int)block_size);
+		size_t data_len = srclen - idx;
+		if(data_len &gt; src_block_size){
+			data_len = src_block_size;
+		}
+		
+		size_t outlen = block_size;
+		OSStatus status = noErr;
+		status = SecKeyDecrypt(keyRef,
+							   kSecPaddingNone,
+							   srcbuf + idx,
+							   data_len,
+							   outbuf,
+							   &amp;outlen
+							   );
+		if (status != 0) {
+			NSLog(@&quot;SecKeyEncrypt fail. Error Code: %d&quot;, status);
+			ret = nil;
+			break;
+		}else{
+			//the actual decrypted data is in the middle, locate it!
+			int idxFirstZero = -1;
+			int idxNextZero = (int)outlen;
+			for ( int i = 0; i &lt; outlen; i++ ) {
+				if ( outbuf[i] == 0 ) {
+					if ( idxFirstZero &lt; 0 ) {
+						idxFirstZero = i;
+					} else {
+						idxNextZero = i;
+						break;
+					}
+				}
+			}
+			
+			[ret appendBytes:&amp;outbuf[idxFirstZero+1] length:idxNextZero-idxFirstZero-1];
+		}
+	}
+	
+	free(outbuf);
+	CFRelease(keyRef);
+	return ret;
+}
+
+
++ (NSString *)decryptString:(NSString *)str privateKey:(NSString *)privKey{
+	NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+	data = [RSA decryptData:data privateKey:privKey];
+	NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	return ret;
+}
+
++ (NSData *)decryptData:(NSData *)data privateKey:(NSString *)privKey{
+	if(!data || !privKey){
+		return nil;
+	}
+	SecKeyRef keyRef = [RSA addPrivateKey:privKey];
+	if(!keyRef){
+		return nil;
+	}
+	return [RSA decryptData:data withKeyRef:keyRef];
+}
+
+/* END: Encryption &amp; Decryption with RSA private key */
+
+/* START: Encryption &amp; Decryption with RSA public key */
+
++ (NSString *)encryptString:(NSString *)str publicKey:(NSString *)pubKey{
+	NSData *data = [RSA encryptData:[str dataUsingEncoding:NSUTF8StringEncoding] publicKey:pubKey];
+	NSString *ret = base64_encode_data(data);
+	return ret;
+}
+
++ (NSData *)encryptData:(NSData *)data publicKey:(NSString *)pubKey{
+	if(!data || !pubKey){
+		return nil;
+	}
+	SecKeyRef keyRef = [RSA addPublicKey:pubKey];
+	if(!keyRef){
+		return nil;
+	}
+	return [RSA encryptData:data withKeyRef:keyRef isSign:NO];
+}
+
++ (NSString *)decryptString:(NSString *)str publicKey:(NSString *)pubKey{
+	NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
+	data = [RSA decryptData:data publicKey:pubKey];
+	NSString *ret = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	return ret;
+}
+
++ (NSData *)decryptData:(NSData *)data publicKey:(NSString *)pubKey{
+	if(!data || !pubKey){
+		return nil;
+	}
+	SecKeyRef keyRef = [RSA addPublicKey:pubKey];
+	if(!keyRef){
+		return nil;
+	}
+	return [RSA decryptData:data withKeyRef:keyRef];
+}
+
+/* END: Encryption &amp; Decryption with RSA public key */
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br><span class="line-number">131</span><br><span class="line-number">132</span><br><span class="line-number">133</span><br><span class="line-number">134</span><br><span class="line-number">135</span><br><span class="line-number">136</span><br><span class="line-number">137</span><br><span class="line-number">138</span><br><span class="line-number">139</span><br><span class="line-number">140</span><br><span class="line-number">141</span><br><span class="line-number">142</span><br><span class="line-number">143</span><br><span class="line-number">144</span><br><span class="line-number">145</span><br><span class="line-number">146</span><br><span class="line-number">147</span><br><span class="line-number">148</span><br><span class="line-number">149</span><br><span class="line-number">150</span><br><span class="line-number">151</span><br><span class="line-number">152</span><br><span class="line-number">153</span><br><span class="line-number">154</span><br><span class="line-number">155</span><br><span class="line-number">156</span><br><span class="line-number">157</span><br><span class="line-number">158</span><br><span class="line-number">159</span><br><span class="line-number">160</span><br><span class="line-number">161</span><br><span class="line-number">162</span><br><span class="line-number">163</span><br><span class="line-number">164</span><br><span class="line-number">165</span><br><span class="line-number">166</span><br><span class="line-number">167</span><br><span class="line-number">168</span><br><span class="line-number">169</span><br><span class="line-number">170</span><br><span class="line-number">171</span><br><span class="line-number">172</span><br><span class="line-number">173</span><br><span class="line-number">174</span><br><span class="line-number">175</span><br><span class="line-number">176</span><br><span class="line-number">177</span><br><span class="line-number">178</span><br><span class="line-number">179</span><br><span class="line-number">180</span><br><span class="line-number">181</span><br><span class="line-number">182</span><br><span class="line-number">183</span><br><span class="line-number">184</span><br><span class="line-number">185</span><br><span class="line-number">186</span><br><span class="line-number">187</span><br><span class="line-number">188</span><br><span class="line-number">189</span><br><span class="line-number">190</span><br><span class="line-number">191</span><br><span class="line-number">192</span><br><span class="line-number">193</span><br><span class="line-number">194</span><br><span class="line-number">195</span><br><span class="line-number">196</span><br><span class="line-number">197</span><br><span class="line-number">198</span><br><span class="line-number">199</span><br><span class="line-number">200</span><br><span class="line-number">201</span><br><span class="line-number">202</span><br><span class="line-number">203</span><br><span class="line-number">204</span><br><span class="line-number">205</span><br><span class="line-number">206</span><br><span class="line-number">207</span><br><span class="line-number">208</span><br><span class="line-number">209</span><br><span class="line-number">210</span><br><span class="line-number">211</span><br><span class="line-number">212</span><br><span class="line-number">213</span><br><span class="line-number">214</span><br><span class="line-number">215</span><br><span class="line-number">216</span><br><span class="line-number">217</span><br><span class="line-number">218</span><br><span class="line-number">219</span><br><span class="line-number">220</span><br><span class="line-number">221</span><br><span class="line-number">222</span><br><span class="line-number">223</span><br><span class="line-number">224</span><br><span class="line-number">225</span><br><span class="line-number">226</span><br><span class="line-number">227</span><br><span class="line-number">228</span><br><span class="line-number">229</span><br><span class="line-number">230</span><br><span class="line-number">231</span><br><span class="line-number">232</span><br><span class="line-number">233</span><br><span class="line-number">234</span><br><span class="line-number">235</span><br><span class="line-number">236</span><br><span class="line-number">237</span><br><span class="line-number">238</span><br><span class="line-number">239</span><br><span class="line-number">240</span><br><span class="line-number">241</span><br><span class="line-number">242</span><br><span class="line-number">243</span><br><span class="line-number">244</span><br><span class="line-number">245</span><br><span class="line-number">246</span><br><span class="line-number">247</span><br><span class="line-number">248</span><br><span class="line-number">249</span><br><span class="line-number">250</span><br><span class="line-number">251</span><br><span class="line-number">252</span><br><span class="line-number">253</span><br><span class="line-number">254</span><br><span class="line-number">255</span><br><span class="line-number">256</span><br><span class="line-number">257</span><br><span class="line-number">258</span><br><span class="line-number">259</span><br><span class="line-number">260</span><br><span class="line-number">261</span><br><span class="line-number">262</span><br><span class="line-number">263</span><br><span class="line-number">264</span><br><span class="line-number">265</span><br><span class="line-number">266</span><br><span class="line-number">267</span><br><span class="line-number">268</span><br><span class="line-number">269</span><br><span class="line-number">270</span><br><span class="line-number">271</span><br><span class="line-number">272</span><br><span class="line-number">273</span><br><span class="line-number">274</span><br><span class="line-number">275</span><br><span class="line-number">276</span><br><span class="line-number">277</span><br><span class="line-number">278</span><br><span class="line-number">279</span><br><span class="line-number">280</span><br><span class="line-number">281</span><br><span class="line-number">282</span><br><span class="line-number">283</span><br><span class="line-number">284</span><br><span class="line-number">285</span><br><span class="line-number">286</span><br><span class="line-number">287</span><br><span class="line-number">288</span><br><span class="line-number">289</span><br><span class="line-number">290</span><br><span class="line-number">291</span><br><span class="line-number">292</span><br><span class="line-number">293</span><br><span class="line-number">294</span><br><span class="line-number">295</span><br><span class="line-number">296</span><br><span class="line-number">297</span><br><span class="line-number">298</span><br><span class="line-number">299</span><br><span class="line-number">300</span><br><span class="line-number">301</span><br><span class="line-number">302</span><br><span class="line-number">303</span><br><span class="line-number">304</span><br><span class="line-number">305</span><br><span class="line-number">306</span><br><span class="line-number">307</span><br><span class="line-number">308</span><br><span class="line-number">309</span><br><span class="line-number">310</span><br><span class="line-number">311</span><br><span class="line-number">312</span><br><span class="line-number">313</span><br><span class="line-number">314</span><br><span class="line-number">315</span><br><span class="line-number">316</span><br><span class="line-number">317</span><br><span class="line-number">318</span><br><span class="line-number">319</span><br><span class="line-number">320</span><br><span class="line-number">321</span><br><span class="line-number">322</span><br><span class="line-number">323</span><br><span class="line-number">324</span><br><span class="line-number">325</span><br><span class="line-number">326</span><br><span class="line-number">327</span><br><span class="line-number">328</span><br><span class="line-number">329</span><br><span class="line-number">330</span><br><span class="line-number">331</span><br><span class="line-number">332</span><br><span class="line-number">333</span><br><span class="line-number">334</span><br><span class="line-number">335</span><br><span class="line-number">336</span><br><span class="line-number">337</span><br><span class="line-number">338</span><br><span class="line-number">339</span><br><span class="line-number">340</span><br><span class="line-number">341</span><br><span class="line-number">342</span><br><span class="line-number">343</span><br><span class="line-number">344</span><br><span class="line-number">345</span><br><span class="line-number">346</span><br><span class="line-number">347</span><br><span class="line-number">348</span><br><span class="line-number">349</span><br><span class="line-number">350</span><br><span class="line-number">351</span><br><span class="line-number">352</span><br><span class="line-number">353</span><br><span class="line-number">354</span><br><span class="line-number">355</span><br><span class="line-number">356</span><br><span class="line-number">357</span><br><span class="line-number">358</span><br><span class="line-number">359</span><br><span class="line-number">360</span><br><span class="line-number">361</span><br><span class="line-number">362</span><br><span class="line-number">363</span><br><span class="line-number">364</span><br><span class="line-number">365</span><br><span class="line-number">366</span><br><span class="line-number">367</span><br><span class="line-number">368</span><br><span class="line-number">369</span><br><span class="line-number">370</span><br><span class="line-number">371</span><br><span class="line-number">372</span><br><span class="line-number">373</span><br><span class="line-number">374</span><br><span class="line-number">375</span><br><span class="line-number">376</span><br><span class="line-number">377</span><br><span class="line-number">378</span><br><span class="line-number">379</span><br><span class="line-number">380</span><br><span class="line-number">381</span><br><span class="line-number">382</span><br><span class="line-number">383</span><br><span class="line-number">384</span><br><span class="line-number">385</span><br><span class="line-number">386</span><br><span class="line-number">387</span><br><span class="line-number">388</span><br><span class="line-number">389</span><br><span class="line-number">390</span><br><span class="line-number">391</span><br><span class="line-number">392</span><br><span class="line-number">393</span><br><span class="line-number">394</span><br><span class="line-number">395</span><br><span class="line-number">396</span><br><span class="line-number">397</span><br><span class="line-number">398</span><br><span class="line-number">399</span><br><span class="line-number">400</span><br><span class="line-number">401</span><br></div></div><p><strong>参考：</strong></p><p><a href="http://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html" target="_blank" rel="noopener noreferrer">RSA算法原理<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><hr><h3 id="其他" tabindex="-1"><a class="header-anchor" href="#其他" aria-hidden="true">#</a> 其他</h3><h4 id="crc" tabindex="-1"><a class="header-anchor" href="#crc" aria-hidden="true">#</a> CRC</h4><blockquote><p>CRC即<strong>循环冗余校验码</strong>（Cyclic Redundancy Check [1] ）：是数据通信领域中最常用的一种查错校验码，其特征是信息字段和校验字段的长度可以任意选定。</p><p>循环冗余检查（CRC）是一种数据传输检错功能，对数据进行多项式计算，并将得到的结果附在帧的后面，接收设备也执行类似的算法，以保证数据传输的正确性和完整性。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>
+#import &lt;zlib.h&gt;
+
+ZEXTERN uLong ZEXPORT crc32   OF((uLong crc, const Bytef *buf, uInt len));
+/*
+     Update a running CRC-32 with the bytes buf[0..len-1] and return the
+   updated CRC-32.  If buf is Z_NULL, this function returns the required
+   initial value for the crc.  Pre- and post-conditioning (one&#39;s complement) is
+   performed within this function so it shouldn&#39;t be done by the application.
+
+   Usage example:
+
+     uLong crc = crc32(0L, Z_NULL, 0);
+
+     while (read_buffer(buffer, length) != EOF) {
+       crc = crc32(crc, buffer, length);
+     }
+     if (crc != original_crc) error();
+*/
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p><strong>参考</strong></p><p><a href="http://blog.163.com/du_minchao@126/blog/static/107495394201075114028606/" target="_blank" rel="noopener noreferrer">CRC的校验原理 <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://www.cnblogs.com/esestt/archive/2007/08/09/848856.html" target="_blank" rel="noopener noreferrer">算法原理<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><p><a href="https://jin-yang.github.io/post/security-encryption-introduce.html" target="_blank" rel="noopener noreferrer">加密算法简介<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/chenxi92/blog.git/edit/main/data-structure/iOS-Encrypt-Summary.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新时间: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: peak@jiemogame.com">peak</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.01142347.js" defer></script>
+  </body>
+</html>

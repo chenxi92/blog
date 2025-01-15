@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>陈希的学习笔记</title><meta name="description" content="">
+    <link rel="modulepreload" href="/blog/assets/app.01142347.js"><link rel="modulepreload" href="/blog/assets/RC4-C___Python.html.5223c192.js"><link rel="modulepreload" href="/blog/assets/RC4-C___Python.html.c7196686.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.72ef85ec.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="陈希的学习笔记"><span class="site-name can-hide">陈希的学习笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="router-link-active" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="router-link-active" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">数据结构学习 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/data-structure/iOS-Encrypt-summary.md" class="sidebar-item" aria-label="加密算法总结"><!--[--><!--]--> 加密算法总结 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/xor.md" class="sidebar-item" aria-label="异或运算"><!--[--><!--]--> 异或运算 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/RC4-C++&amp;Python.md" class="sidebar-item active" aria-label="RC4"><!--[--><!--]--> RC4 <!--[--><!--]--></a><!----></li><li><a href="/blog/data-structure/xor.md" class="sidebar-item" aria-label="常见排序算法"><!--[--><!--]--> 常见排序算法 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><p>最近做日志模块的工作，有一个需求是需要把日志加密写进文件，然后读取文件的时候再解密。所以这个加解密方式就选择了RC4。</p><p>百度百科了一下RC4，介绍如下：</p><blockquote><p>RC4加密算法是大名鼎鼎的RSA三人组中的头号人物Ronald Rivest在1987年设计的密钥长度可变的流加密算法簇。 之所以称其为簇，是由于其核心部分的S-box长度可为任意，但一般为256字节。 该算法的速度可以达到DES加密的10倍左右，且具有很高级别的非线性。RC4起初是用于保护商业机密的。 但是在1994年9月，它的算法被发布在互联网上，也就不再有什么商业机密了。RC4也被叫做ARC4（Alleged RC4——所谓的RC4），因为RSA从来就没有正式发布过这个算法。</p></blockquote><p><strong>RC4 算法原理分为两步：初始化算法(KSA) 和 伪随机子密码生成算法(PRGA)两大部分。</strong></p><p>C++ 实现如下：</p><p>rc4.h 文件</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class RC4
+{
+
+public:
+    RC4();
+    
+    void rc4_init(unsigned char *key, unsigned long Len);
+    
+    // 加/解 密
+    void do_crypt(unsigned char *Data, unsigned long Len);
+    
+private:
+   
+    int m_box[256]; // 对称加密中的置换盒 S盒
+    int m_index_i;
+    int m_index_j;
+};
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>rc4.cpp 文件</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>RC4::RC4()
+{
+    m_index_i = 0;
+    m_index_j = 0;
+}
+
+// 初始化算法
+void RC4::rc4_init(unsigned char *key, unsigned long Len)
+{
+    if (key == NULL || Len == 0)
+    {
+        printf(&quot;rc4 key or len is 0, return! &quot;);
+        return ;
+    }
+    
+    // for循环将0到255的互不重复的元素装入S盒
+    for (int i = 0; i &lt; 256 ; i++) {
+        m_box[i] = i;
+    }
+    
+    // for循环根据密钥打乱S盒
+    int j = 0;
+    unsigned char tmp;
+    for (int i = 0; i &lt; 256; i++)
+    {
+        j = ( j + m_box[i] + key[i % Len] ) % 256;
+        
+        tmp = m_box[i];
+        m_box[i] = m_box[j]; //交换m_box[i]和m_box[j]
+        m_box[j] = tmp;
+    }
+}
+    
+void RC4::do_crypt(unsigned char *Data, unsigned long Len)
+{
+    // 每收到一个字节，就进行while循环。通过一定的算法（(a),(b)）定位S盒中的一个元素，并与输入字节异或，得到k。循环中还改变了S盒（(c)）。如果输入的是明文，输出的就是密文；如果输入的是密文，输出的就是明文。
+    unsigned char tmp;
+    for(unsigned long k = 0 ; k &lt; Len ; k++)
+    {
+        m_index_i = (m_index_i + 1) % 256;    // a
+        m_index_j = (m_index_j + m_box[m_index_i] ) % 256; // b
+        
+        tmp = m_box[m_index_i];
+        m_box[m_index_i] = m_box[m_index_j]; //交换m_box[x]和m_box[y]
+        m_box[m_index_j] = tmp;
+        
+        // 生成伪随机数
+        int r = ( m_box[m_index_i] + m_box[m_index_j] ) % 256;
+        Data[k] ^= m_box[r];
+    }
+    
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br></div></div><p>Python 实现方式如下：</p><p>rc4.py 文件</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code># coding=utf-8
+
+class RC4:
+
+    def __init__(self,public_key = None):
+        if not public_key:
+            public_key = &#39;none_public_key&#39;
+        self.public_key = public_key
+        self.index_i = 0;
+        self.index_j = 0;
+        self._init_box()
+ 
+    def _init_box(self):
+        &quot;&quot;&quot;
+        初始化 置换盒
+        &quot;&quot;&quot;
+
+        self.Box = range(256)
+        key_length = len(self.public_key)
+        j = 0
+        for i in range(256):
+            index = ord(self.public_key[(i % key_length)])
+            j = (j + self.Box[i] + index ) % 256
+            self.Box[i],self.Box[j] = self.Box[j],self.Box[i]
+
+    def do_crypt(self,string):
+        &quot;&quot;&quot;
+        加密/解密
+        string : 待加/解密的字符串
+        &quot;&quot;&quot;
+
+        out = []
+        for s in string:
+            self.index_i = (self.index_i + 1) % 256
+            self.index_j = (self.index_j + self.Box[self.index_i]) % 256
+            self.Box[self.index_i], self.Box[self.index_j] = self.Box[self.index_j],  self.Box[self.index_i]
+
+            r = (self.Box[self.index_i] + self.Box[self.index_j]) % 256
+            R = self.Box[r] # 生成伪随机数
+            out.append(chr(ord(s) ^ R))
+
+        return &#39;&#39;.join(out)
+        
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h4 id="遇到的坑" tabindex="-1"><a class="header-anchor" href="#遇到的坑" aria-hidden="true">#</a> 遇到的坑</h4><p>网上查了很多资料，不少人给出了rc4算法的实现，因为客户端会一直的写数据到文件中去，所以在RC4 初始化之后， 会连续多次调用 <strong>do_crypt</strong> 这个方法，最初遇到的坑是：C++ 加密之后，使用Python 解密的时候，往往只能够解密出最开始的一句，之后的就是乱码了。解决办法是： 把m_index_i 和 m_index_j 作为成员变量，这样连续多次调用之后，对称加密中的置换盒 S盒 中的数据就会不停的滚动， 解密才能全部完成。</p><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/chenxi92/blog.git/edit/main/data-structure/RC4-C++&amp;Python.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新时间: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: peak@jiemogame.com">peak</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.01142347.js" defer></script>
+  </body>
+</html>

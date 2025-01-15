@@ -1,0 +1,1 @@
+const e={key:"v-15e15685",path:"/iOS/method-forward.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633945792e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:2}]},filePathRelative:"iOS/method-forward.md"};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-743faa02",path:"/Vue/",title:"Vue \u5B66\u4E60\u7B14\u8BB0",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1634526264e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"Vue/README.md"};export{e as data};

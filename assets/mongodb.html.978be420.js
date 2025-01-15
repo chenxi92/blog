@@ -1,0 +1,1 @@
+const e={key:"v-d6152b3c",path:"/database/mongodb.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633945792e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"database/mongodb.md"};export{e as data};

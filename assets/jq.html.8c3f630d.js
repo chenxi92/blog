@@ -1,0 +1,1 @@
+const e={key:"v-9e87868c",path:"/shell/jq.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:3,title:"jq \u4F7F\u7528\u603B\u7ED3",slug:"jq-\u4F7F\u7528\u603B\u7ED3",children:[]}],git:{updatedTime:1633945792e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:2}]},filePathRelative:"shell/jq.md"};export{e as data};

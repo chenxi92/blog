@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.36">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>陈希的学习笔记</title><meta name="description" content="">
+    <link rel="modulepreload" href="/blog/assets/app.01142347.js"><link rel="modulepreload" href="/blog/assets/Masonry.html.5f531faf.js"><link rel="modulepreload" href="/blog/assets/Masonry.html.266f488c.js"><link rel="modulepreload" href="/blog/assets/plugin-vue_export-helper.21dcd24c.js">
+    <link rel="stylesheet" href="/blog/assets/style.72ef85ec.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header ref_key="navbar" class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/blog/" class=""><img class="logo" src="https://vuejs.org/images/logo.png" alt="陈希的学习笔记"><span class="site-name can-hide">陈希的学习笔记</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="router-link-active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items"><!--[--><div class="navbar-item"><a href="/blog/java/" class="" aria-label="Android"><!--[--><!--]--> Android <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/iOS/" class="router-link-active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/shell/" class="" aria-label="Shell"><!--[--><!--]--> Shell <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/data-structure/" class="" aria-label="数据结构"><!--[--><!--]--> 数据结构 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/database/" class="" aria-label="数据库"><!--[--><!--]--> 数据库 <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/Vue/" class="" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a></div><div class="navbar-item"><a href="/blog/others/" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></div><div class="navbar-item"><a class="external-link" href="https://github.com/chenxi92/blog.git" rel="noopener noreferrer" target="_blank" aria-label="GitHub"><!--[--><!--]--> GitHub <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><a href="/blog/iOS/" class="router-link-active sidebar-item sidebar-heading active" aria-label="iOS"><!--[--><!--]--> iOS <!--[--><!--]--></a><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/swift-concurrency.md" class="sidebar-item" aria-label="Swift Concurrency"><!--[--><!--]--> Swift Concurrency <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/app-launch.md" class="sidebar-item" aria-label="App 启动"><!--[--><!--]--> App 启动 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/attribute.md" class="sidebar-item" aria-label="attribute"><!--[--><!--]--> attribute <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/autolayout.md" class="sidebar-item" aria-label="AutoLayout 布局"><!--[--><!--]--> AutoLayout 布局 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/bug-track.md" class="sidebar-item" aria-label="Bug 追踪"><!--[--><!--]--> Bug 追踪 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/create-certificate.md" class="sidebar-item" aria-label="创建开发证书"><!--[--><!--]--> 创建开发证书 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/dispatch-semaphore.md" class="sidebar-item" aria-label="信号量"><!--[--><!--]--> 信号量 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/install-ipa-from-safari.md" class="sidebar-item" aria-label="iPA 文件安装"><!--[--><!--]--> iPA 文件安装 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/isa.md" class="sidebar-item" aria-label="isa 指针"><!--[--><!--]--> isa 指针 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/keychain.md" class="sidebar-item" aria-label="钥匙串学习"><!--[--><!--]--> 钥匙串学习 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/libmobiledevice.md" class="sidebar-item" aria-label="libmobiledevice"><!--[--><!--]--> libmobiledevice <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/method-forward.md" class="sidebar-item" aria-label="消息转发"><!--[--><!--]--> 消息转发 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/multiple-thread.md" class="sidebar-item" aria-label="多线程"><!--[--><!--]--> 多线程 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/security.md" class="sidebar-item" aria-label="security"><!--[--><!--]--> security <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/symbols.md" class="sidebar-item" aria-label="符号表"><!--[--><!--]--> 符号表 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/tips.md" class="sidebar-item" aria-label="iOS 开发小知识"><!--[--><!--]--> iOS 开发小知识 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/UIScrollview.md" class="sidebar-item" aria-label="UIScrollView 约束"><!--[--><!--]--> UIScrollView 约束 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/2-unity-ios-bridge.md" class="sidebar-item" aria-label="iOS &amp; Unity 相互调用"><!--[--><!--]--> iOS &amp; Unity 相互调用 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/vapor-tutorial.md" class="sidebar-item" aria-label="Vapor 学习"><!--[--><!--]--> Vapor 学习 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/xcode-shortcut.md" class="sidebar-item" aria-label="Xcode 快捷键"><!--[--><!--]--> Xcode 快捷键 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/configure-alternate-app-icon.md" class="sidebar-item" aria-label="Configure Alternate App Icon"><!--[--><!--]--> Configure Alternate App Icon <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/sending-push-notification.md" class="sidebar-item" aria-label="Sending Push Notifications"><!--[--><!--]--> Sending Push Notifications <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/how-to-create-dmg.md" class="sidebar-item" aria-label="How to create dmg file"><!--[--><!--]--> How to create dmg file <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/how-to-test-static-framework/how-to-test-static-framework.md" class="sidebar-item" aria-label="How to test static framework"><!--[--><!--]--> How to test static framework <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/download-xcappdata-folder.md" class="sidebar-item" aria-label="How to download xcappdata folder"><!--[--><!--]--> How to download xcappdata folder <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">Keywords <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/SwiftKeywords/dynamicCallable.md" class="sidebar-item" aria-label="dynamicCallable"><!--[--><!--]--> dynamicCallable <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><a href="/blog/iOS/ios-app-preorder.md" class="sidebar-item" aria-label="iOS App Pre-Order"><!--[--><!--]--> iOS App Pre-Order <!--[--><!--]--></a><!----></li><li><p tabindex="0" class="sidebar-item">面试 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/interview/0-interview-question.md" class="sidebar-item" aria-label="面试题"><!--[--><!--]--> 面试题 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/1-category-and-extension.md" class="sidebar-item" aria-label="Category &amp; Extension"><!--[--><!--]--> Category &amp; Extension <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/2-atomic.md" class="sidebar-item" aria-label="原子性"><!--[--><!--]--> 原子性 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/3-weak.md" class="sidebar-item" aria-label="Weak"><!--[--><!--]--> Weak <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/4-associated-object.md" class="sidebar-item" aria-label="关联对象"><!--[--><!--]--> 关联对象 <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/interview/property.md" class="sidebar-item" aria-label="属性"><!--[--><!--]--> 属性 <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><li><p tabindex="0" class="sidebar-item active">源码学习 <!----></p><!--[--><ul style="" class="sidebar-item-children"><!--[--><li><a href="/blog/iOS/open-analysis/AFNetworking.md" class="sidebar-item" aria-label="AFNetworking"><!--[--><!--]--> AFNetworking <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/open-analysis/Aspects.md" class="sidebar-item" aria-label="Aspects"><!--[--><!--]--> Aspects <!--[--><!--]--></a><!----></li><li><a href="/blog/iOS/open-analysis/Masonry.md" class="sidebar-item active" aria-label="Masonry"><!--[--><!--]--> Masonry <!--[--><!--]--></a><!----></li><!--]--></ul><!--]--></li><!--]--></ul><!--]--></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h4 id="框架目录结构" tabindex="-1"><a class="header-anchor" href="#框架目录结构" aria-hidden="true">#</a> 框架目录结构</h4><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>Masonry.h
+	- 头文件
+
+MasUtilities.h
+	- 宏定义 以及 内联函数
+
+View+MASAdditions.h
+	- UIView/NSView 分类， 提供 mas_xx 属性、方法做约束
+
+View+MASShorthandAdditions.h
+	- UIView/NSView 分类， 简化 View+MASAdditions.h 属性以及方法前缀
+
+ViewController+MASAdditions.h
+	- UIViewController 分类， 提供 topLayoutGuide 等约束
+
+NSArray+MASAdditions.h
+	- 数组分类，提供类似批处理功能
+	
+NSArray+MASShorthandAdditions.h
+	- 数组分类，提供类似批处理工程，方法名称去掉 mas_ 前缀
+	
+MASConstraint.h
+	- 约束类，实现了链式编程的语法
+MASContraint+Private.h
+	- 定义约束类的抽象接口， 定义约束类相关的协议
+
+MASCompositeConstraint.h
+	- 表示一组约束对象，继承自 MASConstraint
+	
+MASConstraintMaker.h
+	- 表示单个约束对象，继承自 MASConstraint
+
+MASViewAttribute.h
+	- 存储约束对象以及该对象的约束属性
+	
+MASConstraintMaker.h
+	- 工厂方法，用于创建约束对象
+	
+MASLayoutConstrain.h
+	- 继承自 NSLayoutConstraint， 用于Debug
+
+NSLayoutConstraint+MASDebugAdditions.h
+	- NSLayoutConstraint 分类， 用于Debug
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h4 id="源码实现" tabindex="-1"><a class="header-anchor" href="#源码实现" aria-hidden="true">#</a> 源码实现</h4><p>根据下面一个例子来看源码实现。</p><p>创建一个子视图，距离父视图的边缘20， 使用 Masonry 添加约束。</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>UIView *superview = self.view;
+
+UIView *view = [[UIView alloc] init];
+view1.backgroundColor = [UIColor greenColor];
+[superview addSubview:view];
+
+UIEdgeInsets padding = UIEdgeInsetsMake(20, 20, 20, 20);
+
+[view mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(superview.mas_top).offset(padding.top); 
+    make.left.equalTo(superview.mas_left).offset(padding.left);
+    make.bottom.equalTo(superview.mas_bottom).offset(-padding.bottom);
+    make.right.equalTo(superview.mas_right).offset(-padding.right);
+}];
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h5 id="mas-makeconstraints-方法实现" tabindex="-1"><a class="header-anchor" href="#mas-makeconstraints-方法实现" aria-hidden="true">#</a> <code>mas_makeConstraints:</code> 方法实现：</h5><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (NSArray *)mas_makeConstraints:(void(^)(MASConstraintMaker *))block {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    MASConstraintMaker *constraintMaker = [[MASConstraintMaker alloc] initWithView:self];
+    block(constraintMaker);
+    return [constraintMaker install];
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h6 id="_1-禁用-translatesautoresizingmaskintoconstraints" tabindex="-1"><a class="header-anchor" href="#_1-禁用-translatesautoresizingmaskintoconstraints" aria-hidden="true">#</a> 1. 禁用 <code>translatesAutoresizingMaskIntoConstraints</code> ；</h6><p>默认情况下 UIView 上的 <code>autoresizing mask</code> 会产生约束条件，以完全确定视图的位置, <code>AutoLayout</code> 会自动根据 UIView 的 <code>frame</code> 等来确定视图的位置。 当需要自定义约束时， 需要禁用该属性。</p><h6 id="_2-构造-masconstraintmaker-对象" tabindex="-1"><a class="header-anchor" href="#_2-构造-masconstraintmaker-对象" aria-hidden="true">#</a> 2. 构造 <code>MASConstraintMaker</code> 对象；</h6><p><code>MASConstraintMaker</code> 是一个工厂类， 其构造方法如下：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>- (id)initWithView:(MAS_VIEW *)view {
+    self = [super init];
+    if (!self) return nil;
+    
+    self.view = view;
+    self.constraints = NSMutableArray.new;
+    
+    return self;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>存储当前视图(弱引用)；</p><p>初始化约束数组；</p><h6 id="_3-执行-block" tabindex="-1"><a class="header-anchor" href="#_3-执行-block" aria-hidden="true">#</a> 3. 执行 <code>block</code> ；</h6><p><code>mas_makeConstraints:</code> 方法传入了一个 block 作为函数参数， 该 block 无返回值，参数是一个 <code>MASConstraintMaker</code> 对象。 我们所有的约束都是在这个block 里面设定的。</p><p>根据代码看看约束如何创建：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>make.top.equalTo(superview.mas_top).offset(padding.top); 
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>首先 <code>make.top</code> 是调用 <code>MASConstraintMaker</code> 对象的 <code>top</code> 属性的 <code>get</code> 方法， 该方法返回一个 <code>MASConstraint</code> 对象；</p><p>该 <code>get</code> 方法执行流程如下:</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// MASConstraintMaker.m
+
+- (MASConstraint *)top {
+    return [self addConstraintWithLayoutAttribute:NSLayoutAttributeTop];
+}
+
+- (MASConstraint *)addConstraintWithLayoutAttribute:(NSLayoutAttribute)layoutAttribute {
+    return [self constraint:nil addConstraintWithLayoutAttribute:layoutAttribute];
+}
+
+- (MASConstraint *)constraint:(MASConstraint *)constraint addConstraintWithLayoutAttribute:(NSLayoutAttribute)layoutAttribute {
+  	// constraint 为 nil
+  	// layoutAttribute 为 NSLayoutAttributeTop
+  	
+  	// 构造约束视图的信息
+    MASViewAttribute *viewAttribute = [[MASViewAttribute alloc] initWithView:self.view layoutAttribute:layoutAttribute];
+  	
+  	// 根据约束视图信息，构造约束对象
+    MASViewConstraint *newConstraint = [[MASViewConstraint alloc] initWithFirstViewAttribute:viewAttribute];
+  
+    if ([constraint isKindOfClass:MASViewConstraint.class]) {
+        //replace with composite constraint
+        NSArray *children = @[constraint, newConstraint];
+        MASCompositeConstraint *compositeConstraint = [[MASCompositeConstraint alloc] initWithChildren:children];
+        compositeConstraint.delegate = self;
+        [self constraint:constraint shouldBeReplacedWithConstraint:compositeConstraint];
+        return compositeConstraint;
+    }
+  	// constrain 为空，为新构造的 constrain 对象设置代理
+  	// 并把该 constrain 对象存储在约束数组内，供后续使用
+    if (!constraint) {
+        newConstraint.delegate = self;
+        [self.constraints addObject:newConstraint];
+    }
+  	// 返回新创建的约束对象， 该对象的实际类型是 MASViewConstraint
+    return newConstraint;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>其次 <code>.equalTo(superview.mas_top)</code> 会根据 <code>make.top</code> 返回的 <code>MASConstraint</code> 对象( 该对象的实际类型是 <strong>MASViewConstraint</strong>) 去执行 <code>equalTo</code> 方法返回的 block ：</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// MASConstraint.m
+
+- (MASConstraint * (^)(id))equalTo {
+    return ^id(id attribute) {
+        return self.equalToWithRelation(attribute, NSLayoutRelationEqual);
+    };
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><code>equalTo</code> 方法会去调用 <code>equalToWithRelation</code> 方法， 因为 <code>equalToWithRelation</code> 方法需要在子类实现， 实际会调用到 <code>MASViewConstraint</code> 中， 因为 <code>MASViewConstraint</code> 重新实现了 <code>equalToWithRelation</code> 方法 (该方法返回了一个 block， 该 block 的返回值是 <code>MASConstraint</code> 对象，此处实际返回的当前的 <code>MASViewConstraint</code> 对象， block 有2个参数， 第一个参数为 <code>superview.mas_top</code> ，第二个参数为 <code>NSLayoutRelationEqual</code>)</p><p><code>superview.mas_top</code> 执行流程为:</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// View+MASAdditions.m
+
+- (MASViewAttribute *)mas_top {
+    return [[MASViewAttribute alloc] initWithView:self layoutAttribute:NSLayoutAttributeTop];
+}
+
+// MASViewAttribute.m
+- (id)initWithView:(MAS_VIEW *)view layoutAttribute:(NSLayoutAttribute)layoutAttribute {
+    self = [self initWithView:view item:view layoutAttribute:layoutAttribute];
+    return self;
+}
+
+- (id)initWithView:(MAS_VIEW *)view item:(id)item layoutAttribute:(NSLayoutAttribute)layoutAttribute {
+    self = [super init];
+    if (!self) return nil;
+    
+    _view = view;
+    _item = item;
+    _layoutAttribute = layoutAttribute;
+    
+    return self;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>主要是构建约束对象。</p><p><code>equalToWithRelation</code> 执行流程为:</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// MASViewConstraint.m
+
+- (MASConstraint * (^)(id, NSLayoutRelation))equalToWithRelation {
+    return ^id(id attribute, NSLayoutRelation relation) {
+      	// attribute 为 MASViewAttribute 对象
+      	// relation  为 NSLayoutRelationEqual
+        if ([attribute isKindOfClass:NSArray.class]) {
+            NSAssert(!self.hasLayoutRelation, @&quot;Redefinition of constraint relation&quot;);
+            NSMutableArray *children = NSMutableArray.new;
+            for (id attr in attribute) {
+                MASViewConstraint *viewConstraint = [self copy];
+                viewConstraint.layoutRelation = relation;
+                viewConstraint.secondViewAttribute = attr;
+                [children addObject:viewConstraint];
+            }
+            MASCompositeConstraint *compositeConstraint = [[MASCompositeConstraint alloc] initWithChildren:children];
+            compositeConstraint.delegate = self.delegate;
+            [self.delegate constraint:self shouldBeReplacedWithConstraint:compositeConstraint];
+            return compositeConstraint;
+        } else {
+            NSAssert(!self.hasLayoutRelation || self.layoutRelation == relation &amp;&amp; [attribute isKindOfClass:NSValue.class], @&quot;Redefinition of constraint relation&quot;);
+            
+          	// 存储约束对象间的线性等式关系，此处为 NSLayoutRelationEqual
+          	self.layoutRelation = relation;
+          	
+          	// 存储第二个约束对象， 此处主要是 存储 superview 的 NSLayoutAttributeTop 约束属性
+            self.secondViewAttribute = attribute;
+          
+            return self;
+        }
+    };
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><p><code>make.top.equalTo(superview.mas_top)</code> 执行完毕后，还是会返回由 <code>make.top</code> 里面创建的 <code>MASViewConstraint</code> 约束对象。</p><p><code>.offset(padding.top); </code> 会实际执行 <code>MASViewConstraint</code> 内的 <code>setOffset:</code> 方法， 此处参数为 20。</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// MASViewConstraint.m
+
+- (void)setOffset:(CGFloat)offset {
+  	// 重写了 setLayoutConstant: 方法， 此处会给 _layoutConstant 赋值为 20。
+    self.layoutConstant = offset;
+}
+
+- (void)setLayoutConstant:(CGFloat)layoutConstant {
+    _layoutConstant = layoutConstant;
+
+#if TARGET_OS_MAC &amp;&amp; !(TARGET_OS_IPHONE || TARGET_OS_TV)
+    if (self.useAnimator) {
+        [self.layoutConstraint.animator setConstant:layoutConstant];
+    } else {
+        self.layoutConstraint.constant = layoutConstant;
+    }
+#else
+    self.layoutConstraint.constant = layoutConstant;
+#endif
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>到此一条约束 <code>make.top.equalTo(superview.mas_top).offset(padding.top); </code> 执行完毕， 其它约束情况类似。</p><h6 id="_4-执行-masconstraintmaker-对象内的-install-方法" tabindex="-1"><a class="header-anchor" href="#_4-执行-masconstraintmaker-对象内的-install-方法" aria-hidden="true">#</a> 4. 执行 <code>MASConstraintMaker</code> 对象内的 <code>install</code> 方法；</h6><p>该方法会依次去执行每个约束对象(<code>MASViewConstraint</code>) 的 install 方法:</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// MASConstraintMaker.m
+- (NSArray *)install {
+    if (self.removeExisting) {
+        NSArray *installedConstraints = [MASViewConstraint installedConstraintsForView:self.view];
+        for (MASConstraint *constraint in installedConstraints) {
+            [constraint uninstall];
+        }
+    }
+  	// 复制所有的约束对象
+    NSArray *constraints = self.constraints.copy;
+    for (MASConstraint *constraint in constraints) {
+        constraint.updateExisting = self.updateExisting;
+      	// 每个约束对象执行 install 方法
+        [constraint install];
+    }
+    [self.constraints removeAllObjects];
+    return constraints;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>// MASViewConstraint.m
+
+- (void)install {
+   if (self.hasBeenInstalled) {
+       return;
+   }
+   
+   if ([self supportsActiveProperty] &amp;&amp; self.layoutConstraint) {
+       self.layoutConstraint.active = YES;
+       [self.firstViewAttribute.view.mas_installedConstraints addObject:self];
+       return;
+   }
+   // 取出第一个和第二个约束视图，以及各自的约束属性
+   MAS_VIEW *firstLayoutItem = self.firstViewAttribute.item;
+   NSLayoutAttribute firstLayoutAttribute = self.firstViewAttribute.layoutAttribute;
+   MAS_VIEW *secondLayoutItem = self.secondViewAttribute.item;
+   NSLayoutAttribute secondLayoutAttribute = self.secondViewAttribute.layoutAttribute;
+
+   // alignment attributes must have a secondViewAttribute
+   // therefore we assume that is refering to superview
+   // eg make.left.equalTo(@10)
+   if (!self.firstViewAttribute.isSizeAttribute &amp;&amp; !self.secondViewAttribute) {
+       secondLayoutItem = self.firstViewAttribute.view.superview;
+       secondLayoutAttribute = firstLayoutAttribute;
+   }
+   
+ 	// 构造 NSLayoutConstraint 约束对象
+   MASLayoutConstraint *layoutConstraint
+       = [MASLayoutConstraint constraintWithItem:firstLayoutItem
+                                       attribute:firstLayoutAttribute
+                                       relatedBy:self.layoutRelation
+                                          toItem:secondLayoutItem
+                                       attribute:secondLayoutAttribute
+                                      multiplier:self.layoutMultiplier
+                                        constant:self.layoutConstant];
+   // 设置优先级
+   layoutConstraint.priority = self.layoutPriority;
+ 	// 设置调试的 key 值
+   layoutConstraint.mas_key = self.mas_key;
+   
+   if (self.secondViewAttribute.view) {
+     	// 若第二个约束视图存在， 则约束添加在两个约束视图最近的父视图上
+       MAS_VIEW *closestCommonSuperview = [self.firstViewAttribute.view mas_closestCommonSuperview:self.secondViewAttribute.view];
+       NSAssert(closestCommonSuperview,
+                @&quot;couldn&#39;t find a common superview for %@ and %@&quot;,
+                self.firstViewAttribute.view, self.secondViewAttribute.view);
+       self.installedView = closestCommonSuperview;
+   } else if (self.firstViewAttribute.isSizeAttribute) {
+     	// 约束宽高， 则约束添加在第一个约束视图上
+       self.installedView = self.firstViewAttribute.view;
+   } else {
+     	// 约束添加在第一个约束视图的父视图上
+       self.installedView = self.firstViewAttribute.view.superview;
+   }
+
+
+   MASLayoutConstraint *existingConstraint = nil;
+   if (self.updateExisting) {
+       existingConstraint = [self layoutConstraintSimilarTo:layoutConstraint];
+   }
+   if (existingConstraint) {
+       // just update the constant
+       existingConstraint.constant = layoutConstraint.constant;
+       self.layoutConstraint = existingConstraint;
+   } else {
+     	// 添加约束
+       [self.installedView addConstraint:layoutConstraint];
+     	// 存储约束(弱引用)
+       self.layoutConstraint = layoutConstraint;
+     	// 存储约束对象， 方便以后好卸载该约束
+       [firstLayoutItem.mas_installedConstraints addObject:self];
+   }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br></div></div><h4 id="学习收获" tabindex="-1"><a class="header-anchor" href="#学习收获" aria-hidden="true">#</a> 学习收获</h4><h5 id="链式调用" tabindex="-1"><a class="header-anchor" href="#链式调用" aria-hidden="true">#</a> 链式调用</h5><p>block 通常作为函数的参数用的比较多， 但是block作为返回值，则可以写出链式调用的优雅语法:</p><p>定义一个计算器类， 实现加减乘除。</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>interface Caculator : NSObject
+
+@property (nonatomic, assign, readonly) CGFloat result;
+
+- (Caculator * (^) (CGFloat number))addition;
+
+- (Caculator * (^) (CGFloat number))substraction;
+
+- (Caculator * (^) (CGFloat number))multiplication;
+
+- (Caculator * (^) (CGFloat number))division;
+@end
+
+@implementation Caculator
+
+- (Caculator * _Nonnull (^)(CGFloat))addition {
+    return ^Caculator *(CGFloat number) {
+        self -&gt; _result += number;
+        return self;
+    };
+}
+
+- (Caculator * _Nonnull (^)(CGFloat))substraction {
+    return ^Caculator *(CGFloat number) {
+        self -&gt; _result -= number;
+        return self;
+    };
+}
+
+- (Caculator * _Nonnull (^)(CGFloat))multiplication {
+    return ^Caculator *(CGFloat number) {
+        self -&gt; _result *= number;
+        return self;
+    };
+}
+
+- (Caculator * _Nonnull (^)(CGFloat))division {
+    return ^Caculator *(CGFloat number) {
+        self -&gt; _result /= number;
+        return self;
+    };
+}
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><p>定义一个分类，负责调用。</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>@interface NSObject (Caculator)
+
+- (CGFloat)caculate:(void (^)(Caculator *caculate))block;
+
+@end
+
+@implementation NSObject (Caculator)
+
+- (CGFloat)caculate:(void (^)(Caculator * _Nonnull))block {
+    Caculator *caculate = [[Caculator alloc] init];
+    block(caculate);
+    return caculate.result;
+}
+@end
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>测试如下代码， 结果输出为 6 。</p><div class="language-objective ext-objective line-numbers-mode"><pre class="language-objective"><code>CGFloat result = [NSObject caculate:^(Caculator * _Nonnull caculate) {
+  	// 0 + 10 = 10
+  	// 10 - 2 = 8
+  	// 8 / 4 = 2
+  	// 2 * 3 = 6
+    caculate.addition(10).substraction(2).division(4).multiplication(3);
+}];
+
+NSLog(@&quot;result : %.f&quot;, result);
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><!--]--></div><footer class="page-meta"><div class="meta-item edit-link"><a class="external-link meta-item-label" href="https://github.com/chenxi92/blog.git/edit/main/iOS/open-analysis/Masonry.md" rel="noopener noreferrer" target="_blank" aria-label="Edit this page"><!--[--><!--]--> Edit this page <span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span><!--[--><!--]--></a></div><div class="meta-item last-updated"><span class="meta-item-label">上次更新时间: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: peak@jiemogame.com">peak</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/blog/assets/app.01142347.js" defer></script>
+  </body>
+</html>

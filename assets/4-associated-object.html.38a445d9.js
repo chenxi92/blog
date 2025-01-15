@@ -1,0 +1,1 @@
+const e={key:"v-2ce592b5",path:"/iOS/interview/4-associated-object.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1633942617e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:1}]},filePathRelative:"iOS/interview/4-associated-object.md"};export{e as data};

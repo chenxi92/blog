@@ -1,0 +1,1 @@
+const e={key:"v-d8790790",path:"/shell/",title:"Comand line usage notes",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1699521214e3,contributors:[{name:"peak",email:"peak@jiemogame.com",commits:2}]},filePathRelative:"shell/README.md"};export{e as data};
