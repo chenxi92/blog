@@ -11,6 +11,8 @@ This repository record what I have learned.
 
 ## Recently
 
+[Facebook SDK integration issues](./docs/iOS/facebook-sdk-integration-issues.md)
+
 [Download `xcappdata` folder](./docs/iOS/download-xcappdata-folder.md)
 
 [How to encrypt script](./docs/shell/encrypt-shell.md)
